@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206092330) do
+ActiveRecord::Schema.define(version: 20170206092332) do
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer  "employee_id",             limit: 4
@@ -425,7 +425,7 @@ ActiveRecord::Schema.define(version: 20170206092330) do
     t.integer  "employee_category_id",   limit: 4
     t.string   "employee_number",        limit: 255
     t.date     "joining_date"
-    t.string   "first_name",             limit: 255
+    t.binary   "first_name",             limit: 65535
     t.string   "middle_name",            limit: 255
     t.string   "last_name",              limit: 255
     t.string   "gender",                 limit: 255
@@ -951,11 +951,11 @@ ActiveRecord::Schema.define(version: 20170206092330) do
   end
 
   create_table "privilege_users", force: :cascade do |t|
-    t.integer  "privilege_tag_id", limit: 4
     t.integer  "privilege_id",     limit: 4
     t.integer  "user_id",          limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "privilege_tag_id", limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "privilege_users", ["privilege_id"], name: "index_privilege_users_on_privilege_id", using: :btree
@@ -974,9 +974,9 @@ ActiveRecord::Schema.define(version: 20170206092330) do
   create_table "question_databases", force: :cascade do |t|
     t.integer  "question_type_id", limit: 4
     t.string   "question",         limit: 255
-    t.integer  "no_of_option",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "no_of_option",     limit: 4
   end
 
   add_index "question_databases", ["question_type_id"], name: "index_question_databases_on_question_type_id", using: :btree
@@ -1219,6 +1219,16 @@ ActiveRecord::Schema.define(version: 20170206092330) do
 
   add_index "user_activities", ["user_id"], name: "index_user_activities_on_user_id", using: :btree
 
+  create_table "user_privileges", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "privilege_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "user_privileges", ["privilege_id"], name: "index_user_privileges_on_privilege_id", using: :btree
+  add_index "user_privileges", ["user_id"], name: "index_user_privileges_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "username",               limit: 255
     t.string   "first_name",             limit: 255
@@ -1256,17 +1266,6 @@ ActiveRecord::Schema.define(version: 20170206092330) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
-  create_table "versions", force: :cascade do |t|
-    t.string   "item_type",  limit: 255,   null: false
-    t.integer  "item_id",    limit: 4,     null: false
-    t.string   "event",      limit: 255,   null: false
-    t.string   "whodunnit",  limit: 255
-    t.text     "object",     limit: 65535
-    t.datetime "created_at"
-  end
-
-  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
-
   create_table "weekdays", force: :cascade do |t|
     t.integer  "batch_id",    limit: 4
     t.string   "weekday",     limit: 255
@@ -1288,6 +1287,22 @@ ActiveRecord::Schema.define(version: 20170206092330) do
   add_index "weightages", ["placement_exam_id"], name: "index_weightages_on_placement_exam_id", using: :btree
   add_index "weightages", ["question_type_id"], name: "index_weightages_on_question_type_id", using: :btree
 
+  create_table "weights", force: :cascade do |t|
+    t.integer  "percentage",       limit: 4
+    t.integer  "PlacementExam_id", limit: 4
+    t.integer  "QuestionType_id",  limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "weights", ["PlacementExam_id"], name: "index_weights_on_PlacementExam_id", using: :btree
+  add_index "weights", ["QuestionType_id"], name: "index_weights_on_QuestionType_id", using: :btree
+
+  add_foreign_key "privilege_users", "privilege_tags"
+  add_foreign_key "privilege_users", "privileges"
+  add_foreign_key "privilege_users", "users"
   add_foreign_key "student_informations", "batches"
   add_foreign_key "student_informations", "students"
+  add_foreign_key "user_privileges", "privileges"
+  add_foreign_key "user_privileges", "users"
 end

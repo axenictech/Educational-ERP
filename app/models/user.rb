@@ -2,7 +2,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_and_belongs_to_many :privileges
+  has_many :privilege_users
+  has_many :privileges, :through => :privilege_users
   belongs_to :general_setting
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :validatable, :timeoutable, :trackable

@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  privilege_id: 
   user_id: 
-  privilege_tag_id: 
+  privilege_id: 
 
 two:
-  privilege_id: 
   user_id: 
-  privilege_tag_id: 
+  privilege_id: 

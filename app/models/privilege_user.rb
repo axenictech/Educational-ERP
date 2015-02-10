@@ -1,9 +1,8 @@
-# PrivilegeUsers
-class PrivilegeUsers < ActiveRecord::Base
-  include Activity
-  belongs_to :privileges
-  belongs_to :privileges_tag
+class PrivilegeUser < ActiveRecord::Base
+	 include Activity
+  belongs_to :privilege
   belongs_to :user
+  belongs_to :privilege_tag
   scope :shod, ->(id) { where(id: id).take }
 
   def self.privilege_update(privilege_tag, user)
@@ -13,7 +12,7 @@ class PrivilegeUsers < ActiveRecord::Base
 
         next if  privileges.nil?
         privileges.each do |p|
-          PrivilegeUsers.create(user_id: user.id, privilege_id: p.id)
+          PrivilegeUser.create(user_id: user.id, privilege_id: p.id)
         end
       end
     end
