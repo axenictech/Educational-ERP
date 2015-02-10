@@ -304,7 +304,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.shod(params[:format])
     @user = User.find_by_employee_id("#{@employee.id}")
     privilege_tag = params[:privilege]
-    PrivilegeUsers.privilege_update(privilege_tag, @user)
+    PrivilegeUser.privilege_update(privilege_tag, @user)
     redirect_to admission4_employees_path(@employee)
   end
 
