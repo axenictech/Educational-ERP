@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
   def emp_category
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
+
   end
 
   def emp_department
@@ -69,6 +70,7 @@ class EmployeesController < ApplicationController
     authorize! :delete, @employee_category
     @employee_category_new = EmployeeCategory.new
     flash[:notice] = t('emp_delete_category') if @employee_category.destroy
+    redirect_to dashboard_home_index_path
     emp_category
   end
 
@@ -100,6 +102,7 @@ class EmployeesController < ApplicationController
     authorize! :delete, @employee_department
     @employee_department_new = EmployeeDepartment.new
     flash[:notice] = t('destroy_dept') if @employee_department.destroy
+    redirect_to dashboard_home_index_path
     emp_department
   end
 
@@ -130,6 +133,7 @@ class EmployeesController < ApplicationController
     authorize! :delete, @employee_position
     @employee_position_new = EmployeePosition.new
     flash[:notice] = t('dest_pos') if @employee_position.destroy
+    redirect_to dashboard_home_index_path
     emp_position
   end
 
@@ -160,6 +164,7 @@ class EmployeesController < ApplicationController
     authorize! :delete, @bank_field
     @bank_field_new = BankField.new
     flash[:notice] = 'Bank field deleted Successfully' if @bank_field.destroy
+    redirect_to dashboard_home_index_path
     bank_field
   end
 
@@ -194,6 +199,7 @@ class EmployeesController < ApplicationController
     @payroll_category = PayrollCategory.shod(params[:id])
     @payroll_category_new = PayrollCategory.new
     flash[:notice] = t('dest_pay') if @payroll_category.destroy
+    redirect_to dashboard_home_index_path
     pay_category
   end
 
@@ -239,7 +245,8 @@ class EmployeesController < ApplicationController
   def destroy_grade
     authorize! :delete, @employee_grade
     @employee_grade_new = EmployeeGrade.new
-    flash[:notice] = t('dest_grade') if @employee_grade.destroy
+    flash[:notice] = t('dest_grade') if @employee_grade_new.destroy
+    redirect_to dashboard_home_index_path
     emp_grade
   end
 
