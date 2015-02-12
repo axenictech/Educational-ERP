@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206092332) do
+ActiveRecord::Schema.define(version: 20170206092333) do
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer  "employee_id",             limit: 4
@@ -524,12 +524,12 @@ ActiveRecord::Schema.define(version: 20170206092332) do
   create_table "exams", force: :cascade do |t|
     t.integer  "exam_group_id",    limit: 4
     t.integer  "subject_id",       limit: 4
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string   "start_time",       limit: 255
+    t.string   "end_time",         limit: 255
     t.integer  "maximum_marks",    limit: 4
     t.integer  "minimum_marks",    limit: 4
     t.integer  "grading_level_id", limit: 4
-    t.integer  "weightage",        limit: 4, default: 0
+    t.integer  "weightage",        limit: 4,   default: 0
     t.integer  "event_id",         limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"

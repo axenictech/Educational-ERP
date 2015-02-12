@@ -119,7 +119,7 @@ class PlacementExamsController < ApplicationController
     title = "congratulations you are  short \
               listed for next round of " + @company.name
     qualify_student.each do |i|
-      @student = StudentScore.where(student_id: i,placement_exams_id: @placement_exam).take.update(is_qualify: true)
+      @student = StudentScore.where(student_id: i, placement_exams_id: @placement_exam).take.update(is_qualify: true)
       content = Student.find(i).full_name
       PlacementNews.create(title: title, content: content)
     end

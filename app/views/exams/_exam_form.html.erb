@@ -75,7 +75,8 @@
                 <%else%>
                   <td></td><td></td>
                 <%end%>
-                <td ><%= exam.date_field :start_time ,class: 'form-control'%></td>
+                <td> <%= exam.text_field :start_time,class: "form-control datepicker"%></td>
+               <!--  <td ><%= exam.date_field :start_time ,class: 'form-control'%></td> -->
                 <td ><%= exam.date_field :end_time,class: 'form-control'%></td>
                 <td><%= check_box_tag "no_create[]",subject.id,false, class: "exam_no_check" %></td>
               </tr>

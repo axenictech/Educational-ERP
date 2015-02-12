@@ -41,6 +41,6 @@ class PlacementNewsController < ApplicationController
   end
 
   def placement_news_params
-    params.require(:placement_news).permit(:title, :content,:islink)
+    params.require(:placement_news).permit(:title, :content, :islink)
   end
 end
