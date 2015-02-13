@@ -16,19 +16,19 @@ class PlacementExam < ActiveRecord::Base
                        students_id: student.id)
     student_exam = StudentExam.where(students_id: student).take
     i = 0
-    
-      test.each do |t|
-        StudentAnswerSheet.create(student_exams_id: student_exam.id,
-                                  question_databases_id: t[0],
-                                  options_id: t[1])
-        ans = Option.where(question_database_id: t[0].to_i,
-                           id: t[1].to_i).take
 
-        if ans.is_answer == true
-          i += 1
-          question_types << ans.question_database.question_type_id
-        end
+    test.each do |t|
+      StudentAnswerSheet.create(student_exams_id: student_exam.id,
+                                question_databases_id: t[0],
+                                options_id: t[1])
+      ans = Option.where(question_database_id: t[0].to_i,
+                         id: t[1].to_i).take
+
+      if ans.is_answer == true
+        i += 1
+        question_types << ans.question_database.question_type_id
       end
+    end
     result = PlacementExam.tot_per(question_types, exam)
     final_res << result
     StudentScore.create(placement_exams_id: exam,
@@ -39,7 +39,7 @@ class PlacementExam < ActiveRecord::Base
 
     final_res
   end
-  
+
   def self.tot_per(question_types, exam)
     result = []
     types = Weightage.where(placement_exam_id: exam)
@@ -48,9 +48,9 @@ class PlacementExam < ActiveRecord::Base
       total = i.placement_exam.question_count.to_f
       ans = question_types.select { |o| o == i.question_type_id }.count.to_f
       if total == 0
-      	per = 0
+        per = 0
       else
-       per = (ans * 100 / total)
+        per = (ans * 100 / total)
       end
       result << [i.question_type.que_type, per]
     end

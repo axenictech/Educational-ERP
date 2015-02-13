@@ -11,7 +11,18 @@
   <% elsif current_user.role == 'Admin' %>
       <%= render 'dash1' %>
   <% elsif current_user.role == 'Employee' %>
-      <%= render 'dash2' %>
+     <%
+        emp_id =User.select(:employee_id).where(id:current_user.id).pluck(:employee_id)
+        em=Employee.where(id:emp_id.map(&:to_i)).take
+        position = EmployeePosition.where(id:em.employee_position_id).take.name%>
+     
+     <% if position == 'Research Associate'%>
+         <%= render 'dash5' %>
+     <%else%>
+         <%= render 'dash2' %>
+     
+     <%end%>   
   <% else %>
       <%= render 'dash3' %>
   <% end %>
+  
