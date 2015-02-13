@@ -14,12 +14,17 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require dataTables/jquery.dataTables
+//= require jquery.timepicker.js
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 
 $(function() {
   $('.datepicker').datepicker();
 });
+
+
 
 var ready;
 ready = function(){
