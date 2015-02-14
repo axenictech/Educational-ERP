@@ -11,6 +11,10 @@ class EmployeesController < ApplicationController
   before_filter :bank_fields, only: \
   [:edit_bank_field, :update_bank_field, :destroy_bank_field]
 
+  def settings
+    authorize! :create, @employee
+  end
+
   def emp_category
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
