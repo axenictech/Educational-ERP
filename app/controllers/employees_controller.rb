@@ -499,7 +499,7 @@ class EmployeesController < ApplicationController
   def one_click_pay(salary_date)
     redirect_to payslip_employees_path
     flash[:notice] = "#{t('one')}" + \
-      ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
+                     ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
     authorize! :update, @employee
   end
 

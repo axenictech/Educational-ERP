@@ -17,7 +17,7 @@ class Student < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: \
   ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-
+  
   validates :admission_no, presence: true
   validates :admission_date, presence: true
   validates :email, presence: true, format: \
@@ -55,9 +55,9 @@ class Student < ActiveRecord::Base
                     length: { in: 1..30 }, allow_blank: true
   validates :pin_code, numericality: { only_integer: true },
                        length: { minimum: 6, maximum: 6 }, allow_blank: true
-  validates :phone2, numericality: { only_integer: true },
-                     length: { minimum: 6, maximum: 11 }, allow_blank: true
   validates :phone1, numericality: { only_integer: true },
+                     length: { minimum: 6, maximum: 11 }, allow_blank: true
+  validates :phone2, numericality: { only_integer: true },
                      length: { minimum: 6, maximum: 11 }, allow_blank: true
   after_save :create_user_account
   scope :shod, ->(id) { where(id: id).take }
@@ -243,7 +243,16 @@ class Student < ActiveRecord::Base
     ExamScore.where(exam_id: exam, student_id: id).take
   end
 
+  HUMANIZED_ATTRIBUTES = {
+    :phone1 => "Phone number",
+    :phone2 => "Mobile number"
+  }
+ 
   private
+  
+  def self.human_attribute_name(attr, options={})
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end 
 
   def create_user_account
     user = User.new do |u|

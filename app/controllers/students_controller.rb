@@ -17,6 +17,9 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @batches ||= Batch.all.includes(:course)
+    temp_email = params["student"]["email"]
+    downcase_email = temp_email.downcase
+    @student.email = downcase_email
     if @student.save
       flash[:notice] = t('student_admission1')
       redirect_to admission2_students_path(@student)

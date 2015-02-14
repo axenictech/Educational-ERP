@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206092335) do
+ActiveRecord::Schema.define(version: 20170206092332) do
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer  "employee_id",             limit: 4
@@ -480,16 +480,6 @@ ActiveRecord::Schema.define(version: 20170206092335) do
   add_index "employees", ["employee_grade_id"], name: "index_employees_on_employee_grade_id", using: :btree
   add_index "employees", ["employee_position_id"], name: "index_employees_on_employee_position_id", using: :btree
 
-  create_table "evens", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "evens_organizers", force: :cascade do |t|
-    t.integer "even_id",      limit: 4
-    t.integer "organizer_id", limit: 4
-  end
-
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "description", limit: 255
@@ -534,12 +524,12 @@ ActiveRecord::Schema.define(version: 20170206092335) do
   create_table "exams", force: :cascade do |t|
     t.integer  "exam_group_id",    limit: 4
     t.integer  "subject_id",       limit: 4
-    t.string   "start_time",       limit: 20
-    t.string   "end_time",         limit: 20
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.integer  "maximum_marks",    limit: 4
     t.integer  "minimum_marks",    limit: 4
     t.integer  "grading_level_id", limit: 4
-    t.integer  "weightage",        limit: 4,  default: 0
+    t.integer  "weightage",        limit: 4, default: 0
     t.integer  "event_id",         limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -924,11 +914,6 @@ ActiveRecord::Schema.define(version: 20170206092335) do
 
   add_index "options", ["question_database_id"], name: "index_options_on_question_database_id", using: :btree
 
-  create_table "organizers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "payroll_categories", force: :cascade do |t|
     t.string   "name",                limit: 255
     t.float    "percentage",          limit: 24
@@ -966,11 +951,11 @@ ActiveRecord::Schema.define(version: 20170206092335) do
   end
 
   create_table "privilege_users", force: :cascade do |t|
-    t.integer  "privilege_tag_id", limit: 4
     t.integer  "privilege_id",     limit: 4
     t.integer  "user_id",          limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "privilege_tag_id", limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "privilege_users", ["privilege_id"], name: "index_privilege_users_on_privilege_id", using: :btree
@@ -985,11 +970,6 @@ ActiveRecord::Schema.define(version: 20170206092335) do
   end
 
   add_index "privileges", ["privilege_tag_id"], name: "index_privileges_on_privilege_tag_id", using: :btree
-
-  create_table "privileges_users", force: :cascade do |t|
-    t.integer "privilege_id", limit: 4
-    t.integer "user_id",      limit: 4
-  end
 
   create_table "question_databases", force: :cascade do |t|
     t.integer  "question_type_id", limit: 4
@@ -1093,8 +1073,8 @@ ActiveRecord::Schema.define(version: 20170206092335) do
     t.decimal  "marks",                  precision: 10
     t.integer  "student_id", limit: 4
     t.integer  "batch_id",   limit: 4
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "student_informations", ["batch_id"], name: "index_student_informations_on_batch_id", using: :btree
@@ -1233,8 +1213,8 @@ ActiveRecord::Schema.define(version: 20170206092335) do
     t.string   "modelname",  limit: 255
     t.integer  "model_id",   limit: 4
     t.string   "action",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "user_activities", ["user_id"], name: "index_user_activities_on_user_id", using: :btree
@@ -1307,8 +1287,9 @@ ActiveRecord::Schema.define(version: 20170206092335) do
   add_index "weightages", ["placement_exam_id"], name: "index_weightages_on_placement_exam_id", using: :btree
   add_index "weightages", ["question_type_id"], name: "index_weightages_on_question_type_id", using: :btree
 
-  add_foreign_key "student_informations", "batches"
-  add_foreign_key "student_informations", "students"
+  add_foreign_key "privilege_users", "privilege_tags"
+  add_foreign_key "privilege_users", "privileges"
+  add_foreign_key "privilege_users", "users"
   add_foreign_key "user_privileges", "privileges"
   add_foreign_key "user_privileges", "users"
 end
