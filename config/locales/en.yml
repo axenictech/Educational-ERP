@@ -1,5 +1,8 @@
 
 en:
+  
+
+
   authorize: 'You are not Authorized'
   hello: "Hello world"
   first_name: "First Name"
@@ -159,3 +162,14 @@ en:
   placement_news_destroyed: 'Placement news was successfully destroyed.'
   placement_exam_error: 'Total percentages should be 100'
   placement_exam_created: 'Placement Exam created successfully'
+
+  activerecord:
+    attributes:
+      gurdian:
+        office_phone1: "Contact Number"
+    errors:
+      models:
+        gurdian:
+          attributes:
+            email:
+              blank: "is required"

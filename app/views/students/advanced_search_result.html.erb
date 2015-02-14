@@ -38,25 +38,25 @@
       <h3 >StudentAdvanced Search</h3>
     </center>
     <br>
-    <h4> <%= "Students listed by "+@search.downcase %></h4>
-    <table cellpadding="5" cellspacing="5" width="700">
+    
+    <table cellpadding="5" cellspacing="5" width="1000">
      <% c= 'odd' %>
-     <tr>
+     <tr bgcolor="99CCFF">
       <th>Sr.No.</th>
       <th>Name</th>
       <th>Batch</th>
       <th>Admission No</th>
-      <th>Date of birth</th>
+      <th>DOB</th>
     </tr>
     <% students.each.each_with_index do |s,i| %>
     <% student=ArchivedStudent.find_by_student_id(s)%>
     <% student=Student.find(s) if student.nil? %>
     <tr class="<%= cycle((["odd","even"]-[c]).first,c) %>">
       <td align="center"><%= index+=1 %></td>
-      <td align="center"><%= student.first_name+" "+student.last_name %></td>
-      <td align="center"><%= student.batch.course.course_name+" "+student.batch.name %></td>
-      <td align="center"><%= student.admission_no %></td>
-      <td align="center"><%= student.date_of_birth.strftime("%d %b, %Y") %></td>
+      <td><%= student.first_name+" "+student.last_name %></td>
+      <td><%= student.batch.course.course_name+" "+student.batch.name %></td>
+      <td align="right"><%= student.admission_no %></td>
+      <td align="right"><%= student.date_of_birth.strftime("%d %b, %Y") %></td>
     </tr>
     <% end %>
   </table>

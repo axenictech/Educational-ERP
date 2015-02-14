@@ -1,8 +1,8 @@
 class Guardian < ActiveRecord::Base
-  include Activity
+  
   belongs_to :country
   belongs_to :student
-  validates :email, presence: true, format: { with: /\A[a-zA-Z0-9._-]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}+\z/ }, allow_blank: true
+  validates :email, format: { with: /\A[a-zA-Z0-9._-]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}+\z/ }, allow_blank: true
   validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
   validates_length_of :first_name, minimum: 1, maximum: 20
 
@@ -12,7 +12,7 @@ class Guardian < ActiveRecord::Base
   validates :relation, presence: true, format: { with: /\A[a-z A-Z]+\z/, message: 'only allows letters' }
   validates_length_of :relation, minimum: 1, maximum: 20
   validates :country_id, presence: true
-  validates :office_phone1, numericality: { only_integer: true }, length: { minimum: 6, maximum: 11 }
+  validates :office_phone1, numericality: { only_integer: true}, length: { minimum: 6, maximum: 11 }, allow_blank: true 
   validates :office_phone2, numericality: { only_integer: true }, length: { minimum: 6, maximum: 11 }, allow_blank: true
   validates :office_address_line1, length: { in: 1..20 }, allow_blank: true
   validates :office_address_line2, length: { in: 1..20 }, allow_blank: true
