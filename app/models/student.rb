@@ -244,6 +244,7 @@ class Student < ActiveRecord::Base
   end
 
   HUMANIZED_ATTRIBUTES = {
+    :email => "Email Address",
     :phone1 => "Phone number",
     :phone2 => "Mobile number"
   }

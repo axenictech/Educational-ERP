@@ -40,5 +40,17 @@ class Guardian < ActiveRecord::Base
       u.general_setting_id =  User.current.general_setting.id
     end
     user.save
- end
+  end
+
+  HUMANIZED_ATTRIBUTES = {
+    :email => "Email Address",
+    :office_phone1 => "Contact number",
+    :office_phone2 => "Office phone number"
+  }
+ 
+  private
+  
+  def self.human_attribute_name(attr, options={})
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end 
 end
