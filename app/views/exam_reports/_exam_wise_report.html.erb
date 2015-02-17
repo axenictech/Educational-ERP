@@ -71,7 +71,7 @@
           <%if @exam_group.exam_type=="Marks and Grades"%>
           <th>-</th>
           <%end%>
-          <th><%= "%.2f" %(total_marks_attained*100/total_max_marks)+"%" unless total_max_marks == 0 %></th>
+          <th><%="%.2f" %((total_marks_attained.to_f*100) / total_max_marks.to_f).round(2) + '%' unless total_max_marks == 0 %></th>
         </tr>
       <% end %>
     </table>
@@ -80,5 +80,4 @@
 <%end%>
 
 <%end%>
-
 

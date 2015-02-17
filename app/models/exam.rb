@@ -163,7 +163,7 @@ class Exam < ActiveRecord::Base
   end
 
   def scores(student)
-    ExamScore.score(student.id, id)
+    ExamScore.score(student.id, id) unless student.nil?
   end
 
   def exam_total(total)

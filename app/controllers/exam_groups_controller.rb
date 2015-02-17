@@ -38,6 +38,7 @@ class ExamGroupsController < ApplicationController
 
   def exam_group_create
     @exam_group = ExamGroup.shod(params[:id])
+ 
     @exam_group.update(params_exam_group)
     @exam_group.update_exam(@exam_group, params[:no_create])
   end
