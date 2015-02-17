@@ -2,8 +2,8 @@
   <ul class="breadcrumb">
     <li><%= link_to 'Home',dashboard_home_index_path %></li>
     <li><%= link_to 'Finance',finance_index_path %></li>
-    <li><%= link_to 'Transction',transactions_finance_index_path %></li>
-    <li>Compare transction report</li>
+    <li><%= link_to 'Transaction',transactions_finance_index_path %></li>
+    <li>Compare transaction report</li>
   </ul>
 </div>
 <div id="flash"><%= render 'layouts/messages'%></div>
@@ -11,7 +11,7 @@
   <div class="box col-md-12">
     <div class="box-inner">
       <div class="box-header well">
-        <h2>Select Date for Comparision</h2>
+        <h2>Select Date for Comparison</h2>
       </div>
       <div class="box-content">
       <%= form_for :transaction, url:{action: 'transactions_comparison'} do |f| %>

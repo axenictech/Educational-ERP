@@ -56,13 +56,13 @@
   <% end %>
 <div class="col-md-5">
   <div class="form-group">
-  <b>Password:</b>
-  <%= f.password_field :password, autocomplete: "off",class: "form-control",style: "width:300px" %>
+  <b>New Password:</b>
+  <%= f.password_field :password, placeholder: "Minimum 8 characters",autocomplete: "off",class: "form-control",style: "width:300px" %>
   </div>
 
 <div class="form-group">
-  <b>Password Confirmation:</b>
-  <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",style: "width:300px" %>
+  <b>Confirm New Password:</b>
+  <%= f.password_field :password_confirmation,placeholder: "Minimum 8 characters" ,autocomplete: "off",class: "form-control",style: "width:300px" %>
   </div>
 
  <div class="form-group">
