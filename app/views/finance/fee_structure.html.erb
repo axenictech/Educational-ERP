@@ -38,14 +38,14 @@
         <tr>
           <td>Name</td>
           <td>:</td>
-          <td><%= @student.first_name.capitalize %> <%= @student.middle_name.capitalize %> <%= @student.last_name.capitalize %>
+          <td align="left"><%= @student.first_name.capitalize %> <%= @student.middle_name.capitalize %> <%= @student.last_name.capitalize %>
           </td>
         </tr>
         <tr>  
           <td>Fee Category Name</td>
           <td>:</td>
           <% unless @category.nil? %>
-            <td><%= @category.name %></td>
+            <td align="left"><%= @category.name %></td>
           <%else%>
             <td>-</td>
           <%end%>
@@ -53,22 +53,22 @@
         <tr>
           <td>Fee Collection Name</td>
           <td>:</td>
-          <td><%= @collection.name %></td>
+          <td align="left"><%= @collection.name %></td>
         </tr>
         <tr>
           <td>Start Date</td>
           <td>:</td>
-          <td><%= @collection.start_date %></td>
+          <td align="left"><%= @collection.start_date %></td>
         </tr>
         <tr>
           <td>End Date</td>
           <td>:</td>
-          <td><%= @collection.end_date %></td>
+          <td align="left"><%= @collection.end_date %></td>
         </tr>
         <tr>
           <td>Due Date</td>
           <td>:</td>
-          <td><%= @collection.due_date %></td>
+          <td align="left"><%= @collection.due_date %></td>
         </tr>
       </table>
       <br/><br/>
@@ -77,9 +77,9 @@
         <%discount=0%>
         <%fines=0%>
         <tr bgcolor="99CCFF">
-          <th>Sr.No.</th>
+          <th width="70">Sr. No.</th>
           <th>Particular</th>
-          <th>Amount</th>
+          <th width="150">Amount</th>
         </tr>
         <% unless @particulars.nil?%>
           <% @particulars.each_with_index do |p,i|%>
@@ -98,9 +98,9 @@
       <table cellpadding="5" cellspacing="5" width="700">
         <% unless @discounts.nil?%>
           <tr bgcolor="99CCFF">
-            <th>Sr.No.</th>
+            <th width="70">Sr.No.</th>
             <th>Discount Type</th>
-            <th>Discount</th>
+            <th width="150">Discount</th>
           </tr>
           <tr>
             <% @discounts.each_with_index do |d,i|%>
