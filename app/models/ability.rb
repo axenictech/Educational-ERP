@@ -15,7 +15,7 @@ class Ability
       end
     else
       can [:read, :update], [Student, ArchivedStudent]
-      can :read, TimeTable
+      can :read, TimeTable,Event
     end
   end
 end

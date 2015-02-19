@@ -1,3 +1,4 @@
+# Guardian 
 class Guardian < ActiveRecord::Base
   
   belongs_to :country
@@ -35,7 +36,7 @@ class Guardian < ActiveRecord::Base
       u.first_name = first_name
       u.last_name = last_name
       u.username = email
-      u.student_id = id
+      u.student_id = student.id
       u.password = 'P' + student.admission_no
       u.role = 'Parent'
       u.email = email
@@ -56,5 +57,4 @@ class Guardian < ActiveRecord::Base
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
-
 end

@@ -26,14 +26,14 @@ class CalenderController < ApplicationController
     @event = Event.find(params[:format])
     @batches = @event.batches
     @departments = @event.employee_departments
-  end  
+  end
 
   def update_event
+    authorize! :update, @event
     @event = Event.find(params[:id])
-    if @event.update(params_event)
-      flash[:notice] = 'Event updated successfully'
-      redirect_to calender_index_path
-    end
+    return unless @event.update(params_event)
+    flash[:notice] = 'Event updated successfully'
+    redirect_to calender_index_path
   end
 
   private
