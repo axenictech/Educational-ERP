@@ -91,10 +91,14 @@
               <% max_total = 0 %>
               <% marks_total = 0 %>
             <%end%>
+             <%unless @total==0.0%>
             <tr class="tr-head">
               <th colspan="2" align="right">Total</th>
               <th><%="%.2f" %(@mark*100/@total)+"%"%></th>
+            <%else%>
+              <th><%=" "%></th> 
             </tr>
+              <%end%>
           </table>
         <%else%>
           <h4>Subject Not Found</h4>

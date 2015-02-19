@@ -10,13 +10,19 @@
   <div class="col-md-12">
     <div class="pull-right">
 
-      <% if @user.role.eql? "Student" or @user.role.eql? "Parent"%>
+      <% if @user.role.eql? "Student" %>
       <% unless @student.nil? %>
         <% if @student.status_description.nil? %>
           <%= link_to "View Profile",profile_student_path(@student), class: "btn btn-primary-link btn-xs" %>
         <% else %>
           <%= link_to "View Profile",archived_student_profile_student_path(@student.id), class: "btn btn-primary-link btn-xs"%>
         <%end%>
+
+        <% if @user.role.eql? "Parent"%>
+        <%@parent = @user.student.take%>
+            <%= link_to "View Profile",profile_student_path(@parent), class: "btn btn-primary-link btn-xs" %>
+        <%end%>
+        
         <% end %>
       <% elsif @user.role.eql? "Employee"%>
         <% unless @employee.nil? %>

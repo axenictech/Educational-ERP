@@ -42,62 +42,52 @@
 <br>
  <div class="row">
 <div class="col-md-12">
- <table class="table table-striped">   
- <%=form_for :exams,url:{action:'update_exam_score',id:@exam.id},method: :patch do |f| %>       
- <thead>
-  <tr >
-    <th >Student name</th>
-    <th >Marks</th>
-    <th >Remarks</th>
-    <th ><%= 'Grades' unless @exam.exam_group.exam_type=="Marks"%></th>
+<table class="table table-hover" style="width:700px">
+  <%=form_for :exams,url:{action:'update_exam_score',id:@exam.id},method: :patch do |f| %>  
+  <tr>
+    <td class="col-3" colspan="3">Exam Name: <%= @exam.exam_group.name %></td>
+  </tr>
+        
+  <tr>
+    <td class="col-3" colspan="3">
+    Subject Name: <%= @exam.subject.name %></td>
+  </tr>
+  <tr class="tr-head">
+    <td class="col-2">Student name</td>
+    <td >Marks</td>
+    <td >Remarks</td>
+    <td ><%= 'Grades' unless @exam.exam_group.exam_type=="Marks"%></td>
   </tr> 
-  </thead>
-<tbody>
 <% @exam_scores.each do |es| %>
 <tr>
 <% student=es.student%>
     <% unless es.nil? %>
-      <td class="col-2"><font color="red"><%= f.label "#{student.full_name}" %></font></td>
-    <div class="col-md-12">
-     <table class="table table-striped">   
-       <%=form_for :exams,url:{action:'update_exam_score',id:@exam.id},method: :patch do |f| %>       
-       <thead>
-        <tr >
-          <th >Student name</th>
-          <th >Marks</th>
-          <th >Remarks</th>
-          <th><%= 'Grades' unless @exam.exam_group.exam_type=="Marks"%></th>
-        </tr> 
-      </thead>
-      <tbody>
-        <% @exam_scores.includes(:student, :grading_level).each do |es| %>
-        <tr>
-          <% student=es.student%>
-          <% unless es.nil? %>
-          <td class="col-2"><font color="red"><%= f.label "#{student.full_name}" %></font></td>
-          
-          <%else%>
-          <td class="col-2"><%= f.label "#{student.full_name}" %></td>
-          <%end%>
-          <% unless es.nil? %>
-          <td><%= f.text_field "exam[#{student.id}][marks]",value:es.marks,class: "form-control"%></td>
-          <td><%= f.text_field "exam[#{student.id}][remarks]",value:es.remarks,class: "form-control"%></td>
-          <td><%= f.text_field "exam[#{student.id}][grades]",value:es.grading_level.name,readonly:true,class: "form-control",style: 'width:50px' unless @exam.exam_group.exam_type=="Marks"%></td>
-          <%else%>
-          <td><%= f.text_field "exam[#{student.id}][marks]",class: "form-control"%></td>
-          <td><%= f.text_field "exam[#{student.id}][remarks]",class: "form-control"%></td>
-          <td><%= f.text_field "exam[#{student.id}][grades]",readonly:true,class: "form-control",style: 'width:50px' unless @exam.exam_group.exam_type=="Marks"%></td>
-          <%end %>   
-        </tr>
-        <% end %> 
+    
+     
+      <td class="col-2"><font color="red"><%= f.label "#{student.first_name+" "+student.last_name}" %></font></td>
+    
+<%else%>
+      <td class="col-2"><%= f.label "#{student.first_name+" "+student.last_name}" %></td>
+    <%end%>
+    <% unless es.nil? %>
+        <td><%= f.text_field "exam[#{student.id}][marks]",value:es.marks%></td>
+        <td><%= f.text_field "exam[#{student.id}][remarks]",value:es.remarks%></td>
+        <td><%= f.text_field "exam[#{student.id}][grades]",value:es.grading_level.name,readonly:true,style:"width:50px" unless @exam.exam_group.exam_type=="Marks"%></td>
+    <%else%>
+      <td><%= f.text_field "exam[#{student.id}][marks]"%></td>
+      <td><%= f.text_field "exam[#{student.id}][remarks]"%></td>
+      <td><%= f.text_field "exam[#{student.id}][grades]",readonly:true,style:"width:50px" unless @exam.exam_group.exam_type=="Marks"%></td>
+    <%end %>   
+</tr>
+<% end %> 
+ <tr class="tr-head"><td colspan="4">
+<%= f.submit 'Submit', class: "btn btn-primary"%>
+<%= link_to 'Finish',exam_groups_previous_exam_data_path, class: "btn btn-primary"%></td>
+</tr>
+<%end%>
+</table>
 
-        <tr><td colspan="3" align="center">
-          <%= f.submit 'Submit', class: "btn btn-primary"%>
-          <%= link_to 'Finish',previous_exam_data_exam_groups_path, class: "btn btn-primary"%></td>
-        </tr>
-        <%end%>
-      </tbody>
-    </table>
+</div></div>
   </div>
 </div>
 </fieldset>
