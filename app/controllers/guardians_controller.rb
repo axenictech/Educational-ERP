@@ -46,6 +46,7 @@ class GuardiansController < ApplicationController
     @student = Student.shod(params[:student_id])
     @guard = @student.guardians.shod(params[:id])
     if @guard.update(guardian_params)
+      flash[:notice] = t('guardian_update')
       redirect_to dispguardian_students_path(@guard.student)
     else
       render 'edit'

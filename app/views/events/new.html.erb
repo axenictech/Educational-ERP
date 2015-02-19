@@ -19,7 +19,7 @@
         <fieldset>
         <div class="col-md-2"></div>
   <div class="box col-md-7">
-     <%= form_for :event ,url:{action:'create'} do |f| %>
+     <%= form_for :event ,url:{action:'create'}, html: { id: "cust"} do |f| %>
         <div class="form-group">
         <b>Start Date:</b>
         <%=f.date_field :start_date ,value: @start_date,readonly:true,:id=>'datetimepicker2',class: "form-control",style: "width: 350px"%>
@@ -32,6 +32,8 @@
        <div class="form-group">
 
           <b>Title:</b>
+          <span style="color:red">*</span>
+          <label id="first"></label>
           <%= f.text_field :title,class: "form-control",placeholder: "Event Title",style: "width: 350px",required:true %>
         </div>
        <div class="form-group">
@@ -65,3 +67,26 @@
   </div>
   </div>
   </div>
+
+
+<%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.min.js" %>
+<%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+ 
+      $("#cust").validate({
+ 
+        rules: {
+          "event[title]": {
+            required: true
+          }
+        },
+        errorPlacement: function(error, element) {
+             error.appendTo( $("label:first") );
+           },
+ 
+       });
+ 
+ });
+</script>

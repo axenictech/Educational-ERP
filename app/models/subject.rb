@@ -6,7 +6,7 @@ class Subject < ActiveRecord::Base
   has_many :employee_subjects
   has_many :employees, through: :employee_subjects
   validates :name, presence: true, length: \
-  { minimum: 1, maximum: 100 }, format: { with: /\A[a-zA-Z0-9#+_" "-]+\Z/ }
+  { minimum: 1, maximum: 100 }, format: { with: /\A[a-zA-Z0-9#&+_" "-]+\Z/ }
   validates :code, presence: true, length: \
   { minimum: 1, maximum: 10 }, format: { with: /\A[a-zA-Z0-9_" "-]+\Z/ }
   validates :max_weekly_classes, presence: true, length: \

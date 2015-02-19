@@ -56,7 +56,12 @@ class ExamSettingController < ApplicationController
     @rank_lev1 = @course.ranking_levels.new(params_rank)
     @max_rank = RankingLevel.maximum('prioriy')
     @rank_lev1 = @course.max(@max_rank, @rank_lev1)
-    createrank_flash
+    if @rank_lev1.save
+      flash[:notice] = t('create_rank')
+    else
+      flash[:notice] = t('not_create_rank')
+      render 'newrank'
+    end
   end
 
   def createrank_flash

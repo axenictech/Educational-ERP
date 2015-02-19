@@ -1,0 +1,8 @@
+
+        <%= form_for @discount, :html => { :id => "d"} do |f| %>
+        <label id="first"> </label>
+          <b>Name:</b>
+          <%= f.text_field :name%>
+          <%= f.submit 'Submit'%>
+          <p id="p1">This is a paragraph.</p>
+        <%end%>
