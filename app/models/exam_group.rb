@@ -68,7 +68,7 @@ end
     if exam_type == 'Grades'
       es.grading_level.name || 'AB'
     elsif exam_type == 'Marks'
-      [es.marks || 'AB', e.maximum_marks].join('/')   unless es.nil?
+      [es.marks || 'AB', e.maximum_marks].join('/') 
     else
       [[es.marks || 'AB', e.maximum_marks].join('/') ,es.grading_level.name || '-'].join('|') 
     end
