@@ -17,4 +17,28 @@ class CalenderController < ApplicationController
   def event_view
     @event = Event.shod(params[:event_id])
   end
+
+  def view_events
+    @events = Event.all
+  end
+
+  def display_batch_department
+    @event = Event.find(params[:format])
+    @batches = @event.batches
+    @departments = @event.employee_departments
+  end  
+
+  def update_event
+    @event = Event.find(params[:id])
+    if @event.update(params_event)
+      flash[:notice] = 'Event updated successfully'
+      redirect_to calender_index_path
+    end
+  end
+
+  private
+
+  def params_event
+    params.require(:event).permit!
+  end
 end

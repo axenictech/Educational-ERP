@@ -352,6 +352,9 @@ Rails.application.routes.draw do
   resources :calender do
     collection do
       get :event_view
+      get :view_events
+      get :display_batch_department
+      patch :update_event
     end
 
     member do

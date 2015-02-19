@@ -13,6 +13,7 @@ class Batch < ActiveRecord::Base
   has_many :subjects
   has_many :weekdays
   has_many :batch_events
+  has_many :events, through: :batch_events
   has_many :exam_groups
   has_and_belongs_to_many :finance_fee_categories
   has_and_belongs_to_many :online_exams

@@ -1,0 +1,46 @@
+<div>
+  <ul class="breadcrumb">
+    <li><%= link_to 'Home',dashboard_home_index_path %></li>
+    <li><%= link_to 'Calender',calender_index_path %></li>
+    <li>Event Details</li>
+  </ul>
+</div><div id="flash"><%= render 'layouts/messages'%></div>
+
+<hr>
+<div class="row">
+  <div class="box col-md-12">
+  <div class="box-inner">
+    <div class="box-header well">
+      <h2>Event Details</h2>
+    </div>
+  <div class="box-content" style="overflow-y: scroll; height:auto">
+  <% if @events.empty? %>
+ <h4 align="center">No Record Found </h4>
+   <% else %>
+      <table class="table table-striped table-bordered responsive">
+        <thead>
+       <tr>
+        <th>Sr. No.</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+  <tbody>  
+      <% @events.each_with_index do |event,i| %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= link_to event.title,display_batch_department_calender_index_path(event)  %></td>
+          <td><%= event.description %></td>
+          <td><%= event.start_date %></td>
+          <td><%= event.end_date %></td>
+        </tr>      
+      <% end %>     
+   </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>
+<% end %>

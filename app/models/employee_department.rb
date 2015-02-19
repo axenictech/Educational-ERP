@@ -2,6 +2,8 @@
 class EmployeeDepartment < ActiveRecord::Base
   include Activity
   has_many :employees
+  has_many :employee_department_events
+  has_many :events, through: :employee_department_events
   validates :name, presence: true, length: \
   { minimum: 1, maximum: 50 }, format: { with: /\A[a-zA-Z0-9#+_" "-]+\Z/ }
   validates :code, presence: true, length: { minimum: 1, maximum: 10 }

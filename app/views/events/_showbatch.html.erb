@@ -4,25 +4,13 @@
 
 <script type="text/javascript" src="/assets/bootstrap-multiselect.js"></script>
 
-
-<div class="row">
-  <div class="box col-md-9">
-    <div class="box-inner">
-      <div class="box-content">
-        <fieldset>
-          <%=select_tag("batches[]",options_for_select(@batches.collect { |ff| [ff.name, ff.id] },@batches.collect { |fs| [fs.id] }),{:multiple=>true, :id => "batches"})%>
-          
-        </fieldset>
-      </div>
-    </div>
-  </div>
-</div>
-
+<%=select_tag("batches[]",options_for_select(@batches.collect { |ff| [ff.name, ff.id] },@batches.collect { |fs| [fs.id] }),{:multiple=>true, :id => "batches"})%>
 
 <script type="text/javascript">
 $(function() {
 $('#batches').multiselect({
-includeSelectAllOption: true
+includeSelectAllOption: true,
+maxHeight: 200
 });
 
 });
