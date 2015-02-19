@@ -41,7 +41,7 @@
         <% @students.each do |student| %>
           <tr>
             <td>
-              <%= student.student_full_name %>
+              <%= student.stud_full_name %>
             </td>
             <td class="center">
               <%= check_box_tag "students[]", student.id,true,class: 'check_box'%>

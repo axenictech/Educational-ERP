@@ -12,16 +12,7 @@
 //
 //= require_tree .
 
-$(document).ready(function() {
-    $("#discount_form").validate({
-        rules: {
-          "discount[name]": {
-            required: true
-           }
-        },
-    });
- 
-});
+
 
 
 
