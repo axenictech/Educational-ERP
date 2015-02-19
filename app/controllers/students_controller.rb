@@ -73,7 +73,10 @@ class StudentsController < ApplicationController
     @student = Student.shod(params[:id])
     @student.update(student_params)
     @guardian = Guardian.shod(@student.immediate_contact)
+    p '-------------------------------------------------'
+    p @guardian
     @guardian.create_user_account
+    p 'account createdddddddddddd.......................'
     redirect_to previous_data_students_path(@student)
   end
 
