@@ -44,13 +44,15 @@ class Guardian < ActiveRecord::Base
     p user.errors
   end
  
+
+ 
+  private
+
   HUMANIZED_ATTRIBUTES = {
     email: 'Email Address',
     office_phone1: 'Contact number',
     office_phone2: 'Office phone number'
   }
- 
-  private
   
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
