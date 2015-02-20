@@ -1,8 +1,6 @@
 <div class=" row">
     <div class="col-md-3 col-sm-3 col-xs-6">
     <% unless @student.nil? %>
-    <% unless @student.status_description %> 
-    <%end%>
         <a class="well top-block" href="/students/<%= current_user.student_id%>/profile">
     <% else %>
         <a class="well top-block" href="/students/archived_profile.<%= current_user.student_id%>">
@@ -14,7 +12,7 @@
 
     <div class="col-md-3 col-sm-3 col-xs-6">
         <a class="well top-block" href="/newscasts">
-            <i class="glyphicon glyphicon-comment"></i>
+            <i class="glyphicon glyphicon-cxomment"></i>
             <div>Campus News</div>
         </a>
     </div>

@@ -12,10 +12,10 @@ class Ability
       p = user.privileges.collect { |i|[i.name, i.privilege_tag.name_tag] }
       p.each do |i|
         can [i[0].to_sym], (Object.const_get i[1])
-    end
+      end
     else
       can [:read, :update], [Student, ArchivedStudent]
-      can :read, TimeTable
+      can :read, TimeTable,Event
     end
   end
 end

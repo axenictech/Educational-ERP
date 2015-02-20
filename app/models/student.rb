@@ -199,15 +199,15 @@ class Student < ActiveRecord::Base
     script += ' Name: ' + search[:name].to_s + ', ' \
     unless search[:name].empty?
     if search[:course_id].present?
-      course = Course.shod(search[:course_id])
+      course = Course.find(search[:course_id])
       script += ' Course: ' + course.course_name + ', ' unless course.nil?
     end
     if batch[:id].present?
-      batch = Batch.shod(batch[:id])
+      batch = Batch.find(batch[:id])
       script += ' Batch: ' + batch.name + ', ' unless batch.nil?
     end
     if search[:category_id].present?
-      script += ' Category: ' + Category.shod(search[:category_id]).name + ', '
+      script += ' Category: ' + Category.find(search[:category_id]).name + ', '
     end
     if  search[:gender] == 'All'
       script += ' Gender: All' + ', '
@@ -218,7 +218,7 @@ class Student < ActiveRecord::Base
     script += ' Blood group: ' + search[:blood_group].to_s + ', ' \
     unless search[:blood_group].empty?
     if search[:country_id].present?
-      script += ' Country: ' + Country.shod(search[:country_id]).name + ', '
+      script += ' Country: ' + Country.find(search[:country_id]).name + ', '
     end
     script += ' Admission date: ' +  search[:admission_date].to_s + ', ' \
     unless  search[:admission_date].empty?

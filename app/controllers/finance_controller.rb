@@ -548,7 +548,7 @@ class FinanceController < ApplicationController
   end
 
   def new_fee_discount
-    @discount = FeeDiscount.new
+    @fee_discount = FeeDiscount.new
     @categories ||= FinanceFeeCategory.all
     authorize! :create, @discount
   end

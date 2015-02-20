@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :validatable, :timeoutable, :trackable
   validates :username, presence: true, uniqueness: true, length: \
-  { in: 1..50 }, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+  { in: 1..50 }, format: \
+  { with: /\A[a-zA-Z0-9._-]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}+\z/ }
   validates :first_name, presence: true, length: { in: 1..25 }, format: \
   { with: /\A[a-zA-Z" "]+\Z/ }
   validates :last_name, presence: true, length: { in: 1..25 }, format: \

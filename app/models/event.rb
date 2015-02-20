@@ -2,6 +2,9 @@
 class Event < ActiveRecord::Base
   include Activity
   has_many :batch_events
+  has_many :batches, through: :batch_events
+  has_many :employee_department_events
+  has_many :employee_departments, through: :employee_department_events
   scope :shod, ->(id) { where(id: id).take }
 
   def create_event(batches, departments)
