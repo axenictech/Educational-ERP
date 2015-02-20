@@ -2,7 +2,7 @@ class Guardian < ActiveRecord::Base
   
   belongs_to :country
   belongs_to :student
-  validates :email, format: { with: /\A[a-zA-Z0-9._-]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}+\z/ }, allow_blank: true
+  validates :email, presence: true,format: { with: /\A[a-zA-Z0-9._-]+@([a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}+\z/ }, allow_blank: true
   validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: 'only allows letters' }
   validates_length_of :first_name, minimum: 1, maximum: 20
 
@@ -12,7 +12,7 @@ class Guardian < ActiveRecord::Base
   validates :relation, presence: true, format: { with: /\A[a-z A-Z]+\z/, message: 'only allows letters' }
   validates_length_of :relation, minimum: 1, maximum: 20
   validates :country_id, presence: true
-  validates :office_phone1, numericality: { only_integer: true}, length: { minimum: 6, maximum: 11 }, allow_blank: true 
+  validates :office_phone1, presence: true,numericality: { only_integer: true}, length: { minimum: 6, maximum: 11 }, allow_blank: true 
   validates :office_phone2, numericality: { only_integer: true }, length: { minimum: 6, maximum: 11 }, allow_blank: true
   validates :office_address_line1, length: { in: 1..20 }, allow_blank: true
   validates :office_address_line2, length: { in: 1..20 }, allow_blank: true
@@ -23,7 +23,7 @@ class Guardian < ActiveRecord::Base
                         length: { in: 1..20 }, allow_blank: true
   scope :shod, ->(id) { where(id: id).take }
   scope :discover, ->(s, r) { where(student_id: s, relation: r).take }
-  after_save :create_user_account
+  
 
   def student_name
     [first_name, last_name].join(' ')
@@ -36,12 +36,6 @@ class Guardian < ActiveRecord::Base
     :office_phone1 => "Contact number",
     :office_phone2 => "Office phone number"
   }
- 
-  private
-  
-  def self.human_attribute_name(attr, options={})
-    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
-  end
 
   def create_user_account
     user = User.new do |u|
@@ -56,5 +50,10 @@ class Guardian < ActiveRecord::Base
     end
     user.save
   end
-
+   
+  private
+  
+  def self.human_attribute_name(attr, options={})
+    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+  end
 end
