@@ -17,7 +17,7 @@ class AttendencesController < ApplicationController
 
   def select
     @subject = Subject.shod(params[:subject][:id])
-    @students ||= @subject.batch.students
+  
     @time_table_entries ||= TimeTableEntry.attendance(@subject, @subject.batch)
     @today = Date.today
     @start_date = @today.beginning_of_month
@@ -33,7 +33,7 @@ class AttendencesController < ApplicationController
     authorize! :read, Attendence
   end
 
-  def dispaly2
+  def display2
     @time_table_entries ||= TimeTableEntry.attendance(@subject, @subject.batch)
     @start_date = @today.beginning_of_month
     @end_date = @today.end_of_month
@@ -49,9 +49,11 @@ class AttendencesController < ApplicationController
   end
 
   def create
+    @subject_id = params[:subject_id]
     @today = params[:attendence][:month_date].to_date
     @attendence = Attendence.new(attendence_params)
     @attendence.save
+    @attendence.update(subject_id:@subject_id)
     @subject = Subject.shod(params[:subject_id])
     create2
   end
@@ -64,7 +66,7 @@ class AttendencesController < ApplicationController
   end
 
   def edit_attendence
-    @attendence = Attendence.shod(params[:id])
+    @attendence = Attendence.find(params[:id])
     @student = Student.shod(@attendence.student_id)
     @subject_id = params[:subject_id]
     @today = params[:date]
@@ -143,6 +145,6 @@ class AttendencesController < ApplicationController
   private
 
   def attendence_params
-    params.require(:attendence).permit!
+    params.require(:attendence).permit( :forenoon,:afternoon,:reason,:month_date,:student_id,:time_table_entry_id,:batch_id,:subject_id)
   end
 end

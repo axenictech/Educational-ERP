@@ -19,8 +19,8 @@
      <tr>
         <% q = w.to_i %>
         <th><%= @day[q] %></th>
-<% weekday= weekday_batch(@batch,@day[q])%>
-    <% if weekday.nil? %>
+<% @weekday= weekday_batch(@batch,@day[q])%>
+    <% if @weekday.nil? %>
         <td><%= check_box_tag "weekdays[]", w,false%></td>
     <%else%>
         <td><%= check_box_tag "weekdays[]", w,true%></td>
@@ -29,7 +29,12 @@
     <% end %>
     </tbody>
     </table>
-  <p align="center"><%= submit_tag "Save", :class=>'btn btn-primary' %></p>
+
+  <% if Weekday.where(batch_id:@batch.id).present?%>
+      <p align="center"><%= submit_tag "Save",data: {confirm: "This will delete all previous timetable entries, Are you sure to delete?"},:class=>'btn btn-primary' %></p>
+  <%else%>
+    <p align="center"><%= submit_tag "Save",:class=>'btn btn-primary' %></p>
+  <%end%>
 <% end %>
 </div>
 </div>

@@ -29,7 +29,7 @@ class TimeTablesController < ApplicationController
   def timetable
     @today = Date.today
     @time_table = TimeTable.time_table_date(@today)
-  end
+ end
 
   def display_institutional_time_table
     @today = params[:next].to_date
