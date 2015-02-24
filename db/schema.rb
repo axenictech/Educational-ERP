@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206092334) do
+ActiveRecord::Schema.define(version: 20170206092338) do
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer  "employee_id",             limit: 4
@@ -1084,6 +1084,22 @@ ActiveRecord::Schema.define(version: 20170206092334) do
   add_index "student_informations", ["batch_id"], name: "index_student_informations_on_batch_id", using: :btree
   add_index "student_informations", ["student_id"], name: "index_student_informations_on_student_id", using: :btree
 
+  create_table "student_logs", force: :cascade do |t|
+    t.decimal  "mark",                    precision: 10
+    t.integer  "maximum_marks", limit: 4
+    t.integer  "student_id",    limit: 4
+    t.integer  "subject_id",    limit: 4
+    t.integer  "exam_group_id", limit: 4
+    t.integer  "batch_id",      limit: 4
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+  end
+
+  add_index "student_logs", ["batch_id"], name: "index_student_logs_on_batch_id", using: :btree
+  add_index "student_logs", ["exam_group_id"], name: "index_student_logs_on_exam_group_id", using: :btree
+  add_index "student_logs", ["student_id"], name: "index_student_logs_on_student_id", using: :btree
+  add_index "student_logs", ["subject_id"], name: "index_student_logs_on_subject_id", using: :btree
+
   create_table "student_previous_data", force: :cascade do |t|
     t.integer  "student_id",  limit: 4
     t.string   "institution", limit: 255
@@ -1298,6 +1314,10 @@ ActiveRecord::Schema.define(version: 20170206092334) do
   add_foreign_key "privilege_users", "privilege_tags"
   add_foreign_key "privilege_users", "privileges"
   add_foreign_key "privilege_users", "users"
+  add_foreign_key "student_logs", "batches"
+  add_foreign_key "student_logs", "exam_groups"
+  add_foreign_key "student_logs", "students"
+  add_foreign_key "student_logs", "subjects"
   add_foreign_key "user_privileges", "privileges"
   add_foreign_key "user_privileges", "users"
 end

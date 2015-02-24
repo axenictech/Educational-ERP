@@ -7,7 +7,7 @@ class ExamReportsController < ApplicationController
       @batches ||= Batch.includes(:course).all
       @exam_groups ||= Batch.first.exam_groups
       authorize! :read, @exam_groups.first
-   end
+    end
   end
 
   def select
