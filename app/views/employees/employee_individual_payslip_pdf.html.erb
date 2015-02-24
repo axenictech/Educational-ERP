@@ -31,7 +31,12 @@
       <hr>
       <br/>
 
+
 <table align="center">
+
+     <%if @payslip.nil? %>
+        <h2>No salary slip found for this employee</h2>
+    <%else%>   
 
     <%@emp=Employee.find(@payslip.employee_id)%>
     <%approved=MonthlyPayslip.where(employee_id:@emp.id,is_approved:true).pluck(:is_approved)%>
@@ -43,61 +48,88 @@
       <%=@emp.first_name%><br>
       <%="Payslip generated on "+ @payslip.salary_date.to_s+" status "+status%>
 
-      <h3 style="color:brown">Salary:</h3>
+      <h3 style="color:brown">Earning:</h3>
       
       <tr>
          <td bgcolor="99CCFF" width="400px"><b>Category</b></td>
          <td bgcolor="99CCFF" width="300px"><b>Amount</b></td>
       </tr>
-      <%total=0%>
+      <%total = 0%>
+      <%individual_earn = 0%>
       
             <%is_deduction=PayrollCategory.where(is_deduction:false)%>
           <%is_deduction.each do |c| %>
       <% val = EmployeeSaleryStructure.where(employee_id:@emp.id,payroll_category_id: c.id).pluck(:amount) %>
 
       <tr>
-         <td ><%=c.name%></td>
-         <td ><%='%.02f'%val[0]%></td>
+         <td><%=c.name%></td>
+        
+         <td><%='%.02f'%val[0]%></td>
          <%total+=val[0].to_f%>
       </tr>
       <%end%>
+      
+      <%i = IndividualPayslipCategory.where(employee_id:@emp.id,is_deduction:false)%>
+      <% i.each do |p|%>
+         <% individual_earn += p.amount.to_i%>
+         <tr>
+           <td><%=p.name%></td>
+           <td><%=p.amount%></td>
+         </tr>
+      <%end%>
+      <%tot_earn = 0%>
+      <%tot_earn = total + individual_earn%>
+
       <tr>
-        <td ><%="Total"%></td>
-        <td ><%='%.02f'%total%></td>
+        <td><%="Total"%></td>
+
+        <td><%='%.02f'%tot_earn%></td>
       </tr>
         </table>
         <h3 style="color:brown">Deduction:</h3>
         
        <table align="center">
-          <%tot=0%>
+          <%tot_deduction=0%>
           <%is_deduction=PayrollCategory.where(is_deduction:true)%>
            <%is_deduction.each do |d|%>
             <% val = EmployeeSaleryStructure.where(employee_id:@emp.id,payroll_category_id:d.id).pluck(:amount)%>
-
+            
           <tr>
-            <td width="400px" ><%=d.name%></td>
-            <td width="300px" ><%=val[0]%></td>
-              <%tot+=val[0].to_f%>
+            <td width="400px"><%=d.name%></td>
+            <td><%=val[0]%></td>
+              <%tot_deduction += val[0].to_f%>
           </tr>
       
         <%end%>
+         
+         <% individual_deduction = 0%>
+         <%i = IndividualPayslipCategory.where(employee_id:@emp.id,is_deduction:true)%>
+         <% i.each do |p|%>
+           <% individual_deduction += p.amount.to_i%>
+           <tr>
+           <td><%=p.name%></td>
+           <td><%=p.amount%></td>
+         </tr>
+      <%end%>
+      <%final_deduction = 0%>
+      <%final_deduction = tot_deduction + individual_deduction%>
 
         <tr>
-            <td ><%="Total"%></td>
-            <td ><%='%.02f'%tot%></td>
-       </tr>   
+            <td><%="Total"%></td>
+            <td><%='%.02f'%final_deduction%></td>
+       </tr>    
         </table><br>
 <hr>
        <br> 
-        <table>
+       <table class="table table-stried">
           
-            <%last_total=total.to_f-tot.to_f%>
+            <%last_total = tot_earn.to_f - final_deduction.to_f%>
             <tr>
-            <td width="400px"><b><%="Total"%></b></td>
-            <td width="300px"><b><%='%.02f'% last_total %></b></td>
-       </tr>   
-        </table>
-  
+            <th><%="Total"%>:</th>
+            <th><%='%.02f'% last_total %></th>
+          </tr>  
+        </table></h3>
+  <%end%>
 
 </div>
 </body>
