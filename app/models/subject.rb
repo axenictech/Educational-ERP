@@ -5,8 +5,8 @@ class Subject < ActiveRecord::Base
   has_many :timetable_entries, foreign_key: 'subject_id'
   has_many :employee_subjects
   has_many :employees, through: :employee_subjects
-  validates :name, presence: true, length: \
-  { minimum: 1, maximum: 100 }, format: { with: /\A[a-zA-Z0-9#&+_" "-]+\Z/ }
+  validates :name, presence: true, format: { with: /\A[a-zA-Z0-9#&+_" "-]+\Z/ }
+  validates_length_of :name, minimum: 1, maximum: 80
   validates :code, presence: true, length: \
   { minimum: 1, maximum: 10 }, format: { with: /\A[a-zA-Z0-9_" "-]+\Z/ }
   validates :max_weekly_classes, presence: true, length: \

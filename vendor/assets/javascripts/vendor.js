@@ -23,6 +23,54 @@ $(function() {
   $('.datepicker').datepicker();
 });
 
+$(document).ready(function() {
+ 
+      $("#cust").validate({
+ 
+        rules: {
+          "fee_discount[type]": {
+            required: true
+          },
+          "fee_discount[name]": {
+            required: true,
+            rangelength: [3,20]
+          },
+          "fee_discount[discount]": {
+            required: true,
+            digits: true,
+            range: [1,100]
+          },
+          "fee_discount[finance_fee_category_id]": {
+            required: true
+          },
+          "fee_discount[admission_no]": {
+            required: true
+          }
+
+        }
+
+        
+       });
+ 
+ });
+
+ $(document).ready(function() {
+ 
+      $("#cust").validate({
+ 
+        rules: {
+          "event[title]": {
+            required: true
+          }
+        },
+        errorPlacement: function(error, element) {
+             error.appendTo( $("label:first") );
+           },
+ 
+       });
+ 
+ });
+
 
 
 var ready;

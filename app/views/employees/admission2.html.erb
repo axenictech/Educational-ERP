@@ -102,7 +102,7 @@ Note:<font color="red">Fields Marked with * must be filled</font>
 
          <div class="form-group">
             <b>Country:</b>
-         <%=f.select :office_country_id,Country.all.collect{|c| [c.name,c.id]},{prompt:true}, {class: "form-control"}%>
+         <%=f.select :office_country_id,Country.all.collect{|c| [c.name,c.id]},{prompt:true},required: true,{class: "form-control"}%>
        </div>
        </div>
          <div class="col-sm-1"></div>

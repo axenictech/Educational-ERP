@@ -1,126 +1,123 @@
 <div class="row">
-<div class="col-md-3"></div>
-<div class="box col-md-6">
-  <div class="box-inner">
-    <div class="box-header well">
-      <h2>Employee Category</h2>
-    </div>
-  <div class="box-content">
-  <%= form_for @employee_category_new, url:{action:'add_category'},remote:true do |c|%>
-  <div class="errors"><ul class="errors"></ul></div>
-   <fieldset>
-	 <div class="form-group">
-        <div class="col-md-3"><b>Name:</b></div>
-         <%=c.text_field :name, placeholder: "Name", class: "form-control",style:"width:250px"%>
+  <div class="col-md-3"></div>
+  <div class="box col-md-6">
+    <div class="box-inner">
+      <div class="box-header well">
+        <h2>Employee Category</h2>
       </div>
-      <div class="form-group">
-        <div class="col-md-3"><b>Prefix:</b></div>
-         <%=c.text_field :prefix, placeholder: "Prefix", class: "form-control",style:"width:250px"%>
-      </div>
-      <div class="form-group">
-         <div class="col-md-3"><b>Status:</b></div>
-        <%= c.radio_button "status", "true", checked: "checked" %> <b>Active</b>
-        <%= c.radio_button "status", "false"%> <b>Inactive</b>
-       </div>
+      <div class="box-content">
+        <%= form_for @employee_category_new, url:{action:'add_category'},remote:true do |c|%>
+          <div class="errors"><ul class="errors"></ul></div>
+          <fieldset>
+	          <div class="form-group">
+              <div class="col-md-3"><b>Name:</b></div>
+              <%=c.text_field :name, placeholder: "Name", class: "form-control",style:"width:250px"%>
+            </div>
+            <div class="form-group">
+              <div class="col-md-3"><b>Prefix:</b></div>
+              <%=c.text_field :prefix, placeholder: "Prefix", class: "form-control",style:"width:250px"%>
+            </div>
+            <div class="form-group">
+              <div class="col-md-3"><b>Status:</b></div>
+              <%= c.radio_button "status", "true", checked: "checked" %> <b>Active</b>
+              <%= c.radio_button "status", "false"%> <b>Inactive</b>
+            </div>
    
-      <div class="col-sm-4 col-sm-offset-4"> 
-       <div class="form-actions">               
-        <%= c.submit 'Create', class: "btn btn-primary"%>
+            <div class="col-sm-4 col-sm-offset-4"> 
+              <div class="form-actions">               
+                <%= c.submit 'Create', class: "btn btn-primary"%>
+              </div>
+            </div>
+          </fieldset>
+        <%end%>  
       </div>
-      </div>
-   </fieldset>
     </div>
   </div>
- </div>
 </div>
- <div class="row">
+<div class="row">
   <div class="col-sm-6">
      <div class="form-group">
        <div class="row">
         <div class="box col-md-12">
-         <div class="box-inner">
-          <div class="box-header well">
-            <h2>Active Category</h2>
+          <div class="box-inner">
+            <div class="box-header well">
+              <h2>Active Category</h2>
+            </div>
+            <div class="box-content" style="overflow-y: scroll; height:280px">
+              <% if @categories1.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
+                <table id="datatable" class="table table-striped table-bordered responsive">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Operation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%@categories1.each do |c| %>
+                			<tr>
+          	        		<td class="col-3"><%=c.name%> (<%=c.prefix%>)</td>
+          			        <td class="center">
+                          <div class="label-success label label-default">
+                            <i class="glyphicon glyphicon-edit icon-white"></i> 
+                            <%= link_to 'Edit',edit_category_employee_path(c),remote: true,class: "a-action"%></div>
+                          <div class="label-danger label label-default">
+                            <i class="glyphicon glyphicon-trash icon-white"></i> <%= link_to 'Delete',destroy_category_employee_path(c),method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%>
+                          </div>
+                        </td>
+          			      </tr>
+          	    	  <%end%>
+                  </tbody>
+                </table>
+              <%end%>  
+            </div>
           </div>
-         <div class="box-content" style="overflow-y: scroll; height:280px">
-     
-       <table id="datatable" class="table table-striped table-bordered responsive">
-         <thead>
-               <tr>
-                 <th>Name</th>
-                 <th>Operation</th>
-               </tr>
-
-             </thead>
-             <tr><td colspan="2"><%=category1_not_found!%></td></tr>
-          <tbody>
-            <%@categories1.each do |c| %>
-			<tr>
-			<td class="col-3"><%=c.name%> (<%=c.prefix%>)</td>
-			<td class="center">
-              <div class="label-success label label-default">
-              <i class="glyphicon glyphicon-edit icon-white"></i> 
-              <%= link_to 'Edit',edit_category_employee_path(c),remote: true,class: "a-action"%></div>
-
-              <div class="label-danger label label-default">
-              <i class="glyphicon glyphicon-trash icon-white"></i> 
-
-              <%= link_to 'Delete' ,destroy_category_employee_path(c),
-
-                    method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%></div>
-            </td>
-			</tr>
-	    	<%end%>
-          </tbody>
-       </table>
+        </div>
       </div>
     </div>
   </div>
- </div>
-</div>
-</div>
-   <div class="col-sm-6">
-     <div class="form-group">
-       <div class="row">
-         <div class="box col-md-12">
-           <div class="box-inner">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <div class="row">
+        <div class="box col-md-12">
+          <div class="box-inner">
             <div class="box-header well">
               <h2>Inactive Category</h2>
-             </div>
-          <div class="box-content" style="overflow-y: scroll; height:280px">
-             <table id="datatable" class="table table-striped table-bordered responsive">
-             <thead>
-               <tr>
-                 <th>Name</th>
-                 <th>Operation</th>
-               </tr>
-
-             </thead>
-               <tr><td colspan="2"><%=category2_not_found!%></td></tr>
-             <tbody>
-              <%@categories2.each do |c| %>
-		 	<tr>
-		 	<td class="col-3"><%=c.name%> (<%=c.prefix%>)</td>
-			
-       <td class="center">
-              <div class="label-success label label-default">
-              <i class="glyphicon glyphicon-edit icon-white"></i> 
-              <%= link_to 'Edit', edit_category_employee_path(c),remote: true,class: "a-action"%></div>
-
-              <div class="label-danger label label-default">
-              <i class="glyphicon glyphicon-trash icon-white"></i> 
-              <%= link_to 'Delete' ,destroy_category_employee_path(c),
-                    method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%></div>
-            </td>
-			</tr>
-		<%end%>
-       </tbody>
-    </table>
-    <%end%>
+            </div>
+            <div class="box-content" style="overflow-y: scroll; height:280px">
+              <% if @categories2.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
+                <table id="datatable" class="table table-striped table-bordered responsive">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Operation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%@categories2.each do |c| %>
+  	 	                <tr>
+  	 	                  <td class="col-3"><%=c.name%> (<%=c.prefix%>)</td>
+  		                  <td class="center">
+                          <div class="label-success label label-default">
+                            <i class="glyphicon glyphicon-edit icon-white"></i> 
+                            <%= link_to 'Edit', edit_category_employee_path(c),remote: true,class: "a-action"%></div>
+                          <div class="label-danger label label-default">
+                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                            <%= link_to 'Delete' ,destroy_category_employee_path(c),method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%>
+                          </div>
+                        </td>
+  		                </tr>
+  	                <%end%>
+                  </tbody>
+                </table>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
+</div>

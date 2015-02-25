@@ -13,7 +13,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @newscast.comments.shod(params[:id])
+    authorize! :delete, @comment
     @comment.destroy
+    flash[:notice] = "Comment deleted successfully"
     redirect_to newscast_path(@newscast)
   end
 

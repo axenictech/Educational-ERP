@@ -13,13 +13,12 @@
     <div class="box-inner">
       <div class="box-header well">
         <h2> Create New Event</h2>
-       
       </div>
         <div class="box-content">
         <fieldset>
         <div class="col-md-2"></div>
-  <div class="box col-md-7">
-     <%= form_for :event ,url:{action:'create'}, html: { id: "cust"} do |f| %>
+      <div class="box col-md-7">
+      <%= form_for @event ,url:{action:'create'}, html: { id: "cust"} do |f| %>
         <div class="form-group">
         <b>Start Date:</b>
         <%=f.text_field :start_date ,value: @start_date,readonly:true,:id=>'datetimepicker2',class: "form-control",style: "width: 350px"%>
@@ -29,14 +28,14 @@
           <b>End Date:</b>
           <%=f.text_field :end_date ,class: "form-control datepicker",placeholder: "MM/DD/YYYY"%></div>
 
-       <div class="form-group">
+        <div class="form-group">
 
           <b>Title:</b>
           <span style="color:red">*</span>
           <label id="first"></label>
           <%= f.text_field :title,class: "form-control",placeholder: "Event Title",style: "width: 350px",required:true %>
         </div>
-       <div class="form-group">
+      <div class="form-group">
 
       <b>Description:</b>
       <%=f.text_field :description ,class: "form-control",style:"width: 350px",placeholder: "Event Description",required:true %>
@@ -58,7 +57,7 @@
    <%= f.submit :'Create Event',class: "btn btn-primary"%>
    <%= link_to 'Cancel', calender_index_path, class: "btn btn-default"%>
    </div>
-</div>
+  </div>
   <% end %>
   </div>
    

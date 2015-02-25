@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :privilege_users
   has_many :privileges, :through => :privilege_users
+  has_many :newscasts
+  has_many :comments
   belongs_to :general_setting
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :validatable, :timeoutable, :trackable

@@ -12,26 +12,28 @@
   <div class="box col-md-6">
     <div class="box-inner">
       <div class="box-header well" data-original-title="">
-        <h2>Attendance Report
-        </h2>
+        <h2>Attendance Report</h2>
       </div>
       <div class="box-content">
-        <%= form_for :report, :url=>{:action=>'genrate_report'},method: :get,remote: :true do |f|%>
+      
+        <%= form_for :report, :url=>{:action=>'genrate_report'},method: :get,remote: :true,html: {id: "cust"} do |f|%>
         <fieldset>
           <%= f.hidden_field :student_id,value:@student.id%>
           <div class="col-sm-7 col-sm-offset-1">
             <div class="form-group">
+            <span id="invalid-subject_id"></span>
               <%= f.label :select_subject %>     
               <%= f.select :subject_id, @subjects.collect {|s| [s.name,s.id]},{prompt:true},class: "form-control", style: "width: 350px" %>
             </div>
             <div class="form-group">
-             <%= f.label :select_start_date %>     
-             <%= f.date_field :start_date,:style =>"height: 30px",class: "form-control", style: "width: 350px" %> </div>
-             <div class="form-group">
-               <%= f.label :select_end_date %>      
-               <%= f.date_field :end_date,:style =>"height: 30px",class: "form-control", style: "width: 350px" %>
-             </div><br/>
-             <div class="col-sm-7 col-sm-offset-6"> 
+              <%= f.label :select_start_date %>     
+              <%= f.date_field :start_date,:style =>"height: 30px",class: "form-control", style: "width: 350px" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :select_end_date %>      
+              <%= f.date_field :end_date,:style =>"height: 30px",class: "form-control", style: "width: 350px" %>
+            </div><br/>
+            <div class="col-sm-7 col-sm-offset-6"> 
               <div class="form-actions">               
                 <%= f.submit 'View', class: "btn btn-default"%>
               </div>
@@ -44,6 +46,38 @@
   </div>
   <br>
   <div class="col-md-3">           
-   <div id="attendance_report"></div>     
- </div>
+    <div id="attendance_report"></div>     
+  </div>
 </div>
+
+<%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#cust").validate({
+
+      rules: {
+        "report[subject_id]": {
+          required: true
+        },
+        "report[start_date]": {
+          required: true
+        },
+        "report[end_date]": {
+          required: true
+        }
+      },
+      messages: {
+        "report[subject_id]": {
+          required:"Please select a Subject"
+        },
+        "report[start_date]": {
+          required:"Please select a Start Date"
+        },
+        "report[end_date]": {
+          required:"Please select a End Date"
+        }
+      }
+    });
+  });
+</script>

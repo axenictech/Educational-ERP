@@ -1,9 +1,7 @@
 <ul>
 	<li>
-	<% if current_user.id ==  comment.user.id or current_user.id == comment.newscast.user.id %>
 	
-	
-		<div style="color:#158cba">
+	    <div style="color:#158cba">
 		<%= comment.user.full_name %></div> 
 		<div><i class="glyphicon glyphicon-comment icon-white"></i>&nbsp;<%= sanitize  comment.statement.strip.gsub("\n", "<br/>"),:tags => %w[b i a ], :attributes => %w[href] %></div>
 		<div><b>posted</b>&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago
@@ -13,5 +11,5 @@
 		<%= link_to  'Delete',[comment.newscast,comment],	method: :delete, data: { confirm: "Are you sure delete"}, class: "a-action"%></div></div></div>
 	</li>
 </ul>
-<% end %>
+
 <hr>

@@ -39,6 +39,7 @@ Note:<font color="red">Fields Marked with * must be filled</font>
 
        <div class="form-group">
           <b>First Name:</b>
+          <span style="color:red">*</span>
        <%=f.text_field :first_name,placeholder: "First Name",class: "form-control"%>
          </div>
 
@@ -49,6 +50,7 @@ Note:<font color="red">Fields Marked with * must be filled</font>
 
           <div class="form-group">
           <b>Last Name:</b>
+          <span style="color:red">*</span>
        <%=f.text_field :last_name,placeholder: "Last Name",class: "form-control"%>
          </div>
 
@@ -56,17 +58,18 @@ Note:<font color="red">Fields Marked with * must be filled</font>
        <b>Joining Date:</b>
        
          <%=f.date_field :joining_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY"%>
+
        </div>
 
          <div class="form-group">
        <b>Category:</b>
-       
+        <span style="color:red">*</span>
          <%=f.select :employee_category_id, EmployeeCategory.all.collect {|b| [b.name,b.id]},{prompt:true},{class: "form-control"}%>
        </div>
 
         <div class="form-group">
           <b>Grade:</b>
-       
+        <span style="color:red">*</span>
          <%=f.select :employee_grade_id, EmployeeGrade.all.collect {|b| [b.name,b.id]},{prompt:true},{class: "form-control"}%>
        </div>
 
@@ -101,11 +104,13 @@ Note:<font color="red">Fields Marked with * must be filled</font>
 
         <div class="form-group">
           <b>Department:</b>
+          <span style="color:red">*</span>
          <%=f.select :employee_department_id, EmployeeDepartment.all.collect {|b| [b.name,b.id]},{prompt:true},{class: "form-control"}%>
        </div>
 
         <div class="form-group">
           <b>Position:</b>
+          <span style="color:red">*</span>
          <%=f.select :employee_position_id,EmployeePosition.all.collect {|b| [b.name,b.id]},{prompt:true},{class: "form-control"}%>
        </div>
 
@@ -118,6 +123,7 @@ Note:<font color="red">Fields Marked with * must be filled</font>
 
         <div class="form-group">
             <b>Email:</b>
+            <span style="color:red">*</span>
          <%=f.text_field :email,placeholder: "Email", class: "form-control"%>
        </div>
 

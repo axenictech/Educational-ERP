@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   has_many :batches, through: :batch_events
   has_many :employee_department_events
   has_many :employee_departments, through: :employee_department_events
+  validates :title, presence: true, length: { in: 1..10 }
   scope :shod, ->(id) { where(id: id).take }
 
   def create_event(batches, departments)

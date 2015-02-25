@@ -8,125 +8,120 @@
       </div>
       <div class="box-content">
         <%= form_for @employee_position_new, url:{action:'add_position'}, remote:true do |c|%>
-        <div class="errors3">
-        <ul class="errors3"></ul></div>
-        <fieldset>
-         <div class="col-md-offset-1">
-           <br>
-           <div class="form-group">
-             <div class="col-md-3"><b>Name:</b></div>
-             <%=c.text_field :name, placeholder: "Employee Position Name", class: "form-control",style:"width:250px"%>
-           </div>
-          <div class="form-group">
-             <div class="col-md-3"><b>Employee Category:</b></div>
-
-
-             <%= c.select :employee_category_id, emp_category_collect,{prompt:true},class: "form-control",style:"width:250px"%>
-           </div>
-           <br>
-           <div class="form-group">
-             <div class="col-md-3"> <b>Status:</b></div>
-             <%= c.radio_button "status", "true", checked: "checked" %>&nbsp; <b>Active</b>&nbsp;&nbsp;
-             <%= c.radio_button "status", "false"%> &nbsp;<b>Inactive</b> 
-           </div>
-          <div class="col-sm-4 col-sm-offset-4"> 
-             <div class="form-actions">               
-              <%= c.submit 'Create', class: "btn btn-primary"%>
+          <div class="errors3">
+          <ul class="errors3"></ul></div>
+          <fieldset>
+            <div class="col-md-offset-1"><br>
+              <div class="form-group">
+                <div class="col-md-3"><b>Name:</b></div>
+                <%=c.text_field :name, placeholder: "Employee Position Name", class: "form-control",style:"width:250px"%>
+              </div>
+              <div class="form-group">
+                <div class="col-md-3"><b>Employee Category:</b></div>
+                <%= c.select :employee_category_id, emp_category_collect,{prompt:true},class: "form-control",style:"width:250px"%>
+              </div><br>
+              <div class="form-group">
+                <div class="col-md-3"> <b>Status:</b></div>
+                <%= c.radio_button "status", "true", checked: "checked" %>&nbsp; <b>Active</b>&nbsp;&nbsp;
+                <%= c.radio_button "status", "false"%> &nbsp;<b>Inactive</b> 
+              </div>
+              <div class="col-sm-4 col-sm-offset-4"> 
+                <div class="form-actions">               
+                 <%= c.submit 'Create', class: "btn btn-primary"%>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </fieldset>
+          </fieldset>
+        <%end%>  
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div class="row">
   <div class="col-sm-6" >
-   <div class="form-group">
-     <div class="row">
-      <div class="box col-md-12">
-       <div class="box-inner">
-        <div class="box-header well">
-          <h2>Active Position</h2>
-        </div>
-        <div class="box-content" style="overflow-y: scroll; height:280px">
-         <table id="datatable" class="table table-striped table-bordered responsive">
-           <thead>
-             <tr>
-               <th>Name</th>
-               <th>Operation</th>
-               
-             </tr>
-
-           </thead>
-            <tr><td colspan="2"><%=positions1_not_found!%></td></tr>
-           <tbody>
-             <%@positions1.each do |c| %>
-             <tr>
-               <td class="col-3"><%=c.name%></td>
-               <td class="center">
-                <div class="label-success label label-default">
-                  <i class="glyphicon glyphicon-edit icon-white"></i> 
-                  <%= link_to 'Edit',edit_position_employee_path(c),remote: true,class: "a-action"%></div>
-
-                  <div class="label-danger label label-default">
-                    <i class="glyphicon glyphicon-trash icon-white"></i> 
-                    <%= link_to 'Delete' ,destroy_position_employee_path(c),
-                    method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%></div>
-                  </td>
-
-                </tr>
-                <%end%>
-              </tbody>
-            </table>
+    <div class="form-group">
+      <div class="row">
+        <div class="box col-md-12">
+          <div class="box-inner">
+            <div class="box-header well">
+              <h2>Active Position</h2>
+            </div>
+            <div class="box-content" style="overflow-y: scroll; height:280px">
+              <% if @positions1.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
+                <table id="datatable" class="table table-striped table-bordered responsive">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Operation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%@positions1.each do |c| %>
+                      <tr>
+                        <td class="col-3"><%=c.name%></td>
+                        <td class="center">
+                          <div class="label-success label label-default">
+                            <i class="glyphicon glyphicon-edit icon-white"></i> 
+                            <%= link_to 'Edit',edit_position_employee_path(c),remote: true,class: "a-action"%></div>
+                          <div class="label-danger label label-default">
+                            <i class="glyphicon glyphicon-trash icon-white"></i>
+                            <%= link_to 'Delete',destroy_position_employee_path(c),method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%>
+                          </div>
+                        </td>
+                      </tr>
+                    <%end%>
+                  </tbody>
+                </table>
+              <%end%>  
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="col-sm-6" >
- <div class="form-group">
-   <div class="row">
-     <div class="box col-md-12">
-       <div class="box-inner">
-        <div class="box-header well">
-          <h2>Inactive Position</h2>
-        </div>
-        <div class="box-content" style="overflow-y: scroll; height:280px">
-         <table id="datatable" class="table table-striped table-bordered responsive">
-           <thead>
-             <tr>
-               <th>Name</th>
-               <th>Operation</th>
-               
-             </tr>
-           </thead>
-            <tr><td colspan="2"><%=positions2_not_found!%></td></tr>
-           <tbody>
-             <%@positions2.each do |c| %>
-             <tr>
-               <td class="col-3"><%=c.name%></td>
-               <td class="center">
-                <div class="label-success label label-default">
-                  <i class="glyphicon glyphicon-edit icon-white"></i> 
-                  <%= link_to 'Edit',edit_position_employee_path(c),remote: true,class: "a-action"%></div>
-
-                  <div class="label-danger label label-default">
-                    <i class="glyphicon glyphicon-trash icon-white"></i> 
-                    <%= link_to 'Delete' ,destroy_position_employee_path(c),
-                    method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%></div>
-                  </td>
-                </tr>
-                <%end%>
-              </tbody>
-            </table>
-            <%end%>
+  <div class="col-sm-6" >
+    <div class="form-group">
+      <div class="row">
+        <div class="box col-md-12">
+          <div class="box-inner">
+            <div class="box-header well">
+              <h2>Inactive Position</h2>
+            </div>
+            <div class="box-content" style="overflow-y: scroll; height:280px">
+              <% if @positions2.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
+                <table id="datatable" class="table table-striped table-bordered responsive">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Operation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%@positions2.each do |c| %>
+                      <tr>
+                        <td class="col-3"><%=c.name%></td>
+                        <td class="center">
+                          <div class="label-success label label-default">
+                          <i class="glyphicon glyphicon-edit icon-white"></i> 
+                          <%= link_to 'Edit',edit_position_employee_path(c),remote: true,class: "a-action"%></div>
+                          <div class="label-danger label label-default">
+                          <i class="glyphicon glyphicon-trash icon-white"></i> 
+                          <%= link_to 'Delete' ,destroy_position_employee_path(c),method: :delete, data: { confirm: "Are you sure to delete #{c.name}?" },class: "a-action"%></div>
+                        </td>
+                      </tr>
+                    <%end%>
+                  </tbody>
+                </table>
+              <%end%>  
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
