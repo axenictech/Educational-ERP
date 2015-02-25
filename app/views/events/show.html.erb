@@ -13,72 +13,76 @@
     <div class="box-inner">
       <div class="box-header well">
         <h2>Confirmation </h2>
-       
       </div>
-        <div class="box-content">
+      <div class="box-content">
         <fieldset>
-        <div class="col-md-1"></div>
-  <div class="box col-md-12">
-<%= form_for :events,url:{action:'update'},method: :patch do |f| %>
- <%= hidden_field_tag :event_id,@event.id%>
-
- <div class="row">
-	<div class="form-group">
-		<div class="col-md-6"><b>Title:</b></div>
-		<div class="col-md-6"><%=@event.title%>
-		</div>
-	</div>
-<br>
-	<div class="form-group">
-		<div class="col-md-6"><b> Description:</b></div>
-		<div class="col-md-6"><%=@event.description%></div>
-	</div>
-<br>
-	<div class="form-group">
-		<div class="col-md-6"><b>Start Date:</b></div>
-		<div class="col-md-6"><%=@event.start_date.to_date%></div>
-	</div>
-<br>
-	<div class="form-group">
-		<div class="col-md-6"><b> End Date:</b></div>
-		<div class="col-md-6"><%=@event.end_date.to_date%></div>
-	</div>
-</div>
-<br>
-<div class="row">
-  <%unless @event.is_common? %>
-		<div class="form-group">
-			<div class="col-md-6"><%= link_to 'Select Batch',event_path,class: "btn btn-primary-link btn-xs",remote: true%>
+          <div class="col-md-1"></div>
+				  <div class="box col-md-12">
+						<%= form_for :events,url:{action:'update',event: @event},method: :patch,html: {id: "cust"} do |f| %>
+							<%= hidden_field_tag :event_id,@event.id%>
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6"><b>Title:</b></div>
+									<div class="col-md-6"><%=@event.title%></div>
+								</div><br>
+								<div class="form-group">
+									<div class="col-md-6"><b> Description:</b></div>
+									<div class="col-md-6"><%=@event.description%></div>
+								</div><br>
+								<div class="form-group">
+									<div class="col-md-6"><b>Start Date:</b></div>
+									<div class="col-md-6"><%=@event.start_date.to_date%></div>
+								</div><br>
+								<div class="form-group">
+									<div class="col-md-6"><b> End Date:</b></div>
+									<div class="col-md-6"><%=@event.end_date.to_date%></div>
+								</div><br>
+								<%unless @event.is_common? %>
+									<div class="form-group">
+										<div class="col-md-6"><b> Select Batch:</b></div>
+										<div class="col-md-6"><%=select_tag("batches[]",options_for_select(@batches.collect { |ff| [ff.name, ff.id] }),{:multiple=>true, :id => "batches"})%></div>
+									</div><br><br>
+									<div class="form-group">
+										<div class="col-md-6"><b> Select Department:</b></div>
+										<div class="col-md-6"><%=select_tag("departments[]",options_for_select(@departments.collect { |d| [d.name, d.id] }),{:multiple=>true, :id => "departments"})%></div>
+									</div><br>
+								<%end%>
+								<br><div class="form-group">
+							  	<div class="col-md-offset-4">
+						 				<%=f.submit 'Confirm',class: "btn btn-primary"%>&nbsp;&nbsp;
+							  		<%= link_to 'Cancel',calender_index_path,class: "btn btn-default"%>
+							  	</div>
+						    </div>
+							</div>
+						<%end%>
+					</div>
+				</fieldset>
 			</div>
-			<div class="col-md-6">
-				<div id="batch_details"></div>
-			</div>
 		</div>
-</div>
-<br/>
-<div class="row">
-	<div class="form-group">	
-		<div class="col-md-6"><%= link_to 'Select Department',showdep_events_path,class: "btn btn-primary-link btn-xs",remote: true%>
-		</div>
-		<div class="col-md-6"><div id="department_details"></div></div>
 	</div>
-<%end%>
-</div>
-</div>
-<br>
-	<div class="form-group">
-	
-	  
-	  <div class="col-md-offset-4">
- 		<%=f.submit 'Confirm',class: "btn btn-primary"%>&nbsp;&nbsp;
-	  <%= link_to 'Cancel',calender_index_path,class: "btn btn-default"%></div>
-  </div>
-
-
-<%end%>
-</div>
-</fieldset>
-</div>
-</div>
 </div>
 
+<link rel="stylesheet" 
+      href="/assets/bootstrap-multiselect.css" 
+      type="text/css" />
+<script type="text/javascript" 
+        src="http://code.jquery.com/jquery-1.8.2.js">
+</script>
+
+<script type="text/javascript" 
+        src="/assets/bootstrap-multiselect.js">
+</script>
+
+
+<script type="text/javascript">
+$(function() {
+	$('#batches').multiselect({
+		includeSelectAllOption: true,
+		maxHeight: 200
+	});
+	$('#departments').multiselect({
+		includeSelectAllOption: true,
+		maxHeight: 200
+	});
+});
+</script>

@@ -53,15 +53,16 @@
         <td>:</td>
         <td><%= @student.admission_no %></td>
       </tr>
-    </table>
-    <br/><br/>
-    <table cellpadding="5" cellspacing="5" width="700">
-      <tr><th colspan="3" bgcolor="99CCFF" align="left">Student Personnel Details</th></tr>
       <tr>
         <td>Admission Date</td>
         <td>:</td>
         <td><%= @student.admission_date %></td>
       </tr>
+    </table>
+    <br/>
+    <table cellpadding="5" cellspacing="5" width="700">
+      <tr><th colspan="3" bgcolor="99CCFF" align="left">Student Personnel Details</th></tr>
+      
       <tr>
         <td>Date of Birth</td>
         <td>:</td>
@@ -90,11 +91,11 @@
       <tr>
         <td>Religion</td>
         <td>:</td>
-        <td><%= @student.address_line1+" "+@student.address_line2 %>
+        <td><%= @student.religion %>
         </td>
       </tr>
     </table>
-    <br/><br/>
+    <br/>
     <table cellpadding="5" cellspacing="5" width="700">
       <tr><th colspan="3" bgcolor="99CCFF" align="left">Contact Details</th></tr>
       <tr>
@@ -168,7 +169,7 @@
       <% @student_previous_subject_marks.each do |psm| %>
       <tr>
         <td><%= psm.subject %></td>
-        <td><%= psm.mark %></td>
+        <td align="right"><%= psm.mark %></td>
       </tr>
       <%end%>
       <%end%>  

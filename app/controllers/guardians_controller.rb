@@ -22,6 +22,9 @@ class GuardiansController < ApplicationController
   def addguardian_create
     @student = Student.shod(params[:format])
     @guard = @student.guardians.create(guardian_params)
+    temp_email = params["guardian"]["email"]
+    downcase_email = temp_email.downcase
+    @guard.email = downcase_email
     if @guard.save
       redirect_to dispguardian_students_path(@student)
     else

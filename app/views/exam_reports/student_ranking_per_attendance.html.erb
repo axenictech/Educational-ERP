@@ -24,13 +24,13 @@
  
        <b>Select Start Date:</b>
       
-      <%= f.date_field :start_date,class: "form-control",style: "width: 300px , height: 30px", required: true %>
+      <%= f.date_field :start_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY",style: "width: 300px , height: 30px", required: true %>
      
 <br>
  
        <b>Select End Date:</b>
       
-      <%= f.date_field :end_date,class: "form-control",style: "width: 300px ,height: 30px", required: true%>
+      <%= f.date_field :end_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY",style: "width: 300px ,height: 30px", required: true%>
      <br/>
 <div align="center"><%= f.submit 'View', class: 'btn btn-default' %></div>
   <% end %>

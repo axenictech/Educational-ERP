@@ -2,9 +2,7 @@
   <ul class="breadcrumb">
     <li><%= link_to 'Home',dashboard_home_index_path %></li>
     <li><%= link_to 'Examination','/exams'%></li>
-     
     <li><%= link_to 'Report Center', '/exam_reports/report_center' %></li>
-    
     <li><%= link_to 'Subject Wise Report','/exam_reports/subject_wise_report'%></li>
     <li>Generated Report</li>
   </ul>
@@ -15,21 +13,17 @@
 <div class="row">
   <div class="col-md-12">
     <div class="pull-right">
-   
       <%= link_to 'Pdf Report',subject_wise_students_report_exam_reports_path(id:@subject.id,format:"pdf"), class: "btn btn-primary-link btn-sm" %>
-      
-      
     </div>
   </div>
 </div>
 <hr>
 
-
 <div class="row">
     <div class="col-md-12">
       <div class="box-inner">
         <div class="box-header well">
-           <h2><%= @batch.name %> - <%= @batch.course.course_name+" "+ @batch.course.section_name%> | <%= @subject.name %></h2>
+          <h2><%= @batch.name %> - <%= @batch.course.course_name+" "+ @batch.course.section_name%> | <%= @subject.name %></h2>
         </div>
 
         <div class="box-content">
@@ -39,7 +33,7 @@
           <% @exam_groups.each do |exam_group| %>
             <th><%= exam_group.name %></th>
           <% end %>
-        </tr>
+          </tr>
            <% @students.each do |student| %>
           <% is_valid_subject=1 %>
           <% unless @subject.elective_group_id.nil? %>
@@ -73,7 +67,7 @@
         <tr class="tr-blank"></tr>
         <tr class="tr-head">
           <th class="col-2">
-            class_average
+            Class Average
           </th>
           <% total_marks=0%> <% total_max_marks=0%>
           <% @exam_groups.each do |exam_group| %>
@@ -85,12 +79,12 @@
             <% is_valid_subject = 0 if is_student_elective.nil? %>
           <% end %>
           <% unless is_valid_subject == 0 %>
-              <% exam = Exam.find_by_subject_id_and_exam_group_id(@subject.id,exam_group.id) %>
-              <% exam_score = ExamScore.find_by_exam_id_and_student_id(exam.id,student.id) unless exam.nil? %>
-                  <% unless exam_score.nil? %>
-                      <% total_marks+=exam_score.marks unless exam_score.marks.nil? %>
-                      <% total_max_marks+=exam.maximum_marks unless exam.maximum_marks.nil? %>
-                  <%end%>
+            <% exam = Exam.find_by_subject_id_and_exam_group_id(@subject.id,exam_group.id) %>
+            <% exam_score = ExamScore.find_by_exam_id_and_student_id(exam.id,student.id) unless exam.nil? %>
+                <% unless exam_score.nil? %>
+                  <% total_marks+=exam_score.marks unless exam_score.marks.nil? %>
+                  <% total_max_marks+=exam.maximum_marks unless exam.maximum_marks.nil? %>
+                <%end%>
             <%end%>
             <%end%>
               <th>
