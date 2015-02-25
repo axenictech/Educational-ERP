@@ -8,4 +8,10 @@ $('ul.errors').html("")
 $('#form_exam').html("<%=  j render '/exams/exam_form' %>")
 <%end%>
 
+ $(function () {
+                $('.datetimepicker1').datetimepicker({
+                   format: 'DD/MM/YYYY h:m A'
 
+                });
+               
+});

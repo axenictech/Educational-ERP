@@ -34,8 +34,8 @@ class ExamGroup < ActiveRecord::Base
     flag = false
     unless ex.exams.nil?
       ex.exams.each do |exam|
-        next if exam.end_time.nil?
-        flag = true if exam.end_time >= Date.today
+        next if exam.end_time.to_date.nil?
+        flag = true if exam.end_time.to_date >= Date.today
       end
     end
     flag
