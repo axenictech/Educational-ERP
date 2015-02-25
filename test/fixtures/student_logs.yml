@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mark: 9.99
+  maximum_marks: 1
+  student_id: 
+  subject_id: 
+  exam_group_id: 
+  batch_id: 
+
+two:
+  mark: 9.99
+  maximum_marks: 1
+  student_id: 
+  subject_id: 
+  exam_group_id: 
+  batch_id: 

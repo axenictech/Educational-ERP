@@ -78,7 +78,7 @@ class EmployeeAttendancesController < ApplicationController
     authorize! :read, EmployeeAttendance
   end
 
-  def new_attendance
+  def new_attendance 
     @attendance = EmployeeAttendance.new
     @employee = Employee.find(params[:id])
     @date = params[:attendance_date]
@@ -89,16 +89,20 @@ class EmployeeAttendancesController < ApplicationController
   def create
     @attendance = EmployeeAttendance.new(params_attendance)
     @employee = Employee.find(params[:employee_attendance][:employee_id])
+    @leave_types=EmployeeLeaveType.all
+    @leave_count=EmployeeLeave.where(employee_id: @employee.id)
     @date = params[:employee_attendance][:attendance_date]
     create2
     date_operation
   end
 
   def create2
-    @attendance.create_att(@attendance)
-    @deparment = @employee.employee_department
-    @employees = @deparment.employees.all
-    @today = @date.to_date
+     @leave_types=EmployeeLeaveType.all
+     @leave_count=EmployeeLeave.where(employee_id: @employee.id)
+     @attendance.create_att(@attendance)
+     @deparment = @employee.employee_department
+     @employees = @deparment.employees.all
+     @today = @date.to_date
   end
 
   def edit_attendance

@@ -7,7 +7,7 @@ class ExamReportsController < ApplicationController
       @batches ||= Batch.includes(:course).all
       @exam_groups ||= Batch.first.exam_groups
       authorize! :read, @exam_groups.first
-   end
+    end
   end
 
   def select
@@ -194,60 +194,7 @@ class ExamReportsController < ApplicationController
     end
   end
 
-  # def archived_students_exam_report
-  #   @batch = Batch.find(params[:batch_id])
-  #   @students = @batch.archived_students.all
-  #   @exam_groups = @batch.exam_groups.where(result_published: true)
-  #   @subjects = @batch.subjects.all
-  #   @general_setting = GeneralSetting.first
-  #   render 'archived_students_exam_report', layout: false
-  # end
-
-  # def archived_student
-  #   @student = ArchivedStudent.find(params[:student_id])
-  #   @batch = @student.batch
-  #   @exam_groups = @batch.exam_groups.where(result_published: true)
-  #   @subjects = @batch.subjects.all
-  # end
-
-  # # def archived_student_report
-  # #   @courses ||= Course.all
-  # #   @batches ||= Course.first.batches unless Course.first.nil?
-  # #   authorize! :read, ExamGroup
-  # # end
-
-  # # def select_course
-  # #   @course = Course.shod(params[:course_select][:id])
-  # #   @batches ||= @course.batches
-  # #   authorize! :read, ExamGroup
-  # # end
-
-  # # def generate_archived_report
-  # #   if params[:batch_select][:id].present?
-  # #     @batch = Batch.shod(params[:batch_select][:id])
-  # #     generate_archived_report2
-  # #   else
-  # #     generate_archived_report3
-  # #   end
-  # #   authorize! :read, ExamGroup
-  # # end
-
-  # # def generate_archived_report2
-  # #   @students ||= @batch.archived_students 
-  # #   @student = @batch.archived_students.first 
-  # #   p "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-  # #   p @student
-  # #   @exam_groups ||= @batch.result_published
-  # #   @subjects ||= @batch.subjects
-  # # end
-
-  # # def generate_archived_report3
-  # #   flash[:alert] = t('group_error')
-  # #   @courses ||= Course.all
-  # #   @batches ||= Course.first.batches
-  # #   render 'archived_student_report'
-  # # end
-
+  
   def archived_students_exam_report
     @batch = Batch.shod(params[:id])
     @students ||= @batch.archived_students

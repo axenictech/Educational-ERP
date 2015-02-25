@@ -44,6 +44,7 @@
  </thead>
  <tbody >
     <% @employees.each do |employee| %>
+    
     <tr class="tr-<%= cycle('odd', 'even')  %>">
       <th class="td-name">
         <%= employee.first_name %>&nbsp;<%= employee.last_name %>
@@ -65,10 +66,14 @@
             <%= link_to '-',new_attendance_employee_attendance_path( 
             employee.id,attendance_date:date), remote:true %>
           <% end %>
+
+
+  
         </div>
         </td>
       <% end %>
     </tr>
+ 
 <% end %>
 </tbody>
 </table>

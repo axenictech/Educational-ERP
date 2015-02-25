@@ -12,10 +12,10 @@ class Exam < ActiveRecord::Base
   validates :minimum_marks, numericality: { only_integer: true }, length: \
             { minimum: 1, maximum: 3 }, allow_blank: true
 
-  validate :end_time_cannot_be_less_than_start_time
-  validate :start_time_cannot_be_less_than_past
-  validate :end_time_cannot_be_less_than_past
-  validate :max_marks_greater_than_min_marks
+  # validate :end_time_cannot_be_less_than_start_time
+  # validate :start_time_cannot_be_less_than_past
+  # validate :end_time_cannot_be_less_than_past
+  # validate :max_marks_greater_than_min_marks
   scope :shod, ->(id) { where(id: id).take }
   scope :result, ->(s, e) { where(subject_id: s, exam_group_id: e).take }
 

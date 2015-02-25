@@ -9,7 +9,7 @@ class TimeTablesController < ApplicationController
 
   def new
     @timetables ||= TimeTable.all
-    authorize! :read, @timetables.first
+    authorize! :read, TimeTableEntry
   end
 
   def select_time
@@ -29,7 +29,7 @@ class TimeTablesController < ApplicationController
   def timetable
     @today = Date.today
     @time_table = TimeTable.time_table_date(@today)
-  end
+ end
 
   def display_institutional_time_table
     @today = params[:next].to_date
@@ -64,7 +64,7 @@ class TimeTablesController < ApplicationController
 
   def teachers_timetable
     @timetables ||= TimeTable.all
-    authorize! :read, @timetables.first
+    authorize! :read, TimeTableEntry
   end
 
   def teacher_timetable_pdf
