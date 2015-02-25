@@ -8,13 +8,18 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(params_event)
-    @event.save
-    redirect_to event_path(@event)
+    if @event.save
+      flash[:notice] = "Event created successfully"
+      redirect_to event_path(@event)
+    else
+      render 'new'
+    end
   end
 
   def show
     @event = Event.shod(params[:id])
     @batches ||= Batch.all
+    @departments ||= EmployeeDepartment.all
     authorize! :read, @event
   end
 
@@ -25,8 +30,10 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.shod(params[:event_id])
-    @event.create_event(params[:batches], params[:departments])
-    redirect_to calender_index_path
+    if @event.create_event(params[:batches], params[:departments])
+      flash[:notice] = "Event confirmation successfully"
+      redirect_to calender_index_path
+    end
   end
 
   private

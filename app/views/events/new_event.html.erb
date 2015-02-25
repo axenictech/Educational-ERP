@@ -1,0 +1,69 @@
+<div>
+  <ul class="breadcrumb">
+    <li><%= link_to 'Home',dashboard_home_index_path %></li>
+    <li><%= link_to 'Calendar','/calender'%></li>
+    <li>Create New Event:Step-1</li>
+  </ul>
+</div><div id="flash"><%= render 'layouts/messages'%></div>
+
+<br>
+<div class="row">
+<div class="col-md-2"></div>
+  <div class="box col-md-7">
+    <div class="box-inner">
+      <div class="box-header well">
+        <h2> Create New Event</h2>
+       
+      </div>
+        <div class="box-content">
+        <fieldset>
+        <div class="col-md-2"></div>
+  <div class="box col-md-7">
+     <%= form_for :event ,url:{action:'create'}, html: { id: "cust"} do |f| %>
+        <div class="form-group">
+        <b>Start Date:</b>
+        <%=f.date_field :start_date ,value: @start_date,readonly:true,:id=>'datetimepicker2',class: "form-control",style: "width: 350px"%>
+        </div>
+
+          <div class="form-group">
+          <b>End Date:</b>
+          <%=f.date_field :end_date ,value: @start_date,:id=>'datetimepicker2',class: "form-control",style: "width: 350px"%></div>
+
+       <div class="form-group">
+
+          <b>Title:</b>
+          <span style="color:red">*</span>
+          <label id="first"></label>
+          <%= f.text_field :title,class: "form-control",placeholder: "Event Title",style: "width: 350px",required:true %>
+        </div>
+       <div class="form-group">
+
+      <b>Description:</b>
+      <%=f.text_field :description ,class: "form-control",style:"width: 350px",placeholder: "Event Description",required:true %>
+
+      </div>
+        <div class="form-group">
+        <%= f.check_box :is_holiday, {:checked=>false}%>&nbsp; 
+
+        <b>Holiday</b>
+        </div>
+        
+        <div class="form-group">
+        <%= f.check_box :is_common, {:checked=>false}%>&nbsp;
+        <b>Event common to all</b>
+        </div>
+        
+         <div class="form-group">
+        <div align="center" class="col-md-offset-2">
+   <%= f.submit :'Create Event',class: "btn btn-primary"%>
+   <%= link_to 'Cancel', calender_index_path, class: "btn btn-default"%>
+   </div>
+</div>
+  <% end %>
+  </div>
+   
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  </div>

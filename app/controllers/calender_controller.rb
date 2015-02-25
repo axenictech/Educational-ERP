@@ -30,10 +30,9 @@ class CalenderController < ApplicationController
 
   def update_event
     @event = Event.find(params[:id])
-    if @event.update(params_event)
+    return unless @event.update(params_event)
       flash[:notice] = 'Event updated successfully'
       redirect_to calender_index_path
-    end
   end
 
   private

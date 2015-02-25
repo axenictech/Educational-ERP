@@ -60,7 +60,9 @@
             <h2>Earnings</h2>
           </div>
          <div class="box-content" style="overflow-y: scroll; height:220px">
-
+              <% if @payroll_categories1.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
       
        <table id="datatable" class="table table-striped table-bordered responsive">
          <thead>
@@ -71,7 +73,7 @@
                </tr>
 
              </thead>
-           <tr><td colspan="3"><%=payroll_categories1_not_found!%></td></tr>
+           
           <tbody>
            <%@payroll_categories1.each do |c| %>
 			<tr>
@@ -104,6 +106,7 @@
 	    	<%end%>
           </tbody>
        </table>
+       <%end%>
       </div>
     </div>
   </div>
@@ -119,6 +122,9 @@
               <h2>Deductions</h2>
              </div>
           <div class="box-content" style="overflow-y: scroll; height:220px">
+          <% if @payroll_categories2.empty? %>
+                <h4 align="center">No Record Found </h4>
+              <% else %>
              <table id="datatable" class="table table-striped responsive">
          <thead>
                <tr>
@@ -128,7 +134,7 @@
                </tr>
 
              </thead>
-        <tr><td colspan="3"><%=payroll_categories2_not_found!%></td></tr>
+        
           <tbody>
            <% @payroll_categories2.each do |c| %>
 			<tr>
@@ -156,6 +162,7 @@
 	    	<%end%>
           </tbody>
        </table>
+       <%end%>
     <%end%>
  </div>
  </div>

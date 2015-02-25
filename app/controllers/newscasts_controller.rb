@@ -41,6 +41,7 @@ class NewscastsController < ApplicationController
   def show
     @newscast = Newscast.shod(params[:id])
     @comment = @newscast.comments.new
+    authorize! :read, @newscast
   end
 
   def display
