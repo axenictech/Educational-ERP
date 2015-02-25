@@ -96,5 +96,54 @@
            <h4>Subject Not Found</h4>
            <%end%>
            </div>
-</div></div>
+     </div>
+     <%@current.downto(@first).each do |i|%>
+ 
+ <%previous_batch = Batch.find(i)%>
+ <div class="box-header well">
+        <div class="batch-name" style="color:blue"><h2><%= "(Code -"+previous_batch.course.code+") "+previous_batch.name.capitalize %></h2></div></div>
+        <div class="box-content" style="overflow-y: scroll; height:auto">
+          <table id="datatable" class="table table-striped table-bordered responsive">
+            <thead>
+             <tr>
+                <th>Subject Code</th>
+                <th>Subject Title</th>
+                <th>Percentage(%)</th>
+              </tr>
+
+              </thead>
+        <% @mark1 = 0 %>
+        <% @total1 = 0 %>
+       <% @subjects=StudentLog.where(student_id:@student.id,batch_id:previous_batch).pluck(:subject_id).uniq%>
+        <%@subjects.each do |subject|%>
+        <% max_total1 = 0 %>
+        <% marks_total1 = 0 %>
+        
+        <% stud = StudentLog.where(batch_id:previous_batch,subject_id:subject,student_id:@student.id)%>
+            <% stud.each do |s| %>
+               <% max_total1 += s.maximum_marks.to_f %>
+                <% marks_total1 += s.mark%>
+                <% @mark1 += s.mark %>
+                <% @total1 += s.maximum_marks.to_f %>
+            <% end %>
+            <tbody>   
+              <% sname=Subject.find(subject)%>             
+               <tr class="tr-<%= cycle('odd', 'even') %>">
+                    <td class="col-1"> <%=sname.code %></td>
+                    <td class="col-3"> <%=sname.name %></td>
+                    <td class="col-3"><%="%.2f" %(marks_total1*100/max_total1)+"%" unless max_total1 == 0%></td>
+                  </tr>
+                     <%end%>
+                          <tr class="tr-blank"></tr>
+                <tr class="tr-head">
+                  <td colspan="2" align="right"><b>Total</b></td>
+                  <td><%="%.2f" %(@mark1*100/@total1)+"%" unless @total1==0 %></td>
+                </tr>
+            </thead>
+            </table>
+            </div>
+           
+    <%end%>
+     </div>
+      </div>
 </div>

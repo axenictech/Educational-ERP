@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class FinanceFeeCollection - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Activity.html">Activity</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-fee">::fee</a>
+    
+    <li ><a href="#method-i-create_collection_particular">#create_collection_particular</a>
+    
+    <li ><a href="#method-i-create_fee">#create_fee</a>
+    
+    <li ><a href="#method-i-create_fee_collection_discount">#create_fee_collection_discount</a>
+    
+    <li ><a href="#method-i-date_cannot_be_in_past">#date_cannot_be_in_past</a>
+    
+    <li ><a href="#method-i-due_date_cannot_be_less_than_end_date">#due_date_cannot_be_less_than_end_date</a>
+    
+    <li ><a href="#method-i-end_date_cannot_be_less_than_start_date">#end_date_cannot_be_less_than_start_date</a>
+    
+    <li ><a href="#method-i-fee">#fee</a>
+    
+    <li ><a href="#method-i-is_due_date-3F">#is_due_date?</a>
+    
+    <li ><a href="#method-i-next">#next</a>
+    
+    <li ><a href="#method-i-previous">#previous</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-FinanceFeeCollection">
+  <h1 id="class-FinanceFeeCollection" class="class">
+    class FinanceFeeCollection
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-fee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fee</span><span
+            class="method-args">(params, batches)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fee-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fee</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">batches</span>)
+  <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">batches</span>.<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">batches</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">collection</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">create_fee</span>(<span class="ruby-identifier">b</span>)
+        <span class="ruby-identifier">error</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">error</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create_collection_particular" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_collection_particular</span><span
+            class="method-args">(batch, master_category)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_collection_particular-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_collection_particular</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">master_category</span>)
+  <span class="ruby-identifier">fee_particulars</span> = <span class="ruby-identifier">master_category</span>.<span class="ruby-identifier">finance_fee_particulars</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fee_particulars</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">fee_particulars</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">collection_particular</span> = <span class="ruby-identifier">fee_collection_particulars</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">description</span>, <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">category_id</span>, <span class="ruby-identifier">admission_no</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">admission_no</span>, <span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>)
+        <span class="ruby-identifier">collection_particular</span>.<span class="ruby-identifier">student_fee_collection</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_fee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_fee</span><span
+            class="method-args">(batch)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_fee-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_fee</span>(<span class="ruby-identifier">batch</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">batch_id</span> = <span class="ruby-identifier">batch</span>
+  <span class="ruby-identifier">category</span> = <span class="ruby-identifier">finance_fee_category</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">create_collection_particular</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">category</span>)
+    <span class="ruby-identifier">create_fee_collection_discount</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">category</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_fee_collection_discount" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_fee_collection_discount</span><span
+            class="method-args">(batch, master_category)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_fee_collection_discount-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_fee_collection_discount</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">master_category</span>)
+  <span class="ruby-identifier">discounts</span> = <span class="ruby-identifier">master_category</span>.<span class="ruby-identifier">fee_discounts</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">discounts</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">discounts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">collection_discount</span> = <span class="ruby-identifier">fee_collection_discounts</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">discount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">discount</span>, <span class="ruby-identifier">category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">category_id</span>, <span class="ruby-identifier">admission_no</span><span class="ruby-operator">:</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">admission_no</span>, <span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>)
+        <span class="ruby-identifier">collection_discount</span>.<span class="ruby-identifier">student_fee_collection_discount</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-date_cannot_be_in_past" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">date_cannot_be_in_past</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="date_cannot_be_in_past-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">date_cannot_be_in_past</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">start_date</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">start_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:start_date</span>, <span class="ruby-string">&quot;can&#39;t be in past&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">end_date</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:end_date</span>, <span class="ruby-string">&quot;can&#39;t be in past&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">due_date</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">due_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:due_date</span>, <span class="ruby-string">&quot;can&#39;t be in past&quot;</span>)
+   <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-due_date_cannot_be_less_than_end_date" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">due_date_cannot_be_less_than_end_date</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="due_date_cannot_be_less_than_end_date-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">due_date_cannot_be_less_than_end_date</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">due_date</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">due_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">end_date</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:due_date</span>, <span class="ruby-string">&quot;can&#39;t be less than end date&quot;</span>)
+  <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-end_date_cannot_be_less_than_start_date" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_date_cannot_be_less_than_start_date</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="end_date_cannot_be_less_than_start_date-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_date_cannot_be_less_than_start_date</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">end_date</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">start_date</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:end_date</span>, <span class="ruby-string">&quot;can&#39;t be less than start date&quot;</span>)
+  <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fee</span><span
+            class="method-args">(student)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fee-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fee</span>(<span class="ruby-identifier">student</span>)
+  <span class="ruby-identifier">finance_fees</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-is_due_date-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_due_date?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is_due_date-3F-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_due_date?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">due_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next</span><span
+            class="method-args">(student)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">next</span>(<span class="ruby-identifier">student</span>)
+  <span class="ruby-identifier">finance_fees</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-previous" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">previous</span><span
+            class="method-args">(student)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="previous-source">
+            <pre><span class="ruby-comment"># File app/models/finance_fee_collection.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous</span>(<span class="ruby-identifier">student</span>)
+  <span class="ruby-identifier">finance_fees</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

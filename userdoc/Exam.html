@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Exam - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Activity.html">Activity</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create_exam_event">#create_exam_event</a>
+    
+    <li ><a href="#method-i-end_time_cannot_be_less_than_past">#end_time_cannot_be_less_than_past</a>
+    
+    <li ><a href="#method-i-end_time_cannot_be_less_than_start_time">#end_time_cannot_be_less_than_start_time</a>
+    
+    <li ><a href="#method-i-exam_mar">#exam_mar</a>
+    
+    <li ><a href="#method-i-exam_total">#exam_total</a>
+    
+    <li ><a href="#method-i-is_failed">#is_failed</a>
+    
+    <li ><a href="#method-i-max_marks_greater_than_min_marks">#max_marks_greater_than_min_marks</a>
+    
+    <li ><a href="#method-i-score_exam">#score_exam</a>
+    
+    <li ><a href="#method-i-scores">#scores</a>
+    
+    <li ><a href="#method-i-select_subject">#select_subject</a>
+    
+    <li ><a href="#method-i-start_time_cannot_be_less_than_past">#start_time_cannot_be_less_than_past</a>
+    
+    <li ><a href="#method-i-update_exam_scr">#update_exam_scr</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Exam">
+  <h1 id="class-Exam" class="class">
+    class Exam
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Exam.html">Exam</a> Active Record</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create_exam_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_exam_event</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_exam_event-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_exam_event</span>
+  <span class="ruby-identifier">batch</span> = <span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@event</span> = <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">event</span> = <span class="ruby-constant">Event</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">title</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Exam&#39;</span>, <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{exam_group.name} for subject- #{subject.name} #{batch.course.course_name} #{batch.course.section_name} #{batch.name}&quot;</span>,
+                         <span class="ruby-identifier">start_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">start_time</span>,
+                         <span class="ruby-identifier">end_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">end_time</span>,
+                         <span class="ruby-identifier">is_exam</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">update</span>(<span class="ruby-identifier">event_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@event</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">start_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-end_time_cannot_be_less_than_past" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_time_cannot_be_less_than_past</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="end_time_cannot_be_less_than_past-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_time_cannot_be_less_than_past</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:end_time</span>, <span class="ruby-string">&#39;should not be past date&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-end_time_cannot_be_less_than_start_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_time_cannot_be_less_than_start_time</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="end_time_cannot_be_less_than_start_time-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_time_cannot_be_less_than_start_time</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">end_time</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">start_time</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:end_time</span>, <span class="ruby-string">&#39;cannot be less than start time&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_mar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_mar</span><span
+            class="method-args">(student, marks)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_mar-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_mar</span>(<span class="ruby-identifier">student</span>, <span class="ruby-identifier">marks</span>)
+  <span class="ruby-identifier">exam_score</span> = <span class="ruby-identifier">scores</span>(<span class="ruby-identifier">student</span>)
+  <span class="ruby-identifier">marks</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">exam_score</span>.<span class="ruby-identifier">marks</span>.<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_total" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_total</span><span
+            class="method-args">(total)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_total-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_total</span>(<span class="ruby-identifier">total</span>)
+  <span class="ruby-identifier">total</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">maximum_marks</span>.<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-is_failed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_failed</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is_failed-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_failed</span>
+  <span class="ruby-identifier">exam_scores</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_failed</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">includes</span>(<span class="ruby-value">:student</span>, <span class="ruby-value">:grading_level</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-max_marks_greater_than_min_marks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_marks_greater_than_min_marks</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="max_marks_greater_than_min_marks-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">max_marks_greater_than_min_marks</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">maximum_marks</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">minimum_marks</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">maximum_marks</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">minimum_marks</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:maximum_marks</span>, <span class="ruby-string">&#39;should be greater than minimum marks&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-score_exam" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">score_exam</span><span
+            class="method-args">(temps, batch, exam, exam_group, grades)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="score_exam-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">score_exam</span>(<span class="ruby-identifier">temps</span>, <span class="ruby-identifier">batch</span>, <span class="ruby-identifier">exam</span>, <span class="ruby-identifier">exam_group</span>, <span class="ruby-identifier">grades</span>)
+  <span class="ruby-identifier">temps</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">student_id</span>, <span class="ruby-identifier">details</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@exam_score</span> = <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">exam_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">id</span>,
+                                  <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>).<span class="ruby-identifier">take</span>
+    <span class="ruby-ivar">@grouped_exam</span> = <span class="ruby-constant">GroupedExamReport</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">id</span>,
+                                            <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>,
+                                            <span class="ruby-identifier">exam_group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">id</span>,
+                                            <span class="ruby-identifier">subject_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject_id</span>).<span class="ruby-identifier">take</span>
+    <span class="ruby-identifier">score_grade</span> = <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">fail</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">fail</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">minimum_marks</span>.<span class="ruby-identifier">to_f</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">exam_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Marks&#39;</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">exam_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Grades&#39;</span>
+        <span class="ruby-identifier">percentage</span> = (<span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">maximum_marks</span>.<span class="ruby-identifier">to_f</span>
+        <span class="ruby-identifier">grades</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">grade</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">percentage</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">min_score</span>
+            <span class="ruby-identifier">score_grade</span> = <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">id</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">grades</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">grade</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">min_score</span>
+            <span class="ruby-identifier">score_grade</span> = <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">id</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exam_score</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">exam_score</span> = <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">exam_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>,
+                                 <span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>], <span class="ruby-identifier">remarks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:remarks</span>], <span class="ruby-identifier">grading_level_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">score_grade</span>, <span class="ruby-identifier">is_failed</span><span class="ruby-operator">:</span> <span class="ruby-identifier">fail</span>)
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exam_score</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-ivar">@errors</span> = <span class="ruby-identifier">exam_score</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@exam_score</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>], <span class="ruby-identifier">remarks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:remarks</span>], <span class="ruby-identifier">grading_level_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">score_grade</span>, <span class="ruby-identifier">is_failed</span><span class="ruby-operator">:</span> <span class="ruby-identifier">fail</span>)
+        <span class="ruby-ivar">@errors</span> = <span class="ruby-ivar">@exam_score</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>
+      <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@grouped_exam</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-constant">GroupedExamReport</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>,
+                                 <span class="ruby-identifier">exam_group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">subject_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject_id</span>, <span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>])
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@grouped_exam</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>])
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-scores" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scores</span><span
+            class="method-args">(student)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="scores-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scores</span>(<span class="ruby-identifier">student</span>)
+  <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">score</span>(<span class="ruby-identifier">student</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">id</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">student</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select_subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_subject</span><span
+            class="method-args">(s1, s2, exam)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_subject-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_subject</span>(<span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span>, <span class="ruby-identifier">exam</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">std</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject</span>.<span class="ruby-identifier">elective_group</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">s1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">std</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">is_elective</span> = <span class="ruby-constant">StudentSubject</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">std</span>.<span class="ruby-identifier">id</span>,
+                                           <span class="ruby-identifier">subject_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject_id</span>).<span class="ruby-identifier">take</span>
+        <span class="ruby-identifier">s1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">std</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">is_elective</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">s1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-start_time_cannot_be_less_than_past" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_time_cannot_be_less_than_past</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="start_time_cannot_be_less_than_past-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_time_cannot_be_less_than_past</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">start_time</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">start_time</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:start_time</span>, <span class="ruby-string">&#39;should not be past date&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_exam_scr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_exam_scr</span><span
+            class="method-args">(exam, exam_group, batch, param)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_exam_scr-source">
+            <pre><span class="ruby-comment"># File app/models/exam.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_exam_scr</span>(<span class="ruby-identifier">exam</span>, <span class="ruby-identifier">exam_group</span>, <span class="ruby-identifier">batch</span>, <span class="ruby-identifier">param</span>)
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">student_id</span>, <span class="ruby-identifier">details</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exam_score</span> = <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">exrep</span>(<span class="ruby-identifier">exam</span>, <span class="ruby-identifier">student_id</span>)
+    <span class="ruby-identifier">grouped_exam</span> = <span class="ruby-constant">GroupedExamReport</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span>                                                <span class="ruby-identifier">student_id</span>, <span class="ruby-identifier">exam_group_id</span><span class="ruby-operator">:</span>                                                <span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">subject_id</span><span class="ruby-operator">:</span>                                                <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject_id</span>).<span class="ruby-identifier">take</span>
+    <span class="ruby-identifier">score_grade</span> = <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">fail</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">fail</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">minimum_marks</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">exam_type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Marks&#39;</span>
+      <span class="ruby-identifier">percentage</span> = (<span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>].<span class="ruby-identifier">to_f</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">maximum_marks</span>.<span class="ruby-identifier">to_f</span>
+      <span class="ruby-identifier">grades</span> = <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">batch</span>.<span class="ruby-identifier">grading_levels</span>.<span class="ruby-identifier">all</span>
+      <span class="ruby-identifier">grades</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">grade</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">percentage</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">min_score</span>
+          <span class="ruby-identifier">score_grade</span> = <span class="ruby-identifier">grade</span>.<span class="ruby-identifier">id</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">exam_score</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">exam_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>,
+                       <span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>], <span class="ruby-identifier">remarks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:remarks</span>], <span class="ruby-identifier">grading_level_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">score_grade</span>, <span class="ruby-identifier">is_failed</span><span class="ruby-operator">:</span> <span class="ruby-identifier">fail</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">exam_score</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>], <span class="ruby-identifier">remarks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:remarks</span>], <span class="ruby-identifier">grading_level_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">score_grade</span>, <span class="ruby-identifier">is_failed</span><span class="ruby-operator">:</span> <span class="ruby-identifier">fail</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">grouped_exam</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-constant">GroupedExamReport</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">batch_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>,
+                               <span class="ruby-identifier">exam_group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam_group</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">subject_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>.<span class="ruby-identifier">subject_id</span>, <span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">grouped_exam</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">marks</span><span class="ruby-operator">:</span> <span class="ruby-identifier">details</span>[<span class="ruby-value">:marks</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

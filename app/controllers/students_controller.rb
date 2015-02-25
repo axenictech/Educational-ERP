@@ -231,6 +231,9 @@ class StudentsController < ApplicationController
   def transcript_report
     @student = Student.shod(params[:format])
     @batch = @student.batch
+    @first = Batch.first.id
+    @current = @batch.id - 1
+    @student_log = StudentLog.where(student_id:@student)
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @student
   end
@@ -388,6 +391,10 @@ class StudentsController < ApplicationController
     @archived_student = @student.archived_student
     @archived_student.update(status_description: \
       params[:archived_student][:status_description])
+    s=StudentLog.where(student_id:@student)
+    s.each do |m|
+     StudentLog.destroy(m.id)
+    end
     @student.destroy
     redirect_to archived_profile_student_path(@archived_student)
   end

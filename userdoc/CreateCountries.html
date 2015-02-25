@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class CreateCountries - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Migration
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-change">#change</a>
+    
+    <li ><a href="#method-i-create_default">#create_default</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-CreateCountries">
+  <h1 id="class-CreateCountries" class="class">
+    class CreateCountries
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-change" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change-source">
+            <pre><span class="ruby-comment"># File db/migrate/20140821082046_create_countries.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:countries</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:name</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">create_default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_default</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_default-source">
+            <pre><span class="ruby-comment"># File db/migrate/20140821082046_create_countries.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_default</span>
+  <span class="ruby-identifier">clist</span> = [<span class="ruby-string">&#39;Afghanistan&#39;</span>,
+           <span class="ruby-string">&#39;Albania&#39;</span>,
+           <span class="ruby-string">&#39;Algeria&#39;</span>,
+           <span class="ruby-string">&#39;Andorra&#39;</span>,
+           <span class="ruby-string">&#39;Angola&#39;</span>,
+           <span class="ruby-string">&#39;Antigua &amp; Deps&#39;</span>,
+           <span class="ruby-string">&#39;Argentina&#39;</span>,
+           <span class="ruby-string">&#39;Armenia&#39;</span>,
+           <span class="ruby-string">&#39;Australia&#39;</span>,
+           <span class="ruby-string">&#39;Austria&#39;</span>,
+           <span class="ruby-string">&#39;Azerbaijan&#39;</span>,
+           <span class="ruby-string">&#39;Bahamas&#39;</span>,
+           <span class="ruby-string">&#39;Bahrain&#39;</span>,
+           <span class="ruby-string">&#39;Bangladesh&#39;</span>,
+           <span class="ruby-string">&#39;Barbados&#39;</span>,
+           <span class="ruby-string">&#39;Belarus&#39;</span>,
+           <span class="ruby-string">&#39;Belgium&#39;</span>,
+           <span class="ruby-string">&#39;Belize&#39;</span>,
+           <span class="ruby-string">&#39;Benin&#39;</span>,
+           <span class="ruby-string">&#39;Bhutan&#39;</span>,
+           <span class="ruby-string">&#39;Bolivia&#39;</span>,
+           <span class="ruby-string">&#39;Bosnia Herzegovina&#39;</span>,
+           <span class="ruby-string">&#39;Botswana&#39;</span>,
+           <span class="ruby-string">&#39;Brazil&#39;</span>,
+           <span class="ruby-string">&#39;Brunei&#39;</span>,
+           <span class="ruby-string">&#39;Bulgaria&#39;</span>,
+           <span class="ruby-string">&#39;Burkina&#39;</span>,
+           <span class="ruby-string">&#39;Burundi&#39;</span>,
+           <span class="ruby-string">&#39;Cambodia&#39;</span>,
+           <span class="ruby-string">&#39;Cameroon&#39;</span>,
+           <span class="ruby-string">&#39;Canada&#39;</span>,
+           <span class="ruby-string">&#39;Cape Verde&#39;</span>,
+           <span class="ruby-string">&#39;Central African Rep&#39;</span>,
+           <span class="ruby-string">&#39;Chad&#39;</span>,
+           <span class="ruby-string">&#39;Chile&#39;</span>,
+           <span class="ruby-string">&#39;China&#39;</span>,
+           <span class="ruby-string">&#39;Colombia&#39;</span>,
+           <span class="ruby-string">&#39;Comoros&#39;</span>,
+           <span class="ruby-string">&#39;Congo&#39;</span>,
+           <span class="ruby-string">&#39;Congo {Democratic Rep}&#39;</span>,
+           <span class="ruby-string">&#39;Costa Rica&#39;</span>,
+           <span class="ruby-string">&#39;Croatia&#39;</span>,
+           <span class="ruby-string">&#39;Cuba&#39;</span>,
+           <span class="ruby-string">&#39;Cyprus&#39;</span>,
+           <span class="ruby-string">&#39;Czech Republic&#39;</span>,
+           <span class="ruby-string">&#39;Denmark&#39;</span>,
+           <span class="ruby-string">&#39;Djibouti&#39;</span>,
+           <span class="ruby-string">&#39;Dominica&#39;</span>,
+           <span class="ruby-string">&#39;Dominican Republic&#39;</span>,
+           <span class="ruby-string">&#39;East Timor&#39;</span>,
+           <span class="ruby-string">&#39;Ecuador&#39;</span>,
+           <span class="ruby-string">&#39;Egypt&#39;</span>,
+           <span class="ruby-string">&#39;El Salvador&#39;</span>,
+           <span class="ruby-string">&#39;Equatorial Guinea&#39;</span>,
+           <span class="ruby-string">&#39;Eritrea&#39;</span>,
+           <span class="ruby-string">&#39;Estonia&#39;</span>,
+           <span class="ruby-string">&#39;Ethiopia&#39;</span>,
+           <span class="ruby-string">&#39;Fiji&#39;</span>,
+           <span class="ruby-string">&#39;Finland&#39;</span>,
+           <span class="ruby-string">&#39;France&#39;</span>,
+           <span class="ruby-string">&#39;Gabon&#39;</span>,
+           <span class="ruby-string">&#39;Gambia&#39;</span>,
+           <span class="ruby-string">&#39;Georgia&#39;</span>,
+           <span class="ruby-string">&#39;Germany&#39;</span>,
+           <span class="ruby-string">&#39;Ghana&#39;</span>,
+           <span class="ruby-string">&#39;Greece&#39;</span>,
+           <span class="ruby-string">&#39;Grenada&#39;</span>,
+           <span class="ruby-string">&#39;Guatemala&#39;</span>,
+           <span class="ruby-string">&#39;Guinea&#39;</span>,
+           <span class="ruby-string">&#39;Guinea-Bissau&#39;</span>,
+           <span class="ruby-string">&#39;Guyana&#39;</span>,
+           <span class="ruby-string">&#39;Haiti&#39;</span>,
+           <span class="ruby-string">&#39;Honduras&#39;</span>,
+           <span class="ruby-string">&#39;Hungary&#39;</span>,
+           <span class="ruby-string">&#39;Iceland&#39;</span>,
+           <span class="ruby-string">&#39;India&#39;</span>,
+           <span class="ruby-string">&#39;Indonesia&#39;</span>,
+           <span class="ruby-string">&#39;Iran&#39;</span>,
+           <span class="ruby-string">&#39;Iraq&#39;</span>,
+           <span class="ruby-string">&#39;Ireland {Republic}&#39;</span>,
+           <span class="ruby-string">&#39;Israel&#39;</span>,
+           <span class="ruby-string">&#39;Italy&#39;</span>,
+           <span class="ruby-string">&#39;Ivory Coast&#39;</span>,
+           <span class="ruby-string">&#39;Jamaica&#39;</span>,
+           <span class="ruby-string">&#39;Japan&#39;</span>,
+           <span class="ruby-string">&#39;Jordan&#39;</span>,
+           <span class="ruby-string">&#39;Kazakhstan&#39;</span>,
+           <span class="ruby-string">&#39;Kenya&#39;</span>,
+           <span class="ruby-string">&#39;Kiribati&#39;</span>,
+           <span class="ruby-string">&#39;Korea North&#39;</span>,
+           <span class="ruby-string">&#39;Korea South&#39;</span>,
+           <span class="ruby-string">&#39;Kosovo&#39;</span>,
+           <span class="ruby-string">&#39;Kuwait&#39;</span>,
+           <span class="ruby-string">&#39;Kyrgyzstan&#39;</span>,
+           <span class="ruby-string">&#39;Laos&#39;</span>,
+           <span class="ruby-string">&#39;Latvia&#39;</span>,
+           <span class="ruby-string">&#39;Lebanon&#39;</span>,
+           <span class="ruby-string">&#39;Lesotho&#39;</span>,
+           <span class="ruby-string">&#39;Liberia&#39;</span>,
+           <span class="ruby-string">&#39;Libya&#39;</span>,
+           <span class="ruby-string">&#39;Liechtenstein&#39;</span>,
+           <span class="ruby-string">&#39;Lithuania&#39;</span>,
+           <span class="ruby-string">&#39;Luxembourg&#39;</span>,
+           <span class="ruby-string">&#39;Macedonia&#39;</span>,
+           <span class="ruby-string">&#39;Madagascar&#39;</span>,
+           <span class="ruby-string">&#39;Malawi&#39;</span>,
+           <span class="ruby-string">&#39;Malaysia&#39;</span>,
+           <span class="ruby-string">&#39;Maldives&#39;</span>,
+           <span class="ruby-string">&#39;Mali&#39;</span>,
+           <span class="ruby-string">&#39;Malta&#39;</span>,
+           <span class="ruby-string">&#39;Montenegro&#39;</span>,
+           <span class="ruby-string">&#39;Marshall Islands&#39;</span>,
+           <span class="ruby-string">&#39;Mauritania&#39;</span>,
+           <span class="ruby-string">&#39;Mauritius&#39;</span>,
+           <span class="ruby-string">&#39;Mexico&#39;</span>,
+           <span class="ruby-string">&#39;Micronesia&#39;</span>,
+           <span class="ruby-string">&#39;Moldova&#39;</span>,
+           <span class="ruby-string">&#39;Monaco&#39;</span>,
+           <span class="ruby-string">&#39;Mongolia&#39;</span>,
+           <span class="ruby-string">&#39;Morocco&#39;</span>,
+           <span class="ruby-string">&#39;Mozambique&#39;</span>,
+           <span class="ruby-string">&#39;Myanmar, {Burma}&#39;</span>,
+           <span class="ruby-string">&#39;Namibia&#39;</span>,
+           <span class="ruby-string">&#39;Nauru&#39;</span>,
+           <span class="ruby-string">&#39;Nepal&#39;</span>,
+           <span class="ruby-string">&#39;Netherlands&#39;</span>,
+           <span class="ruby-string">&#39;New Zealand&#39;</span>,
+           <span class="ruby-string">&#39;Nicaragua&#39;</span>,
+           <span class="ruby-string">&#39;Niger&#39;</span>,
+           <span class="ruby-string">&#39;Nigeria&#39;</span>,
+           <span class="ruby-string">&#39;Norway&#39;</span>,
+           <span class="ruby-string">&#39;Oman&#39;</span>,
+           <span class="ruby-string">&#39;Pakistan&#39;</span>,
+           <span class="ruby-string">&#39;Palau&#39;</span>,
+           <span class="ruby-string">&#39;Panama&#39;</span>,
+           <span class="ruby-string">&#39;Papua New Guinea&#39;</span>,
+           <span class="ruby-string">&#39;Paraguay&#39;</span>,
+           <span class="ruby-string">&#39;Peru&#39;</span>,
+           <span class="ruby-string">&#39;Philippines&#39;</span>,
+           <span class="ruby-string">&#39;Poland&#39;</span>,
+           <span class="ruby-string">&#39;Portugal&#39;</span>,
+           <span class="ruby-string">&#39;Qatar&#39;</span>,
+           <span class="ruby-string">&#39;Romania&#39;</span>,
+           <span class="ruby-string">&#39;Russian Federation&#39;</span>,
+           <span class="ruby-string">&#39;Rwanda&#39;</span>,
+           <span class="ruby-string">&#39;St Kitts &amp; Nevis&#39;</span>,
+           <span class="ruby-string">&#39;St Lucia&#39;</span>,
+           <span class="ruby-string">&#39;Saint Vincent &amp; the Grenadines&#39;</span>,
+           <span class="ruby-string">&#39;Samoa&#39;</span>,
+           <span class="ruby-string">&#39;San Marino&#39;</span>,
+           <span class="ruby-string">&#39;Sao Tome &amp; Principe&#39;</span>,
+           <span class="ruby-string">&#39;Saudi Arabia&#39;</span>,
+           <span class="ruby-string">&#39;Senegal&#39;</span>,
+           <span class="ruby-string">&#39;Serbia&#39;</span>,
+           <span class="ruby-string">&#39;Seychelles&#39;</span>,
+           <span class="ruby-string">&#39;Sierra Leone&#39;</span>,
+           <span class="ruby-string">&#39;Singapore&#39;</span>,
+           <span class="ruby-string">&#39;Slovakia&#39;</span>,
+           <span class="ruby-string">&#39;Slovenia&#39;</span>,
+           <span class="ruby-string">&#39;Solomon Islands&#39;</span>,
+           <span class="ruby-string">&#39;Somalia&#39;</span>,
+           <span class="ruby-string">&#39;South Africa&#39;</span>,
+           <span class="ruby-string">&#39;Spain&#39;</span>,
+           <span class="ruby-string">&#39;Sri Lanka&#39;</span>,
+           <span class="ruby-string">&#39;Sudan&#39;</span>,
+           <span class="ruby-string">&#39;Suriname&#39;</span>,
+           <span class="ruby-string">&#39;Swaziland&#39;</span>,
+           <span class="ruby-string">&#39;Sweden&#39;</span>,
+           <span class="ruby-string">&#39;Switzerland&#39;</span>,
+           <span class="ruby-string">&#39;Syria&#39;</span>,
+           <span class="ruby-string">&#39;Taiwan&#39;</span>,
+           <span class="ruby-string">&#39;Tajikistan&#39;</span>,
+           <span class="ruby-string">&#39;Tanzania&#39;</span>,
+           <span class="ruby-string">&#39;Thailand&#39;</span>,
+           <span class="ruby-string">&#39;Togo&#39;</span>,
+           <span class="ruby-string">&#39;Tonga&#39;</span>,
+           <span class="ruby-string">&#39;Trinidad &amp; Tobago&#39;</span>,
+           <span class="ruby-string">&#39;Tunisia&#39;</span>,
+           <span class="ruby-string">&#39;Turkey&#39;</span>,
+           <span class="ruby-string">&#39;Turkmenistan&#39;</span>,
+           <span class="ruby-string">&#39;Tuvalu&#39;</span>,
+           <span class="ruby-string">&#39;Uganda&#39;</span>,
+           <span class="ruby-string">&#39;Ukraine&#39;</span>,
+           <span class="ruby-string">&#39;United Arab Emirates&#39;</span>,
+           <span class="ruby-string">&#39;United Kingdom&#39;</span>,
+           <span class="ruby-string">&#39;United States&#39;</span>,
+           <span class="ruby-string">&#39;Uruguay&#39;</span>,
+           <span class="ruby-string">&#39;Uzbekistan&#39;</span>,
+           <span class="ruby-string">&#39;Vanuatu&#39;</span>,
+           <span class="ruby-string">&#39;Vatican City&#39;</span>,
+           <span class="ruby-string">&#39;Venezuea&#39;</span>,
+           <span class="ruby-string">&#39;Vietnam&#39;</span>,
+           <span class="ruby-string">&#39;Yemen&#39;</span>,
+           <span class="ruby-string">&#39;Zambia&#39;</span>,
+           <span class="ruby-string">&#39;Zimbabwe&#39;</span>]
+
+  <span class="ruby-identifier">clist</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c1</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">c1</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">c</span>
+    <span class="ruby-identifier">c1</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

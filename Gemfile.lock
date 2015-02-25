@@ -276,6 +276,7 @@ DEPENDENCIES
   passenger
   pdfkit
   rails
+  rdoc
   roo
   sass-rails
   sdoc

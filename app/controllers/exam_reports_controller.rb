@@ -18,6 +18,8 @@ class ExamReportsController < ApplicationController
 
   def select_batch
     @batch = Batch.shod(params[:batch_select][:id])
+    p "bbbbbbbbbbbbb"
+    p @batch
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @exam_groups.first
   end

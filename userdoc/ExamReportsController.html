@@ -1,0 +1,2352 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ExamReportsController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-archived_student">#archived_student</a>
+    
+    <li ><a href="#method-i-archived_student_report">#archived_student_report</a>
+    
+    <li ><a href="#method-i-archived_students_consolidated_report">#archived_students_consolidated_report</a>
+    
+    <li ><a href="#method-i-archived_students_exam_report">#archived_students_exam_report</a>
+    
+    <li ><a href="#method-i-attendance_wise_ranking_report">#attendance_wise_ranking_report</a>
+    
+    <li ><a href="#method-i-attendance_wise_ranking_report2">#attendance_wise_ranking_report2</a>
+    
+    <li ><a href="#method-i-batch_wise_ranking_report">#batch_wise_ranking_report</a>
+    
+    <li ><a href="#method-i-choose_batch">#choose_batch</a>
+    
+    <li ><a href="#method-i-consolidated_archived_report">#consolidated_archived_report</a>
+    
+    <li ><a href="#method-i-consolidated_report">#consolidated_report</a>
+    
+    <li ><a href="#method-i-course_wise_ranking_report">#course_wise_ranking_report</a>
+    
+    <li ><a href="#method-i-exam_group_wise_report">#exam_group_wise_report</a>
+    
+    <li ><a href="#method-i-exam_wise_consolidated_report">#exam_wise_consolidated_report</a>
+    
+    <li ><a href="#method-i-exam_wise_report">#exam_wise_report</a>
+    
+    <li ><a href="#method-i-exam_wise_students_report">#exam_wise_students_report</a>
+    
+    <li ><a href="#method-i-generate_archived_report">#generate_archived_report</a>
+    
+    <li ><a href="#method-i-generate_attendance_report">#generate_attendance_report</a>
+    
+    <li ><a href="#method-i-generate_attendance_report2">#generate_attendance_report2</a>
+    
+    <li ><a href="#method-i-generate_course_report">#generate_course_report</a>
+    
+    <li ><a href="#method-i-generate_exam_report">#generate_exam_report</a>
+    
+    <li ><a href="#method-i-generate_exam_report2">#generate_exam_report2</a>
+    
+    <li ><a href="#method-i-generate_exam_report3">#generate_exam_report3</a>
+    
+    <li ><a href="#method-i-generate_grouped_report">#generate_grouped_report</a>
+    
+    <li ><a href="#method-i-generate_grouped_report2">#generate_grouped_report2</a>
+    
+    <li ><a href="#method-i-generate_grouped_report3">#generate_grouped_report3</a>
+    
+    <li ><a href="#method-i-generate_rank_report2">#generate_rank_report2</a>
+    
+    <li ><a href="#method-i-generate_rank_report3">#generate_rank_report3</a>
+    
+    <li ><a href="#method-i-generate_ranking_report">#generate_ranking_report</a>
+    
+    <li ><a href="#method-i-generate_ranking_report2">#generate_ranking_report2</a>
+    
+    <li ><a href="#method-i-generate_ranking_report3">#generate_ranking_report3</a>
+    
+    <li ><a href="#method-i-generate_student_ranking_report">#generate_student_ranking_report</a>
+    
+    <li ><a href="#method-i-generate_student_ranking_report2">#generate_student_ranking_report2</a>
+    
+    <li ><a href="#method-i-generate_student_ranking_report3">#generate_student_ranking_report3</a>
+    
+    <li ><a href="#method-i-generate_subject_report">#generate_subject_report</a>
+    
+    <li ><a href="#method-i-generate_subject_report2">#generate_subject_report2</a>
+    
+    <li ><a href="#method-i-generate_subject_report3">#generate_subject_report3</a>
+    
+    <li ><a href="#method-i-generate_view_transcripts">#generate_view_transcripts</a>
+    
+    <li ><a href="#method-i-generate_view_transcripts2">#generate_view_transcripts2</a>
+    
+    <li ><a href="#method-i-generate_view_transcripts3">#generate_view_transcripts3</a>
+    
+    <li ><a href="#method-i-grouped_exam_report">#grouped_exam_report</a>
+    
+    <li ><a href="#method-i-grouped_exam_students_report">#grouped_exam_students_report</a>
+    
+    <li ><a href="#method-i-rank_report_batch">#rank_report_batch</a>
+    
+    <li ><a href="#method-i-school_wise_ranking_report">#school_wise_ranking_report</a>
+    
+    <li ><a href="#method-i-select">#select</a>
+    
+    <li ><a href="#method-i-select_batch">#select_batch</a>
+    
+    <li ><a href="#method-i-select_course">#select_course</a>
+    
+    <li ><a href="#method-i-student_exam_report">#student_exam_report</a>
+    
+    <li ><a href="#method-i-student_ranking_per_attendance">#student_ranking_per_attendance</a>
+    
+    <li ><a href="#method-i-student_ranking_per_batch">#student_ranking_per_batch</a>
+    
+    <li ><a href="#method-i-student_ranking_per_course">#student_ranking_per_course</a>
+    
+    <li ><a href="#method-i-student_ranking_per_school">#student_ranking_per_school</a>
+    
+    <li ><a href="#method-i-student_ranking_per_subject">#student_ranking_per_subject</a>
+    
+    <li ><a href="#method-i-student_report">#student_report</a>
+    
+    <li ><a href="#method-i-student_view_transcripts">#student_view_transcripts</a>
+    
+    <li ><a href="#method-i-students_transcripts_report">#students_transcripts_report</a>
+    
+    <li ><a href="#method-i-subject_wise_ranking_report">#subject_wise_ranking_report</a>
+    
+    <li ><a href="#method-i-subject_wise_report">#subject_wise_report</a>
+    
+    <li ><a href="#method-i-subject_wise_students_report">#subject_wise_students_report</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ExamReportsController">
+  <h1 id="class-ExamReportsController" class="class">
+    class ExamReportsController
+  </h1>
+
+  <section class="description">
+    
+<p>ExamReport Controller</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-archived_student" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_student</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_student-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_student</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@student</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-archived_student_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_student_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_student_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_student_report</span>
+
+  <span class="ruby-ivar">@courses</span>=<span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@batches</span>=<span class="ruby-constant">Course</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">batches</span>.<span class="ruby-identifier">all</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-ivar">@courses</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@batches</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">batches</span>.<span class="ruby-identifier">all</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-archived_students_consolidated_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_students_consolidated_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_students_consolidated_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_students_consolidated_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;archived_students_consolidated_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-archived_students_exam_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_students_exam_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_students_exam_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_students_exam_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">archived_students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;archived_students_exam_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-attendance_wise_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attendance_wise_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attendance_wise_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attendance_wise_ranking_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_id</span>])
+  <span class="ruby-ivar">@start_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:start_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-ivar">@end_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:end_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-identifier">attendance_wise_ranking_report2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-attendance_wise_ranking_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attendance_wise_ranking_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attendance_wise_ranking_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attendance_wise_ranking_report2</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@weekdays</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">weekdays</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;attendance_wise_ranking_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-batch_wise_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">batch_wise_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="batch_wise_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">batch_wise_ranking_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_id</span>])
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;batch_wise_ranking_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-choose_batch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">choose_batch</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="choose_batch-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">choose_batch</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_choose</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-consolidated_archived_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consolidated_archived_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="consolidated_archived_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">consolidated_archived_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">exam_groups</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-consolidated_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consolidated_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="consolidated_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">consolidated_report</span>
+  <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_group</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-course_wise_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">course_wise_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="course_wise_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 336</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">course_wise_ranking_report</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_id</span>])
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">batches</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;course_wise_ranking_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_group_wise_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_group_wise_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_group_wise_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_group_wise_report</span>
+  <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_group_option</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_group</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_wise_consolidated_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_wise_consolidated_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_wise_consolidated_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_wise_consolidated_report</span>
+  <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_group_id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;exam_wise_consolidated_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_wise_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_wise_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_wise_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_wise_report</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">exam_groups</span>
+    <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+    <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">exam_groups</span>
+    <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_wise_students_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_wise_students_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_wise_students_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_wise_students_report</span>
+  <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_group_id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;exam_wise_students_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_archived_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_archived_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_archived_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_archived_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">get?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_select</span>][<span class="ruby-value">:id</span>].<span class="ruby-identifier">present?</span>
+      <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_select</span>][<span class="ruby-value">:id</span>])
+      <span class="ruby-ivar">@students</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">archived_students</span>.<span class="ruby-identifier">all</span>
+      <span class="ruby-ivar">@student</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">archived_students</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-ivar">@exam_groups</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">exam_groups</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">result_published</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+      <span class="ruby-ivar">@subjects</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>.<span class="ruby-identifier">all</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice_arch</span>] = <span class="ruby-string">&#39;Please select batch&#39;</span>
+      <span class="ruby-ivar">@courses</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+      <span class="ruby-ivar">@batches</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">batches</span>.<span class="ruby-identifier">all</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;archived_student_report&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_attendance_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_attendance_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_attendance_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 376</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_attendance_report</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@weekdays</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">weekdays</span>
+  <span class="ruby-ivar">@batch_events</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">batch_events</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:event</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_attendance_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_attendance_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_attendance_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 382</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_attendance_report2</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;attendance_error&#39;</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;student_ranking_per_attendance&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_course_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_course_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_course_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_course_report</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;course_rank_error&#39;</span>)
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;student_ranking_per_course&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_exam_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_exam_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_exam_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_exam_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_group_select</span>][<span class="ruby-value">:id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_group_select</span>][<span class="ruby-value">:id</span>])
+    <span class="ruby-identifier">generate_exam_report2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_exam_report3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_group</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_exam_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_exam_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_exam_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_exam_report2</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@exam_group</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_exam_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_exam_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_exam_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_exam_report3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;exam_report_error&#39;</span>)
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">exam_groups</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;exam_wise_report&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_grouped_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_grouped_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_grouped_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_grouped_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_option</span>][<span class="ruby-value">:id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_option</span>][<span class="ruby-value">:id</span>])
+    <span class="ruby-identifier">generate_grouped_report2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_grouped_report3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_grouped_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_grouped_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_grouped_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_grouped_report2</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_grouped_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_grouped_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_grouped_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_grouped_report3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;group_error&#39;</span>)
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;grouped_exam_report&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_rank_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_rank_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_rank_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_rank_report2</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_rank_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_rank_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_rank_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_rank_report3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;batch_rank_error&#39;</span>)
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;student_ranking_per_batch&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_ranking_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:subject_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:subject_id</span>])
+    <span class="ruby-identifier">generate_ranking_report2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_ranking_report3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_ranking_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_ranking_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_ranking_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_ranking_report2</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@subject</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_ranking_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_ranking_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_ranking_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_ranking_report3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;subject_rank_errror&#39;</span>)
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;student_ranking_per_subject&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_student_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_student_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_student_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_student_ranking_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:batch_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:batch_id</span>])
+    <span class="ruby-identifier">generate_rank_report2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_rank_report3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_student_ranking_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_student_ranking_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_student_ranking_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 320</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_student_ranking_report2</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:course_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:course_id</span>])
+    <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">batches</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_course_report</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_student_ranking_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_student_ranking_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_student_ranking_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_student_ranking_report3</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@start_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:start_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-ivar">@end_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:end_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@start_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@end_date</span>
+    <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:batch_id</span>])
+    <span class="ruby-identifier">generate_attendance_report</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_attendance_report2</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_subject_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_subject_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_subject_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_subject_report</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:subject_select</span>][<span class="ruby-value">:id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:subject_select</span>][<span class="ruby-value">:id</span>])
+    <span class="ruby-identifier">generate_subject_report2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_subject_report3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_subject_report2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_subject_report2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_subject_report2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_subject_report2</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@subject</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_subject_report3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_subject_report3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_subject_report3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_subject_report3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;subject_report_error&#39;</span>)
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;subject_wise_report&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_view_transcripts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_view_transcripts</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_view_transcripts-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_view_transcripts</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:transcript</span>][<span class="ruby-value">:batch_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:transcript</span>][<span class="ruby-value">:batch_id</span>])
+    <span class="ruby-identifier">generate_view_transcripts2</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">generate_view_transcripts3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_view_transcripts2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_view_transcripts2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_view_transcripts2-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 411</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_view_transcripts2</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_view_transcripts3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_view_transcripts3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_view_transcripts3-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_view_transcripts3</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;group_error&#39;</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;view_transcripts&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-grouped_exam_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grouped_exam_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="grouped_exam_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grouped_exam_report</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-grouped_exam_students_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grouped_exam_students_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="grouped_exam_students_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grouped_exam_students_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_id</span>])
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;grouped_exam_students_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rank_report_batch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rank_report_batch</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rank_report_batch-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rank_report_batch</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:rank_report</span>][<span class="ruby-value">:batch_id</span>])
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-school_wise_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">school_wise_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="school_wise_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">school_wise_ranking_report</span>
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Student</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;school_wise_ranking_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam</span>][<span class="ruby-value">:course_id</span>])
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">batches</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select_batch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_batch</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_batch-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_batch</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_select</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">exam_groups</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select_course" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_course</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_course-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_course</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_select</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batches</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">batches</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_exam_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_exam_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_exam_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_exam_report</span>
+  <span class="ruby-ivar">@exam_group</span> = <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@student</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_group</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_ranking_per_attendance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_ranking_per_attendance</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_ranking_per_attendance-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_ranking_per_attendance</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_ranking_per_batch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_ranking_per_batch</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_ranking_per_batch-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_ranking_per_batch</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_ranking_per_course" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_ranking_per_course</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_ranking_per_course-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_ranking_per_course</span>
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_ranking_per_school" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_ranking_per_school</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_ranking_per_school-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_ranking_per_school</span>
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Student</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ExamGroup</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_ranking_per_subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_ranking_per_subject</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_ranking_per_subject-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_ranking_per_subject</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">subjects</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@subjects</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:student_id</span>])
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_view_transcripts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_view_transcripts</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_view_transcripts-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_view_transcripts</span>
+  <span class="ruby-ivar">@student</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@student</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@exam_groups</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-students_transcripts_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">students_transcripts_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="students_transcripts_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">students_transcripts_report</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:batch_id</span>])
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;students_transcripts_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subject_wise_ranking_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject_wise_ranking_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="subject_wise_ranking_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject_wise_ranking_report</span>
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@subject</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;subject_wise_ranking_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subject_wise_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject_wise_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="subject_wise_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject_wise_report</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">subjects</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@batches</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subjects</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">subjects</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ExamGroup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subject_wise_students_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject_wise_students_report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="subject_wise_students_report-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_reports_controller.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject_wise_students_report</span>
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-ivar">@subject</span>.<span class="ruby-identifier">batch</span>
+  <span class="ruby-ivar">@exam_groups</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">result_published</span>
+  <span class="ruby-ivar">@students</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">students</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;subject_wise_students_report&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
