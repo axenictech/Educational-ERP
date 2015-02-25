@@ -39,7 +39,7 @@ Note:<font color="red">Fields Marked with * must be filled</font>
          <div class="form-group">
        <b>Date of birth:</b>
 
-         <%=f.date_field :date_of_birth,:value => Time.now.strftime('%Y-%m-%d'), class: "form-control"%>
+         <%=f.date_field :date_of_birth,class: "form-control datepicker",placeholder: "MM/DD/YYYY"%>
        </div>
 
          <div class="form-group">

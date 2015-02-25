@@ -45,7 +45,7 @@
 
           <div class="form-group">
             <b>Transction Date:</b>
-            <%= f.date_field :transaction_date,:value => Time.now.strftime('%Y-%m-%d'),:style =>"width: 300px", class: "form-control"%>
+            <%= f.date_field :transaction_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY",:style =>"width: 300px"%>
           </div>
         </div>
       </div>

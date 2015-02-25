@@ -14,7 +14,7 @@
    	<tr>     
           <td><b>Salary Date:</b>
           <span style="color:red">*</span></td>
-          <td ><%=f.date_field :salery_date,:value => Time.now.strftime('%Y-%m-%d'),onblur: "var date={salary_date:$(this).val()};
+          <td ><%=f.date_field :salery_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY",onblur: "var date={salary_date:$(this).val()};
           get('admission1',date,function(response){});",class: "form-control",style: "width:250px"%></td>
         
          
@@ -45,3 +45,10 @@
 </div>
 </div>
 <%end%>
+<script type="text/javascript">
+window.onload = function()
+{ 
+  $('.datepicker').datepicker();
+};
+ 
+</script>
