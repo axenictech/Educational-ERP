@@ -1,0 +1,4576 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class EmployeesController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-active_payroll_category">#active_payroll_category</a>
+    
+    <li ><a href="#method-i-add_bank_field">#add_bank_field</a>
+    
+    <li ><a href="#method-i-add_category">#add_category</a>
+    
+    <li ><a href="#method-i-add_department">#add_department</a>
+    
+    <li ><a href="#method-i-add_grade">#add_grade</a>
+    
+    <li ><a href="#method-i-add_payroll_category">#add_payroll_category</a>
+    
+    <li ><a href="#method-i-add_position">#add_position</a>
+    
+    <li ><a href="#method-i-address_profile">#address_profile</a>
+    
+    <li ><a href="#method-i-address_profile_archived">#address_profile_archived</a>
+    
+    <li ><a href="#method-i-address_profile_pdf">#address_profile_pdf</a>
+    
+    <li ><a href="#method-i-admission1">#admission1</a>
+    
+    <li ><a href="#method-i-admission2">#admission2</a>
+    
+    <li ><a href="#method-i-admission2_create">#admission2_create</a>
+    
+    <li ><a href="#method-i-admission3">#admission3</a>
+    
+    <li ><a href="#method-i-admission3_create">#admission3_create</a>
+    
+    <li ><a href="#method-i-admission4">#admission4</a>
+    
+    <li ><a href="#method-i-advance_search_emp">#advance_search_emp</a>
+    
+    <li ><a href="#method-i-advance_search_result_pdf">#advance_search_result_pdf</a>
+    
+    <li ><a href="#method-i-allemp">#allemp</a>
+    
+    <li ><a href="#method-i-archived_employee_profile">#archived_employee_profile</a>
+    
+    <li ><a href="#method-i-assign">#assign</a>
+    
+    <li ><a href="#method-i-assign_employee">#assign_employee</a>
+    
+    <li ><a href="#method-i-assign_subject">#assign_subject</a>
+    
+    <li ><a href="#method-i-assign_subject_disp">#assign_subject_disp</a>
+    
+    <li ><a href="#method-i-bank_field">#bank_field</a>
+    
+    <li ><a href="#method-i-bank_info">#bank_info</a>
+    
+    <li ><a href="#method-i-bank_info_archived">#bank_info_archived</a>
+    
+    <li ><a href="#method-i-bank_info_pdf">#bank_info_pdf</a>
+    
+    <li ><a href="#method-i-change_reporting_manager">#change_reporting_manager</a>
+    
+    <li ><a href="#method-i-change_to_former">#change_to_former</a>
+    
+    <li ><a href="#method-i-contact_profile">#contact_profile</a>
+    
+    <li ><a href="#method-i-contact_profile_archived">#contact_profile_archived</a>
+    
+    <li ><a href="#method-i-contact_profile_pdf">#contact_profile_pdf</a>
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-create_archived_employee">#create_archived_employee</a>
+    
+    <li ><a href="#method-i-create_archived_employee2">#create_archived_employee2</a>
+    
+    <li ><a href="#method-i-create_monthly_payslip">#create_monthly_payslip</a>
+    
+    <li ><a href="#method-i-create_monthly_payslip2">#create_monthly_payslip2</a>
+    
+    <li ><a href="#method-i-create_payslip_category">#create_payslip_category</a>
+    
+    <li ><a href="#method-i-delete_employee">#delete_employee</a>
+    
+    <li ><a href="#method-i-department_employee_list">#department_employee_list</a>
+    
+    <li ><a href="#method-i-destroy_bank_field">#destroy_bank_field</a>
+    
+    <li ><a href="#method-i-destroy_category">#destroy_category</a>
+    
+    <li ><a href="#method-i-destroy_department">#destroy_department</a>
+    
+    <li ><a href="#method-i-destroy_grade">#destroy_grade</a>
+    
+    <li ><a href="#method-i-destroy_payroll_category">#destroy_payroll_category</a>
+    
+    <li ><a href="#method-i-destroy_position">#destroy_position</a>
+    
+    <li ><a href="#method-i-edit_address_profile">#edit_address_profile</a>
+    
+    <li ><a href="#method-i-edit_bank_field">#edit_bank_field</a>
+    
+    <li ><a href="#method-i-edit_bank_info">#edit_bank_info</a>
+    
+    <li ><a href="#method-i-edit_category">#edit_category</a>
+    
+    <li ><a href="#method-i-edit_contact_profile">#edit_contact_profile</a>
+    
+    <li ><a href="#method-i-edit_department">#edit_department</a>
+    
+    <li ><a href="#method-i-edit_grade">#edit_grade</a>
+    
+    <li ><a href="#method-i-edit_payroll_category">#edit_payroll_category</a>
+    
+    <li ><a href="#method-i-edit_personal_profile">#edit_personal_profile</a>
+    
+    <li ><a href="#method-i-edit_position">#edit_position</a>
+    
+    <li ><a href="#method-i-edit_privilege">#edit_privilege</a>
+    
+    <li ><a href="#method-i-edit_profile">#edit_profile</a>
+    
+    <li ><a href="#method-i-emp_category">#emp_category</a>
+    
+    <li ><a href="#method-i-emp_department">#emp_department</a>
+    
+    <li ><a href="#method-i-emp_grade">#emp_grade</a>
+    
+    <li ><a href="#method-i-emp_payroll">#emp_payroll</a>
+    
+    <li ><a href="#method-i-emp_payslip">#emp_payslip</a>
+    
+    <li ><a href="#method-i-emp_position">#emp_position</a>
+    
+    <li ><a href="#method-i-emp_search_result_pdf">#emp_search_result_pdf</a>
+    
+    <li ><a href="#method-i-employee_individual_payslip_pdf">#employee_individual_payslip_pdf</a>
+    
+    <li ><a href="#method-i-employee_profile">#employee_profile</a>
+    
+    <li ><a href="#method-i-employee_structure">#employee_structure</a>
+    
+    <li ><a href="#method-i-genral_profile">#genral_profile</a>
+    
+    <li ><a href="#method-i-genral_profile_archived">#genral_profile_archived</a>
+    
+    <li ><a href="#method-i-inactive_payroll_category">#inactive_payroll_category</a>
+    
+    <li ><a href="#method-i-list_emp">#list_emp</a>
+    
+    <li ><a href="#method-i-monthly_payslip">#monthly_payslip</a>
+    
+    <li ><a href="#method-i-new_bank_field">#new_bank_field</a>
+    
+    <li ><a href="#method-i-new_category">#new_category</a>
+    
+    <li ><a href="#method-i-new_department">#new_department</a>
+    
+    <li ><a href="#method-i-new_grade">#new_grade</a>
+    
+    <li ><a href="#method-i-new_payroll_category">#new_payroll_category</a>
+    
+    <li ><a href="#method-i-new_position">#new_position</a>
+    
+    <li ><a href="#method-i-one_click_pay">#one_click_pay</a>
+    
+    <li ><a href="#method-i-one_click_payslip_generate">#one_click_payslip_generate</a>
+    
+    <li ><a href="#method-i-one_click_payslip_revert">#one_click_payslip_revert</a>
+    
+    <li ><a href="#method-i-one_click_payslip_revert2">#one_click_payslip_revert2</a>
+    
+    <li ><a href="#method-i-pay_category">#pay_category</a>
+    
+    <li ><a href="#method-i-payroll_category">#payroll_category</a>
+    
+    <li ><a href="#method-i-paysli">#paysli</a>
+    
+    <li ><a href="#method-i-personal_profile">#personal_profile</a>
+    
+    <li ><a href="#method-i-personal_profile_archived">#personal_profile_archived</a>
+    
+    <li ><a href="#method-i-personal_profile_pdf">#personal_profile_pdf</a>
+    
+    <li ><a href="#method-i-profile">#profile</a>
+    
+    <li ><a href="#method-i-remove">#remove</a>
+    
+    <li ><a href="#method-i-remove_employee">#remove_employee</a>
+    
+    <li ><a href="#method-i-remove_employee2">#remove_employee2</a>
+    
+    <li ><a href="#method-i-search">#search</a>
+    
+    <li ><a href="#method-i-search_emp">#search_emp</a>
+    
+    <li ><a href="#method-i-search_employee">#search_employee</a>
+    
+    <li ><a href="#method-i-select_employee_department">#select_employee_department</a>
+    
+    <li ><a href="#method-i-select_month">#select_month</a>
+    
+    <li ><a href="#method-i-settings">#settings</a>
+    
+    <li ><a href="#method-i-subject_assignment">#subject_assignment</a>
+    
+    <li ><a href="#method-i-update_bank_details">#update_bank_details</a>
+    
+    <li ><a href="#method-i-update_bank_details2">#update_bank_details2</a>
+    
+    <li ><a href="#method-i-update_bank_field">#update_bank_field</a>
+    
+    <li ><a href="#method-i-update_category">#update_category</a>
+    
+    <li ><a href="#method-i-update_department">#update_department</a>
+    
+    <li ><a href="#method-i-update_edit_address_profile">#update_edit_address_profile</a>
+    
+    <li ><a href="#method-i-update_edit_contact_profile">#update_edit_contact_profile</a>
+    
+    <li ><a href="#method-i-update_edit_profile">#update_edit_profile</a>
+    
+    <li ><a href="#method-i-update_grade">#update_grade</a>
+    
+    <li ><a href="#method-i-update_payroll_category">#update_payroll_category</a>
+    
+    <li ><a href="#method-i-update_position">#update_position</a>
+    
+    <li ><a href="#method-i-update_privilege">#update_privilege</a>
+    
+    <li ><a href="#method-i-update_profile">#update_profile</a>
+    
+    <li ><a href="#method-i-update_reporting_manager">#update_reporting_manager</a>
+    
+    <li ><a href="#method-i-update_reporting_manager_name">#update_reporting_manager_name</a>
+    
+    <li ><a href="#method-i-view_employee_payslip">#view_employee_payslip</a>
+    
+    <li ><a href="#method-i-view_payslip">#view_payslip</a>
+    
+    <li ><a href="#method-i-view_payslip_profile">#view_payslip_profile</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-EmployeesController">
+  <h1 id="class-EmployeesController" class="class">
+    class EmployeesController
+  </h1>
+
+  <section class="description">
+    
+<p>employee controller</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-active_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">active_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="active_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">active_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@payroll_category</span>.<span class="ruby-identifier">active</span>
+  <span class="ruby-identifier">pay_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@payroll_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_bank_field</span>
+  <span class="ruby-ivar">@bank_field_new</span> = <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@bank_field</span> = <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bank_field_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Bank field created Successfully&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bank_field</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">bank_field</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_category</span>
+  <span class="ruby-ivar">@employee_category_new</span> = <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@employee_category</span> = <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">category_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;emp_category&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_category</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">emp_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_department</span>
+  <span class="ruby-ivar">@employee_department_new</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@employee_department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">department_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;add_emp_dept&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_department</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">emp_department</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_grade</span>
+  <span class="ruby-ivar">@employee_grade_new</span> = <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@employee_grade</span> = <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">grade_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;emp_grade&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_grade</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">emp_grade</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">payroll_category_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;add_pay&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@payroll_category</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">pay_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_position</span>
+  <span class="ruby-ivar">@employee_position_new</span> = <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@employee_position</span> = <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">position_params</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;add_pos&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_position</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">emp_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-address_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="address_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 622</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@home_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">home_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@office_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">office_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-address_profile_archived" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address_profile_archived</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="address_profile_archived-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 629</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address_profile_archived</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@home_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">home_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@office_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">office_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-address_profile_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address_profile_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="address_profile_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 719</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address_profile_pdf</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@home_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">home_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@office_country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">office_country</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;address_profile_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission1" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission1</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission1-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission1</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@empdept</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%Y%m%d&#39;</span>)
+  <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">emp_no</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission2</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission2_create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission2_create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission2_create-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission2_create</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;Additional details added for #{@employee.first_name}&quot;</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admission3_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;admission2&#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission3" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission3</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission3-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission3</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@bank_fields</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission3_create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission3_create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission3_create-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 298</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission3_create</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@bank_fields</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">post?</span>
+    <span class="ruby-constant">EmployeeBankDetail</span>.<span class="ruby-identifier">bankdetails</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-identifier">params</span>[<span class="ruby-value">:bank_details</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">edit_privilege_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-admission4" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">admission4</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="admission4-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">admission4</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-advance_search_emp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advance_search_emp</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advance_search_emp-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 467</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advance_search_emp</span>
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">adv_search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>])
+  <span class="ruby-ivar">@search</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">adv_search2</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-advance_search_result_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advance_search_result_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advance_search_result_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 473</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advance_search_result_pdf</span>
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:employees</span>]
+  <span class="ruby-ivar">@search</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;advance_search_result_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-allemp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">allemp</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="allemp-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 462</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">allemp</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:viewall</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@employees</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-archived_employee_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_employee_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_employee_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 688</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_employee_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-assign" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assign-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 433</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign</span>
+  <span class="ruby-ivar">@assigned_employee</span> = <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">ass_emp</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-ivar">@subject</span>)
+  <span class="ruby-ivar">@assigned_employees</span> = <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">ass_emp1</span>(<span class="ruby-ivar">@subject</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-assign_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assign_employee-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign_employee</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:department_id</span>])
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">assign</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-assign_subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign_subject</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assign_subject-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 408</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign_subject</span>
+  <span class="ruby-ivar">@batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:subject_assignment</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-ivar">@batch</span>.<span class="ruby-identifier">subjects</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-assign_subject_disp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign_subject_disp</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assign_subject_disp-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 413</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign_subject_disp</span>
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:subject_assignment</span>][<span class="ruby-value">:subject_id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bank_field</span>
+  <span class="ruby-ivar">@bank_fields1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">is_status</span>
+  <span class="ruby-ivar">@bank_fields2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">not_status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bank_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bank_info</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bank_info-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 646</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bank_info</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@bank_details</span> = <span class="ruby-constant">EmployeeBankDetail</span>.<span class="ruby-identifier">bank_details</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bank_info_archived" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bank_info_archived</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bank_info_archived-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 652</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bank_info_archived</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@bank_details</span> = <span class="ruby-constant">EmployeeBankDetail</span>.<span class="ruby-identifier">bank_details</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-bank_info_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bank_info_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="bank_info_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 737</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bank_info_pdf</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@bank_details</span> = <span class="ruby-constant">EmployeeBankDetail</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;bank_info_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-change_reporting_manager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_reporting_manager</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change_reporting_manager-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_reporting_manager</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@reporting_manager</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-ivar">@employee</span>     .<span class="ruby-identifier">reporting_manager_id</span>).<span class="ruby-identifier">first_name</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">reporting_manager_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-change_to_former" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_to_former</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change_to_former-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 669</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_to_former</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-contact_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contact_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contact_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 636</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contact_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-contact_profile_archived" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contact_profile_archived</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contact_profile_archived-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 641</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contact_profile_archived</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-contact_profile_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contact_profile_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contact_profile_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 729</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contact_profile_pdf</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;contact_profile_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@empdept</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">employee_params</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;Employee details added for #{@employee.first_name}&quot;</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admission2_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;admission1&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_archived_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_archived_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_archived_employee-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 674</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_archived_employee</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">post?</span>
+  <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">destroy_all</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">create_archived_employee2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_archived_employee2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_archived_employee2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_archived_employee2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 681</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_archived_employee2</span>
+  <span class="ruby-ivar">@archived_empsloyee</span> = <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">archived_employee</span>
+  <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Employee&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{@employee.first_name}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;archived&#39;)}&quot;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">archived_employee_profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_monthly_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_monthly_payslip</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_monthly_payslip-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 515</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_monthly_payslip</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@salary_date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:salery_slip</span>][<span class="ruby-value">:salery_date</span>])
+  <span class="ruby-identifier">create_monthly_payslip2</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_monthly_payslip2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_monthly_payslip2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_monthly_payslip2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 522</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_monthly_payslip2</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@salary_date</span>.<span class="ruby-identifier">to_date</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">joining_date</span>.<span class="ruby-identifier">to_date</span>
+    <span class="ruby-identifier">flag</span> = <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">create_payslip</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-ivar">@salary_date</span>)
+    <span class="ruby-identifier">paysli</span>(<span class="ruby-identifier">flag</span>, <span class="ruby-ivar">@employee</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">monthly_payslip_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_payslip_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_payslip_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_payslip_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 548</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_payslip_category</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@salary_date</span> = (<span class="ruby-identifier">params</span>[<span class="ruby-value">:salary_date</span>])
+  <span class="ruby-ivar">@created_category</span> = <span class="ruby-constant">IndividualPayslipCategory</span>                         .<span class="ruby-identifier">create_category</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-identifier">params</span>[<span class="ruby-value">:payslip</span>])
+  <span class="ruby-ivar">@created_category</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">monthly_payslip_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete_employee-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 693</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_employee</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@employee</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;#{t(&#39;all&#39;)}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot; #{@employee.first_name}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;del&#39;)}&quot;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-department_employee_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">department_employee_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="department_employee_list-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 484</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">department_employee_list</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:select_department</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@employees</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_bank_field</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@bank_field</span>
+  <span class="ruby-ivar">@bank_field_new</span> = <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Bank field deleted Successfully&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bank_field</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">bank_field</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@employee_category</span>
+  <span class="ruby-ivar">@employee_category_new</span> = <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;emp_delete_category&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_category</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">emp_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_department</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@employee_department</span>
+  <span class="ruby-ivar">@employee_department_new</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;destroy_dept&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_department</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">emp_department</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_grade</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@employee_grade</span>
+  <span class="ruby-ivar">@employee_grade_new</span> = <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;dest_grade&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_grade_new</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">emp_grade</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_payroll_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@payroll_category</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;dest_pay&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@payroll_category</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">pay_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_position</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@employee_position</span>
+  <span class="ruby-ivar">@employee_position_new</span> = <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;dest_pos&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_position</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">dashboard_home_index_path</span>
+  <span class="ruby-identifier">emp_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_address_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_address_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_address_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 757</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_address_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_bank_field</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@bank_field</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_bank_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_bank_info</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_bank_info-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 767</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_bank_info</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@bank_info</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">employee_bank_details</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:bank_field</span>).<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_contact_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_contact_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_contact_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 762</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_contact_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_department</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee_department</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_grade</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee_grade</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@payroll_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_personal_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_personal_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_personal_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 752</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_personal_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_position</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_privilege" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_privilege</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_privilege-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_privilege</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@privilege_tags</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">PrivilegeTag</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 360</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>we can add employee category</p>
+          
+          
+
+          
+          <div class="method-source-code" id="emp_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_category</span>
+  <span class="ruby-ivar">@categories1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">is_status</span>
+  <span class="ruby-ivar">@categories2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">not_status</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_department</span>
+  <span class="ruby-ivar">@departments1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">is_status</span>
+  <span class="ruby-ivar">@departments2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">not_status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_grade</span>
+  <span class="ruby-ivar">@grade1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">is_status</span>
+  <span class="ruby-ivar">@grade2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">not_status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_payroll" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_payroll</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_payroll-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 658</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_payroll</span>
+  <span class="ruby-ivar">@emp</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@payslip</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@emp</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@emp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_payslip</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_payslip-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 788</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_payslip</span>
+  <span class="ruby-ivar">@salary_dates</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@emp</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@payslip</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@emp</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_position</span>
+  <span class="ruby-ivar">@positions1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">is_status</span>
+  <span class="ruby-ivar">@positions2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">not_status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_search_result_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_search_result_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_search_result_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 746</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_search_result_pdf</span>
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:employees</span>]
+  <span class="ruby-ivar">@search</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;emp_search_result_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-employee_individual_payslip_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">employee_individual_payslip_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="employee_individual_payslip_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 592</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">employee_individual_payslip_pdf</span>
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">general_setting</span>
+  <span class="ruby-ivar">@payslip</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:payslip</span>])
+  <span class="ruby-ivar">@independent_categories</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;employee_individual_payslip_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-employee_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">employee_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="employee_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 701</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">employee_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@reporting_manager</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">report</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;employee_profile&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-employee_structure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">employee_structure</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="employee_structure-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 538</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">employee_structure</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>])
+  <span class="ruby-ivar">@independent_categories</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@amount</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:amount</span>]
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]
+  <span class="ruby-ivar">@salary</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">emp</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-ivar">@payroll_category</span>, <span class="ruby-ivar">@amount</span>)
+  <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update_payroll</span>(<span class="ruby-ivar">@payroll_category</span>, <span class="ruby-ivar">@amount</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-genral_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">genral_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="genral_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 599</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">genral_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@reporting_manager</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">rep_man</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-genral_profile_archived" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">genral_profile_archived</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="genral_profile_archived-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 605</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">genral_profile_archived</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inactive_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inactive_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inactive_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inactive_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@payroll_category</span>.<span class="ruby-identifier">inactive</span>
+  <span class="ruby-identifier">pay_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@payroll_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_emp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_emp</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_emp-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_emp</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:subject_assignment</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@assigned_employees</span> = <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">assign_emp</span>(<span class="ruby-ivar">@subject</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-monthly_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">monthly_payslip</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="monthly_payslip-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 489</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">monthly_payslip</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@independent_categories</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_bank_field</span>
+  <span class="ruby-ivar">@bank_field_new</span> = <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">bank_field</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@bank_field_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_category</span>
+  <span class="ruby-ivar">@employee_category_new</span> = <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">emp_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee_category_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_department</span>
+  <span class="ruby-ivar">@employee_department_new</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">emp_department</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee_department_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_grade</span>
+  <span class="ruby-ivar">@employee_grade_new</span> = <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">emp_grade</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee_grade_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">pay_category</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@payroll_category_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_position</span>
+  <span class="ruby-ivar">@employee_position_new</span> = <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">emp_position</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee_position_new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-one_click_pay" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_click_pay</span><span
+            class="method-args">(salary_date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_click_pay-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 503</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_click_pay</span>(<span class="ruby-identifier">salary_date</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">payslip_employees_path</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;#{t(&#39;one&#39;)}&quot;</span> <span class="ruby-operator">+</span>                       <span class="ruby-node">&quot;:#{salary_date.strftime(&#39;%B&#39;)}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;one_click&#39;)}&quot;</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-one_click_payslip_generate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_click_payslip_generate</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_click_payslip_generate-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 495</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_click_payslip_generate</span>
+  <span class="ruby-identifier">salary_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:payslip</span>][<span class="ruby-value">:joining_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-ivar">@employees</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">already_created</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:employee_id</span>)
+  <span class="ruby-ivar">@employees</span>.<span class="ruby-identifier">one_click</span>(<span class="ruby-ivar">@employees</span>, <span class="ruby-identifier">already_created</span>, <span class="ruby-identifier">salary_date</span>)
+  <span class="ruby-identifier">one_click_pay</span>(<span class="ruby-identifier">salary_date</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-one_click_payslip_revert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_click_payslip_revert</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_click_payslip_revert-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 563</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_click_payslip_revert</span>
+  <span class="ruby-ivar">@salary_date</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:payslip</span>][<span class="ruby-value">:joining_date</span>].<span class="ruby-identifier">to_date</span>
+  <span class="ruby-ivar">@b</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@salary_dates</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:salary_date</span>)
+  <span class="ruby-identifier">one_click_payslip_revert2</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">employees_payslip_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-one_click_payslip_revert2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_click_payslip_revert2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_click_payslip_revert2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 570</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_click_payslip_revert2</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">present?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@b</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-ivar">@salary_date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%b&#39;</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Payslip of &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">first_name</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;pay&#39;)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pay_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pay_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pay_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pay_category</span>
+  <span class="ruby-ivar">@payroll_categories1</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">not_deduction</span>
+  <span class="ruby-ivar">@payroll_categories2</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">is_deduction</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 510</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">payroll_category</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-paysli" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">paysli</span><span
+            class="method-args">(flag, employee)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="paysli-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 530</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">paysli</span>(<span class="ruby-identifier">flag</span>, <span class="ruby-identifier">employee</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">flag</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Payslip of &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">first_name</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;p&#39;)}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Payslip of &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">first_name</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;#{t(&#39;paysli&#39;)}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-personal_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">personal_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="personal_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 610</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">personal_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">per</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-personal_profile_archived" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">personal_profile_archived</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="personal_profile_archived-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 616</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">personal_profile_archived</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">per</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-personal_profile_pdf" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">personal_profile_pdf</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="personal_profile_pdf-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 710</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">personal_profile_pdf</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>]).<span class="ruby-identifier">take</span>     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@country</span> = <span class="ruby-constant">Country</span>.<span class="ruby-identifier">per</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-ivar">@general_setting</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;personal_profile_pdf&#39;</span>, <span class="ruby-identifier">layout</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@reporting_manager</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-ivar">@employee</span>     .<span class="ruby-identifier">reporting_manager_id</span>).<span class="ruby-identifier">first_name</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">reporting_manager_id</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 664</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_employee-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 438</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_employee</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:department_id</span>])
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">remove_employee2</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_employee2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_employee2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_employee2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 446</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_employee2</span>
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@assigned_employee</span> = <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">rem_emp</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-ivar">@subject</span>)
+  <span class="ruby-ivar">@assigned_employee</span>.<span class="ruby-identifier">dest</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-ivar">@subject</span>)
+  <span class="ruby-ivar">@assigned_employees</span> = <span class="ruby-constant">EmployeeSubject</span>.<span class="ruby-identifier">rem_emp2</span>(<span class="ruby-ivar">@subject</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@reporting_man</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">search2</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:advance_search</span>]       , <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search_emp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_emp</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search_emp-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 457</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search_emp</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">search2</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:advance_search</span>], <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">Employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search_employee-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 453</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search_employee</span>
+  <span class="ruby-ivar">@department</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select_employee_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_employee_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_employee_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 480</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_employee_department</span>
+  <span class="ruby-ivar">@department</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select_month" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_month</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_month-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 558</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_month</span>
+  <span class="ruby-ivar">@salary_dates</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:view_payslip</span>][<span class="ruby-value">:id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-settings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">settings</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="settings-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">settings</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subject_assignment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject_assignment</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="subject_assignment-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject_assignment</span>
+  <span class="ruby-ivar">@batches</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:course</span>).<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_bank_details" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_bank_details</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_bank_details-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 773</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_bank_details</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-identifier">params</span>[<span class="ruby-value">:banks</span>].<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@bank_info</span> = <span class="ruby-constant">EmployeeBankDetail</span>.<span class="ruby-identifier">up</span>(<span class="ruby-ivar">@employee</span>, <span class="ruby-identifier">k</span>)
+    <span class="ruby-ivar">@bank_info</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">bank_info</span><span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">:bank_info</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">update_bank_details2</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_bank_details2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_bank_details2</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_bank_details2-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 783</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_bank_details2</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-node">&quot;#{t(&#39;bank&#39;)}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot; #{@employee.first_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_bank_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_bank_field</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_bank_field-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_bank_field</span>
+  <span class="ruby-ivar">@bank_field_new</span> = <span class="ruby-constant">BankField</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;up_bank&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bank_field</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">bank_field_params</span>)
+  <span class="ruby-identifier">bank_field</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_category</span>
+  <span class="ruby-ivar">@employee_category_new</span> = <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;emp_update_category&#39;</span>) <span class="ruby-keyword">if</span>      <span class="ruby-ivar">@employee_category</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">category_params</span>)
+  <span class="ruby-identifier">emp_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_department" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_department</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_department-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_department</span>
+  <span class="ruby-ivar">@employee_department_new</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;update_dept&#39;</span> <span class="ruby-keyword">if</span>      <span class="ruby-ivar">@employee_department</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">department_params</span>)
+  <span class="ruby-identifier">emp_department</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_edit_address_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_edit_address_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_edit_address_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 384</span>
+<span class="ruby-keyword">def</span>  <span class="ruby-identifier">update_edit_address_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;Address_details&#39;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">first_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;edit_address_profile&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_edit_contact_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_edit_contact_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_edit_contact_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 394</span>
+<span class="ruby-keyword">def</span>  <span class="ruby-identifier">update_edit_contact_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;Contact_details&#39;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">first_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;edit_contact_profile&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_edit_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_edit_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_edit_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_edit_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;Personal_details&#39;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">first_name</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;edit_personal_profile&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_grade" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_grade</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_grade-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_grade</span>
+  <span class="ruby-ivar">@employee_grade_new</span> = <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;up_grade&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_grade</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">grade_params</span>)
+  <span class="ruby-identifier">emp_grade</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_payroll_category" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_payroll_category</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_payroll_category-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_payroll_category</span>
+  <span class="ruby-ivar">@payroll_category_new</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@payroll_category</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;up_pay&#39;</span>) <span class="ruby-keyword">if</span>      <span class="ruby-ivar">@payroll_category</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">payroll_category_params</span>)
+  <span class="ruby-identifier">pay_category</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_position-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_position</span>
+  <span class="ruby-ivar">@employee_position_new</span> = <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;up_pos&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee_position</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">position_params</span>)
+  <span class="ruby-identifier">emp_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_privilege" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_privilege</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_privilege-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_privilege</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_employee_id</span>(<span class="ruby-node">&quot;#{@employee.id}&quot;</span>)
+  <span class="ruby-identifier">privilege_tag</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:privilege</span>]
+  <span class="ruby-constant">PrivilegeUser</span>.<span class="ruby-identifier">privilege_update</span>(<span class="ruby-identifier">privilege_tag</span>, <span class="ruby-ivar">@user</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admission4_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_profile</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;edit_profile&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_reporting_manager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_reporting_manager</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_reporting_manager-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_reporting_manager</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@employee</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">employee_params</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">profile_employees_path</span>(<span class="ruby-ivar">@employee</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_reporting_manager_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_reporting_manager_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_reporting_manager_name-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_reporting_manager_name</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@reporting_manager</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:reporting_manager_id</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-view_employee_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_employee_payslip</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="view_employee_payslip-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 587</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_employee_payslip</span>
+  <span class="ruby-ivar">@payslip</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">view</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:salary_date</span>], <span class="ruby-identifier">params</span>[<span class="ruby-value">:employee_id</span>])
+  <span class="ruby-ivar">@independent_categories</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-view_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_payslip</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="view_payslip-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 576</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_payslip</span>
+  <span class="ruby-ivar">@salary_dates</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@department</span> = <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+  <span class="ruby-ivar">@employees</span> = <span class="ruby-ivar">@department</span>.<span class="ruby-identifier">employees</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-view_payslip_profile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_payslip_profile</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="view_payslip_profile-source">
+            <pre><span class="ruby-comment"># File app/controllers/employees_controller.rb, line 582</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_payslip_profile</span>
+  <span class="ruby-ivar">@salary_dates</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@employee</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

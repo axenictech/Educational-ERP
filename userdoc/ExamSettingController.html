@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ExamSettingController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-create_flash">#create_flash</a>
+    
+    <li ><a href="#method-i-createrank">#createrank</a>
+    
+    <li ><a href="#method-i-createrank_flash">#createrank_flash</a>
+    
+    <li ><a href="#method-i-decrease_priority">#decrease_priority</a>
+    
+    <li ><a href="#method-i-destroy">#destroy</a>
+    
+    <li ><a href="#method-i-destroy_flash">#destroy_flash</a>
+    
+    <li ><a href="#method-i-destroy_rank">#destroy_rank</a>
+    
+    <li ><a href="#method-i-destroy_rank_flash">#destroy_rank_flash</a>
+    
+    <li ><a href="#method-i-edit">#edit</a>
+    
+    <li ><a href="#method-i-edit_rank">#edit_rank</a>
+    
+    <li ><a href="#method-i-inc_dec">#inc_dec</a>
+    
+    <li ><a href="#method-i-increase_priority">#increase_priority</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-new">#new</a>
+    
+    <li ><a href="#method-i-newrank">#newrank</a>
+    
+    <li ><a href="#method-i-ranklevel">#ranklevel</a>
+    
+    <li ><a href="#method-i-select">#select</a>
+    
+    <li ><a href="#method-i-selectrank">#selectrank</a>
+    
+    <li ><a href="#method-i-setting">#setting</a>
+    
+    <li ><a href="#method-i-settingrank">#settingrank</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+    <li ><a href="#method-i-update_flash">#update_flash</a>
+    
+    <li ><a href="#method-i-update_rank">#update_rank</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ExamSettingController">
+  <h1 id="class-ExamSettingController" class="class">
+    class ExamSettingController
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Exam.html">Exam</a> Setting Controller</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@class_dess</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>
+  <span class="ruby-ivar">@class_des1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params_class</span>)
+  <span class="ruby-identifier">create_flash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_flash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_flash-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_flash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@class_des1</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;create_class&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_create_class&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-createrank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">createrank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="createrank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">createrank</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_id</span>])
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params_rank</span>)
+  <span class="ruby-ivar">@max_rank</span> = <span class="ruby-constant">RankingLevel</span>.<span class="ruby-identifier">maximum</span>(<span class="ruby-string">&#39;prioriy&#39;</span>)
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">max</span>(<span class="ruby-ivar">@max_rank</span>, <span class="ruby-ivar">@rank_lev1</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rank_lev1</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;create_rank&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_create_rank&#39;</span>)
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;newrank&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-createrank_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">createrank_flash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="createrank_flash-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">createrank_flash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rank_lev1</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;create_rank&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_create_rank&#39;</span>)
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;newrank&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-decrease_priority" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decrease_priority</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="decrease_priority-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrease_priority</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">inc_dec</span>
+  <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:index</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">decrease_logic</span>(<span class="ruby-ivar">@rank_levels</span>, <span class="ruby-identifier">selected</span>)
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@rank_lev1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@class_des1</span>
+  <span class="ruby-ivar">@class_dess</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>
+  <span class="ruby-ivar">@class_des1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:class_des</span>])
+  <span class="ruby-identifier">destroy_flash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_flash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_flash-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_flash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@class_des1</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;del_class&#39;</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">new_exam_setting_path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_del_class&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_rank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_rank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_rank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_rank</span>
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-constant">RankingLevel</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:delete</span>, <span class="ruby-ivar">@ranking_levels</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-ivar">@rank_lev1</span>.<span class="ruby-identifier">course</span>
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-identifier">destroy_rank_flash</span>(<span class="ruby-ivar">@rank_lev1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy_rank_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy_rank_flash</span><span
+            class="method-args">(rank_lev1)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy_rank_flash-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_rank_flash</span>(<span class="ruby-identifier">rank_lev1</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rank_lev1</span>.<span class="ruby-identifier">destroy</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;del_rank&#39;</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">newrank_exam_setting_index_path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_del_rank&#39;</span>)
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;newrank&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@class_des1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:class_des</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@class_des1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_rank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_rank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit_rank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit_rank</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_id</span>])
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:update</span>, <span class="ruby-ivar">@rank_lev1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inc_dec" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inc_dec</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inc_dec-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inc_dec</span>
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:format</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-increase_priority" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">increase_priority</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="increase_priority-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">increase_priority</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">inc_dec</span>
+  <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:index</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">increase_logic</span>(<span class="ruby-ivar">@rank_levels</span>, <span class="ruby-identifier">selected</span>)
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@rank_lev1</span>
+ <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">GradingLevel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">ClassDesignation</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-newrank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">newrank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="newrank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">newrank</span>
+  <span class="ruby-ivar">@courses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-constant">RankingLevel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ranklevel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ranklevel</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ranklevel-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ranklevel</span>
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@class_dess</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:read</span>, <span class="ruby-ivar">@class_dess</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-selectrank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">selectrank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="selectrank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">selectrank</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course</span>][<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@rank_levels</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;prioriy ASC&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-setting" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setting</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setting-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setting</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@class_des</span> = <span class="ruby-constant">ClassDesignation</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@class_dess</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>
+  <span class="ruby-ivar">@class_des1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>.<span class="ruby-identifier">build</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@class_des</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-settingrank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">settingrank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="settingrank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">settingrank</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@rank_lev</span> = <span class="ruby-constant">RankingLevel</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@rank_levels</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>
+  <span class="ruby-ivar">@rank_lev1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">ranking_levels</span>.<span class="ruby-identifier">build</span>
+  <span class="ruby-identifier">authorize!</span> <span class="ruby-value">:create</span>, <span class="ruby-ivar">@rank_lev</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_id</span>])
+  <span class="ruby-ivar">@class_dess</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>
+  <span class="ruby-ivar">@class_des1</span> = <span class="ruby-ivar">@course</span>.<span class="ruby-identifier">class_designations</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:class_des</span>])
+  <span class="ruby-identifier">update_flash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_flash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_flash-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_flash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@class_des1</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">params_class</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;update_class&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_update_class&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_rank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_rank</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_rank-source">
+            <pre><span class="ruby-comment"># File app/controllers/exam_setting_controller.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_rank</span>
+  <span class="ruby-ivar">@course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:course_id</span>])
+  <span class="ruby-identifier">ranklevel</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@rank_lev1</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">params_rank</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;update_rank&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;not_update_rank&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Employee - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Activity.html">Activity</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-adv_search">::adv_search</a>
+    
+    <li ><a href="#method-c-adv_search2">::adv_search2</a>
+    
+    <li ><a href="#method-c-att_leave">::att_leave</a>
+    
+    <li ><a href="#method-c-emp">::emp</a>
+    
+    <li ><a href="#method-c-employee_find">::employee_find</a>
+    
+    <li ><a href="#method-c-one_click">::one_click</a>
+    
+    <li ><a href="#method-c-rep_man">::rep_man</a>
+    
+    <li ><a href="#method-c-report">::report</a>
+    
+    <li ><a href="#method-c-search2">::search2</a>
+    
+    <li ><a href="#method-i-archived_employee">#archived_employee</a>
+    
+    <li ><a href="#method-i-assign">#assign</a>
+    
+    <li ><a href="#method-i-create_payslip">#create_payslip</a>
+    
+    <li ><a href="#method-i-emp_no">#emp_no</a>
+    
+    <li ><a href="#method-i-full_name">#full_name</a>
+    
+    <li ><a href="#method-i-leave_reset">#leave_reset</a>
+    
+    <li ><a href="#method-i-personal_salary">#personal_salary</a>
+    
+    <li ><a href="#method-i-remove">#remove</a>
+    
+    <li ><a href="#method-i-salary">#salary</a>
+    
+    <li ><a href="#method-i-update_payroll">#update_payroll</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Employee">
+  <h1 id="class-Employee" class="class">
+    class Employee
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Employee.html">Employee</a></p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-adv_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">adv_search</span><span
+            class="method-args">(p)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="adv_search-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">adv_search</span>(<span class="ruby-identifier">p</span>)
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;concat_ws(&#39; &#39;,first_name,last_name) like &#39;#{p[:name]}%&#39; COLLATE utf8_bin&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:gender</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">eql?</span> <span class="ruby-string">&#39;All&#39;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+        <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;gender like &#39;#{p[:gender]}&#39;&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND gender like &#39;#{p[:gender]}&#39;&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_category_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;employee_category_id = #{p[:employee_category_id]}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_category_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_category_id = #{p[:employee_category_id]}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_category_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:blood_group</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;blood_group like &#39;#{p[:blood_group]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:blood_group</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND blood_group like &#39;#{p[:blood_group]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:blood_group</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:marital_status</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;marital_status like &#39;#{p[:marital_status]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:marital_status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND marital_status like &#39;#{p[:marital_status]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:marital_status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:country_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;country_id=&#39;#{p[:country_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:country_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND country_id =&#39;#{p[:country_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:country_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:joining_date</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;joining_date=&#39;#{p[:joining_date]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:joining_date</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND joining_date =&#39;#{p[:joining_date]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:joining_date</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_department_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;employee_department_id=&#39;#{p[:employee_department_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_department_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_department_id=&#39;#{p[:employee_department_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_department_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_position_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;employee_position_id=&#39;#{p[:employee_position_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_position_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_position_id=&#39;#{p[:employee_position_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_position_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_grade_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;employee_grade_id=&#39;#{p[:employee_grade_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_grade_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_grade_id=&#39;#{p[:employee_grade_id]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_grade_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:date_of_birth</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;date_of_birth=&#39;#{p[:date_of_birth]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:date_of_birth</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND date_of_birth =&#39;#{p[:date_of_birth]}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:date_of_birth</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">status</span> = <span class="ruby-identifier">p</span>[<span class="ruby-value">:status</span>]
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;all&#39;</span>
+      <span class="ruby-ivar">@employee1</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:employee_department</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+      <span class="ruby-ivar">@employee2</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:employee_department</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+      <span class="ruby-ivar">@employees</span> = <span class="ruby-ivar">@employee1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@employee2</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;present&#39;</span>
+      <span class="ruby-ivar">@employees</span> = <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:employee_department</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@employees</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:employee_department</span>).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@employees</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-adv_search2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">adv_search2</span><span
+            class="method-args">(p)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="adv_search2-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">adv_search2</span>(<span class="ruby-identifier">p</span>)
+  <span class="ruby-identifier">search</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Name: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span>  <span class="ruby-identifier">p</span>[<span class="ruby-value">:gender</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;All&#39;</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Gender: All&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Gender: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Blood group: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:blood_group</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:blood_group</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Marital Status: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:marital_status</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:marital_status</span>].<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:country_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Country: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Country</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">p</span>[<span class="ruby-value">:country_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_category_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Category: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EmployeeCategory</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_category_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;Joining date:&#39;</span> <span class="ruby-operator">+</span>  <span class="ruby-identifier">p</span>[<span class="ruby-value">:joining_date</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">p</span>[<span class="ruby-value">:joining_date</span>].<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_department_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Department: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EmployeeDepartment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_department_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+   <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_position_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Position: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EmployeePosition</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_position_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+   <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_grade_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Grade: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">EmployeeGrade</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">p</span>[<span class="ruby-value">:employee_grade_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+   <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">searchs</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Date of birth: &#39;</span> <span class="ruby-operator">+</span>  <span class="ruby-identifier">p</span>[<span class="ruby-value">:date_of_birth</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">p</span>[<span class="ruby-value">:date_of_birth</span>].<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;present&#39;</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;Staus: Present student&#39;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;former&#39;</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;Staus: Former student&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">search</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Status: All student&#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">search</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-att_leave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">att_leave</span><span
+            class="method-args">(emp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="att_leave-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 412</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">att_leave</span>(<span class="ruby-identifier">emp</span>)
+  <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">EmployeeLeaveType</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@leave</span> = <span class="ruby-constant">EmployeeLeave</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">id</span>,                                        <span class="ruby-identifier">employee_leave_type_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">id</span>,                                       <span class="ruby-identifier">leave_count</span><span class="ruby-operator">:</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">max_leave_count</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-emp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp</span><span
+            class="method-args">(emp, payroll, amount)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">emp</span>(<span class="ruby-identifier">emp</span>, <span class="ruby-identifier">payroll</span>, <span class="ruby-identifier">amount</span>)
+  <span class="ruby-identifier">salary</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">payroll</span>).<span class="ruby-identifier">take</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">salary</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">payroll</span>, <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">amount</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">salary</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">amount</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-employee_find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">employee_find</span><span
+            class="method-args">(emp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="employee_find-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">employee_find</span>(<span class="ruby-identifier">emp</span>)
+  <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">emp</span>).<span class="ruby-identifier">first_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-one_click" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_click</span><span
+            class="method-args">(employees, already_created, salary_date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_click-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">one_click</span>(<span class="ruby-identifier">employees</span>, <span class="ruby-identifier">already_created</span>, <span class="ruby-identifier">salary_date</span>)
+  <span class="ruby-identifier">employees</span>.<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:id</span>)
+  <span class="ruby-identifier">employees</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">emp</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">already_created</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>
+
+    <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">tot</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">tot_deduction</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">grand_tot</span> = <span class="ruby-value">0</span>
+          <span class="ruby-identifier">no_deduction</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_deduction</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+          <span class="ruby-identifier">no_deduction</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">amount</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">j</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:amount</span>)
+            <span class="ruby-identifier">amount</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">tot</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_f</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">is_deduction</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_deduction</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+          <span class="ruby-identifier">is_deduction</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">amount</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:amount</span>)
+            <span class="ruby-identifier">amount</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>  <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">tot_deduction</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">j</span>.  <span class="ruby-identifier">to_f</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">grand_tot</span> = <span class="ruby-identifier">tot</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">tot_deduction</span>
+
+          <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">grand_tot</span>, <span class="ruby-identifier">is_approved</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">salary_date</span>)
+          <span class="ruby-identifier">counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-rep_man" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rep_man</span><span
+            class="method-args">(emp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rep_man-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 396</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rep_man</span>(<span class="ruby-identifier">emp</span>)
+  <span class="ruby-identifier">find</span>(<span class="ruby-identifier">emp</span>.<span class="ruby-identifier">reporting_manager_id</span>).<span class="ruby-identifier">first_name</span>       <span class="ruby-keyword">unless</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">reporting_manager_id</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report</span><span
+            class="method-args">(emp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="report-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">report</span>(<span class="ruby-identifier">emp</span>)
+  <span class="ruby-identifier">find</span>(<span class="ruby-identifier">emp</span>.<span class="ruby-identifier">reporting_manager_id</span>).<span class="ruby-identifier">first_name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">reporting_manager_id</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search2</span><span
+            class="method-args">(a, s)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search2-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search2</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">dep_id</span> = <span class="ruby-identifier">a</span>[<span class="ruby-value">:employee_department_id</span>]
+    <span class="ruby-identifier">cat_id</span> = <span class="ruby-identifier">a</span>[<span class="ruby-value">:employee_category_id</span>]
+    <span class="ruby-identifier">pos_id</span> = <span class="ruby-identifier">a</span>[<span class="ruby-value">:employee_position_id</span>]
+    <span class="ruby-identifier">grd_id</span> = <span class="ruby-identifier">a</span>[<span class="ruby-value">:employee_grade_id</span>]
+    <span class="ruby-identifier">other_conditions</span> = <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">other_conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_department_id = &#39;#{dep_id}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dep_id</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">other_conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_category_id = &#39;#{cat_id}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cat_id</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">other_conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_position_id = &#39;#{pos_id}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos_id</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">other_conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND employee_grade_id = &#39;#{grd_id}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">grd_id</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">search1</span>(<span class="ruby-identifier">other_conditions</span>, <span class="ruby-identifier">s</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;id ASC&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-archived_employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_employee-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_employee</span>
+  <span class="ruby-identifier">employee_attributes</span> = <span class="ruby-identifier">attributes</span>
+  <span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">status_description</span><span class="ruby-operator">:</span> <span class="ruby-identifier">status</span>)
+  <span class="ruby-identifier">employee_attributes</span>[<span class="ruby-string">&#39;former_id&#39;</span>] = <span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">archived_employee</span> = <span class="ruby-constant">ArchivedEmployee</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">employee_attributes</span>)
+  <span class="ruby-identifier">archived_employee</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-assign" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assign</span><span
+            class="method-args">(batch, id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assign-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">employee_id</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">assigned_emps</span> = []
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assigned_emps</span> = <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">employee_id</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assigned_emps</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">update</span> <span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">assigned_emps</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-identifier">assigned_emps</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;,&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_payslip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_payslip</span><span
+            class="method-args">(employee, salary_date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_payslip-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_payslip</span>(<span class="ruby-identifier">employee</span>, <span class="ruby-identifier">salary_date</span>)
+  <span class="ruby-identifier">start_date</span> = <span class="ruby-identifier">salary_date</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">salary_date</span>.<span class="ruby-identifier">day</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">days</span>)
+  <span class="ruby-identifier">end_date</span> = <span class="ruby-identifier">start_date</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>.<span class="ruby-identifier">month</span>
+  <span class="ruby-identifier">payslip_exists</span> = <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">monthly_payslips</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">start_date</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_date</span>).<span class="ruby-identifier">take</span>
+  <span class="ruby-identifier">total_salary</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">tot_deduction</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">amounts</span> = []
+  <span class="ruby-identifier">is_deduction</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_deduction</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">is_deduction</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">amounts</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:amount</span>)
+    <span class="ruby-identifier">amounts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">tot_deduction</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">amo</span> = []
+  <span class="ruby-identifier">is_deduction</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_deduction</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">is_deduction</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">amo</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:amount</span>)
+    <span class="ruby-identifier">amo</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">total_salary</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">total_salary</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">tot_deduction</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">b</span> = <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">salary_date</span>).<span class="ruby-identifier">pluck</span>(<span class="ruby-value">:salary_date</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">salary_date</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%b&#39;</span>)
+      <span class="ruby-identifier">flag</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">MonthlyPayslip</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">salary_date</span>, <span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">employee</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">total_salary</span>)
+    <span class="ruby-identifier">flag</span> = <span class="ruby-value">0</span>
+     <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">flag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emp_no" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emp_no</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="emp_no-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">emp_no</span>
+  <span class="ruby-identifier">date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%Y%m%d&#39;</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">employee_number</span> = <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;1&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">employee_number</span> = <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span>        <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-full_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="full_name-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_name</span>
+  <span class="ruby-node">&quot;#{first_name} #{last_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-leave_reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">leave_reset</span><span
+            class="method-args">(emp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="leave_reset-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">leave_reset</span>(<span class="ruby-identifier">emp</span>)
+  <span class="ruby-identifier">leave_count</span> = <span class="ruby-constant">EmployeeLeave</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">emp</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">leave_count</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">leave_type</span> = <span class="ruby-constant">EmployeeLeaveType</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">employee_leave_type_id</span>)
+    <span class="ruby-identifier">default_leave_count</span> = <span class="ruby-identifier">leave_type</span>.<span class="ruby-identifier">max_leave_count</span>
+    <span class="ruby-identifier">available_leave</span> = <span class="ruby-identifier">default_leave_count</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">leave_taken</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">leave_taken</span><span class="ruby-operator">:</span> <span class="ruby-identifier">leave_taken</span>, <span class="ruby-identifier">leave_count</span><span class="ruby-operator">:</span> <span class="ruby-identifier">available_leave</span>,                <span class="ruby-identifier">reset_date</span><span class="ruby-operator">:</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-personal_salary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">personal_salary</span><span
+            class="method-args">(date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="personal_salary-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">personal_salary</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-identifier">individual_payslip_categories</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">date</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove</span><span
+            class="method-args">(batch, id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>(<span class="ruby-identifier">batch</span>, <span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assigned_emps</span> = <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">employee_id</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-identifier">assigned_emps</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assign_employees</span> = <span class="ruby-identifier">assigned_emps</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;,&#39;</span>)
+  <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">update</span> <span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">assign_employees</span>
+  <span class="ruby-identifier">assign_employees</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-salary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">salary</span><span
+            class="method-args">(date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="salary-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 405</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">salary</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-identifier">monthly_payslips</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">salary_date</span><span class="ruby-operator">:</span> <span class="ruby-identifier">date</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_payroll" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_payroll</span><span
+            class="method-args">(payroll_id, amount)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_payroll-source">
+            <pre><span class="ruby-comment"># File app/models/employee.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_payroll</span>(<span class="ruby-identifier">payroll_id</span>, <span class="ruby-identifier">amount</span>)
+  <span class="ruby-ivar">@payrolls</span> = <span class="ruby-constant">PayrollCategory</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">payroll_id</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@payrolls</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@payrolls</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">payrol</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">p_amount</span> = (<span class="ruby-identifier">amount</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">payrol</span>.<span class="ruby-identifier">percentage</span>.<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">/</span> <span class="ruby-value">100</span>
+      <span class="ruby-ivar">@payroll_salary</span> = <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">payrol</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@payroll_salary</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-constant">EmployeeSaleryStructure</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">employee_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">payroll_category_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">payrol</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p_amount</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@payroll_salary</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">amount</span><span class="ruby-operator">:</span> <span class="ruby-identifier">p_amount</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">update_payroll</span>(<span class="ruby-identifier">payrol</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">p_amount</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,10 +1,13 @@
 
 <%= form_for :exam_group_select,url:{action: 'generate_exam_report'},method: :get do |f| %>
 <div class="form-group">
-
+   
   <b>Select Exam Group:</b>
-    
+      <%if @batch.students.present? %>
       <%= f.select :id, @exam_groups.collect {|s| [s.name,s.id]}, {prompt:true},class:"form-control",style: "width: 300px"%>
+       <%else%>
+          <%= f.select :id,'', {prompt:true},class:"form-control",style: "width: 300px"%>
+       <%end%>
       </div>
       <br>
       <div class="form-group">

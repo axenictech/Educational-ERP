@@ -14,7 +14,7 @@ class EmployeesController < ApplicationController
   def settings
     authorize! :create, @employee
   end
-
+  # we can add employee category
   def emp_category
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
