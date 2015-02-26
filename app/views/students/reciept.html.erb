@@ -23,15 +23,7 @@
     </style>
   </head>
   <body>
-    <div id="heading">
-      <div id="head">
-        <%= @general_setting.school_or_college_name%><br/>
-        <div id="head_info">
-          <%= @general_setting.school_or_college_address%><br/><br/>
-          <%= @general_setting.school_or_college_phone_no%>
-        </div>
-      </div>
-      <hr>
+    
       <br/><h3><center>Student Fee Reciept</center></h3><br/>
       <table cellpadding="5" cellspacing="5" width="700">
         <tr><th colspan="3" bgcolor="99CCFF" align="left">Student Details</th></tr>
@@ -178,6 +170,6 @@
           <td align="right"><b><%=pay_amount=total_fee+fines-paid%><b></td>
         </tr>
       </table>
-    </div>
+    
   </body>
 </html>

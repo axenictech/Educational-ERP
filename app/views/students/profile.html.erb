@@ -14,6 +14,7 @@
       <%= link_to "Send email",email_students_path(@student), class: "btn btn-primary-link btn-xs" %>
       <%= link_to "Delete", remove_students_path(@student), class: "btn btn-primary-link btn-xs" %>
       <%= link_to 'PDF Report',student_profile_student_path(@student,format:"pdf"),class: "btn btn-primary-link btn-xs" %>
+      <%= link_to 'Admission Reciept',reciept_students_path(@student),class: "btn btn-primary-link btn-xs" %>
     </div>
   </div>
 </div>

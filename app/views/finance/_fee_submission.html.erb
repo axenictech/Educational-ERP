@@ -5,157 +5,193 @@
         <h2>Fee collection </h2>
       </div>
       <div class="box-content">
-
-      <div class="form-group"><b>Fee Receipt No</b>&nbsp;&nbsp;<span>:</span><%= @fee.nil? ? t('n_a') : @fee.receipt_no %></div>
-      <% unless @category.nil? %>
-        <div class="form-group"><b>Fee Category Name:</b>&nbsp;&nbsp;<span>:</span><%= @category.name %></div>
-      <% end %>
-      <% unless @student.category.nil? %>
-        <div class="form-group"><b>Student Category:</b>&nbsp;&nbsp;<span>:</span><%= @student.category.name %></div>
-      <% end %>
-      <div class="form-group"><b>Fee Collection Name:&nbsp;&nbsp;<span>:</span><%= @collection.name %></div>
-      <hr/>
-      <% if @collection.is_due_date? %>
-      <%unless @fee.is_paid?%>
-       <%= form_for :fine,url:{action:'pay_fine',finance_fee_id:@fee.id,id:@collection.id},remote:true do |f|%>
-          <div align="center">
-            <div> Due date has been exceeded. Please collect fine amount.
-            <%= text_field_tag :fine%>
-            <%= f.submit 'Add Fine',class: "btn btn-primary"%>
-            </div>
-          </div>
-        <%end%> 
-      <%end%>
-      <%end%>
-      <div>
-        <table class="fc-header" style="width:100%">
-        <tbody>
-          <tr>
-            <td class="fc-header-left">
-              <%unless @student.id==@finance_fees.first.student.id%>
-                <%= link_to '◄ prev',student_fees_details_finance_index_path(id:@collection.id,finance_fee_id:@previous),remote:true,class: "fc-button fc-button-prev fc-state-default fc-corner-left"%>
-              <%end%>
-              <%unless @student.id==@finance_fees.last.student.id%>
-                <%= link_to 'next ►',student_fees_details_finance_index_path(id:@collection.id,finance_fee_id:@next),remote:true, class: "fc-button fc-button-next fc-state-default fc-corner-right"%></p>
-              <%end%>
-              <span class="fc-header-space"></span>
-            </td>
-            <td class="fc-header-center">
-              <span class="fc-header-title"><h2><%= @student.first_name+" "+@student.last_name %></h2></span>
-            </td>
-            <td class="fc-header-right">
-              <span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active" unselectable="on">Students fees</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <br/>
-      <div>
-      <br/>
-      <table align="center" class="table table-striped table-bordered" style="width:80%">
-      <%total=0%>
-      <%discount=0%>
-      <%fines=0%>
-        <tr class="tr-head">
-        <th>Sl no</th>
-        <th>Particular</th>
-        <th>Amount(Rs.)</th>
-        </tr>
-      <tr><td colspan="3"></td></tr>
-      <% unless @particulars.nil?%>
-          <% @particulars.each_with_index do |p,i|%>
-            <tr>
-            <td class="col-3"><%= i+1%></td>
-            <td class="col-3"><%= p.name%></td>
-            <td class="col-3"><%= amt = p.amount%></td>
-            </tr>
-          <%total+=amt%>
-          <%end%>
-      <%else%>
-      <h5>No fee collection particulars found</h5>
-      <%end%>
-      <tr><td colspan="3"></td></tr>
-      <tr class="tr-head"><th colspan="3">Discount</th></tr>
-      <% unless @discounts.nil?%>
-          <% @discounts.each_with_index do |d,i|%>
-            <tr>
-            <td class="col-3"><%= i+1%></td>
-            <td class="col-3"><%= d.name+"("+d.discount.to_s+"%)"%></td>
-            <td class="col-3"><%= dis = d.collection_discount(total)%></td>
-            </tr>
-            <%discount+=dis%>
-          <%end%>
-      <%else%>
-      <h5>No fee collection discount found</h5>
-      <%end%>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="2" align="right">Total Discount:</td><td><%= discount%></td></tr>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="2" align="right">Total Fees:</td><td><%= total_fee =total - discount%></td></tr>
-      <%unless@fines.empty?%>
-      <tr><td colspan="3"></td></tr>
-      <tr class="tr-head"><th colspan="3">Fines:</th></tr>
-        <% @fines.each_with_index do |fine,i|%>
-            <tr>
-            <td class="col-3"><%= i+1%></td>
-            <td class="col-3"><%= "Fine on "+fine.fine_date.to_date.to_s%></td>
-            <td class="col-3"><%= fine.fine %></td>
-            </tr>
-            <%fines+=fine.fine%>
-          <%end%>
-      <%end%>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="2" align="right">Payment done:</td><td><%= paid=@fee.payment %></td></tr>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="2" align="right">Amount to pay:</td><td><%=pay_amount=total_fee+fines-paid%></td></tr>
-      <tr><td colspan="3"></td></tr>
-      <tr><td colspan="3"></td></tr>
-      </table>
-
-      <%unless @fee.is_paid? %>
-        <%= form_for :transaction,url:{action:'pay_fee',finance_fee_id:@fee.id,id:@collection.id},remote:true do |f|%>
-        <%= hidden_field_tag :pay_amount,pay_amount%>
-          <div align="center">
-            <div><%= label_tag :amount%>:
-            <%= text_field_tag :amount, pay_amount%></div>
-          </div>
-          <br/>
-          <div align="center">
-            <div>
-            <%= link_to 'Print Receipt',student_fee_receipt_finance_index_path(id:@collection.id,finance_fee_id:@fee.id,format:"pdf"),class: "btn btn-success"%>&nbsp;&nbsp;
-              <%= f.submit 'Pay Fees',class: "btn btn-primary"%>
-            </div>
-          </div>
-        <%end%>
-      <%else%>
-        <div align="center"><b>Fees Paid</b></div>
-          <br/>
-        <div align="center">
-            <%= link_to 'Print Receipt',student_fee_receipt_finance_index_path(id:@collection.id,finance_fee_id:@fee.id,format:"pdf"),class: "btn btn-success"%>
+        <div class="form-group">
+          <b>Fee Receipt No : </b>
+          <%= @fee.nil? ? t('n_a') : @fee.receipt_no %>
         </div>
-      <%end%>
-      <br/><br/>
-      <% unless @transactions.empty? %>
-      <b>Payment History:</b>
-      <table align="center" class="table table-hover table-bordered" style="width:90%">
-        <tr class="tr-head">
-        <th>Sl no.</th>
-        <th>Payment Date</th>
-        <th>Amount(Rs.)</th>
-        </tr>
-        <% @transactions.each_with_index do |t,i|%>
-          <tr>
-            <td class="col-3"><%= i+1 %></td>
-            <td class="col-3"><%= t.transaction_date%></td>
-            <td class="col-3"><%= t.amount %></td>    
-          </tr>
+        <% unless @category.nil? %>
+          <div class="form-group">
+            <b>Fee Category Name : </b>
+            <%= @category.name %>
+          </div>
+        <% end %>
+        <% unless @student.category.nil? %>
+          <div class="form-group">
+            <b>Student Category : </b>
+            <%= @student.category.name %>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <b>Fee Collection Name : </b>
+          <%= @collection.name %>
+        </div>
+        <hr/>
+        <% if @collection.is_due_date? %>
+          <%unless @fee.is_paid?%>
+            <%= form_for :fine,url:{action:'pay_fine',finance_fee_id:@fee.id,id:@collection.id},remote:true do |f|%>
+              <div align="center">
+                <div> Due date has been exceeded. Please collect fine amount.
+                  <%= text_field_tag :fine%>
+                  <%= f.submit 'Add Fine',class: "btn btn-primary"%>
+                </div>
+              </div>
+            <%end%> 
+          <%end%>
         <%end%>
-      </table>
-      <%end%>
+        <div>
+          <table class="fc-header" style="width:100%">
+            <tbody>
+              <tr>
+                <td class="fc-header-left">
+                  <%unless @student.id==@finance_fees.first.student.id%>
+                    <%= link_to '◄ prev',student_fees_details_finance_index_path(id:@collection.id,finance_fee_id:@previous),remote:true,class: "fc-button fc-button-prev fc-state-default fc-corner-left"%>
+                  <%end%>
+                  <%unless @student.id==@finance_fees.last.student.id%>
+                    <%= link_to 'next ►',student_fees_details_finance_index_path(id:@collection.id,finance_fee_id:@next),remote:true, class: "fc-button fc-button-next fc-state-default fc-corner-right"%></p>
+                  <%end%>
+                  <span class="fc-header-space"></span>
+                </td>
+                <td class="fc-header-center">
+                  <span class="fc-header-title"><h2><%= @student.first_name+" "+@student.last_name %></h2></span>
+                </td>
+                <td class="fc-header-right">
+                  <span class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active" unselectable="on">Students fees</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br/>
+        <div><br/>
+          <table class="table table-striped table-bordered" width="500">
+            <%total=0%>
+            <%discount=0%>
+            <%fines=0%>
+            <tr>
+              <td width="100" align="center"><b>Sl no</b></td>
+              <td align="center"><b>Particulars</b></td>
+              <td align="center"><b>Amount(Rs.)</b></td>
+            </tr>
+            
+            <% unless @particulars.nil?%>
+              <% @particulars.each_with_index do |p,i|%>
+                <tr>
+                  <td align="center"><%= i+1%></td>
+                  <td><%= p.name%></td>
+                  <td align="right"><%= amt = p.amount%></td>
+                </tr>
+                <%total+=amt%>
+              <%end%>
+              <tr>
+                <td></td>
+                <td align="right"><b>Particular Total : </b></td>
+                <td align="right"><b><%= total%></b></td>
+              </tr>
+            <%else%>
+              <h5>No fee collection particulars found</h5>
+            <%end%>
+            </table>
+            
+            <table class="table table-striped table-bordered" width="500">
+            <tr>
+              <td width="100" align="center"><b>Sl no</b></td>
+              <td align="center"><b>Discounts</b></td>
+              <td align="center"><b>Amount(Rs.)</b></td>
+            </tr>
+            <% unless @discounts.nil?%>
+              <% @discounts.each_with_index do |d,i|%>
+                <tr>
+                  <td align="center"><%= i+1%></td>
+                  <td><%= d.name+"("+d.discount.to_s+"%)"%></td>
+                  <td align="right"><%= dis = d.collection_discount(total)%></td>
+                </tr>
+                <%discount+=dis%>
+              <%end%>
+              <tr>
+                <td></td>
+                <td align="right"><b>Discount Total : </b></td>
+                <td align="right"><b><%= discount %></b></td>
+              </tr>
+            <%else%>
+              <h5>No fee collection discount found</h5>
+            <%end%>
+            </table>
+            <% total_fee =total - discount%>
+            <table class="table table-striped table-bordered" width="500">
+            <%unless@fines.empty?%>
+              <tr>
+                <td width="100" align="center"><b>Sl no</b></td>
+                <td align="center"><b>Fines</b></td>
+                <td align="center"><b>Amount(Rs.)</b></td>
+            </tr>
+              <% @fines.each_with_index do |fine,i|%>
+                <tr>
+                  <td align="center"><%= i+1%></td>
+                  <td><%= "Fine on "+fine.fine_date.to_date.to_s%></td>
+                  <td align="right"><%= fine.fine %></td>
+                </tr>
+                <%fines+=fine.fine%>
+              <%end%>
+              <tr>
+                <td></td>
+                <td align="right"><b>Fine Total : </b></td>
+                <td align="right"><b><%= fines %></b></td>
+              </tr>
+            <%end%>
+            <tr>
+          <td></td>
+          <td align="right"><b>Payment done : </b></td>
+          <td align="right"><b><%=paid=@fee.payment%><b></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td align="right"><b>Amount to pay : </b></td>
+          <td align="right"><b><%=pay_amount=total_fee+fines-paid%><b></td>
+        </tr>
+          </table>
+
+          <%unless @fee.is_paid? %>
+            <%= form_for :transaction,url:{action:'pay_fee',finance_fee_id:@fee.id,id:@collection.id},remote:true do |f|%>
+              <%= hidden_field_tag :pay_amount,pay_amount%>
+              <div align="center">
+                <div><%= label_tag :amount%>:
+                <%= text_field_tag :amount, pay_amount%></div>
+              </div>
+              <br/>
+              <div align="center">
+                <div>
+                  <%= link_to 'Print Receipt',student_fee_receipt_finance_index_path(id:@collection.id,finance_fee_id:@fee.id,format:"pdf"),class: "btn btn-success"%>&nbsp;&nbsp;
+                  <%= f.submit 'Pay Fees',class: "btn btn-primary"%>
+                </div>
+              </div>
+            <%end%>
+          <%else%>
+            <div align="center"><b>Fees Paid</b></div> <br/>
+            <div align="center">
+              <%= link_to 'Print Receipt',student_fee_receipt_finance_index_path(id:@collection.id,finance_fee_id:@fee.id,format:"pdf"),class: "btn btn-success"%>
+            </div>
+          <%end%>
+          <br/><br/>
+          <% unless @transactions.empty? %>
+            <b>Payment History:</b>
+            <table align="center" class="table table-hover table-bordered" style="width:90%">
+              <tr class="tr-head">
+                <th>Sl no.</th>
+                <th>Payment Date</th>
+                <th>Amount(Rs.)</th>
+              </tr>
+              <% @transactions.each_with_index do |t,i|%>
+                <tr>
+                  <td class="col-3"><%= i+1 %></td>
+                  <td class="col-3"><%= t.transaction_date%></td>
+                  <td class="col-3"><%= t.amount %></td>    
+                </tr>
+              <%end%>
+            </table>
+          <%end%>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
