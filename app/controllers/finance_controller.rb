@@ -3,16 +3,22 @@
 # fees, fees structure, fees defaulters, transaction, payslip, asset
 # and liability management
 class FinanceController < ApplicationController
-  def transaction_categorys
+  # Display all transaction category list
+  def transaction_category
     @transaction_categories ||= FinanceTransactionCategory.all
     authorize! :read, @transaction_categories.last
   end
 
+  # Create new object of finance transaction category for save the
+  # record in database.
   def new_transaction_category
     @transaction_category = FinanceTransactionCategory.new
     authorize! :create, @transaction_category
   end
 
+  # Create transaction category object with user input value throw
+  # new method.
+  # Save the transaction category record in database.
   def create_transaction_category
     @transaction_category = FinanceTransactionCategory.new\
     (transaction_category_params)
@@ -21,11 +27,14 @@ class FinanceController < ApplicationController
     @transaction_categories ||= FinanceTransactionCategory.all
   end
 
+  # Retrieve user inputed record from transaction category for update.
   def edit_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     authorize! :update, @transaction_category
   end
 
+  # Find out the user inputed record in database with shod method.
+  # Update transaction record to the database.
   def update_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     @transaction_category.update(transaction_category_params)
@@ -33,6 +42,8 @@ class FinanceController < ApplicationController
     @transaction_categories ||= FinanceTransactionCategory.all
   end
 
+  # Fetch the user inputed transaction category record.
+  # Delete from database with destroy method.
   def delete_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     authorize! :delete, @transaction_category
@@ -474,10 +485,12 @@ class FinanceController < ApplicationController
     authorize! :create, @master_category
   end
 
+  # Fetch all batches in batches object.
   def assign_batch
     @batches ||= Batch.all
   end
 
+  # Fetch all batches in batches object.
   def remove_batch
     @batches ||= Batch.all
   end
@@ -490,18 +503,26 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_category_create')
   end
 
+  # Fetch the batch throw drop down list.
+  # Show fees list for selected batch.
   def fees_list
     @batch = Batch.shod(params[:batch][:id])
     @master_categories ||= @batch.finance_fee_categories
     authorize! :read, @master_categories.first
   end
 
+  # Fetch the fee category record which you have to update.
+  # Display the batch which is adjacent to given fee category.
   def edit_master_category
     @batch = Batch.shod(params[:id])
-    @master_category = FinanceFeeCategory.shod(params[:id])
+    @master_category = FinanceFeeCategory.shod(params[:format])
     authorize! :update, @master_category
   end
 
+  # @batch object store the user inputed batch from database.
+  # Using @batch object fetch the master category record.
+  # Update the master category record with update method and
+  # send a flash message.
   def update_master_category
     @batch = Batch.shod(params[:id])
     @master_category = @batch.finance_fee_categories.shod(params[:id])
@@ -510,6 +531,10 @@ class FinanceController < ApplicationController
     @master_categories ||= @batch.finance_fee_categories
   end
 
+  # @batch object store the user inputed batch from database.
+  # Using @batch object fetch the master category record.
+  # delete the master category record with destroy method and
+  # send a flash message.
   def delete_master_category
     @batch = Batch.shod(params[:batch_id])
     @master_category = @batch.finance_fee_categories.shod(params[:id])
@@ -526,6 +551,8 @@ class FinanceController < ApplicationController
     authorize! :create, @fee
   end
 
+  # Generate the drop down list for finance fee category
+  # which is foreign key for save the particular in database.
   def category_batch
     @master_category = FinanceFeeCategory.shod(params[:id])
     @batches ||= @master_category.batches
@@ -568,6 +595,7 @@ class FinanceController < ApplicationController
     authorize! :create, @fee
   end
 
+
   def student_admission_no
     @master_category = FinanceFeeCategory.shod(params[:id])
     @fee = FinanceFeeParticular.new
@@ -580,6 +608,8 @@ class FinanceController < ApplicationController
     authorize! :read, @fee
   end
 
+  # This action save the record of particulars for specific finance fee category.
+  # Batch id and fee categoy is the foreign key for particular record.
   def create_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:id])
@@ -624,6 +654,7 @@ class FinanceController < ApplicationController
     authorize! :create, @discount
   end
 
+  # Assign discount type for type object.
   def discount_type
     @type = params[:type]
   end
@@ -642,6 +673,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  #
   def fee_category
     @batch = Batch.shod(params[:id])
     @categories ||= @batch.finance_fee_categories
