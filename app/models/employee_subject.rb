@@ -33,5 +33,5 @@ class EmployeeSubject < ActiveRecord::Base
         emp_subjs << subject_asso
       end
     end
-end
+  end
 end

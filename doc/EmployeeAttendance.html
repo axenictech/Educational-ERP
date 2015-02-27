@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: EmployeeAttendance
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!EmployeeAttendance.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">EmployeeAttendance</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: EmployeeAttendance
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">EmployeeAttendance</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Activity.html" title="Activity (module)">Activity</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/employee_attendance.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>EmployeeAttendance</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#department_leave_reset-class_method" title="department_leave_reset (class method)">+ (Object) <strong>department_leave_reset</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy_leave-class_method" title="destroy_leave (class method)">+ (Object) <strong>destroy_leave</strong>(a, l, lc) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_att-instance_method" title="#create_att (instance method)">- (Object) <strong>create_att</strong>(att) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report-instance_method" title="#report (instance method)">- (Object) <strong>report</strong>(emp, lt) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="department_leave_reset-class_method">
+  
+    + (<tt>Object</tt>) <strong>department_leave_reset</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee_attendance.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_department_leave_reset'>department_leave_reset</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span>
+    <span class='id identifier rubyid_leave_count'>leave_count</span> <span class='op'>=</span> <span class='const'>EmployeeLeave</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_leave_count'>leave_count</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+      <span class='id identifier rubyid_leave_type'>leave_type</span> <span class='op'>=</span> <span class='const'>EmployeeLeaveType</span><span class='period'>.</span><span class='id identifier rubyid_find_by_id'>find_by_id</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_employee_leave_type_id'>employee_leave_type_id</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_default_leave_count'>default_leave_count</span> <span class='op'>=</span> <span class='id identifier rubyid_leave_type'>leave_type</span><span class='period'>.</span><span class='id identifier rubyid_max_leave_count'>max_leave_count</span>
+      <span class='id identifier rubyid_available_leave'>available_leave</span> <span class='op'>=</span> <span class='id identifier rubyid_default_leave_count'>default_leave_count</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+      <span class='id identifier rubyid_leave_taken'>leave_taken</span> <span class='op'>=</span> <span class='int'>0</span>
+      <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>leave_taken:</span> <span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='comma'>,</span> <span class='label'>leave_count:</span> <span class='id identifier rubyid_available_leave'>available_leave</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy_leave-class_method">
+  
+    + (<tt>Object</tt>) <strong>destroy_leave</strong>(a, l, lc) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee_attendance.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_destroy_leave'>destroy_leave</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_l'>l</span><span class='comma'>,</span> <span class='id identifier rubyid_lc'>lc</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+    <span class='id identifier rubyid_lc'>lc</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:destroy</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create_att-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_att</strong>(att) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee_attendance.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_att'>create_att</span><span class='lparen'>(</span><span class='id identifier rubyid_att'>att</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_att'>att</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+    <span class='id identifier rubyid_emp_leave'>emp_leave</span> <span class='op'>=</span> <span class='const'>EmployeeLeave</span><span class='period'>.</span><span class='id identifier rubyid_edit_att'>edit_att</span><span class='lparen'>(</span><span class='id identifier rubyid_att'>att</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span>  <span class='id identifier rubyid_emp_leave'>emp_leave</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_att'>att</span><span class='period'>.</span><span class='id identifier rubyid_is_half_day'>is_half_day</span>
+        <span class='id identifier rubyid_leave_taken'>leave_taken</span> <span class='op'>=</span> <span class='id identifier rubyid_emp_leave'>emp_leave</span><span class='period'>.</span><span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='float'>0.5</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_emp_leave'>emp_leave</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>leave_taken:</span> <span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_leave_taken'>leave_taken</span> <span class='op'>=</span> <span class='id identifier rubyid_emp_leave'>emp_leave</span><span class='period'>.</span><span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_emp_leave'>emp_leave</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>leave_taken:</span> <span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report</strong>(emp, lt) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee_attendance.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='comma'>,</span> <span class='id identifier rubyid_lt'>lt</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lt'>lt</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span>
+    <span class='id identifier rubyid_leave_count'>leave_count</span> <span class='op'>=</span> <span class='const'>EmployeeAttendance</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> \
+                                           <span class='label'>employee_leave_type_id:</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:51:59 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>

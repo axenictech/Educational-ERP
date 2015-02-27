@@ -12,15 +12,14 @@
     <tbody>
     
    	<tr>     
+    
           <td><b>Salary Date:</b>
           <span style="color:red">*</span></td>
-          <td ><%=f.date_field :salery_date,class: "form-control datepicker",placeholder: "MM/DD/YYYY",onblur: "var date={salary_date:$(this).val()};
-          get('admission1',date,function(response){});",class: "form-control",style: "width:250px"%></td>
+          <td ><%=f.date_field :salery_date,id:'date' ,onblur: "var salery_date = {salery_date:$(this).val()};",class: "form-control",style: "width:250px"%></td>
         
          
      </tr>
-         
-
+ 
    <tr></tr>
       <%@independent_categories.each do |c| %>
       <% val = EmployeeSaleryStructure.find_by_employee_id_and_payroll_category_id(@employee, c) -%>
@@ -28,7 +27,7 @@
           <% if c.payroll_category_id.nil? %>
           <tr style="background-color:rgb(187, 249, 187)">
             <td ><b><%=c.name%>:</b></td>
-            <td ><%= text_field_tag "amounts[#{val.nil? ? 0.00 : val.amount.to_f}]",val.nil? ? 0.00 : val.amount,onblur:"var a={amount:$(this).val(),employee_id:#{@employee.id},id:#{c.id}}; $.get('employee_structure',a,function(response){});",class: "form-control",style: "width:250px"%></td>
+            <td ><%= text_field_tag "amounts[#{val.nil? ? 0.00 : val.amount.to_f}]",val.nil? ? 0.00 : val.amount,onblur:"var a={amount:$(this).val(),employee_id:#{@employee.id},salery_date:(document.getElementById('date').value),id:#{c.id}}; $.get('employee_structure',a,function(response){});",class: "formal-control",style: "width:250px"%></td>
             </tr>
           <%else%>
           <tr>
@@ -45,10 +44,3 @@
 </div>
 </div>
 <%end%>
-<script type="text/javascript">
-window.onload = function()
-{ 
-  $('.datepicker').datepicker();
-};
- 
-</script>

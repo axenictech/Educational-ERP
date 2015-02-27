@@ -1,0 +1,917 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: TimeTablesHelper
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TimeTablesHelper.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TimeTablesHelper</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: TimeTablesHelper
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/helpers/time_tables_helper.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>TimeTable Helper</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#class_timing_id-instance_method" title="#class_timing_id (instance method)">- (Object) <strong>class_timing_id</strong>(t) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#classtiming_not_found%21-instance_method" title="#classtiming_not_found! (instance method)">- (Object) <strong>classtiming_not_found!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_batch-instance_method" title="#collect_batch (instance method)">- (Object) <strong>collect_batch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_time_batch-instance_method" title="#collect_time_batch (instance method)">- (Object) <strong>collect_time_batch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_time_table-instance_method" title="#collect_time_table (instance method)">- (Object) <strong>collect_time_table</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_week_batch-instance_method" title="#collect_week_batch (instance method)">- (Object) <strong>collect_week_batch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edit_time_not_found%21-instance_method" title="#edit_time_not_found! (instance method)">- (Object) <strong>edit_time_not_found!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#institutional_time_table-instance_method" title="#institutional_time_table (instance method)">- (Object) <strong>institutional_time_table</strong>(time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#teacher_time_table-instance_method" title="#teacher_time_table (instance method)">- (Object) <strong>teacher_time_table</strong>(emp, class_timing, weekday, timetable) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#teacher_timetable_not_found%21-instance_method" title="#teacher_timetable_not_found! (instance method)">- (Object) <strong>teacher_timetable_not_found!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#time_table_id-instance_method" title="#time_table_id (instance method)">- (Object) <strong>time_table_id</strong>(time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#timetable_collect-instance_method" title="#timetable_collect (instance method)">- (Object) <strong>timetable_collect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#timetable_error%21-instance_method" title="#timetable_error! (instance method)">- (Object) <strong>timetable_error!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weekday_batch-instance_method" title="#weekday_batch (instance method)">- (Object) <strong>weekday_batch</strong>(batch, day) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="class_timing_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>class_timing_id</strong>(t) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_class_timing_id'>class_timing_id</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span>
+  <span class='const'>ClassTiming</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_class_timing_id'>class_timing_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="classtiming_not_found!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>classtiming_not_found!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 11</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_classtiming_not_found!'>classtiming_not_found!</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span>  <span class='ivar'>@class_timings</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-HTML</span>
+<span class='tstring_content'>   &lt;div&gt;
+    &lt;h4 align=&quot;center&quot;&gt;No record found&lt;/h4&gt;
+  &lt;/div&gt;
+</span><span class='heredoc_end'>  HTML
+</span>  <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_batch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_batch</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_batch'>collect_batch</span>
+  <span class='ivar'>@batches</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_full_name'>full_name</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_time_batch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_time_batch</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_time_batch'>collect_time_batch</span>
+  <span class='ivar'>@batches</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_full_name'>full_name</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_time_table-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_time_table</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_time_table'>collect_time_table</span>
+  <span class='ivar'>@timetables</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_full_time'>full_time</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="collect_week_batch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_week_batch</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_week_batch'>collect_week_batch</span>
+  <span class='ivar'>@weekdays</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_full_name'>full_name</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edit_time_not_found!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>edit_time_not_found!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_edit_time_not_found!'>edit_time_not_found!</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span>  <span class='ivar'>@timetables</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-HTML</span>
+<span class='tstring_content'>   &lt;div&gt;
+    &lt;h4 align=&quot;center&quot;&gt;No record found&lt;/h4&gt;
+  &lt;/div&gt;
+</span><span class='heredoc_end'>  HTML
+</span>  <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="institutional_time_table-instance_method">
+  
+    - (<tt>Object</tt>) <strong>institutional_time_table</strong>(time) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_institutional_time_table'>institutional_time_table</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>class_timing_id:</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_class_timing_id'>class_timing_id</span>\
+      <span class='comma'>,</span> <span class='label'>weekday_id:</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_weekday_id'>weekday_id</span><span class='comma'>,</span> <span class='label'>time_table_id:</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_time_table'>time_table</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="teacher_time_table-instance_method">
+  
+    - (<tt>Object</tt>) <strong>teacher_time_table</strong>(emp, class_timing, weekday, timetable) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_teacher_time_table'>teacher_time_table</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='comma'>,</span> <span class='id identifier rubyid_class_timing'>class_timing</span><span class='comma'>,</span> <span class='id identifier rubyid_weekday'>weekday</span><span class='comma'>,</span> <span class='id identifier rubyid_timetable'>timetable</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> \
+    <span class='comma'>,</span> <span class='label'>class_timing_id:</span> <span class='id identifier rubyid_class_timing'>class_timing</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>weekday_id:</span> <span class='id identifier rubyid_weekday'>weekday</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>\
+    <span class='comma'>,</span> <span class='label'>time_table_id:</span> <span class='id identifier rubyid_timetable'>timetable</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="teacher_timetable_not_found!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>teacher_timetable_not_found!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_teacher_timetable_not_found!'>teacher_timetable_not_found!</span>
+  <span class='kw'>return</span> <span class='kw'>unless</span> <span class='ivar'>@time</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-HTML</span>
+<span class='tstring_content'>    &lt;h4 align=&quot;center&quot;&gt;No timetable entries found&lt;/h4&gt;
+</span><span class='heredoc_end'>  HTML
+</span>  <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="time_table_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>time_table_id</strong>(time) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_time_table_id'>time_table_id</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>time_table_id:</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="timetable_collect-instance_method">
+  
+    - (<tt>Object</tt>) <strong>timetable_collect</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_timetable_collect'>timetable_collect</span>
+  <span class='ivar'>@timetables</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_full_time'>full_time</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="timetable_error!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>timetable_error!</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_timetable_error!'>timetable_error!</span>
+  <span class='kw'>return</span> <span class='kw'>if</span>  <span class='ivar'>@time_table</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_messages'>messages</span> <span class='op'>=</span> <span class='ivar'>@time_table</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> \
+  <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='op'>|</span> <span class='id identifier rubyid_content_tag'>content_tag</span><span class='lparen'>(</span><span class='symbol'>:li</span><span class='comma'>,</span> <span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+  <span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-HTML</span>
+<span class='tstring_content'>   &lt;div class=&quot;alert alert-danger alert-dismissable&quot;&gt;
+    &lt;ul&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_messages'>messages</span><span class='embexpr_end'>}</span><span class='tstring_content'>&lt;/ul&gt;
+  &lt;/div&gt;
+</span><span class='heredoc_end'>  HTML
+</span>  <span class='id identifier rubyid_html'>html</span><span class='period'>.</span><span class='id identifier rubyid_html_safe'>html_safe</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="weekday_batch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>weekday_batch</strong>(batch, day) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/helpers/time_tables_helper.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_weekday_batch'>weekday_batch</span><span class='lparen'>(</span><span class='id identifier rubyid_batch'>batch</span><span class='comma'>,</span> <span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_weekday'>weekday</span> <span class='op'>=</span> <span class='const'>Weekday</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>weekday:</span> <span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+  <span class='id identifier rubyid_weekday'>weekday</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:51:57 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>
