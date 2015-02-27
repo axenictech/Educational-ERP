@@ -10,15 +10,19 @@ class EmployeeAttendance < ActiveRecord::Base
    { minimum: 1, maximum: 50 }, format: \
    { with: /\A[a-z A-Z 0-9]+\z/, message: 'only allows letters' }
   scope :shod, ->(id) { where(id: id).take }
+  # find employee attendences where leave type is as we pass in parameter
   scope :dest_leave, ->(leave) { where(employee_leave_type_id: leave.id) }
 
+  # destroy employee attendences
   def self.destroy_leave(a, l, lc)
     if a.blank?
       l.destroy
       lc.each(&:destroy)
     end
   end
-
+  
+  # if EmployeeAttendences save the leave is add for
+  # that employee in EmployeeLeave
   def create_att(att)
     if att.save
       emp_leave = EmployeeLeave.edit_att(att)
@@ -40,7 +44,9 @@ class EmployeeAttendance < ActiveRecord::Base
                                              employee_leave_type_id: l.id).size
     end
   end
-
+  
+  # get max_leave_count from employee leave type and and update leave count
+  # of employee leave to max_leave_count
   def self.department_leave_reset(emp)
     emp.each do |c|
       leave_count = EmployeeLeave.where(employee_id: c)

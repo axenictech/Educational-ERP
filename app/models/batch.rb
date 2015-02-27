@@ -51,8 +51,32 @@ class Batch < ActiveRecord::Base
     Weekday.where(batch_id: id).present?
   end
 
-  def trans(students, transfer_id)
+  def trans(students, transfer_id,batch)
     return unless students.present?
+    general_subjects = batch.subjects.where(elective_group_id: nil)
+    student_electives = StudentSubject.where(student_id: students,batch_id: batch.id)
+    elective_subjects = []
+    student_electives.each do |elect|
+      elective_subjects.push Subject.find(elect.subject_id)
+    end
+    @subject = general_subjects + elective_subjects
+    @exam_group = batch.result_published
+    
+      students.each  do |student|
+        @subject.each do |subject|
+        @exam_group.each do |exam_group|
+          unless @subject.nil?
+          exam = Exam.find_by_subject_id_and_exam_group_id(subject.id,exam_group.id)
+          unless exam.nil?
+          exam_score = ExamScore.find_by_student_id_and_exam_id(student, exam.id)
+          unless exam_score.nil?
+             StudentLog.create(subject_id:subject.id,batch_id:batch.id,student_id:student,exam_group_id:exam_group.id,mark:exam_score.marks,maximum_marks: exam.maximum_marks)
+            end
+            end
+         end
+        end
+      end
+    end
     students.each  do |student|
       Student.find(student).update(batch_id: transfer_id)
     end

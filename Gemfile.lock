@@ -249,6 +249,7 @@ GEM
     yaml_db (0.3.0)
       rails (>= 3.0, < 4.3)
       rake (>= 0.8.7)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
@@ -280,7 +281,6 @@ DEPENDENCIES
   passenger
   pdfkit
   rails
-  rdoc
   roo
   sass-rails
   sdoc
@@ -291,3 +291,4 @@ DEPENDENCIES
   will_paginate
   wkhtmltopdf-binary
   yaml_db
+  yard

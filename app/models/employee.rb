@@ -96,6 +96,8 @@ class Employee < ActiveRecord::Base
   scope :not_status, -> { where(status: false).order(:name) }
   scope :search1, ->(other_conditions, param)\
    { where('first_name like ?' + other_conditions, param + '%') }
+
+  # find employee which we created after the employee leave type created
   scope :att_reg, -> { where.not(id: EmployeeLeave.all.pluck(:employee_id)) }
 
   def archived_employee
@@ -410,6 +412,9 @@ class Employee < ActiveRecord::Base
   def personal_salary(date)
     individual_payslip_categories.where(salary_date: date).take
   end
+
+  # create employee leave for the employee which we created after the employee
+  # leave type created
   def self.att_leave(emp)
     emp.each do |e|
       EmployeeLeaveType.all.each do |l|

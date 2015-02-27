@@ -12,12 +12,14 @@ class EmployeeLeaveType < ActiveRecord::Base
   scope :nostatus, -> { where(status: false).order(:name) }
   scope :dest_leave, ->(leave) { where(employee_leave_type_id: leave.id) }
 
+  # when we create employee leave type we also create
+  # that leave for all empoyee and save in EmployeeLeave database
   def add_leave(new_leave, emp)
     emp.each do |e|
       EmployeeLeave.create(employee_id: e.id, employee_leave_type_id: new_leave.id, leave_count: new_leave.max_leave_count)
     end
   end
-
+   # update all employee leave associated with selected employee leave type
   def up(l, lc, param)
     return if l.update(param)
     lc.each do |la|
