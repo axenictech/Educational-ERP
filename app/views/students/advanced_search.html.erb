@@ -31,7 +31,7 @@
 						</div>
 						<div class="form-group">
 							<b>Batch Name:</b>
-							<div id="batch_view"><%= render 'all_batch'%>
+							<div id="batch_view"><%=select :batch,:id,Batch.all.collect {|b| [b.name,b.id]},{prompt:true},{class:"form-control"}%>
 							</div>
 						</div>
 						<div class="form-group">

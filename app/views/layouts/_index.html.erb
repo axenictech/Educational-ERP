@@ -7,7 +7,7 @@
           <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-      <% unless current_user.general_setting.image.blank? %>
+      <% if current_user.general_setting.image.nil? %>
         <%= image_tag(current_user.general_setting.image,class: "hidden-xs") %>
       <% end %>
         <span><%= current_user.institute_name%></span>

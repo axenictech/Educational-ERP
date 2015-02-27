@@ -1,5 +1,6 @@
+# PrivilegeUser
 class PrivilegeUser < ActiveRecord::Base
-	 include Activity
+  include Activity
   belongs_to :privilege
   belongs_to :user
   belongs_to :privilege_tag

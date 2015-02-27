@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Exam
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Exam.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Exam</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Exam
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Exam</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Activity.html" title="Activity (module)">Activity</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/exam.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Exam Active Record</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_exam_event-instance_method" title="#create_exam_event (instance method)">- (Object) <strong>create_exam_event</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_time_cannot_be_less_than_past-instance_method" title="#end_time_cannot_be_less_than_past (instance method)">- (Object) <strong>end_time_cannot_be_less_than_past</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_time_cannot_be_less_than_start_time-instance_method" title="#end_time_cannot_be_less_than_start_time (instance method)">- (Object) <strong>end_time_cannot_be_less_than_start_time</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exam_mar-instance_method" title="#exam_mar (instance method)">- (Object) <strong>exam_mar</strong>(student, marks) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exam_total-instance_method" title="#exam_total (instance method)">- (Object) <strong>exam_total</strong>(total) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_failed-instance_method" title="#is_failed (instance method)">- (Object) <strong>is_failed</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_marks_greater_than_min_marks-instance_method" title="#max_marks_greater_than_min_marks (instance method)">- (Object) <strong>max_marks_greater_than_min_marks</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#score_exam-instance_method" title="#score_exam (instance method)">- (Object) <strong>score_exam</strong>(temps, batch, exam, exam_group, grades) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scores-instance_method" title="#scores (instance method)">- (Object) <strong>scores</strong>(student) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select_subject-instance_method" title="#select_subject (instance method)">- (Object) <strong>select_subject</strong>(s1, s2, exam) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_time_cannot_be_less_than_past-instance_method" title="#start_time_cannot_be_less_than_past (instance method)">- (Object) <strong>start_time_cannot_be_less_than_past</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_exam_scr-instance_method" title="#update_exam_scr (instance method)">- (Object) <strong>update_exam_scr</strong>(exam, exam_group, batch, param) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="create_exam_event-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_exam_event</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_exam_event'>create_exam_event</span>
+  <span class='id identifier rubyid_batch'>batch</span> <span class='op'>=</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+  <span class='ivar'>@event</span> <span class='op'>=</span> <span class='id identifier rubyid_event'>event</span>
+  <span class='kw'>if</span> <span class='ivar'>@event</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_event'>event</span> <span class='op'>=</span> <span class='const'>Event</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Exam</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>description:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> for subject- </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_course'>course</span><span class='period'>.</span><span class='id identifier rubyid_course_name'>course_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_course'>course</span><span class='period'>.</span><span class='id identifier rubyid_section_name'>section_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                         <span class='label'>start_date:</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='comma'>,</span>
+                         <span class='label'>end_date:</span> <span class='id identifier rubyid_end_time'>end_time</span><span class='comma'>,</span>
+                         <span class='label'>is_exam:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>event_id:</span> <span class='id identifier rubyid_event'>event</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@event</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>start_date:</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='comma'>,</span> <span class='label'>end_date:</span> <span class='id identifier rubyid_end_time'>end_time</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end_time_cannot_be_less_than_past-instance_method">
+  
+    - (<tt>Object</tt>) <strong>end_time_cannot_be_less_than_past</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_end_time_cannot_be_less_than_past'>end_time_cannot_be_less_than_past</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_end_time'>end_time</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_end_time'>end_time</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>&lt;</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span>
+    <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:end_time</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>should not be past date</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end_time_cannot_be_less_than_start_time-instance_method">
+  
+    - (<tt>Object</tt>) <strong>end_time_cannot_be_less_than_start_time</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_end_time_cannot_be_less_than_start_time'>end_time_cannot_be_less_than_start_time</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_end_time'>end_time</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_end_time'>end_time</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_start_time'>start_time</span>
+    <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:end_time</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cannot be less than start time</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exam_mar-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exam_mar</strong>(student, marks) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exam_mar'>exam_mar</span><span class='lparen'>(</span><span class='id identifier rubyid_student'>student</span><span class='comma'>,</span> <span class='id identifier rubyid_marks'>marks</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_exam_score'>exam_score</span> <span class='op'>=</span> <span class='id identifier rubyid_scores'>scores</span><span class='lparen'>(</span><span class='id identifier rubyid_student'>student</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_marks'>marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>+</span> <span class='id identifier rubyid_exam_score'>exam_score</span><span class='period'>.</span><span class='id identifier rubyid_marks'>marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exam_total-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exam_total</strong>(total) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exam_total'>exam_total</span><span class='lparen'>(</span><span class='id identifier rubyid_total'>total</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_total'>total</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>+</span> <span class='id identifier rubyid_maximum_marks'>maximum_marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_failed-instance_method">
+  
+    - (<tt>Object</tt>) <strong>is_failed</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 161</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_is_failed'>is_failed</span>
+  <span class='id identifier rubyid_exam_scores'>exam_scores</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>is_failed:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:student</span><span class='comma'>,</span> <span class='symbol'>:grading_level</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_marks_greater_than_min_marks-instance_method">
+  
+    - (<tt>Object</tt>) <strong>max_marks_greater_than_min_marks</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_max_marks_greater_than_min_marks'>max_marks_greater_than_min_marks</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_maximum_marks'>maximum_marks</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_minimum_marks'>minimum_marks</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_maximum_marks'>maximum_marks</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_minimum_marks'>minimum_marks</span>
+    <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:maximum_marks</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>should be greater than minimum marks</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="score_exam-instance_method">
+  
+    - (<tt>Object</tt>) <strong>score_exam</strong>(temps, batch, exam, exam_group, grades) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_score_exam'>score_exam</span><span class='lparen'>(</span><span class='id identifier rubyid_temps'>temps</span><span class='comma'>,</span> <span class='id identifier rubyid_batch'>batch</span><span class='comma'>,</span> <span class='id identifier rubyid_exam'>exam</span><span class='comma'>,</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='comma'>,</span> <span class='id identifier rubyid_grades'>grades</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_temps'>temps</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span> <span class='id identifier rubyid_details'>details</span><span class='op'>|</span>
+    <span class='ivar'>@exam_score</span> <span class='op'>=</span> <span class='const'>ExamScore</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>exam_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                  <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+    <span class='ivar'>@grouped_exam</span> <span class='op'>=</span> <span class='const'>GroupedExamReport</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                            <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span>
+                                            <span class='label'>exam_group_id:</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                            <span class='label'>subject_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject_id'>subject_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+    <span class='id identifier rubyid_score_grade'>score_grade</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_fail'>fail</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_fail'>fail</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_minimum_marks'>minimum_marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+
+    <span class='kw'>unless</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exam_type'>exam_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Marks</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exam_type'>exam_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Grades</span><span class='tstring_end'>&#39;</span></span>
+        <span class='id identifier rubyid_percentage'>percentage</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_maximum_marks'>maximum_marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+        <span class='id identifier rubyid_grades'>grades</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_grade'>grade</span><span class='op'>|</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_percentage'>percentage</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_min_score'>min_score</span>
+            <span class='id identifier rubyid_score_grade'>score_grade</span> <span class='op'>=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_grades'>grades</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_grade'>grade</span><span class='op'>|</span>
+          <span class='kw'>if</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_min_score'>min_score</span>
+            <span class='id identifier rubyid_score_grade'>score_grade</span> <span class='op'>=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='ivar'>@exam_score</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_exam_score'>exam_score</span> <span class='op'>=</span> <span class='const'>ExamScore</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>exam_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span>
+                                 <span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>remarks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:remarks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>grading_level_id:</span> <span class='id identifier rubyid_score_grade'>score_grade</span><span class='comma'>,</span> <span class='label'>is_failed:</span> <span class='id identifier rubyid_fail'>fail</span><span class='rparen'>)</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_exam_score'>exam_score</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+        <span class='ivar'>@errors</span> <span class='op'>=</span> <span class='id identifier rubyid_exam_score'>exam_score</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span>
+    <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='kw'>unless</span> <span class='ivar'>@exam_score</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>remarks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:remarks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>grading_level_id:</span> <span class='id identifier rubyid_score_grade'>score_grade</span><span class='comma'>,</span> <span class='label'>is_failed:</span> <span class='id identifier rubyid_fail'>fail</span><span class='rparen'>)</span>
+        <span class='ivar'>@errors</span> <span class='op'>=</span> <span class='ivar'>@exam_score</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_full_messages'>full_messages</span>
+      <span class='kw'>end</span>
+        <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='ivar'>@errors</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>if</span> <span class='ivar'>@grouped_exam</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='const'>GroupedExamReport</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span>
+                                 <span class='label'>exam_group_id:</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>subject_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject_id'>subject_id</span><span class='comma'>,</span> <span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='ivar'>@grouped_exam</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scores-instance_method">
+  
+    - (<tt>Object</tt>) <strong>scores</strong>(student) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_scores'>scores</span><span class='lparen'>(</span><span class='id identifier rubyid_student'>student</span><span class='rparen'>)</span>
+  <span class='const'>ExamScore</span><span class='period'>.</span><span class='id identifier rubyid_score'>score</span><span class='lparen'>(</span><span class='id identifier rubyid_student'>student</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_student'>student</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select_subject-instance_method">
+  
+    - (<tt>Object</tt>) <strong>select_subject</strong>(s1, s2, exam) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_select_subject'>select_subject</span><span class='lparen'>(</span><span class='id identifier rubyid_s1'>s1</span><span class='comma'>,</span> <span class='id identifier rubyid_s2'>s2</span><span class='comma'>,</span> <span class='id identifier rubyid_exam'>exam</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_s2'>s2</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_s2'>s2</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_std'>std</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_elective_group'>elective_group</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_s1'>s1</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_std'>std</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_is_elective'>is_elective</span> <span class='op'>=</span> <span class='const'>StudentSubject</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>student_id:</span> <span class='id identifier rubyid_std'>std</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+                                           <span class='label'>subject_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject_id'>subject_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+        <span class='id identifier rubyid_s1'>s1</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_std'>std</span> <span class='kw'>unless</span> <span class='id identifier rubyid_is_elective'>is_elective</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_s1'>s1</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start_time_cannot_be_less_than_past-instance_method">
+  
+    - (<tt>Object</tt>) <strong>start_time_cannot_be_less_than_past</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_start_time_cannot_be_less_than_past'>start_time_cannot_be_less_than_past</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>&lt;</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span>
+    <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:start_time</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>should not be past date</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_exam_scr-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_exam_scr</strong>(exam, exam_group, batch, param) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/exam.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_exam_scr'>update_exam_scr</span><span class='lparen'>(</span><span class='id identifier rubyid_exam'>exam</span><span class='comma'>,</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='comma'>,</span> <span class='id identifier rubyid_batch'>batch</span><span class='comma'>,</span> <span class='id identifier rubyid_param'>param</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_param'>param</span><span class='period'>.</span><span class='id identifier rubyid_each_pair'>each_pair</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span> <span class='id identifier rubyid_details'>details</span><span class='op'>|</span>
+    <span class='id identifier rubyid_exam_score'>exam_score</span> <span class='op'>=</span> <span class='const'>ExamScore</span><span class='period'>.</span><span class='id identifier rubyid_exrep'>exrep</span><span class='lparen'>(</span><span class='id identifier rubyid_exam'>exam</span><span class='comma'>,</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_grouped_exam'>grouped_exam</span> <span class='op'>=</span> <span class='const'>GroupedExamReport</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>student_id:</span> \
+                                            <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span> <span class='label'>exam_group_id:</span> \
+                                            <span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>subject_id:</span> \
+                                            <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject_id'>subject_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+    <span class='id identifier rubyid_score_grade'>score_grade</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_fail'>fail</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_fail'>fail</span> <span class='op'>=</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_minimum_marks'>minimum_marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exam_type'>exam_type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Marks</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_percentage'>percentage</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_maximum_marks'>maximum_marks</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+      <span class='id identifier rubyid_grades'>grades</span> <span class='op'>=</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_grading_levels'>grading_levels</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+      <span class='id identifier rubyid_grades'>grades</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_grade'>grade</span><span class='op'>|</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_percentage'>percentage</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_min_score'>min_score</span>
+          <span class='id identifier rubyid_score_grade'>score_grade</span> <span class='op'>=</span> <span class='id identifier rubyid_grade'>grade</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_exam_score'>exam_score</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='const'>ExamScore</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>exam_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span>
+                       <span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>remarks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:remarks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>grading_level_id:</span> <span class='id identifier rubyid_score_grade'>score_grade</span><span class='comma'>,</span> <span class='label'>is_failed:</span> <span class='id identifier rubyid_fail'>fail</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_exam_score'>exam_score</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>remarks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:remarks</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>grading_level_id:</span> <span class='id identifier rubyid_score_grade'>score_grade</span><span class='comma'>,</span> <span class='label'>is_failed:</span> <span class='id identifier rubyid_fail'>fail</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_grouped_exam'>grouped_exam</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='const'>GroupedExamReport</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>student_id:</span> <span class='id identifier rubyid_student_id'>student_id</span><span class='comma'>,</span>
+                               <span class='label'>exam_group_id:</span> <span class='id identifier rubyid_exam_group'>exam_group</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>subject_id:</span> <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_subject_id'>subject_id</span><span class='comma'>,</span> <span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_grouped_exam'>grouped_exam</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>marks:</span> <span class='id identifier rubyid_details'>details</span><span class='lbracket'>[</span><span class='symbol'>:marks</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:51:57 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>

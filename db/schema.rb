@@ -142,24 +142,6 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
     t.datetime "updated_at"
   end
 
-  create_table "attendences", force: :cascade do |t|
-    t.boolean  "forenoon",            limit: 1
-    t.boolean  "afternoon",           limit: 1
-    t.string   "reason",              limit: 255
-    t.date     "month_date"
-    t.integer  "student_id",          limit: 4
-    t.integer  "time_table_entry_id", limit: 4
-    t.integer  "batch_id",            limit: 4
-    t.integer  "subject_id",          limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-  end
-
-  add_index "attendences", ["batch_id"], name: "index_attendences_on_batch_id", using: :btree
-  add_index "attendences", ["student_id"], name: "index_attendences_on_student_id", using: :btree
-  add_index "attendences", ["subject_id"], name: "index_attendences_on_subject_id", using: :btree
-  add_index "attendences", ["time_table_entry_id"], name: "index_attendences_on_time_table_entry_id", using: :btree
-
   create_table "bank_fields", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.boolean  "status",     limit: 1
@@ -1307,10 +1289,6 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   add_index "weightages", ["placement_exam_id"], name: "index_weightages_on_placement_exam_id", using: :btree
   add_index "weightages", ["question_type_id"], name: "index_weightages_on_question_type_id", using: :btree
 
-  add_foreign_key "attendences", "batches"
-  add_foreign_key "attendences", "students"
-  add_foreign_key "attendences", "subjects"
-  add_foreign_key "attendences", "time_table_entries"
   add_foreign_key "privilege_users", "privilege_tags"
   add_foreign_key "privilege_users", "privileges"
   add_foreign_key "privilege_users", "users"

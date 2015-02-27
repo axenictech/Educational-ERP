@@ -112,7 +112,7 @@ class Employee < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def update_payroll(payroll_id, amount)
+  def update_payroll(payroll_id, amount, salary_date)
     @payrolls = PayrollCategory.where(payroll_category_id: payroll_id)
     unless @payrolls.nil?
       @payrolls.each do |payrol|
@@ -123,7 +123,7 @@ class Employee < ActiveRecord::Base
         else
           @payroll_salary.update(amount: p_amount)
         end
-        update_payroll(payrol.id, p_amount)
+        update_payroll(payrol.id, p_amount,salary_date)
       end
     end
   end
@@ -168,7 +168,7 @@ class Employee < ActiveRecord::Base
       Employee.search1(other_conditions, s).order('id ASC')
     end
   end
-
+# adv search user can search employee with multiple options
   def self.adv_search(p)
     conditions = ''
     conditions += "concat_ws(' ',first_name,last_name) like '#{p[:name]}%' COLLATE utf8_bin" unless p[:name] == ''
@@ -269,7 +269,7 @@ class Employee < ActiveRecord::Base
     end
     @employees
   end
-
+# user can search here employee with multiple options 
   def self.adv_search2(p)
     search = ''
     search += ' Name: ' + p[:name].to_s + ', ' unless p[:name].empty?
@@ -387,7 +387,7 @@ class Employee < ActiveRecord::Base
     flag
   end
 
-  def self.emp(emp, payroll, amount)
+  def self.emp(emp, payroll, amount, salary_date)
     salary = EmployeeSaleryStructure.where(employee_id: emp.id, payroll_category_id: payroll).take
     if salary.nil?
       EmployeeSaleryStructure.create(employee_id: emp.id, payroll_category_id: payroll, amount: amount)
