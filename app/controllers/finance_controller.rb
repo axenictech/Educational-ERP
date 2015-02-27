@@ -610,6 +610,8 @@ class FinanceController < ApplicationController
 
   # This action save the record of particulars for specific finance fee category.
   # Batch id and fee categoy is the foreign key for particular record.
+  # Particular is assign by three role i.e.Admission number,student category
+  # and common to all. For that operation @fee.set is used.
   def create_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:id])
@@ -621,6 +623,7 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_create')
   end
 
+  # Fetch the finance particular record for update from database.
   def edit_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:master_id])

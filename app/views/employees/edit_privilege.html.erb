@@ -9,7 +9,6 @@
  </div>
 <div id="flash"><%= render 'layouts/messages'%></div>
 
-
 <%= form_for :edit_privilege ,url:{action:'update_privilege',format: @employee.id} do |f| %>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
@@ -35,8 +34,11 @@
     <tbody>
      <%@privilege_tags.each do |p_t|%>
      <tr>
-          <td><%= check_box_tag "privilege[]",p_t.id,false,class: "check_box"%></td>
-          <td><b><%=p_t.name_tag%></b></td>
+        <td> <b><%= p_t.name_tag%></b></td>
+        <% p_t.privileges.each do |i| %>
+        <td> <b><%= i.name%></b></td>
+          <td><%= check_box_tag "privilege[#{p_t.id}]name[]",[i.id],false,class: "check_box"%></td>
+      <%end%>    
      </tr>
      <%end%>
      </tbody>
