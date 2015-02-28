@@ -1,0 +1,1717 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Employee
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Employee.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Employee</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Employee
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Employee</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Activity.html" title="Activity (module)">Activity</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/employee.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Employee</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#adv_search-class_method" title="adv_search (class method)">+ (Object) <strong>adv_search</strong>(p) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>adv search user can search employee with multiple options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#adv_search2-class_method" title="adv_search2 (class method)">+ (Object) <strong>adv_search2</strong>(p) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>user can search here employee with multiple options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#att_leave-class_method" title="att_leave (class method)">+ (Object) <strong>att_leave</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#emp-class_method" title="emp (class method)">+ (Object) <strong>emp</strong>(emp, payroll, amount) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#employee_find-class_method" title="employee_find (class method)">+ (Object) <strong>employee_find</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#one_click-class_method" title="one_click (class method)">+ (Object) <strong>one_click</strong>(employees, already_created, salary_date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rep_man-class_method" title="rep_man (class method)">+ (Object) <strong>rep_man</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report-class_method" title="report (class method)">+ (Object) <strong>report</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search2-class_method" title="search2 (class method)">+ (Object) <strong>search2</strong>(a, s) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#archived_employee-instance_method" title="#archived_employee (instance method)">- (Object) <strong>archived_employee</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assign-instance_method" title="#assign (instance method)">- (Object) <strong>assign</strong>(batch, id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_payslip-instance_method" title="#create_payslip (instance method)">- (Object) <strong>create_payslip</strong>(employee, salary_date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#emp_no-instance_method" title="#emp_no (instance method)">- (Object) <strong>emp_no</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#full_name-instance_method" title="#full_name (instance method)">- (Object) <strong>full_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#leave_reset-instance_method" title="#leave_reset (instance method)">- (Object) <strong>leave_reset</strong>(emp) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#personal_salary-instance_method" title="#personal_salary (instance method)">- (Object) <strong>personal_salary</strong>(date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove-instance_method" title="#remove (instance method)">- (Object) <strong>remove</strong>(batch, id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#salary-instance_method" title="#salary (instance method)">- (Object) <strong>salary</strong>(date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_payroll-instance_method" title="#update_payroll (instance method)">- (Object) <strong>update_payroll</strong>(payroll_id, amount) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="adv_search-class_method">
+  
+    + (<tt>Object</tt>) <strong>adv_search</strong>(p) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>adv search user can search employee with multiple options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 170</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_adv_search'>adv_search</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>concat_ws(&#39; &#39;,first_name,last_name) like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>%&#39; COLLATE utf8_bin</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_eql?'>eql?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>All</span><span class='tstring_end'>&#39;</span></span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+        <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gender like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND gender like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>employee_category_id = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_category_id = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>blood_group like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND blood_group like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>marital_status like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND marital_status like &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>country_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND country_id =&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joining_date=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND joining_date =&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>employee_department_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_department_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>employee_position_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_position_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+   <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>employee_grade_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_grade_id=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date_of_birth=&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND date_of_birth =&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>all</span><span class='tstring_end'>&#39;</span></span>
+      <span class='ivar'>@employee1</span> <span class='op'>=</span> <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:employee_department</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+      <span class='ivar'>@employee2</span> <span class='op'>=</span> <span class='const'>ArchivedEmployee</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:employee_department</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+      <span class='ivar'>@employees</span> <span class='op'>=</span> <span class='ivar'>@employee1</span> <span class='op'>+</span> <span class='ivar'>@employee2</span>
+    <span class='kw'>elsif</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>present</span><span class='tstring_end'>&#39;</span></span>
+      <span class='ivar'>@employees</span> <span class='op'>=</span> <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:employee_department</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@employees</span> <span class='op'>=</span> <span class='const'>ArchivedEmployee</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:employee_department</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@employees</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="adv_search2-class_method">
+  
+    + (<tt>Object</tt>) <strong>adv_search2</strong>(p) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>user can search here employee with multiple options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 271</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_adv_search2'>adv_search2</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Name: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='kw'>if</span>  <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>All</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Gender: All</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Gender: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:gender</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Blood group: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:blood_group</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Marital Status: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:marital_status</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Country: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'>Country</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:country_id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Category: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'>EmployeeCategory</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Joining date:</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span>  <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span>  <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:joining_date</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Department: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'>EmployeeDepartment</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+   <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Position: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'>EmployeePosition</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+   <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Grade: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'>EmployeeGrade</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span>
+   <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_searchs'>searchs</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Date of birth: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span>  <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span>  <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:date_of_birth</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>present</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Staus: Present student</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='symbol'>:status</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>former</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Staus: Former student</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_search'>search</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> Status: All student</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_search'>search</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="att_leave-class_method">
+  
+    + (<tt>Object</tt>) <strong>att_leave</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+413
+414
+415
+416
+417
+418
+419
+420
+421</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 413</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_att_leave'>att_leave</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+    <span class='const'>EmployeeLeaveType</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_l'>l</span><span class='op'>|</span>
+      <span class='ivar'>@leave</span> <span class='op'>=</span> <span class='const'>EmployeeLeave</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> \
+                                    <span class='label'>employee_leave_type_id:</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>\
+                                    <span class='label'>leave_count:</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_max_leave_count'>max_leave_count</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="emp-class_method">
+  
+    + (<tt>Object</tt>) <strong>emp</strong>(emp, payroll, amount) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+388
+389
+390
+391
+392
+393
+394
+395</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 388</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_emp'>emp</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='comma'>,</span> <span class='id identifier rubyid_payroll'>payroll</span><span class='comma'>,</span> <span class='id identifier rubyid_amount'>amount</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_salary'>salary</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_payroll'>payroll</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_salary'>salary</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_payroll'>payroll</span><span class='comma'>,</span> <span class='label'>amount:</span> <span class='id identifier rubyid_amount'>amount</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_salary'>salary</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>amount:</span> <span class='id identifier rubyid_amount'>amount</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="employee_find-class_method">
+  
+    + (<tt>Object</tt>) <strong>employee_find</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+435
+436
+437</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 435</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_employee_find'>employee_find</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="one_click-class_method">
+  
+    + (<tt>Object</tt>) <strong>one_click</strong>(employees, already_created, salary_date) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 318</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_one_click'>one_click</span><span class='lparen'>(</span><span class='id identifier rubyid_employees'>employees</span><span class='comma'>,</span> <span class='id identifier rubyid_already_created'>already_created</span><span class='comma'>,</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_employees'>employees</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_employees'>employees</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_emp'>emp</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_already_created'>already_created</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+
+    <span class='kw'>else</span>
+          <span class='id identifier rubyid_counter'>counter</span> <span class='op'>=</span> <span class='int'>0</span>
+          <span class='id identifier rubyid_tot'>tot</span> <span class='op'>=</span> <span class='int'>0</span>
+          <span class='id identifier rubyid_tot_deduction'>tot_deduction</span> <span class='op'>=</span> <span class='int'>0</span>
+          <span class='id identifier rubyid_grand_tot'>grand_tot</span> <span class='op'>=</span> <span class='int'>0</span>
+          <span class='id identifier rubyid_no_deduction'>no_deduction</span> <span class='op'>=</span> <span class='const'>PayrollCategory</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>is_deduction:</span> <span class='kw'>false</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_no_deduction'>no_deduction</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_j'>j</span><span class='op'>|</span>
+            <span class='id identifier rubyid_amount'>amount</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_j'>j</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:amount</span><span class='rparen'>)</span>
+            <span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+              <span class='id identifier rubyid_tot'>tot</span> <span class='op'>+=</span> <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+          <span class='id identifier rubyid_is_deduction'>is_deduction</span> <span class='op'>=</span> <span class='const'>PayrollCategory</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>is_deduction:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_is_deduction'>is_deduction</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+            <span class='id identifier rubyid_amount'>amount</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:amount</span><span class='rparen'>)</span>
+            <span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span>  <span class='op'>|</span><span class='id identifier rubyid_j'>j</span><span class='op'>|</span>
+              <span class='id identifier rubyid_tot_deduction'>tot_deduction</span> <span class='op'>+=</span> <span class='id identifier rubyid_j'>j</span><span class='period'>.</span>  <span class='id identifier rubyid_to_f'>to_f</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+
+          <span class='id identifier rubyid_grand_tot'>grand_tot</span> <span class='op'>=</span> <span class='id identifier rubyid_tot'>tot</span> <span class='op'>-</span> <span class='id identifier rubyid_tot_deduction'>tot_deduction</span>
+
+          <span class='const'>MonthlyPayslip</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>amount:</span> <span class='id identifier rubyid_grand_tot'>grand_tot</span><span class='comma'>,</span> <span class='label'>is_approved:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>salary_date:</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='rparen'>)</span>
+          <span class='id identifier rubyid_counter'>counter</span> <span class='op'>+=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rep_man-class_method">
+  
+    + (<tt>Object</tt>) <strong>rep_man</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+397
+398
+399
+400</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 397</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_rep_man'>rep_man</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_reporting_manager_id'>reporting_manager_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> \
+   <span class='kw'>unless</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_reporting_manager_id'>reporting_manager_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report-class_method">
+  
+    + (<tt>Object</tt>) <strong>report</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+402
+403
+404</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 402</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_reporting_manager_id'>reporting_manager_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='kw'>unless</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_reporting_manager_id'>reporting_manager_id</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="search2-class_method">
+  
+    + (<tt>Object</tt>) <strong>search2</strong>(a, s) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_search2'>search2</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_dep_id'>dep_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='symbol'>:employee_department_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_cat_id'>cat_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='symbol'>:employee_category_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_pos_id'>pos_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='symbol'>:employee_position_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_grd_id'>grd_id</span> <span class='op'>=</span> <span class='id identifier rubyid_a'>a</span><span class='lbracket'>[</span><span class='symbol'>:employee_grade_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_other_conditions'>other_conditions</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_other_conditions'>other_conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_department_id = &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_dep_id'>dep_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_dep_id'>dep_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_other_conditions'>other_conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_category_id = &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cat_id'>cat_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_cat_id'>cat_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_other_conditions'>other_conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_position_id = &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pos_id'>pos_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_pos_id'>pos_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_other_conditions'>other_conditions</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND employee_grade_id = &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_grd_id'>grd_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_grd_id'>grd_id</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+    <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_search1'>search1</span><span class='lparen'>(</span><span class='id identifier rubyid_other_conditions'>other_conditions</span><span class='comma'>,</span> <span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id ASC</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="archived_employee-instance_method">
+  
+    - (<tt>Object</tt>) <strong>archived_employee</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_archived_employee'>archived_employee</span>
+  <span class='id identifier rubyid_employee_attributes'>employee_attributes</span> <span class='op'>=</span> <span class='id identifier rubyid_attributes'>attributes</span>
+  <span class='id identifier rubyid_update_attributes'>update_attributes</span><span class='lparen'>(</span><span class='label'>status_description:</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_employee_attributes'>employee_attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>former_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_archived_employee'>archived_employee</span> <span class='op'>=</span> <span class='const'>ArchivedEmployee</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_employee_attributes'>employee_attributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_archived_employee'>archived_employee</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="assign-instance_method">
+  
+    - (<tt>Object</tt>) <strong>assign</strong>(batch, id) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assign'>assign</span><span class='lparen'>(</span><span class='id identifier rubyid_batch'>batch</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_employee_id'>employee_id</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_assigned_emps'>assigned_emps</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_assigned_emps'>assigned_emps</span> <span class='op'>=</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_employee_id'>employee_id</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_assigned_emps'>assigned_emps</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span> <span class='label'>employee_id:</span> <span class='id identifier rubyid_assigned_emps'>assigned_emps</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assigned_emps'>assigned_emps</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_payslip-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_payslip</strong>(employee, salary_date) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 351</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_payslip'>create_payslip</span><span class='lparen'>(</span><span class='id identifier rubyid_employee'>employee</span><span class='comma'>,</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_start_date'>start_date</span> <span class='op'>=</span> <span class='id identifier rubyid_salary_date'>salary_date</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_salary_date'>salary_date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_days'>days</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_end_date'>end_date</span> <span class='op'>=</span> <span class='id identifier rubyid_start_date'>start_date</span> <span class='op'>+</span> <span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span>
+  <span class='id identifier rubyid_payslip_exists'>payslip_exists</span> <span class='op'>=</span> <span class='id identifier rubyid_employee'>employee</span><span class='period'>.</span><span class='id identifier rubyid_monthly_payslips'>monthly_payslips</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>salary_date:</span> <span class='id identifier rubyid_start_date'>start_date</span><span class='op'>..</span><span class='id identifier rubyid_end_date'>end_date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+  <span class='id identifier rubyid_total_salary'>total_salary</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_tot_deduction'>tot_deduction</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_amounts'>amounts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_is_deduction'>is_deduction</span> <span class='op'>=</span> <span class='const'>PayrollCategory</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>is_deduction:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_is_deduction'>is_deduction</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_amounts'>amounts</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_employee'>employee</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:amount</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_amounts'>amounts</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_j'>j</span><span class='op'>|</span>
+      <span class='id identifier rubyid_tot_deduction'>tot_deduction</span> <span class='op'>+=</span> <span class='id identifier rubyid_j'>j</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_amo'>amo</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_is_deduction'>is_deduction</span> <span class='op'>=</span> <span class='const'>PayrollCategory</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>is_deduction:</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_is_deduction'>is_deduction</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_amo'>amo</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_employee'>employee</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:amount</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_amo'>amo</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_j'>j</span><span class='op'>|</span>
+      <span class='id identifier rubyid_total_salary'>total_salary</span> <span class='op'>+=</span> <span class='id identifier rubyid_j'>j</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_total_salary'>total_salary</span> <span class='op'>-=</span> <span class='id identifier rubyid_tot_deduction'>tot_deduction</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='const'>MonthlyPayslip</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_employee'>employee</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>salary_date:</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='symbol'>:salary_date</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_b'>b</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_b'>b</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%b</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='const'>MonthlyPayslip</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>salary_date:</span> <span class='id identifier rubyid_salary_date'>salary_date</span><span class='comma'>,</span> <span class='label'>employee_id:</span> <span class='id identifier rubyid_employee'>employee</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>amount:</span> <span class='id identifier rubyid_total_salary'>total_salary</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='int'>0</span>
+     <span class='kw'>end</span>
+  <span class='id identifier rubyid_flag'>flag</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="emp_no-instance_method">
+  
+    - (<tt>Object</tt>) <strong>emp_no</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148
+149
+150
+151
+152
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 148</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_emp_no'>emp_no</span>
+  <span class='id identifier rubyid_date'>date</span> <span class='op'>=</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>%Y%m%d</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_employee_number'>employee_number</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>if</span> <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_employee_number'>employee_number</span> <span class='op'>=</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> \
+    <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_next'>next</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>unless</span> <span class='const'>Employee</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="full_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>full_name</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_full_name'>full_name</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_first_name'>first_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_last_name'>last_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="leave_reset-instance_method">
+  
+    - (<tt>Object</tt>) <strong>leave_reset</strong>(emp) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 423</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_leave_reset'>leave_reset</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leave_count'>leave_count</span> <span class='op'>=</span> <span class='const'>EmployeeLeave</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leave_count'>leave_count</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+    <span class='id identifier rubyid_leave_type'>leave_type</span> <span class='op'>=</span> <span class='const'>EmployeeLeaveType</span><span class='period'>.</span><span class='id identifier rubyid_find_by_id'>find_by_id</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_employee_leave_type_id'>employee_leave_type_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_default_leave_count'>default_leave_count</span> <span class='op'>=</span> <span class='id identifier rubyid_leave_type'>leave_type</span><span class='period'>.</span><span class='id identifier rubyid_max_leave_count'>max_leave_count</span>
+    <span class='id identifier rubyid_available_leave'>available_leave</span> <span class='op'>=</span> <span class='id identifier rubyid_default_leave_count'>default_leave_count</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+    <span class='id identifier rubyid_leave_taken'>leave_taken</span> <span class='op'>=</span> <span class='int'>0</span>
+    <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>leave_taken:</span> <span class='id identifier rubyid_leave_taken'>leave_taken</span><span class='comma'>,</span> <span class='label'>leave_count:</span> <span class='id identifier rubyid_available_leave'>available_leave</span><span class='comma'>,</span>\
+             <span class='label'>reset_date:</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="personal_salary-instance_method">
+  
+    - (<tt>Object</tt>) <strong>personal_salary</strong>(date) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+410
+411
+412</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 410</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_personal_salary'>personal_salary</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_individual_payslip_categories'>individual_payslip_categories</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>salary_date:</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove</strong>(batch, id) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_batch'>batch</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assigned_emps'>assigned_emps</span> <span class='op'>=</span> <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_employee_id'>employee_id</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assigned_emps'>assigned_emps</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_assign_employees'>assign_employees</span> <span class='op'>=</span> <span class='id identifier rubyid_assigned_emps'>assigned_emps</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span> <span class='label'>employee_id:</span> <span class='id identifier rubyid_assign_employees'>assign_employees</span>
+  <span class='id identifier rubyid_assign_employees'>assign_employees</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="salary-instance_method">
+  
+    - (<tt>Object</tt>) <strong>salary</strong>(date) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+406
+407
+408</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 406</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_salary'>salary</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_monthly_payslips'>monthly_payslips</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>salary_date:</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_payroll-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_payroll</strong>(payroll_id, amount) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/employee.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_payroll'>update_payroll</span><span class='lparen'>(</span><span class='id identifier rubyid_payroll_id'>payroll_id</span><span class='comma'>,</span> <span class='id identifier rubyid_amount'>amount</span><span class='rparen'>)</span>
+  <span class='ivar'>@payrolls</span> <span class='op'>=</span> <span class='const'>PayrollCategory</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_payroll_id'>payroll_id</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='ivar'>@payrolls</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='ivar'>@payrolls</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_payrol'>payrol</span><span class='op'>|</span>
+      <span class='id identifier rubyid_p_amount'>p_amount</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_amount'>amount</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>*</span> <span class='id identifier rubyid_payrol'>payrol</span><span class='period'>.</span><span class='id identifier rubyid_percentage'>percentage</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>100</span>
+      <span class='ivar'>@payroll_salary</span> <span class='op'>=</span> <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_payrol'>payrol</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span>
+      <span class='kw'>if</span> <span class='ivar'>@payroll_salary</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='const'>EmployeeSaleryStructure</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>payroll_category_id:</span> <span class='id identifier rubyid_payrol'>payrol</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>amount:</span> <span class='id identifier rubyid_p_amount'>p_amount</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='ivar'>@payroll_salary</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>amount:</span> <span class='id identifier rubyid_p_amount'>p_amount</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_update_payroll'>update_payroll</span><span class='lparen'>(</span><span class='id identifier rubyid_payrol'>payrol</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_p_amount'>p_amount</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:51:58 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>

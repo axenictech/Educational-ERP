@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: TimeTableEntry
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!TimeTableEntry.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo;
+    
+    
+    <span class="title">TimeTableEntry</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: TimeTableEntry
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">TimeTableEntry</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Activity.html" title="Activity (module)">Activity</a></span></dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">app/models/time_table_entry.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Time Table Entry Model</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#employee_time_table-class_method" title="employee_time_table (class method)">+ (Object) <strong>employee_time_table</strong>(timetable) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#entries-class_method" title="entries (class method)">+ (Object) <strong>entries</strong>(subject, batch) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_day-class_method" title="max_day (class method)">+ (Object) <strong>max_day</strong>(emp, week, time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_subject-class_method" title="max_subject (class method)">+ (Object) <strong>max_subject</strong>(subject, time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_week-class_method" title="max_week (class method)">+ (Object) <strong>max_week</strong>(emp, time) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select_employee-class_method" title="select_employee (class method)">+ (Object) <strong>select_employee</strong>(e) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select_time_table-class_method" title="select_time_table (class method)">+ (Object) <strong>select_time_table</strong>(time_table) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#selecttime-class_method" title="selecttime (class method)">+ (Object) <strong>selecttime</strong>(_e) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="employee_time_table-class_method">
+  
+    + (<tt>Object</tt>) <strong>employee_time_table</strong>(timetable) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_employee_time_table'>employee_time_table</span><span class='lparen'>(</span><span class='id identifier rubyid_timetable'>timetable</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_timetables'>timetables</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_timetable'>timetable</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_tbe'>tbe</span><span class='op'>|</span>
+    <span class='id identifier rubyid_timetables'>timetables</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tbe'>tbe</span><span class='period'>.</span><span class='id identifier rubyid_time_table'>time_table</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_timetables'>timetables</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="entries-class_method">
+  
+    + (<tt>Object</tt>) <strong>entries</strong>(subject, batch) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_entries'>entries</span><span class='lparen'>(</span><span class='id identifier rubyid_subject'>subject</span><span class='comma'>,</span> <span class='id identifier rubyid_batch'>batch</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>subject_id:</span> <span class='id identifier rubyid_subject'>subject</span><span class='comma'>,</span> <span class='label'>batch_id:</span> <span class='id identifier rubyid_batch'>batch</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_day-class_method">
+  
+    + (<tt>Object</tt>) <strong>max_day</strong>(emp, week, time) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_max_day'>max_day</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='comma'>,</span> <span class='id identifier rubyid_week'>week</span><span class='comma'>,</span> <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>weekday_id:</span> \
+  <span class='id identifier rubyid_week'>week</span><span class='comma'>,</span> <span class='label'>time_table_id:</span> <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_employee_grade'>employee_grade</span><span class='period'>.</span><span class='id identifier rubyid_max_hours_day'>max_hours_day</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_subject-class_method">
+  
+    + (<tt>Object</tt>) <strong>max_subject</strong>(subject, time) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_max_subject'>max_subject</span><span class='lparen'>(</span><span class='id identifier rubyid_subject'>subject</span><span class='comma'>,</span> <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>subject_id:</span> <span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>time_table_id:</span> \
+  <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_max_weekly_classes'>max_weekly_classes</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_week-class_method">
+  
+    + (<tt>Object</tt>) <strong>max_week</strong>(emp, time) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_max_week'>max_week</span><span class='lparen'>(</span><span class='id identifier rubyid_emp'>emp</span><span class='comma'>,</span> <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='const'>TimeTableEntry</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>employee_id:</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>time_table_id:</span> \
+  <span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_emp'>emp</span><span class='period'>.</span><span class='id identifier rubyid_employee_grade'>employee_grade</span><span class='period'>.</span><span class='id identifier rubyid_max_hours_week'>max_hours_week</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select_employee-class_method">
+  
+    + (<tt>Object</tt>) <strong>select_employee</strong>(e) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_select_employee'>select_employee</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_weekdays'>weekdays</span><span class='comma'>,</span> <span class='id identifier rubyid_class_timings'>class_timings</span><span class='comma'>,</span> <span class='id identifier rubyid_employees'>employees</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span>
+      <span class='id identifier rubyid_weekdays'>weekdays</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_weekday'>weekday</span>
+      <span class='id identifier rubyid_class_timings'>class_timings</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_class_timing'>class_timing</span>
+      <span class='id identifier rubyid_employees'>employees</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_employee'>employee</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_weekdays'>weekdays</span><span class='comma'>,</span> <span class='id identifier rubyid_class_timings'>class_timings</span><span class='comma'>,</span> <span class='id identifier rubyid_employees'>employees</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select_time_table-class_method">
+  
+    + (<tt>Object</tt>) <strong>select_time_table</strong>(time_table) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_select_time_table'>select_time_table</span><span class='lparen'>(</span><span class='id identifier rubyid_time_table'>time_table</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_batches'>batches</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_time_table'>time_table</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_time_table'>time_table</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span>
+      <span class='id identifier rubyid_batches'>batches</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_batches'>batches</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="selecttime-class_method">
+  
+    + (<tt>Object</tt>) <strong>selecttime</strong>(_e) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/time_table_entry.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_selecttime'>selecttime</span><span class='lparen'>(</span><span class='id identifier rubyid__e'>_e</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_weekdays'>weekdays</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_class_timings'>class_timings</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_employees'>employees</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span>
+      <span class='id identifier rubyid_weekdays'>weekdays</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_weekday'>weekday</span>
+      <span class='id identifier rubyid_class_timings'>class_timings</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_class_timing'>class_timing</span>
+      <span class='id identifier rubyid_employees'>employees</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_employee'>employee</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:51:59 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: ExamGroupsController
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!ExamGroupsController.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">ExamGroupsController</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: ExamGroupsController
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActionController::Base</li>
+          
+            <li class="next"><span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></li>
+          
+            <li class="next">ExamGroupsController</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/controllers/exam_groups_controller.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>ExamGroupsController</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assign_all-instance_method" title="#assign_all (instance method)">- (Object) <strong>assign_all</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connect_exam-instance_method" title="#connect_exam (instance method)">- (Object) <strong>connect_exam</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#destroy-instance_method" title="#destroy (instance method)">- (Object) <strong>destroy</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edit-instance_method" title="#edit (instance method)">- (Object) <strong>edit</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exam_group_create-instance_method" title="#exam_group_create (instance method)">- (Object) <strong>exam_group_create</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exams-instance_method" title="#exams (instance method)">- (Object) <strong>exams</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#index-instance_method" title="#index (instance method)">- (Object) <strong>index</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-instance_method" title="#new (instance method)">- (Object) <strong>new</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#previous_exam-instance_method" title="#previous_exam (instance method)">- (Object) <strong>previous_exam</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#previous_exam_data-instance_method" title="#previous_exam_data (instance method)">- (Object) <strong>previous_exam_data</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#previous_exam_details-instance_method" title="#previous_exam_details (instance method)">- (Object) <strong>previous_exam_details</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#previous_exam_group-instance_method" title="#previous_exam_group (instance method)">- (Object) <strong>previous_exam_group</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#previous_exam_scores-instance_method" title="#previous_exam_scores (instance method)">- (Object) <strong>previous_exam_scores</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#publish_exam-instance_method" title="#publish_exam (instance method)">- (Object) <strong>publish_exam</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#publish_res-instance_method" title="#publish_res (instance method)">- (Object) <strong>publish_res</strong>(flag) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#publish_result-instance_method" title="#publish_result (instance method)">- (Object) <strong>publish_result</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_all-instance_method" title="#remove_all (instance method)">- (Object) <strong>remove_all</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select-instance_method" title="#select (instance method)">- (Object) <strong>select</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">- (Object) <strong>show</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Object) <strong>update</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_exam_score-instance_method" title="#update_exam_score (instance method)">- (Object) <strong>update_exam_score</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="ApplicationController.html" title="ApplicationController (class)">ApplicationController</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="ApplicationController.html#set_current_user-instance_method" title="ApplicationController#set_current_user (method)">#set_current_user</a></span></p>
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="assign_all-instance_method">
+  
+    - (<tt>Object</tt>) <strong>assign_all</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 95</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assign_all'>assign_all</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="connect_exam-instance_method">
+  
+    - (<tt>Object</tt>) <strong>connect_exam</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 90</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_connect_exam'>connect_exam</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_params_exam_group'>params_exam_group</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+  <span class='ivar'>@subjects</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam'>exam</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exams'>exams</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="destroy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>destroy</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136
+137
+138
+139
+140
+141</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_authorize!'>authorize!</span> <span class='symbol'>:delete</span><span class='comma'>,</span> <span class='ivar'>@exam_group</span>
+  <span class='id identifier rubyid_batch'>batch</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
+  <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Exam Group deleted successfully!</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_exam_group_path'>exam_group_path</span><span class='lparen'>(</span><span class='id identifier rubyid_batch'>batch</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edit-instance_method">
+  
+    - (<tt>Object</tt>) <strong>edit</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_edit'>edit</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exam_group_create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exam_group_create</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exam_group_create'>exam_group_create</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:exam_group</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:exams_attributes</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span>
+    <span class='ivar'>@flag</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_start_time'>start_time</span> <span class='op'>=</span> <span class='id identifier rubyid_s'>s</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:start_time</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span>
+    <span class='id identifier rubyid_end_time'>end_time</span> <span class='op'>=</span> <span class='id identifier rubyid_s'>s</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:end_time</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_start_time'>start_time</span> <span class='op'>&gt;=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_start_date'>start_date</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_end_time'>end_time</span> <span class='op'>&lt;=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_end_date'>end_date</span>
+      <span class='ivar'>@flag</span> <span class='op'>=</span> <span class='kw'>false</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='ivar'>@flag</span> <span class='op'>==</span> <span class='kw'>false</span>
+    <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params_exam_group'>params_exam_group</span><span class='rparen'>)</span>
+    <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_update_exam'>update_exam</span><span class='lparen'>(</span><span class='ivar'>@exam_group</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:no_create</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='symbol'>:exam_date</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>is not in range of batch date</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="exams-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exams</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_exams'>exams</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exams</span> <span class='op'>||=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exams'>exams</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:subject</span><span class='rparen'>)</span>
+  <span class='ivar'>@course</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span><span class='period'>.</span><span class='id identifier rubyid_course'>course</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="index-instance_method">
+  
+    - (<tt>Object</tt>) <strong>index</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
+  <span class='ivar'>@courses</span> <span class='op'>||=</span> <span class='const'>Course</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span>
+  <span class='ivar'>@course</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_course'>course</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="previous_exam-instance_method">
+  
+    - (<tt>Object</tt>) <strong>previous_exam</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_previous_exam'>previous_exam</span>
+  <span class='ivar'>@course</span> <span class='op'>=</span> <span class='const'>Course</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:course</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@batches</span> <span class='op'>=</span> <span class='ivar'>@course</span><span class='period'>.</span><span class='id identifier rubyid_batches'>batches</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="previous_exam_data-instance_method">
+  
+    - (<tt>Object</tt>) <strong>previous_exam_data</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_previous_exam_data'>previous_exam_data</span>
+  <span class='ivar'>@courses</span> <span class='op'>||=</span> <span class='const'>Course</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="previous_exam_details-instance_method">
+  
+    - (<tt>Object</tt>) <strong>previous_exam_details</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_previous_exam_details'>previous_exam_details</span>
+  <span class='ivar'>@exams</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:exam_group</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exams</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exam_details'>exam_details</span><span class='lparen'>(</span><span class='ivar'>@exam_group</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="previous_exam_group-instance_method">
+  
+    - (<tt>Object</tt>) <strong>previous_exam_group</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_previous_exam_group'>previous_exam_group</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:batch</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>result_published:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="previous_exam_scores-instance_method">
+  
+    - (<tt>Object</tt>) <strong>previous_exam_scores</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 143</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_previous_exam_scores'>previous_exam_scores</span>
+  <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='const'>Exam</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_scores</span> <span class='op'>=</span> <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_is_failed'>is_failed</span>
+  <span class='comment'># authroize! :update, @exam
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="publish_exam-instance_method">
+  
+    - (<tt>Object</tt>) <strong>publish_exam</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111
+112</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_publish_exam'>publish_exam</span>
+  <span class='ivar'>@date</span> <span class='op'>=</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_today'>today</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>is_published:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exams'>exams</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:create_exam_event</span><span class='rparen'>)</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>||=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="publish_res-instance_method">
+  
+    - (<tt>Object</tt>) <strong>publish_res</strong>(flag) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125
+126
+127
+128
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 125</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_publish_res'>publish_res</span><span class='lparen'>(</span><span class='id identifier rubyid_flag'>flag</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_flag'>flag</span> <span class='op'>==</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Exam results cannot be published</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>else</span>
+    <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='label'>result_published:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:notice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Result published successfully</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="publish_result-instance_method">
+  
+    - (<tt>Object</tt>) <strong>publish_result</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 114</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_publish_result'>publish_result</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:format</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_is_published?'>is_published?</span>
+    <span class='id identifier rubyid_flag'>flag</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_publish'>publish</span><span class='lparen'>(</span><span class='ivar'>@exam_group</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_publish_res'>publish_res</span><span class='lparen'>(</span><span class='id identifier rubyid_flag'>flag</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_flash'>flash</span><span class='lbracket'>[</span><span class='symbol'>:alert</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Exam scheduled not published</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_exams_exam_group_path'>exams_exam_group_path</span><span class='lparen'>(</span><span class='ivar'>@exam_group</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_all-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remove_all</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 100</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_remove_all'>remove_all</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select-instance_method">
+  
+    - (<tt>Object</tt>) <strong>select</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+7
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 7</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_select'>select</span>
+  <span class='ivar'>@course</span> <span class='op'>=</span> <span class='const'>Course</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:course</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@batches</span> <span class='op'>||=</span> <span class='ivar'>@course</span><span class='period'>.</span><span class='id identifier rubyid_batches'>batches</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    - (<tt>Object</tt>) <strong>show</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='const'>Batch</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_groups</span> <span class='op'>||=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_exam_groups'>exam_groups</span><span class='period'>.</span><span class='id identifier rubyid_all'>all</span>
+  <span class='ivar'>@course</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_course'>course</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='const'>ExamGroup</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_params_exam_group'>params_exam_group</span><span class='rparen'>)</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+  <span class='ivar'>@subjects</span> <span class='op'>=</span> <span class='ivar'>@batch</span><span class='period'>.</span><span class='id identifier rubyid_subjects'>subjects</span><span class='period'>.</span><span class='id identifier rubyid_exam'>exam</span>
+  <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_exams'>exams</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update_exam_score-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_exam_score</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/controllers/exam_groups_controller.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update_exam_score'>update_exam_score</span>
+  <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='const'>Exam</span><span class='period'>.</span><span class='id identifier rubyid_shod'>shod</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='ivar'>@exam_group</span> <span class='op'>=</span> <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_exam_group'>exam_group</span>
+  <span class='ivar'>@batch</span> <span class='op'>=</span> <span class='ivar'>@exam_group</span><span class='period'>.</span><span class='id identifier rubyid_batch'>batch</span>
+  <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_update_exam_scr'>update_exam_scr</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='comma'>,</span> <span class='ivar'>@exam_group</span><span class='comma'>,</span> <span class='ivar'>@batch</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:exams</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:exam</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_redirect_to'>redirect_to</span> <span class='id identifier rubyid_previous_exam_scores_exam_groups_path'>previous_exam_scores_exam_groups_path</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Feb 26 00:52:03 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.5).
+</div>
+
+  </body>
+</html>
