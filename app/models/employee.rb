@@ -100,6 +100,9 @@ class Employee < ActiveRecord::Base
   # find employee which we created after the employee leave type created
   scope :att_reg, -> { where.not(id: EmployeeLeave.all.pluck(:employee_id)) }
 
+  # This method is used to create archived employee,
+  # update all attributes of employee ,call create method and pass
+  # required params and return archived employee
   def archived_employee
     employee_attributes = attributes
     update_attributes(status_description: status)
@@ -108,10 +111,15 @@ class Employee < ActiveRecord::Base
     archived_employee
   end
 
+  # this method return full name of employee
   def full_name
     "#{first_name} #{last_name}"
   end
 
+  # This method is used to update payroll of employee of each category,
+  # first find payroll for selected employee,then caluclate amount on payroll
+  # defined percentage,if payroll is nil then create payroll and update all
+  # payroll category amount
   def update_payroll(payroll_id, amount, salary_date)
     @payrolls = PayrollCategory.where(payroll_category_id: payroll_id)
     unless @payrolls.nil?
@@ -128,6 +136,9 @@ class Employee < ActiveRecord::Base
     end
   end
 
+  # This method is used to asssign employee to batch,
+  # check employee already present in batch else split batch and insert
+  # employee in batch and update batch and join again
   def assign(batch, id)
     if batch.employee_id.blank?
       assigned_emps = []
@@ -139,6 +150,9 @@ class Employee < ActiveRecord::Base
     assigned_emps.join(',')
   end
 
+  # This method is used to remove assigned  employee from batch,
+  # split assigned employee array, and delete id form array whose
+  # employee to be remove and join again
   def remove(batch, id)
     assigned_emps = batch.employee_id.split(',')
     assigned_emps.delete(id.to_s)
@@ -147,6 +161,9 @@ class Employee < ActiveRecord::Base
     assign_employees
   end
 
+  # this method is used to calculate the employee number
+  # if first employee then append 1 to today date else
+  # append last id to today date
   def emp_no
     date = Date.today.strftime('%Y%m%d')
     self.employee_number = date.to_s + '1' if Employee.first.nil?
@@ -154,6 +171,8 @@ class Employee < ActiveRecord::Base
       Employee.last.id.next.to_s unless Employee.first.nil?
   end
 
+  # This methd is used to search employee on dept,category,position,grade.
+  # find employee by combining all parameter
   def self.search2(a, s)
     if s.present?
       dep_id = a[:employee_department_id]
@@ -168,7 +187,10 @@ class Employee < ActiveRecord::Base
       Employee.search1(other_conditions, s).order('id ASC')
     end
   end
-# adv search user can search employee with multiple options
+
+  # This method used for adv search user ,user can search employee with
+  # multiple options combine all required parameter and pass to sql query
+  # and return the search result
   def self.adv_search(p)
     conditions = ''
     conditions += "concat_ws(' ',first_name,last_name) like '#{p[:name]}%' COLLATE utf8_bin" unless p[:name] == ''
@@ -269,7 +291,10 @@ class Employee < ActiveRecord::Base
     end
     @employees
   end
-# user can search here employee with multiple options 
+
+  # This method used for adv search user ,user can search employee with
+  # multiple options combine all required parameter and pass to sql query
+  # and return the search result
   def self.adv_search2(p)
     search = ''
     search += ' Name: ' + p[:name].to_s + ', ' unless p[:name].empty?
@@ -317,6 +342,11 @@ class Employee < ActiveRecord::Base
     search
   end
 
+  # This method is used for payslip generation of all employee,
+  # first calculate deduction of each employee and earning of each employee
+  # from payroll ,check each employee for whose payslip already generated,
+  # else create monthlypayslip ,take appropriate amount from
+  # employeesalarystrcture
   def self.one_click(employees, already_created, salary_date)
     employees.pluck(:id)
     employees.each do |emp|
@@ -350,6 +380,11 @@ class Employee < ActiveRecord::Base
     end
   end
 
+  # This method is used for payslip generation of selected employee,
+  # first calculate deduction of each employee and earning of each employee
+  # from payroll ,check month for new creation of payslip or update payslip and
+  #  ,take appropriate amount from employeesalarystrcture
+  # then create  or update monthlypayslip
   def create_payslip(employee, salary_date)
     start_date = salary_date - ((salary_date.day - 1).days)
     end_date = start_date + 1.month
@@ -387,28 +422,38 @@ class Employee < ActiveRecord::Base
     flag
   end
 
-  def self.emp(emp, payroll, amount, salary_date)
-    salary = EmployeeSaleryStructure.where(employee_id: emp.id, payroll_category_id: payroll).take
+  # This method is used for create or update employee salary strcture
+  # if salary structure already created then update it otherwise update
+  def self.emp(emp, payroll, amount)
+    salary = EmployeeSaleryStructure.where(employee_id: emp.id,
+                                           payroll_category_id: payroll).take
     if salary.nil?
-      EmployeeSaleryStructure.create(employee_id: emp.id, payroll_category_id: payroll, amount: amount)
+      EmployeeSaleryStructure.create(employee_id: emp.id,
+                                     payroll_category_id: payroll,
+                                     amount: amount)
     else
       salary.update(amount: amount)
     end
   end
 
+  # This method is ued for find reporting manager
   def self.rep_man(emp)
     find(emp.reporting_manager_id).first_name \
      unless emp.reporting_manager_id.nil?
   end
 
+  # This method is ued for find reporting manager
   def self.report(emp)
-    find(emp.reporting_manager_id).first_name unless emp.reporting_manager_id.nil?
+    find(emp.reporting_manager_id).first_name \
+    unless emp.reporting_manager_id.nil?
   end
 
+  # This method is used for hold the salary date
   def salary(date)
     monthly_payslips.where(salary_date: date).take
   end
 
+  # This method is used for hold the salary date of individual category
   def personal_salary(date)
     individual_payslip_categories.where(salary_date: date).take
   end
@@ -425,6 +470,9 @@ class Employee < ActiveRecord::Base
     end
   end
 
+  # This method used for reset leave of selectd employee
+  # calculate max leave count for employee and default count
+  # and update leave taken to zero
   def leave_reset(emp)
     leave_count = EmployeeLeave.where(employee_id: emp.id)
     leave_count.each do |e|
@@ -437,6 +485,7 @@ class Employee < ActiveRecord::Base
     end
   end
 
+  # This method is used to find employee
   def self.employee_find(emp)
     Employee.find(emp).first_name
   end
