@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Student - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Activity.html">Activity</a>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-advance_search">::advance_search</a>
+    
+    <li ><a href="#method-c-search">::search</a>
+    
+    <li ><a href="#method-c-search_script">::search_script</a>
+    
+    <li ><a href="#method-c-set_admission_no">::set_admission_no</a>
+    
+    <li ><a href="#method-i-address_line">#address_line</a>
+    
+    <li ><a href="#method-i-archived_student">#archived_student</a>
+    
+    <li ><a href="#method-i-batch_name">#batch_name</a>
+    
+    <li ><a href="#method-i-exam_scores">#exam_scores</a>
+    
+    <li ><a href="#method-i-full_name">#full_name</a>
+    
+    <li ><a href="#method-i-guard_name">#guard_name</a>
+    
+    <li ><a href="#method-i-mail">#mail</a>
+    
+    <li ><a href="#method-i-stud_full_name">#stud_full_name</a>
+    
+    <li ><a href="#method-i-student_name">#student_name</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Student">
+  <h1 id="class-Student" class="class">
+    class Student
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Student.html">Student</a> model</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="HUMANIZED_ATTRIBUTES">HUMANIZED_ATTRIBUTES
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-advance_search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advance_search</span><span
+            class="method-args">(search, batch)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advance_search-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">advance_search</span>(<span class="ruby-identifier">search</span>, <span class="ruby-identifier">batch</span>)
+  <span class="ruby-identifier">conditions</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;concat_ws(&#39; &#39;,first_name,last_name) \
+  like &#39;#{search[:name]}%&#39; COLLATE utf8_bin&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">batch</span>[<span class="ruby-value">:id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;batch_id = #{batch[:id]}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">batch</span>[<span class="ruby-value">:id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND batch_id = #{batch[:id]}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">batch</span>[<span class="ruby-value">:id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:category_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;category_id = #{search[:category_id]}&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:category_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND category_id = #{search[:category_id]}&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:category_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:gender</span>]
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">eql?</span> <span class="ruby-string">&#39;All&#39;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+        <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;gender like &#39;#{search[:gender]}&#39;&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND gender like &#39;#{search[:gender]}&#39;&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:blood_group</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;blood_group like &#39;#{search[:blood_group]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:blood_group</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND blood_group like &#39;#{search[:blood_group]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:blood_group</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:country_id</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;nationality_id =&#39;#{search[:country_id]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:country_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND nationality_id =&#39;#{search[:country_id]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:country_id</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:admission_date</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;admission_date =&#39;#{search[:admission_date]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:admission_date</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND admission_date =&#39;#{search[:admission_date]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:admission_date</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:date_of_birth</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;date_of_birth = &#39;#{search[:date_of_birth]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:date_of_birth</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">conditions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; AND date_of_birth = &#39;#{search[:date_of_birth]}&#39;&quot;</span>          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:date_of_birth</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:status</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;all&#39;</span>
+      <span class="ruby-identifier">std1</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+      <span class="ruby-identifier">std2</span> = <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+      <span class="ruby-identifier">std1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">std2</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;present&#39;</span>
+      <span class="ruby-constant">Student</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">conditions</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(input, status)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">status</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-string">&#39;present&#39;</span>
+    <span class="ruby-constant">Student</span>.<span class="ruby-identifier">where</span>(<span class="ruby-node">&quot;concat_ws(&#39; &#39;,first_name,last_name)like &#39;#{input}%&#39; \
+      OR concat_ws(&#39; &#39;,last_name,first_name)like &#39;#{input}%&#39; \
+      OR admission_no like &#39;#{input}%&#39; COLLATE utf8_bin&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">where</span>(<span class="ruby-node">&quot;concat_ws(&#39; &#39;,first_name,last_name)like \
+      &#39;#{input}%&#39; OR concat_ws(&#39; &#39;,last_name,first_name)like &#39;#{input}%&#39; \
+      OR admission_no like &#39;#{input}%&#39; COLLATE utf8_bin&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search_script" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_script</span><span
+            class="method-args">(search, batch)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search_script-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search_script</span>(<span class="ruby-identifier">search</span>, <span class="ruby-identifier">batch</span>)
+  <span class="ruby-identifier">script</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Name: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:name</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:course_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">search</span>[<span class="ruby-value">:course_id</span>])
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Course: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">course</span>.<span class="ruby-identifier">course_name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">course</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">batch</span>[<span class="ruby-value">:id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">batch</span> = <span class="ruby-constant">Batch</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">batch</span>[<span class="ruby-value">:id</span>])
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Batch: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:category_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Category: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Category</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">search</span>[<span class="ruby-value">:category_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span>  <span class="ruby-identifier">search</span>[<span class="ruby-value">:gender</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;All&#39;</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Gender: All&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Gender: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:gender</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Blood group: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:blood_group</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:blood_group</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:country_id</span>].<span class="ruby-identifier">present?</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Country: &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Country</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">search</span>[<span class="ruby-value">:country_id</span>]).<span class="ruby-identifier">name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Admission date: &#39;</span> <span class="ruby-operator">+</span>  <span class="ruby-identifier">search</span>[<span class="ruby-value">:admission_date</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>      <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">search</span>[<span class="ruby-value">:admission_date</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Date of birth: &#39;</span> <span class="ruby-operator">+</span>  <span class="ruby-identifier">search</span>[<span class="ruby-value">:date_of_birth</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;, &#39;</span>      <span class="ruby-keyword">unless</span>  <span class="ruby-identifier">search</span>[<span class="ruby-value">:date_of_birth</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;present&#39;</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Present student&#39;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">search</span>[<span class="ruby-value">:status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;former&#39;</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; Former student&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">script</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39; All student&#39;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">script</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-set_admission_no" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_admission_no</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_admission_no-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">set_admission_no</span>
+  <span class="ruby-identifier">date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%Y%m%d&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Student</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-string">&#39;S&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;1&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">last_id</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">next</span>
+    <span class="ruby-string">&#39;S&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">last_id</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-address_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">address_line</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="address_line-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">address_line</span>
+  [<span class="ruby-identifier">address_line1</span>, <span class="ruby-identifier">address_line2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-archived_student" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">archived_student</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="archived_student-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">archived_student</span>
+  <span class="ruby-identifier">student_attributes</span> = <span class="ruby-identifier">attributes</span>
+  <span class="ruby-identifier">student_attributes</span>[<span class="ruby-string">&#39;student_id&#39;</span>] = <span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">archived_student</span> = <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">student_attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-batch_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">batch_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="batch_name-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">batch_name</span>
+  [<span class="ruby-identifier">batch</span>.<span class="ruby-identifier">course</span>.<span class="ruby-identifier">course_name</span>, <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">course</span>.<span class="ruby-identifier">section_name</span>, <span class="ruby-identifier">batch</span>.<span class="ruby-identifier">name</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam_scores" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam_scores</span><span
+            class="method-args">(exam)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam_scores-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam_scores</span>(<span class="ruby-identifier">exam</span>)
+  <span class="ruby-constant">ExamScore</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">exam_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">exam</span>, <span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>).<span class="ruby-identifier">take</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-full_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="full_name-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_name</span>
+  [<span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">last_name</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-guard_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guard_name</span><span
+            class="method-args">(p)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guard_name-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guard_name</span>(<span class="ruby-identifier">p</span>)
+  [<span class="ruby-identifier">p</span>.<span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">p</span>.<span class="ruby-identifier">last_name</span>, <span class="ruby-identifier">p</span>.<span class="ruby-identifier">relation</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mail</span><span
+            class="method-args">(subject, recipient, message)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mail-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mail</span>(<span class="ruby-identifier">subject</span>, <span class="ruby-identifier">recipient</span>, <span class="ruby-identifier">message</span>)
+  <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">discover</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">recipient</span>).<span class="ruby-identifier">take</span>
+  <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">student_email</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">subject</span>, <span class="ruby-identifier">message</span>).<span class="ruby-identifier">deliver</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-stud_full_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stud_full_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stud_full_name-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stud_full_name</span>
+  [<span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">middle_name</span>, <span class="ruby-identifier">last_name</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student_name-source">
+            <pre><span class="ruby-comment"># File app/models/student.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student_name</span>
+  [<span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">last_name</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39; &#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

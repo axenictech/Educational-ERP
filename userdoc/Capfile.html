@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Capfile - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Capfile.html">Capfile</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="./app/assets/javascripts/bootstrap-multiselect_js.html">bootstrap-multiselect.js</a>
+  
+    <li><a href="./app/assets/javascripts/jquery_multiselect_min_js.html">jquery.multiselect.min.js</a>
+  
+    <li><a href="./app/assets/stylesheets/bootstrap-multiselect_css.html">bootstrap-multiselect.css</a>
+  
+    <li><a href="./app/views/options/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/options/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/placement_exams/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/placement_exams/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./app/views/qusetions/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="./app/views/qusetions/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="./config_ru.html">config.ru</a>
+  
+    <li><a href="./config/deploy_rb_save.html">deploy.rb.save</a>
+  
+    <li><a href="./log/development_log.html">development.log</a>
+  
+    <li><a href="./public/404_html.html">404.html</a>
+  
+    <li><a href="./public/422_html.html">422.html</a>
+  
+    <li><a href="./public/500_html.html">500.html</a>
+  
+    <li><a href="./public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="./public/robots_txt.html">robots</a>
+  
+    <li><a href="./vendor/assets/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li><a href="./vendor/assets/javascripts/highcharts_js.html">highcharts.js</a>
+  
+    <li><a href="./vendor/assets/javascripts/vendor_js.html">vendor.js</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page Capfile">
+
+<p># Load DSL and set up stages require &#39;capistrano/setup&#39;</p>
+
+<p># Include default deployment tasks require &#39;capistrano/deploy&#39;</p>
+
+<p># Include tasks from other gems included in your <a
+href="Gemfile.html">Gemfile</a> # # For documentation on these, see for
+example: # #   <a
+href="https://github.com/capistrano/rvm">github.com/capistrano/rvm</a> #  
+<a
+href="https://github.com/capistrano/rbenv">github.com/capistrano/rbenv</a>
+#   <a
+href="https://github.com/capistrano/chruby">github.com/capistrano/chruby</a>
+#   <a
+href="https://github.com/capistrano/bundler">github.com/capistrano/bundler</a>
+#   <a
+href="https://github.com/capistrano/rails">github.com/capistrano/rails</a>
+#   <a
+href="https://github.com/capistrano/passenger">github.com/capistrano/passenger</a>
+# # require &#39;capistrano/rvm&#39; # require &#39;capistrano/rbenv&#39; #
+require &#39;capistrano/chruby&#39; # require &#39;capistrano/bundler&#39;
+# require &#39;capistrano/rails/assets&#39; # require
+&#39;capistrano/rails/migrations&#39; # require
+&#39;capistrano/passenger&#39;</p>
+
+<p># Load custom tasks from `lib/capistrano/tasks&#39; if you have any defined
+Dir.glob(&#39;lib/capistrano/tasks/*.rake&#39;).each { |r| import r }</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

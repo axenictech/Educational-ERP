@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class User - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">ActiveRecord::Base
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-current">::current</a>
+    
+    <li ><a href="#method-c-current-3D">::current=</a>
+    
+    <li ><a href="#method-c-search_user">::search_user</a>
+    
+    <li ><a href="#method-i-create_general_setting">#create_general_setting</a>
+    
+    <li ><a href="#method-i-employee">#employee</a>
+    
+    <li ><a href="#method-i-full_name">#full_name</a>
+    
+    <li ><a href="#method-i-institute_name">#institute_name</a>
+    
+    <li ><a href="#method-i-student">#student</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-User">
+  <h1 id="class-User" class="class">
+    class User
+  </h1>
+
+  <section class="description">
+    
+<p><a href="User.html">User</a></p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-current" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">current</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:user</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-current-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current=</span><span
+            class="method-args">(user)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current-3D-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">current=</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-value">:user</span>] = <span class="ruby-identifier">user</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_user</span><span
+            class="method-args">(search)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="search_user-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">search_user</span>(<span class="ruby-identifier">search</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">search</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;concat_ws(&#39; &#39;,first_name,last_name)like ? \
+    OR concat_ws(&#39; &#39;,last_name,first_name)like ? \
+    OR username like ?&quot;</span>, <span class="ruby-node">&quot;#{search}%&quot;</span>, <span class="ruby-node">&quot;#{search}%&quot;</span>, <span class="ruby-node">&quot;#{search}%&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create_general_setting" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_general_setting</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_general_setting-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_general_setting</span>
+  <span class="ruby-identifier">role</span> = <span class="ruby-string">&#39;Admin&#39;</span>
+  <span class="ruby-identifier">role</span> = <span class="ruby-string">&#39;SuperAdmin&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">gs</span> = <span class="ruby-constant">GeneralSetting</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">school_or_college_name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Axenic School&#39;</span>)
+  <span class="ruby-identifier">update</span>(<span class="ruby-identifier">general_setting_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">gs</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">role</span><span class="ruby-operator">:</span> <span class="ruby-identifier">role</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-employee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">employee</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="employee-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">employee</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">role</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Employee&#39;</span>
+  <span class="ruby-constant">Employee</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">employee_id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-full_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="full_name-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_name</span>
+  <span class="ruby-identifier">first_name</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">last_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-institute_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">institute_name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="institute_name-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">institute_name</span>
+  <span class="ruby-identifier">general_setting</span>.<span class="ruby-identifier">school_or_college_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-student" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">student</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="student-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">student</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">role</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Student&#39;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">role</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Parent&#39;</span>
+  <span class="ruby-identifier">std</span> = <span class="ruby-constant">ArchivedStudent</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">student_id</span>).<span class="ruby-identifier">take</span>
+  <span class="ruby-identifier">std</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">shod</span>(<span class="ruby-identifier">student_id</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">std</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">std</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

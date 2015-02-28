@@ -6,13 +6,13 @@ class FinanceFeeCollection < ActiveRecord::Base
   has_many :fee_collection_discounts
   has_many :finance_fees
   has_many :students, through: :finance_fees
-  # validates :name, presence: true, length: { minimum: 1, maximum: 30 }, format: { with: /\A[a-z A-Z 0-9_.-\/]+\z/ }
-  # validates :start_date, presence: true
-  # validates :end_date, presence: true
-  # validates :due_date, presence: true
-  # validate :end_date_cannot_be_less_than_start_date
-  # validate :due_date_cannot_be_less_than_end_date
-  # validate :date_cannot_be_in_past
+  validates :name, presence: true, length: { minimum: 1, maximum: 30 }, format: { with: /\A[a-z A-Z 0-9_.-\/]+\z/ }
+  validates :start_date, presence: true
+  validates :end_date, presence: true
+  validates :due_date, presence: true
+  validate :end_date_cannot_be_less_than_start_date
+  validate :due_date_cannot_be_less_than_end_date
+  validate :date_cannot_be_in_past
   scope :shod, ->(id) { where(id: id).take }
   def end_date_cannot_be_less_than_start_date
     if end_date.present? && end_date < start_date

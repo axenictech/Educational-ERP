@@ -12,20 +12,24 @@ class TimeTableEntry < ActiveRecord::Base
   scope :attendance, ->(s, b) { where(subject_id: s.id, batch_id: b.id) }
   scope :employees, ->(employee) { where(employee_id: employee.id).includes(:time_table) }
   scope :timetables, ->(time) { where(time_table_id: time) }
-
+  
+  # validation for max_hours_day_exceeded of employee
   def self.max_day(emp, week, time)
     TimeTableEntry.where(employee_id: emp.id, weekday_id: \
     week, time_table_id: time).count >= emp.employee_grade.max_hours_day
   end
-
+  # validation for  Max hours per week exceeded
   def self.max_week(emp, time)
     TimeTableEntry.where(employee_id: emp.id, time_table_id: \
     time).count < emp.employee_grade.max_hours_week
   end
+
+  # validation for Weekly subject limit reached
   def self.max_subject(subject, time)
     TimeTableEntry.where(subject_id: subject.id, time_table_id: \
     time).count >= subject.max_weekly_classes
   end
+  # get all batches of selected time table
   def self.select_time_table(time_table)
     batches = []
     unless time_table.nil?
@@ -36,6 +40,7 @@ class TimeTableEntry < ActiveRecord::Base
     end
   end
 
+  # get weekday, employee,class timing from selected time table
   def self.select_employee(e)
     weekdays, class_timings, employees = [], [], []
     unless e.nil?
@@ -47,7 +52,8 @@ class TimeTableEntry < ActiveRecord::Base
     end
     [weekdays, class_timings, employees]
   end
-
+  
+  # find class timing weekday and employee from timetable which we selected
   def self.selecttime(_e)
     weekdays = []
     class_timings = []
@@ -60,7 +66,8 @@ class TimeTableEntry < ActiveRecord::Base
       end
     end
   end
-
+  
+  # get all timetable from timetable entries
   def self.employee_time_table(timetable)
     timetables = []
     timetable.each do |tbe|
@@ -68,7 +75,8 @@ class TimeTableEntry < ActiveRecord::Base
     end
     timetables
   end
-
+  
+  # get time table entries from database 
   def self.entries(subject, batch)
     where(subject_id: subject, batch_id: batch)
   end

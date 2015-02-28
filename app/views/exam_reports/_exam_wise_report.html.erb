@@ -6,8 +6,11 @@
 <%else%>
 <% exam_score = [] %>
 <% @exam_group.exams.each do |exam| %>
+
+  
   <% exam_score.push exam.exam_scores.find_by_student_id(@student.id) unless exam.exam_scores.find_by_student_id(@student.id).nil?  %>
-<% end%>
+
+<%end%>
   <% total_marks_attained = 0 %>
   <% total_max_marks = 0 %>
 <% if @student.nil? %> 

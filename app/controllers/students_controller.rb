@@ -73,10 +73,7 @@ class StudentsController < ApplicationController
     @student = Student.shod(params[:id])
     @student.update(student_params)
     @guardian = Guardian.shod(@student.immediate_contact)
-    p '-------------------------------------------------'
-    p @guardian
     @guardian.create_user_account
-    p 'account createdddddddddddd.......................'
     redirect_to previous_data_students_path(@student)
   end
 
@@ -172,6 +169,23 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  def reciept
+    @student = Student.shod(params[:format])
+    @general_setting = GeneralSetting.first
+    @collection = @student.finance_fee_collections.take
+    unless @collection.nil?
+      @category = @collection.finance_fee_category
+      @particulars ||= @collection.fee_collection_particulars
+      @discounts ||= @collection.fee_collection_discounts
+      @fee = @student.finance_fees.take
+      @fines ||= @fee.finance_fines
+    else
+      flash[:notice] = "Collection not created for reciept"
+      redirect_to profile_student_path(@student) 
+    end
+    authorize! :read, @student
+  end
+
   def archived_report
     @student = ArchivedStudent.shod(params[:format])
     @batch = @student.batch
@@ -231,6 +245,9 @@ class StudentsController < ApplicationController
   def transcript_report
     @student = Student.shod(params[:format])
     @batch = @student.batch
+    @first = Batch.first.id
+    @current = @batch.id - 1
+    @student_log = StudentLog.where(student_id:@student)
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @student
   end
@@ -388,6 +405,10 @@ class StudentsController < ApplicationController
     @archived_student = @student.archived_student
     @archived_student.update(status_description: \
       params[:archived_student][:status_description])
+    s=StudentLog.where(student_id:@student)
+    s.each do |m|
+     StudentLog.destroy(m.id)
+    end
     @student.destroy
     redirect_to archived_profile_student_path(@archived_student)
   end

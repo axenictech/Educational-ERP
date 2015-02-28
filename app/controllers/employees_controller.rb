@@ -24,6 +24,7 @@ class EmployeesController < ApplicationController
   end
 
   # check employee category is active or inactive
+  # we can add employee category
   def emp_category
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
@@ -604,7 +605,7 @@ class EmployeesController < ApplicationController
   end
 
   # This method is used for search employee on various criteria
-  # by calling class method on search2 
+  # by calling class method on search2
   def search_emp
     @employee = Employee.search2(params[:advance_search], params[:search])
     authorize! :read, Employee

@@ -22,6 +22,8 @@ class EmployeeSubject < ActiveRecord::Base
   scope :ass_emp1, -> (sub) { where(subject_id: sub.id) }
   scope :rem_emp2, -> (sub2) { where(subject_id: sub2.id) }
 
+  # use in timetable controller
+  # create and save employee and releted subject in database.
   def self.allot_work(employee_subj_ids)
     status, error_carrier = false, new
     transaction do

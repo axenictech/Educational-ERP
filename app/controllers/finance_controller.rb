@@ -1,15 +1,24 @@
-# Finance Controller
+# This controller manages the all financial operation of the colleges
+# or school like manage admission fees, manage collection of admission
+# fees, fees structure, fees defaulters, transaction, payslip, asset
+# and liability management
 class FinanceController < ApplicationController
+  # Display all transaction category list
   def transaction_category
     @transaction_categories ||= FinanceTransactionCategory.all
     authorize! :read, @transaction_categories.last
   end
 
+  # Create new object of finance transaction category for save the
+  # record in database.
   def new_transaction_category
     @transaction_category = FinanceTransactionCategory.new
     authorize! :create, @transaction_category
   end
 
+  # Create transaction category object with user input value throw
+  # new method.
+  # Save the transaction category record in database.
   def create_transaction_category
     @transaction_category = FinanceTransactionCategory.new\
     (transaction_category_params)
@@ -18,11 +27,14 @@ class FinanceController < ApplicationController
     @transaction_categories ||= FinanceTransactionCategory.all
   end
 
+  # Retrieve user inputed record from transaction category for update.
   def edit_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     authorize! :update, @transaction_category
   end
 
+  # Find out the user inputed record in database with shod method.
+  # Update transaction record to the database.
   def update_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     @transaction_category.update(transaction_category_params)
@@ -30,6 +42,8 @@ class FinanceController < ApplicationController
     @transaction_categories ||= FinanceTransactionCategory.all
   end
 
+  # Fetch the user inputed transaction category record.
+  # Delete from database with destroy method.
   def delete_transaction_category
     @transaction_category = FinanceTransactionCategory.shod(params[:id])
     authorize! :delete, @transaction_category
@@ -38,11 +52,13 @@ class FinanceController < ApplicationController
     redirect_to transaction_category_finance_index_path
   end
 
+  # Create the fresh object of donation for storing new value.
   def donation
     @donation = FinanceDonation.new
     authorize! :create, @donation
   end
 
+  # Insert the new donation record in database
   def create_donation
     @donation = FinanceDonation.new(donation_params)
     if @donation.save
@@ -54,27 +70,32 @@ class FinanceController < ApplicationController
     end
   end
 
+  # Generating the information for displaying donation receipt. 
   def donation_receipt
     @donation = FinanceDonation.shod(params[:id])
     authorize! :read, @donation
   end
 
+  # Display pdf of donation receipt for specific donor.
   def finance_donation_receipt
     @donation = FinanceDonation.shod(params[:id])
     @general_setting = GeneralSetting.first
     render 'finance_donation_receipt', layout: false
   end
 
+  # Display all donors list.
   def donors
     @donors ||= FinanceDonation.all
     authorize! :read, @donors.first
   end
 
+  # Getting the already existed donation for update.
   def edit_donation
     @donation = FinanceDonation.shod(params[:id])
     authorize! :update, @donation
   end
 
+  # Actual updation of donation record.
   def update_donation
     @donation = FinanceDonation.shod(params[:id])
     if @donation.update(donation_params)
@@ -86,6 +107,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  # Delete the particular donation.
   def delete_donation
     @donation = FinanceDonation.shod(params[:id])
     authorize! :delete, @donation
@@ -94,11 +116,13 @@ class FinanceController < ApplicationController
     redirect_to donation_finance_index_path
   end
 
+  # Create the fresh object for inserting the asset record in database.
   def new_asset
     @asset = Asset.new
     authorize! :create, @asset
   end
 
+  # Insert the asset details in database.
   def create_asset
     @assets ||= Asset.all
     @asset = Asset.new(asset_params)
@@ -106,16 +130,20 @@ class FinanceController < ApplicationController
     flash[:notice] = t('asset_create')
   end
 
+  # Display all asset list.
   def view_asset
     @assets ||= Asset.all
     authorize! :read, @assets.first
   end
 
+  # Creating the object for update the asset details which are
+  # already existed in database.
   def edit_asset
     @asset = Asset.shod(params[:id])
     authorize! :update, @asset
   end
 
+  # Update the given asset details in database.
   def update_asset
     @asset = Asset.shod(params[:id])
     @asset.update(asset_params)
@@ -123,6 +151,7 @@ class FinanceController < ApplicationController
     flash[:notice] = t('asset_update')
   end
 
+  # Delete the given asset details from database.
   def delete_asset
     @asset = Asset.shod(params[:id])
     authorize! :delete, @asset
@@ -131,38 +160,47 @@ class FinanceController < ApplicationController
     redirect_to view_asset_finance_index_path
   end
 
+  # Collecting the information for display asset list pdf
   def asset_list
     @assets ||= Asset.all
     @general_setting = GeneralSetting.first
     render 'asset_list', layout: false
   end
 
+  # Display each asset particularly.
   def each_asset_view
     @asset = Asset.shod(params[:id])
     authorize! :read, @asset
   end
 
+  # Create the fresh object for inserting the liability record in
+  # database.
   def new_liability
     @liability = Liability.new
     authorize! :read, @liability
   end
 
+  # Insert the liability details in database.
   def create_liability
     @liability = Liability.new(liability_params)
     @liability.save
     flash[:notice] = t('liability_create')
   end
 
+  # Display all liability list.
   def view_liability
     @liabilities ||= Liability.all
     authorize! :read, @liabilities.first
   end
 
+  # Creating the object for update the liability details which are
+  # already existed in database.
   def edit_liability
     @liability = Liability.shod(params[:id])
     authorize! :update, @liability
   end
 
+  # Update the given liability details in database.
   def update_liability
     @liabilities ||= Liability.all
     @liability = Liability.shod(params[:id])
@@ -170,6 +208,7 @@ class FinanceController < ApplicationController
     flash[:notice] = t('liability_update')
   end
 
+  # Delete the given liability details from database.
   def delete_liability
     @liability = Liability.shod(params[:id])
     authorize! :delete, @liability
@@ -178,28 +217,35 @@ class FinanceController < ApplicationController
     redirect_to view_liability_finance_index_path
   end
 
+  # Display each liability particularly.
   def each_liability_view
     @liability = Liability.shod(params[:id])
     authorize! :read, @liability
   end
 
+  # Collecting the information for display liability list pdf
   def liability_list
     @liabilities ||= Liability.all
     @general_setting = GeneralSetting.first
     render 'liability_list', layout: false
   end
 
+  # Fetching the automatic transaction details from database and 
+  # display list.
   def automatic_transaction
     @automatic_transactions ||= FinanceTransactionTrigger.all
     authorize! :read, @automatic_transactions.first
   end
 
+  # Create the fresh object for inserting the automatic transaction
+  # record in database for the given categories.
   def new_automatic_transaction
     @automatic_transaction = FinanceTransactionTrigger.new
     @categories ||= FinanceTransactionCategory.all
     authorize! :create, @automatic_transaction
   end
 
+  # Insert the automatic transaction details in database.
   def create_automatic_transaction
     @automatic_transaction = FinanceTransactionTrigger.new\
     (auto_transaction_params)
@@ -208,12 +254,15 @@ class FinanceController < ApplicationController
     @automatic_transactions ||= FinanceTransactionTrigger.all
   end
 
+  # Creating the object for update the automatic transaction
+  # details which are already existed in database.
   def edit_automatic_transaction
     @automatic_transaction = FinanceTransactionTrigger.shod(params[:id])
     @categories ||= FinanceTransactionCategory.all
     authorize! :update, @automatic_transaction
   end
 
+  # Update the given automatic transaction details in database.
   def update_automatic_transaction
     @automatic_transaction = FinanceTransactionTrigger.shod(params[:id])
     @automatic_transaction.update(auto_transaction_params)
@@ -221,6 +270,9 @@ class FinanceController < ApplicationController
     @automatic_transactions ||= FinanceTransactionTrigger.all
   end
 
+  # Find the record from finance transaction trigger with the help
+  # of params id and delete this record. Display the notice message.
+  # Perform authorization.
   def delete_automatic_transaction
     @automatic_transaction = FinanceTransactionTrigger.shod(params[:id])
     authorize! :delete, @automatic_transaction
@@ -229,12 +281,14 @@ class FinanceController < ApplicationController
     redirect_to automatic_transaction_finance_index_path
   end
 
+  # Create the fresh object to save the record of expenses.
   def new_expense
     @transaction = FinanceTransaction.new
     @categories ||= FinanceTransactionCategory.expense
     authorize! :create, @transaction
   end
 
+  # Insert the record of expenses.
   def create_expense
     @transaction = FinanceTransaction.new(transaction_params)
     if @transaction.save
@@ -246,6 +300,8 @@ class FinanceController < ApplicationController
     end
   end
 
+  # This action display the list of expenses of given start and 
+  # end date.
   def expense_list
     @start_date = params[:expense][:start_date].to_date
     @end_date = params[:expense][:end_date].to_date
@@ -258,12 +314,14 @@ class FinanceController < ApplicationController
     authorize! :read, @expenses.first unless @expenses.nil?
   end
 
+  # This action provide the object of given expense record for update.
   def edit_expense
     @transaction = FinanceTransaction.shod(params[:id])
     @categories ||= FinanceTransactionCategory.expense
     authorize! :update, @transaction
   end
 
+  # Actual updation of expense is done here.
   def update_expense
     @transaction = FinanceTransaction.shod(params[:id])
     if @transaction.update(transaction_params)
@@ -275,6 +333,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  # This action perform a process of delete the expense record.
   def delete_expense
     @transaction = FinanceTransaction.shod(params[:id])
     authorize! :delete, @transaction
@@ -283,6 +342,7 @@ class FinanceController < ApplicationController
     redirect_to view_expense_finance_index_path
   end
 
+  # Generate the object for displaying expense report pdf.
   def finance_expense_report
     @general_setting = GeneralSetting.first
     @start_date = params[:start_date].to_date
@@ -291,12 +351,14 @@ class FinanceController < ApplicationController
     render 'finance_expense_report', layout: false
   end
 
+  # Create the fresh object to save the record of income.
   def new_income
     @transaction = FinanceTransaction.new
     @categories ||= FinanceTransactionCategory.income
     authorize! :create, @transaction
   end
 
+  # Insert the record of income.
   def create_income
     @transaction = FinanceTransaction.new(transaction_params)
     if @transaction.save
@@ -308,6 +370,8 @@ class FinanceController < ApplicationController
     end
   end
 
+  # This action display the list of income of given start and 
+  # end date.
   def income_list
     @start_date = params[:income][:start_date].to_date
     @end_date = params[:income][:end_date].to_date
@@ -320,12 +384,14 @@ class FinanceController < ApplicationController
     authorize! :read, @incomes.first unless @incomes.nil?
   end
 
+  # This action provide the object of given income record for update.
   def edit_income
     @transaction = FinanceTransaction.shod(params[:id])
     @categories ||= FinanceTransactionCategory.income
     authorize! :create, @transaction
   end
 
+  # Actual updation of income is done here.
   def update_income
     @transaction = FinanceTransaction.shod(params[:id])
     if @transaction.update(transaction_params)
@@ -337,6 +403,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  # This action perform a process of delete the income record.
   def delete_income
     @transaction = FinanceTransaction.shod(params[:id])
     authorize! :delete, @transaction
@@ -345,6 +412,7 @@ class FinanceController < ApplicationController
     redirect_to view_income_finance_index_path
   end
 
+  # Generate the object for displaying income report pdf
   def finance_income_report
     @general_setting = GeneralSetting.first
     @start_date = params[:start_date].to_date
@@ -353,6 +421,7 @@ class FinanceController < ApplicationController
     render 'finance_income_report', layout: false
   end
 
+  # Display transaction list for given start date and end date.
   def transactions_list
     @start_date = params[:transaction][:start_date].to_date
     @end_date = params[:transaction][:end_date].to_date
@@ -365,6 +434,7 @@ class FinanceController < ApplicationController
     authorize! :read, @categories.first unless @categories.nil?
   end
 
+  # Display the expense details for given start and end date.
   def expense_details
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date
@@ -374,6 +444,7 @@ class FinanceController < ApplicationController
     authorize! :read, @category
   end
 
+  # Display the income details for given start and end date.
   def income_details
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date
@@ -383,6 +454,7 @@ class FinanceController < ApplicationController
     authorize! :read, @category
   end
 
+  # Generate the object for displaying transaction report pdf.
   def finance_transaction_report
     @general_setting = GeneralSetting.first
     @start_date = params[:start_date].to_date
@@ -391,6 +463,8 @@ class FinanceController < ApplicationController
     render 'finance_transaction_report', layout: false
   end
 
+  # This action perform a operation of compare the transaction
+  # within one start and end date to other start and end date.
   def transactions_comparison
     @start_date1 = params[:transaction][:start_date1].to_date
     @end_date1 = params[:transaction][:end_date1].to_date
@@ -404,20 +478,24 @@ class FinanceController < ApplicationController
     end
   end
 
+  # create the new object of category for specific batches
   def new_master_category
     @master_category = FinanceFeeCategory.new
     @batches ||= Batch.all
     authorize! :create, @master_category
   end
 
+  # Fetch all batches in batches object.
   def assign_batch
     @batches ||= Batch.all
   end
 
+  # Fetch all batches in batches object.
   def remove_batch
     @batches ||= Batch.all
   end
 
+  # Insert the record for master category
   def create_master_category
     @master_category = FinanceFeeCategory.new(fee_category_params)
     @master_category.save
@@ -425,18 +503,26 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_category_create')
   end
 
+  # Fetch the batch throw drop down list.
+  # Show fees list for selected batch.
   def fees_list
     @batch = Batch.shod(params[:batch][:id])
     @master_categories ||= @batch.finance_fee_categories
     authorize! :read, @master_categories.first
   end
 
+  # Fetch the fee category record which you have to update.
+  # Display the batch which is adjacent to given fee category.
   def edit_master_category
     @batch = Batch.shod(params[:id])
-    @master_category = FinanceFeeCategory.shod(params[:id])
+    @master_category = FinanceFeeCategory.shod(params[:format])
     authorize! :update, @master_category
   end
 
+  # @batch object store the user inputed batch from database.
+  # Using @batch object fetch the master category record.
+  # Update the master category record with update method and
+  # send a flash message.
   def update_master_category
     @batch = Batch.shod(params[:id])
     @master_category = @batch.finance_fee_categories.shod(params[:id])
@@ -445,6 +531,10 @@ class FinanceController < ApplicationController
     @master_categories ||= @batch.finance_fee_categories
   end
 
+  # @batch object store the user inputed batch from database.
+  # Using @batch object fetch the master category record.
+  # delete the master category record with destroy method and
+  # send a flash message.
   def delete_master_category
     @batch = Batch.shod(params[:batch_id])
     @master_category = @batch.finance_fee_categories.shod(params[:id])
@@ -454,18 +544,22 @@ class FinanceController < ApplicationController
     @master_categories ||= @batch.finance_fee_categories
   end
 
+  # Create a particular for specific finance fee category.
   def new_fees_particular
     @fee = FinanceFeeParticular.new
     @categories ||= FinanceFeeCategory.all
     authorize! :create, @fee
   end
 
+  # Generate the drop down list for finance fee category
+  # which is foreign key for save the particular in database.
   def category_batch
     @master_category = FinanceFeeCategory.shod(params[:id])
     @batches ||= @master_category.batches
     authorize! :read, @master_category
   end
-
+  
+  # Insert the record of particular fee for specific finance category.
   def create_fees_particular
     @categories ||= FinanceFeeCategory.all
     @fee = FinanceFeeParticular.new(fee_particular_params)
@@ -480,6 +574,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  # Displaying the particular of specific fees of particular batch
   def master_category_particular
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:id])
@@ -487,16 +582,19 @@ class FinanceController < ApplicationController
     authorize! :read, @master_category
   end
 
+  # Display all batches for creating and viewing particular of fess.
   def master_fees
     @batches ||= Batch.includes(:course).all
   end
 
+  # creating fresh object for particular
   def new_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:id])
     @fee = FinanceFeeParticular.new
     authorize! :create, @fee
   end
+
 
   def student_admission_no
     @master_category = FinanceFeeCategory.shod(params[:id])
@@ -510,6 +608,10 @@ class FinanceController < ApplicationController
     authorize! :read, @fee
   end
 
+  # This action save the record of particulars for specific finance fee category.
+  # Batch id and fee categoy is the foreign key for particular record.
+  # Particular is assign by three role i.e.Admission number,student category
+  # and common to all. For that operation @fee.set is used.
   def create_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:id])
@@ -521,6 +623,7 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_create')
   end
 
+  # Fetch the finance particular record for update from database.
   def edit_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:master_id])
@@ -547,16 +650,19 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_delete')
   end
 
+  # Create the object for save discount record on the basis of category. 
   def new_fee_discount
     @fee_discount = FeeDiscount.new
     @categories ||= FinanceFeeCategory.all
     authorize! :create, @discount
   end
 
+  # Assign discount type for type object.
   def discount_type
     @type = params[:type]
   end
 
+  # Create the discount record for specific finance category.
   def create_fee_discount
     @categories ||= FinanceFeeCategory.all
     @discount = FeeDiscount.new(fee_discount_params)
@@ -570,6 +676,7 @@ class FinanceController < ApplicationController
     end
   end
 
+  #
   def fee_category
     @batch = Batch.shod(params[:id])
     @categories ||= @batch.finance_fee_categories
@@ -609,12 +716,16 @@ class FinanceController < ApplicationController
     @discounts ||= @master_category.discounts(@batch.id)
   end
 
+  # Create the object for insert the collection record on the basis
+  # of finance category.
   def new_fee_collection
     @collection = FinanceFeeCollection.new
     @categories ||= FinanceFeeCategory.all
     authorize! :create, @collection
   end
 
+  # Insert the collection record with the foriegh key finance
+  # fee category.
   def create_fee_collection
     @collection = FinanceFeeCollection.new(collection_params)
     result = FinanceFeeCollection.fee(collection_params, params[:batches])
@@ -657,6 +768,8 @@ class FinanceController < ApplicationController
     flash[:notice] = t('collection_delete')
   end
 
+  # Display the particulars and discounts for particular finance
+  # fee collection.
   def collection_details_view
     @collection = FinanceFeeCollection.shod(params[:id])
     @particulars ||= @collection.fee_collection_particulars
@@ -664,6 +777,7 @@ class FinanceController < ApplicationController
     authorize! :read, @collection
   end
 
+  # Displaying fee collection reciept of students accorging to batch.
   def fees_submission_batch
     @batches ||= Batch.includes(:course).all
     @collections ||= Batch.first.finance_fee_collections unless Batch.first.nil?
@@ -715,6 +829,7 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
+  # Add fine for particular student.
   def pay_fine
     @student_fine = FinanceFee.shod(params[:finance_fee_id])
     @student_fine.create_fine(params[:fine])
@@ -737,6 +852,7 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
+  # Insert the payment details of students.
   def pay_fee
     @student_fee = FinanceFee.shod(params[:finance_fee_id])
     @student_fee.create_transaction(params[:amount], false)
@@ -761,6 +877,7 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
+  # Creating object with data for display record on pdf.
   def student_fee_receipt
     @general_setting = GeneralSetting.first
     @collection = FinanceFeeCollection.shod(params[:id])
@@ -779,10 +896,12 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
+  # Search student.
   def search_student
     @students = Student.search(params[:search], 'present')
   end
 
+  # Display all collection which is applied to specific student.
   def fees_collection_student
     @student = Student.shod(params[:id])
     @collections ||= @student.finance_fee_collections
@@ -802,10 +921,12 @@ class FinanceController < ApplicationController
     authorize! :read, @collection
   end
 
+  # Search student for fees structure.
   def student_search
     @students = Student.search(params[:search], 'present')
   end
 
+  # Create drop down list of collection of particular student id.
   def fee_collection_structure
     @student = Student.shod(params[:id])
     @collections ||= @student.finance_fee_collections
@@ -831,6 +952,7 @@ class FinanceController < ApplicationController
     render 'fee_structure', layout: false
   end
 
+  # Create the dropdown list for courses,batches and collections.
   def fees_defaulters
     @courses ||= Course.all
     @batches ||= Course.first.batches unless Course.first.nil?
@@ -838,30 +960,35 @@ class FinanceController < ApplicationController
     authorize! :read, @collections.first unless @collections.nil?
   end
 
+  # Collect batches of specific course.
   def batch_choice
     @course = Course.shod(params[:id])
     @batches ||= @course.batches
   end
 
+  # Collect collections of specific batch.
   def collection_choice
     @batch = Batch.shod(params[:id])
     @collections ||= @batch.finance_fee_collections
     authorize! :read, @collections.first
   end
 
+  # Display defaulter student list of specific finance collection.
   def defaulter_students
     @collection = FinanceFeeCollection.shod(params[:id])
-    @students ||= @collection.students
+    @students = @collection.students.uniq
     authorize! :read, @collection
   end
 
+  # Collect the object for display defaulter student list pdf.
   def fees_defaulters_list
     @general_setting = GeneralSetting.first
-    @collection = FinanceFeeCollection.shod(params[:id])
-    @students ||= @collection.students
+    @collection = FinanceFeeCollection.find(params[:id])
+    @students = @collection.students.uniq
     render 'fees_defaulters_list', layout: false
   end
 
+  # Create finance fees record when student make payment.
   def pay_fees_defaulters
     @student = Student.shod(params[:student_id])
     @collection = FinanceFeeCollection.shod(params[:collection_id])
@@ -892,11 +1019,17 @@ class FinanceController < ApplicationController
     redirect_to approve_monthly_payslip_finance_index_path
   end
 
+  # Retrieve the all employee department for drop down list.
+  # Retrieve monthly payslip record of particular employee department
+  # for drop down list.
   def view_monthly_payslip
     @departments ||= EmployeeDepartment.all
     @salary_months ||= MonthlyPayslip.select(:salary_date).distinct
   end
 
+  # Create the new payslip array for inserting salary.
+  # Fetch the department and date from user input.
+  # Insert the particular employee salary in payslips array.
   def view_payslip
     @payslips = []
     @department = EmployeeDepartment.shod(params[:payslip][:department])
@@ -909,12 +1042,18 @@ class FinanceController < ApplicationController
     end
   end
 
+  # This action generate the pdf of employees payslip list.
+  # general setting object retrieve the heading information for pdf
+  # e.g. college name,phone number and address.
   def employee_monthly_payslip
     @general_setting = GeneralSetting.first
     @payslips = params[:payslips]
     render 'employee_monthly_payslip', layout: false
   end
 
+  # Fetch the employee id and date from previous action.
+  # Generate object for the payslip structure.
+  # Generate the object for employee salary and individual salary.
   def view_employee_payslip
     @employee = Employee.shod(params[:id])
     @date = params[:date]
@@ -923,6 +1062,10 @@ class FinanceController < ApplicationController
     @individual_salary = @employee.personal_salary(@date)
   end
 
+  # This action generate the information for display pdf.
+  # Fetch the employee id and date from previous action.
+  # Generate object for the payslip structure.
+  # Generate the object for employee salary and individual salary.
   def employee_payslip
     @general_setting = GeneralSetting.first
     @employee = Employee.shod(params[:id])
@@ -933,6 +1076,7 @@ class FinanceController < ApplicationController
     render 'employee_payslip', layout: false
   end
 
+  # Create the drop down list for selecting batch to display discounts.
   def fee_discounts
     @batches ||= Batch.includes(:course).all
   end

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      #heading {
+        width:100%;
+        margin: 0 auto;
+      }
+      
+      #head {
+        height: 100px;
+        width: 700px;
+        text-align: center;
+        font-size: 40px;
+        border-color: black;
+
+      }
+      #head_info {
+        text-align: center;
+        font-size: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+      <br/><h3><center>Student Fee Reciept</center></h3><br/>
+      <table cellpadding="5" cellspacing="5" width="700">
+        <tr><th colspan="3" bgcolor="99CCFF" align="left">Student Details</th></tr>
+        <tr>
+          <td>Name</td>
+          <td>:</td>
+          <td><%= @student.first_name.capitalize %> <%= @student.middle_name.capitalize %> <%= @student.last_name.capitalize %>
+          </td>
+        </tr>
+        <tr>
+          <td>Fee Reciept No</td>
+          <td>:</td>
+          <td><%= @fee.nil? ? t('n_a') : @fee.receipt_no %></td>
+        </tr>
+        <tr>  
+          <td>Fee Category Name</td>
+          <td>:</td>
+          <% unless @category.nil? %>
+            <td><%= @category.name %></td>
+          <%else%>
+            <td>-</td>
+          <%end%>
+        </tr>
+        <tr>
+          <td>Student Category</td>
+          <td>:</td>
+          <% unless @student.category.nil? %>
+            <td><%= @student.category.name %></td>
+          <%else%>
+            <td><%= @student.category.name %></td>
+          <%end%>  
+        </tr>
+        <tr>
+          <td>Fee Collection Name</td>
+          <td>:</td>
+          <td><%= @collection.name %></td>
+        </tr>
+      </table>
+      <br/><br/>
+      <table cellpadding="5" cellspacing="5" width="700">
+        <%total=0%>
+        <%discount=0%>
+        <%fines=0%>
+        <tr bgcolor="99CCFF">
+          <th width="50">Sr.No.</th>
+          <th>Particular</th>
+          <th>Amount</th>
+        </tr>
+        
+           <% unless @particulars.nil?%>
+          <% @particulars.each_with_index do |p,i|%>
+            <tr>
+            <td align="center"><%= i+1%></td>
+            <td><%= p.name%></td>
+            <td align="right" width="150"><%= amt = p.amount%></td>
+            </tr>
+          <%total+=amt%>
+          <%end%>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>------------------------------</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="right"><b>Particular Total : </b></td>
+              <td align="right"><b><%= total%></b></td>
+            </tr>
+      <%else%>
+      <h5>No fee collection particulars found</h5>
+      <%end%>
+      </table>
+      <br/><br/>
+      <table cellpadding="5" cellspacing="5" width="700">
+        <% unless @discounts.nil?%>
+          <tr bgcolor="99CCFF">
+            <th width="50">Sr.No.</th>
+            <th>Discount Type</th>
+            <th>Discount</th>
+          </tr>
+          
+            <% @discounts.each_with_index do |d,i|%>
+            <tr>
+            <td align="center"><%= i+1%></td>
+            <td><%= d.name+"("+d.discount.to_s+"%)"%></td>
+            <td align="right" width="150"><%= dis = d.collection_discount(total)%></td>
+            </tr>
+            <%discount+=dis%>
+          <%end%>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>------------------------------</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="right"><b>Discount Total : </b></td>
+              <td align="right"><b><%= discount%></b></td>
+            </tr>
+        <%else%>
+          <h5>No fee collection discount found</h5>
+        <%end%>
+      </table>
+      <br/><br/>
+      <% total_fee=total-discount%>
+      <table cellpadding="5" cellspacing="5" width="700">
+        
+          <tr bgcolor="99CCFF">
+            <th width="50">Sr.No.</th>
+            <th>Fine Type</th>
+            <th>Fine Amount</th>
+          </tr>
+          <%unless@fines.empty?%>
+            <% @fines.each_with_index do |fine,i|%>
+              <tr>
+                <td align="center"><%= i+1 %></td>
+                <td><%= "Fine on "+fine.fine_date.to_date.to_s%></td>
+                <td align="right" width="150"><%= fine.fine %></td>
+              </tr>
+              <%fines+=fine.fine%>
+            <%end%>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>------------------------------</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td align="right"><b>Fine Total : </b></td>
+              <td align="right"><b><%=fines%><b></td>
+            </tr>
+        <%else%>
+          <tr><th colspan="3"><center>No fines available<center></th></tr>
+        <%end%>
+        <tr>
+          <td></td>
+          <td align="right"><b>Payment done : </b></td>
+          <td align="right"><b><%=paid=@fee.payment%><b></td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td align="right"><b>Amount to pay : </b></td>
+          <td align="right"><b><%=pay_amount=total_fee+fines-paid%><b></td>
+        </tr>
+      </table>
+    
+  </body>
+</html>

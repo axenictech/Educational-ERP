@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class PlacementExamsController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-apply_exam">#apply_exam</a>
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-create_exam">#create_exam</a>
+    
+    <li ><a href="#method-i-destroy">#destroy</a>
+    
+    <li ><a href="#method-i-disp_time">#disp_time</a>
+    
+    <li ><a href="#method-i-display_result">#display_result</a>
+    
+    <li ><a href="#method-i-edit">#edit</a>
+    
+    <li ><a href="#method-i-exam">#exam</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-insert">#insert</a>
+    
+    <li ><a href="#method-i-insert_exam">#insert_exam</a>
+    
+    <li ><a href="#method-i-new">#new</a>
+    
+    <li ><a href="#method-i-placement_tpo">#placement_tpo</a>
+    
+    <li ><a href="#method-i-publish_result">#publish_result</a>
+    
+    <li ><a href="#method-i-qualified_student">#qualified_student</a>
+    
+    <li ><a href="#method-i-qualify_student">#qualify_student</a>
+    
+    <li ><a href="#method-i-question_paper">#question_paper</a>
+    
+    <li ><a href="#method-i-question_type">#question_type</a>
+    
+    <li ><a href="#method-i-save_test">#save_test</a>
+    
+    <li ><a href="#method-i-setting_index">#setting_index</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-PlacementExamsController">
+  <h1 id="class-PlacementExamsController" class="class">
+    class PlacementExamsController
+  </h1>
+
+  <section class="description">
+    
+<p><a href="PlacementExamsController.html">PlacementExamsController</a></p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-apply_exam" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">apply_exam</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="apply_exam-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_exam</span>
+  <span class="ruby-ivar">@companies</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@placement_news</span> = <span class="ruby-constant">PlacementNews</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">placement_exam_params</span>)
+  <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_exam" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_exam</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_exam-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_exam</span>
+  <span class="ruby-ivar">@exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">placement_exams_path</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Placement exam was successfully destroyed.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-disp_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disp_time</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="disp_time-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disp_time</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_id</span>])
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:company_id</span>])
+  <span class="ruby-ivar">@questions</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">conduct_exam</span>(<span class="ruby-ivar">@company</span>, <span class="ruby-ivar">@placement_exam</span>)
+  <span class="ruby-ivar">@time</span> = <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">timeperiod</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&#39;%M&#39;</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-display_result" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">display_result</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="display_result-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_result</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:p_id</span>])
+  <span class="ruby-ivar">@student_score</span> = <span class="ruby-constant">StudentScore</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">placement_exams_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@placement_exam</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exam" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exam</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exam-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exam</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@placement_news</span> = <span class="ruby-constant">PlacementNews</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="insert-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert</span>
+  <span class="ruby-ivar">@companies</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@placement_news</span> = <span class="ruby-constant">PlacementNews</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_exam" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_exam</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="insert_exam-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">insert_exam</span>
+  <span class="ruby-identifier">question_type</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:question_type</span>]
+  <span class="ruby-identifier">percentage</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:percentages</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">percentage</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_i</span>).<span class="ruby-identifier">sum</span> <span class="ruby-operator">==</span> <span class="ruby-value">100</span>
+    <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">placement_exam_params</span>)
+    <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">question_type</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">q</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Weightage</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">question_type_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">q</span>, <span class="ruby-identifier">placement_exam_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">percentage</span><span class="ruby-operator">:</span> <span class="ruby-identifier">percentage</span>[<span class="ruby-identifier">i</span>])
+      <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">create_exam_placement_exams_path</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;placement_exam_created&#39;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;create_exam&#39;</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:alert</span>] = <span class="ruby-identifier">t</span>(<span class="ruby-string">&#39;placement_exam_error&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-placement_tpo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">placement_tpo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="placement_tpo-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">placement_tpo</span>
+  <span class="ruby-ivar">@placement_exams</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-publish_result" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">publish_result</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="publish_result-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">publish_result</span>
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-qualified_student" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">qualified_student</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="qualified_student-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">qualified_student</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_id</span>])
+  <span class="ruby-ivar">@score</span> = <span class="ruby-constant">StudentScore</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">placement_exams_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@placement_exam</span>)
+  <span class="ruby-ivar">@student_score</span> = <span class="ruby-ivar">@score</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">is_qualify</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-qualify_student" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">qualify_student</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="qualify_student-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">qualify_student</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:exam_id</span>])
+  <span class="ruby-identifier">qualify_student</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:qualify</span>]
+  <span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;congratulations you are  short \
+            listed for next round of &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">qualify_student</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@student</span> = <span class="ruby-constant">StudentScore</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">student_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>,<span class="ruby-identifier">placement_exams_id</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@placement_exam</span>).<span class="ruby-identifier">take</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">is_qualify</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">content</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">i</span>).<span class="ruby-identifier">full_name</span>
+    <span class="ruby-constant">PlacementNews</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">title</span><span class="ruby-operator">:</span> <span class="ruby-identifier">title</span>, <span class="ruby-identifier">content</span><span class="ruby-operator">:</span> <span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Student short-listed successfully&#39;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">placement_exams_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-question_paper" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">question_paper</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="question_paper-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">question_paper</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:p_id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-question_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">question_type</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="question_type-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">question_type</span>
+  <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:type</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-save_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">save_test</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="save_test-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save_test</span>
+  <span class="ruby-ivar">@test</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:question</span>]
+  <span class="ruby-ivar">@placement_exam</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:placement_exam_id</span>])
+  <span class="ruby-ivar">@student</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:student_id</span>])
+  <span class="ruby-ivar">@score</span> = <span class="ruby-constant">PlacementExam</span>.<span class="ruby-identifier">calculateres</span>(<span class="ruby-ivar">@test</span>, <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">id</span>, <span class="ruby-ivar">@student</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-setting_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setting_index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setting_index-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setting_index</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/placement_exams_controller.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@placement_exam</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">placement_exam_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@placement_exam</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&#39;Placement exam was successfully updated.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">&#39;edit&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
