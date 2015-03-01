@@ -185,8 +185,10 @@ class ExamReportsController < ApplicationController
   end
 
   def generate_archived_report2
-    @students ||= @batch.archived_students
-    @student = @batch.archived_students.first
+    @students ||= @batch.archived_students 
+    @student = @batch.archived_students.first 
+    p "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    p @student
     @exam_groups ||= @batch.result_published
     @subjects ||= @batch.subjects
   end

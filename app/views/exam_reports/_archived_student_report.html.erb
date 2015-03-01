@@ -1,7 +1,8 @@
+
 <%= student_present%>
 <div class="box-inner">
   <div class="box-header well">
-    <h2><%= "#{@student.full_name}"" - #{@student.admission_no}" %></h2>
+    <h2><%= "#{@student.first_name}"" - #{@student.admission_no}" %></h2>
    </div>
    <div class="box-content">
     <table class="table table-bordered">
@@ -19,7 +20,7 @@
         <tr class="tr-<%= cycle('odd', 'even') %>">
           <td class="col-3" ><%= subject.name %></td>
         <% @exam_groups.each do |exam_group| %>
-          <td class="col-3"><%= exam_group.exam_marks(subject, @student)%></td>
+          <td class="col-3"><%= exam_group.exam_marks(subject, @student) %></td>
           <%unless exam_group.exam_type == 'Grades'%>
           <%= max_total = exam_group.exam_total(subject, max_total)%>
           <% marks_total = exam_group.exam_mar(subject, @student, marks_total)%>
@@ -42,7 +43,7 @@
           <% if exam.subject.valid?(@student) %>
             <% unless exam_group.exam_type == "Grades"%>
               <% @max_total = exam.exam_total(@max_total) %>
-              <% @marks_total = exam.exam_mar(@student, @marks_total)%>
+              <% @marks_total = exam.exam_mar(@student, @marks_total) unless @student.nil?%>
             <%end%>
           <%end%>
           <%end%>

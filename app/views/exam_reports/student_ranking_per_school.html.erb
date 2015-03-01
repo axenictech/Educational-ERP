@@ -55,7 +55,7 @@
               <% is_valid_subject = 0 if is_student_elective.nil? %>
             <% end %>
             <% unless is_valid_subject == 0 %>
-                <% total_mark+=ge.marks%>
+                <% total_mark = total_mark.to_f + ge.marks.to_f%>
             <%end%>
            <%end%>
            <%ranks<<[student.id,total_mark.to_f]%>

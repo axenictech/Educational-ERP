@@ -94,7 +94,7 @@
             <%end%>
             <%end%>
               <th>
-                <%= "%.2f" %(total_marks*100/total_max_marks)+"%" unless total_max_marks==0 %>
+                <%= "%.2f" %(total_marks.to_f*100/total_max_marks.to_f).round(2) + "%" unless total_max_marks==0 %>
               </th>
             <% total_marks=0%> <% total_max_marks=0%>
             <% else %>
