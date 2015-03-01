@@ -24,22 +24,19 @@
             <b>Select:</b>
              <%= link_to 'all','#',{onclick:"
               event.preventDefault();
-              $('.check_box').prop('checked', true);" , class: "btn btn-primary-link btn-xs"}%>
+              $('.check_box').prop('checked', true);" , class: "btn btn-primary-link btn-xs"}%>,
 
             <%= link_to 'none','#',{onclick:"
               event.preventDefault();
               $('.check_box').prop('checked', false);",class: "btn btn-primary-link btn-xs"}%>
           </div>
+
 <table class="table table-striped">
     <tbody>
      <%@privilege_tags.each do |p_t|%>
      <tr>
-         
+          <td><%= check_box_tag "privilege[]",p_t.id,false,class: "check_box"%></td>
           <td><b><%=p_t.name_tag%></b></td>
-          <%p_t.privileges.each do |i|%>
-          <td><b><%=i.name%></b></td>
-          <td><%= check_box_tag "privilege[#{p_t.id}]name[]",[i.id],false,class: "check_box"%></td>
-          <%end%>
      </tr>
      <%end%>
      </tbody>

@@ -44,7 +44,7 @@
         <div class="box-content">  
           <fieldset>
            <div class="col-md-6">
-            <table id="datatable" class="table table-bordered responsive"> 
+            <table id="datatable" class="table"> 
               <tr>
                <th> Name:</th>
                <td > <%= p.first_name %> <%= p.last_name %></td>     
@@ -94,7 +94,6 @@
             <td></td>
           </tr>    
           <tr >
-            
             <td colspan="2"><%= link_to "Edit",edit_student_guardian_path(@student,p),class: "btn btn-success"%>
              <%= link_to "Delete",[p.student,p], method: :delete, data: { confirm: "Are you sure to delete"} ,class: 'btn btn-danger'%>
            </td>        

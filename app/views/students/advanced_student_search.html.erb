@@ -15,7 +15,7 @@
      <% students<< s%>
      <%end%>
      <%end%>
-     <%= link_to "View Pdf Report",{:action =>'advanced_search_result',format:"pdf", :students=> students, :search=> @search},method: :post,class: "btn btn-primary-link btn-xs"%>
+     <%= link_to "View Pdf Report",advanced_search_result_students_path(students:students, search: @search,format:"pdf"),class: "btn btn-primary-link btn-xs"%>
    </div>
  </div>
 </div>
@@ -35,17 +35,11 @@
           <% else %>
           <thead>
             <tr>
-              <th>
-                Sl no.
-              </th>
-              <th>
-                Admission No
-              </th>
-              <th>
-               Student Name
-             </th>
-             <th>
-             </th></tr>
+              <th>Sl no.</th>
+              <th>Admission No</th>
+              <th>Student Name</th>
+             <th></th>
+             </tr>
            </thead>
            <tbody>
              <tr class="tr-blank"></tr>
