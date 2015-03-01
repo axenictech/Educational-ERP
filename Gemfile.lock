@@ -45,6 +45,8 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
+    bootstrap3-datetimepicker-rails (4.0.0)
+      momentjs-rails (>= 2.8.1)
     brakeman (3.0.1)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -133,6 +135,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
     multi_json (1.10.1)
     mysql2 (0.3.17)
     net-scp (1.2.1)
@@ -255,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   active_median (~> 0.1.0)
   aws-sdk
+  bootstrap3-datetimepicker-rails (~> 4.0.0)
   brakeman
   calendar_date_select
   cancan
@@ -271,6 +276,7 @@ DEPENDENCIES
   jquery-datatables-rails (~> 2.2.3)
   jquery-rails
   jquery-ui-rails
+  momentjs-rails (>= 2.9.0)
   mysql2
   paperclip
   passenger
