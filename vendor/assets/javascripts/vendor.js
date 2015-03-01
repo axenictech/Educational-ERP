@@ -23,8 +23,6 @@ $(function() {
   $('.datepicker').datepicker();
 });
 
-
-
 var ready;
 ready = function(){
   $('.table').dataTable();

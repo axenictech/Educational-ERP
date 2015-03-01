@@ -11,6 +11,10 @@ class EmployeesController < ApplicationController
   before_filter :bank_fields, only: \
   [:edit_bank_field, :update_bank_field, :destroy_bank_field]
 
+  def settings
+    authorize! :create, @employee
+  end
+
   def emp_category
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
@@ -499,7 +503,7 @@ class EmployeesController < ApplicationController
   def one_click_pay(salary_date)
     redirect_to payslip_employees_path
     flash[:notice] = "#{t('one')}" + \
-      ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
+                     ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
     authorize! :update, @employee
   end
 

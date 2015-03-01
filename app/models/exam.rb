@@ -20,19 +20,19 @@ class Exam < ActiveRecord::Base
   scope :result, ->(s, e) { where(subject_id: s, exam_group_id: e).take }
 
   def end_time_cannot_be_less_than_start_time
-    if DateTime.parse(end_time).present? && DateTime.parse(end_time) < DateTime.parse(start_time)
+    if end_time.present? && end_time < start_time
       errors.add(:end_time, 'cannot be less than start time')
     end
   end
 
   def start_time_cannot_be_less_than_past
-    if  DateTime.parse(start_time).present? &&  DateTime.parse(start_time).to_date < Date.today
+    if start_time.present? && start_time.to_date < Date.today
       errors.add(:start_time, 'should not be past date')
     end
   end
 
   def end_time_cannot_be_less_than_past
-    if  DateTime.parse(end_time).present? &&  DateTime.parse(end_time).to_date < Date.today
+    if end_time.present? && end_time.to_date < Date.today
       errors.add(:end_time, 'should not be past date')
     end
   end
@@ -163,7 +163,7 @@ class Exam < ActiveRecord::Base
   end
 
   def scores(student)
-    ExamScore.score(student.id, id)
+    ExamScore.score(student.id, id) unless student.nil?
   end
 
   def exam_total(total)

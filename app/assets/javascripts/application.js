@@ -22,4 +22,3 @@ $('#removeCountdown').click(function() {
     $(this).text(destroy ? 'Re-attach' : 'Remove'); 
     $('#defaultCountdown').countdown(destroy ? 'destroy' : {until: newYear}); 
 });
-

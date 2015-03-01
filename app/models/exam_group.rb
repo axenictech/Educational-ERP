@@ -34,8 +34,8 @@ class ExamGroup < ActiveRecord::Base
     flag = false
     unless ex.exams.nil?
       ex.exams.each do |exam|
-        next if exam.end_time.to_date.nil?
-        flag = true if exam.end_time.to_date >= Date.today
+        next if exam.end_time.nil?
+        flag = true if exam.end_time >= Date.today
       end
     end
     flag
@@ -53,6 +53,7 @@ class ExamGroup < ActiveRecord::Base
   def exam_marks(subject, student)
     exam = exam_data(subject)
     exam_score = exam.scores(student)
+    unless  exam_score.nil?
     if exam.nil?
       result = 'NA'
     else
@@ -60,17 +61,19 @@ class ExamGroup < ActiveRecord::Base
     end
     result
   end
+end
 
   def type_result(e, es)
+  
     if exam_type == 'Grades'
       es.grading_level.name || 'AB'
     elsif exam_type == 'Marks'
-      [es.marks || 'AB', e.maximum_marks].join('/')
+      [es.marks || 'AB', e.maximum_marks].join('/')   unless es.nil?
     else
-      [[es.marks || 'AB', e.maximum_marks].join('/')\
-      , es.grading_level.name || '-'].join('|')
+      [[es.marks || 'AB', e.maximum_marks].join('/') ,es.grading_level.name || '-'].join('|') 
     end
   end
+
 
   def exam_total(subject, total)
     exam = exam_data(subject)
@@ -81,7 +84,9 @@ class ExamGroup < ActiveRecord::Base
   def exam_mar(subject, student, marks)
     exam = exam_data(subject)
     exam_score = exam.scores(student)
+   
     return if exam.nil?
     marks.to_f + exam_score.marks.to_f
+
   end
 end
