@@ -7,7 +7,7 @@
   <ul>
     <% @students.each do |s| %>
       <li>
-        <%=link_to s.full_name, archived_student_exam_report_path(s),remote:true%>
+        <%=link_to s.first_name, archived_student_exam_report_path(s),remote:true%>
       </li>
     <% end %>
   </ul>
