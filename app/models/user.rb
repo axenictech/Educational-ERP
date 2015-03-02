@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :privilege_users
-  has_many :privileges, :through => :privilege_users
+  has_many :privileges, through: :privilege_users
   has_many :newscasts
   has_many :comments
   belongs_to :general_setting
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   def full_name
     first_name + ' ' + last_name
   end
-  
+
   # create GeneralSetting object and pass required parameters
   # create_general_setting action is saving our new general_setting to the database.
   def create_general_setting

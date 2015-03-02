@@ -1,28 +1,27 @@
 class OptionsController < ApplicationController
   before_action :set_option, only: [:show, :edit, :update, :destroy]
 
-  # GET /options
-  # GET /options.json
+  # this method used for display alloptions
   def index
     @options = Option.all
   end
 
-  # GET /options/1
-  # GET /options/1.json
+  # this method used for show options
   def show
   end
 
-  # GET /options/new
+  # this method used for  GET new options
   def new
     @option = Option.new
   end
 
-  # GET /options/1/edit
+  # This method is used for edit options
   def edit
   end
 
-  # POST /options
-  # POST /options.json
+  # This method used for create options,
+  # create option instance  and pass required params
+  # from private method and call save method on option instance
   def create
     @option = Option.new(option_params)
 
@@ -37,8 +36,8 @@ class OptionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /options/1
-  # PATCH/PUT /options/1.json
+  # this method used for update option,first find option which to be update
+  # call update method on instance option
   def update
     respond_to do |format|
       if @option.update(option_params)
@@ -51,12 +50,16 @@ class OptionsController < ApplicationController
     end
   end
 
-  # DELETE /options/1
-  # DELETE /options/1.json
+  # this method used for destroy option,
+  # first find option which to be destroy
+  # call destroy method on instance of option
   def destroy
     @option.destroy
     respond_to do |format|
-      format.html { redirect_to options_url, notice: 'Option was successfully destroyed.' }
+      format.html do
+        redirect_to options_url,
+                    notice: 'Option was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -68,7 +71,8 @@ class OptionsController < ApplicationController
     @option = Option.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def option_params
     params.require(:option).permit(:option, :is_answer, :question_id)
   end

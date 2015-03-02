@@ -69,7 +69,7 @@ class AttendencesController < ApplicationController
     @today = params[:attendence][:month_date].to_date
     @attendence = Attendence.new(attendence_params)
     @attendence.save
-    @attendence.update(subject_id:@subject_id)
+    @attendence.update(subject_id: @subject_id)
     @subject = Subject.shod(params[:subject_id])
     create2
   end
@@ -186,6 +186,6 @@ class AttendencesController < ApplicationController
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
   def attendence_params
-    params.require(:attendence).permit( :forenoon,:afternoon,:reason,:month_date,:student_id,:time_table_entry_id,:batch_id,:subject_id)
+    params.require(:attendence).permit(:forenoon, :afternoon, :reason, :month_date, :student_id, :time_table_entry_id, :batch_id, :subject_id)
   end
 end

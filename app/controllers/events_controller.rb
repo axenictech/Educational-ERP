@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params_event)
     if @event.save
-      flash[:notice] = "Event created successfully"
+      flash[:notice] = 'Event created successfully'
       redirect_to event_path(@event)
     else
       render 'new'
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.shod(params[:event_id])
     if @event.create_event(params[:batches], params[:departments])
-      flash[:notice] = "Event confirmation successfully"
+      flash[:notice] = 'Event confirmation successfully'
       redirect_to calender_index_path
     end
   end

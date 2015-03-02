@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @batches ||= Batch.all.includes(:course)
-    temp_email = params["student"]["email"]
+    temp_email = params['student']['email']
     downcase_email = temp_email.downcase
     @student.email = downcase_email
     if @student.save
@@ -180,8 +180,8 @@ class StudentsController < ApplicationController
       @fee = @student.finance_fees.take
       @fines ||= @fee.finance_fines
     else
-      flash[:notice] = "Collection not created for reciept"
-      redirect_to profile_student_path(@student) 
+      flash[:notice] = 'Collection not created for reciept'
+      redirect_to profile_student_path(@student)
     end
     authorize! :read, @student
   end
@@ -247,7 +247,7 @@ class StudentsController < ApplicationController
     @batch = @student.batch
     @first = Batch.first.id
     @current = @batch.id - 1
-    @student_log = StudentLog.where(student_id:@student)
+    @student_log = StudentLog.where(student_id: @student)
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @student
   end
@@ -405,9 +405,9 @@ class StudentsController < ApplicationController
     @archived_student = @student.archived_student
     @archived_student.update(status_description: \
       params[:archived_student][:status_description])
-    s=StudentLog.where(student_id:@student)
+    s = StudentLog.where(student_id: @student)
     s.each do |m|
-     StudentLog.destroy(m.id)
+      StudentLog.destroy(m.id)
     end
     @student.destroy
     redirect_to archived_profile_student_path(@archived_student)

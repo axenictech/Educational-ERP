@@ -26,7 +26,7 @@ class TimeTable < ActiveRecord::Base
     end
     error
   end
-  
+
   # create time table and validation
   def create_error(t)
     previous = TimeTable.where('end_date >= ? AND
@@ -53,7 +53,7 @@ class TimeTable < ActiveRecord::Base
     end
     today
   end
- 
+
   # upadate method update a class timing,
   # and it accepts a hash containing the attributes that you want to update.
   def update_time(time)
@@ -63,20 +63,20 @@ class TimeTable < ActiveRecord::Base
     return if time.start_date > Date.today \
        && time.end_date > Date.today
   end
-  
+
   # list all weekaday of selected time table
   def self.weekday_teacher(wt)
     wt.collect(&:weekday) \
       .uniq.sort! { |a, b| a.weekday <=> b.weekday }
   end
-  
+
   # list all class timing of selected time table
   def self.class_teacher(ct)
     ct.collect(&:class_timing) \
       .uniq.sort! { |a, b| a.start_time <=> b.start_time }
   end
-  
-  #list all employee of selected timetable
+
+  # list all employee of selected timetable
   def self.employee_teacher(et)
     et.collect(&:employee).uniq
   end

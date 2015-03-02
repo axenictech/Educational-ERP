@@ -1,10 +1,8 @@
 class GradingLevelsController < ApplicationController
   before_filter :find_batch, only: [:new, :create]
   before_filter :find_grade, only: [:edit, :update, :destroy]
-  
 
   # find all batches from database,and perform authorization
-
   def index
     @batches ||= Batch.includes(:course).all
     authorize! :read, @batches.first
@@ -18,7 +16,6 @@ class GradingLevelsController < ApplicationController
     authorize! :create, @grading_level
   end
 
-  
   # create GradingLevel object and pass required parameters
   # from private method params_grade and
   # create action is saving our new GradingLevel to the database.
@@ -35,13 +32,12 @@ class GradingLevelsController < ApplicationController
     authorize! :update, @grading_level1
   end
 
-  
   # find GradingLevel which we want to edit and pass it to update method
   # and perform authorization
   def edit
     authorize! :update, @grading_level1
   end
-  
+
   # upadate method update a GradingLevel,
   # and it accepts a hash containing the attributes that you want to update.
   # and perform authorization
@@ -50,7 +46,6 @@ class GradingLevelsController < ApplicationController
     @grading_level1.update(params_grade)
     flash[:notice] = t('grade_update')
   end
-
 
   # find GradingLevel which we want to destroy,
   # destroy method deleting that GradingLevels from the
@@ -63,7 +58,6 @@ class GradingLevelsController < ApplicationController
     redirect_to grading_levels_path
   end
 
-  
   # find batch,
   # get all grading_level of that batch, and perform authorization
   def select
@@ -73,18 +67,18 @@ class GradingLevelsController < ApplicationController
   end
 
   private
-  
+
   # find batch
   def find_batch
     @batch = Batch.shod(params[:batch_id])
   end
-  
+
   # find batch and grading levels
   def find_grade
     @batch = Batch.shod(params[:batch_id])
     @grading_level1 = @batch.grading_levels.shod(params[:id])
   end
-  
+
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
   def params_grade

@@ -19,7 +19,7 @@ class EmployeeLeaveType < ActiveRecord::Base
       EmployeeLeave.create(employee_id: e.id, employee_leave_type_id: new_leave.id, leave_count: new_leave.max_leave_count)
     end
   end
-   # update all employee leave associated with selected employee leave type
+  # update all employee leave associated with selected employee leave type
   def up(l, lc, param)
     return if l.update(param)
     lc.each do |la|
