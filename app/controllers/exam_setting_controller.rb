@@ -1,24 +1,26 @@
-# Exam Setting Controller
+# Exam controller is perform the operation for ranking level and class disignation
+# e.g. Insert, Delete, Update, Read.
 class ExamSettingController < ApplicationController
   def index
     authorize! :read, GradingLevel
   end
 
-  def ranklevel
-    @rank_levels = @course.ranking_levels.order('prioriy ASC')
-    @rank_lev1 = @course.ranking_levels.find(params[:id])
-  end
-
+  # @courses object store the all records of course from database.
+  # This object is used in drop down list for select particular course.
   def new
     @courses ||= Course.all
     authorize! :read, ClassDesignation
   end
 
+  # @courses object store the all records of course from database.
+  # This object is used in drop down list for select particular course.
   def newrank
     @courses ||= Course.all
     authorize! :read, RankingLevel
   end
 
+  # This action is create the new object for save class designation
+  # record in database.
   def setting
     @course = Course.shod(params[:id])
     @class_des = ClassDesignation.new
@@ -27,6 +29,8 @@ class ExamSettingController < ApplicationController
     authorize! :create, @class_des
   end
 
+  # This action is create the new object for save rank level
+  # record in database.
   def settingrank
     @course = Course.shod(params[:id])
     @rank_lev = RankingLevel.new
@@ -35,6 +39,8 @@ class ExamSettingController < ApplicationController
     authorize! :create, @rank_lev
   end
 
+  # This action save the class designation object in database.
+  # In this action 'create_flash' action is called for saving the record.
   def create
     @course = Course.shod(params[:id])
     @class_dess ||= @course.class_designations
@@ -42,6 +48,9 @@ class ExamSettingController < ApplicationController
     create_flash
   end
 
+  # This action is subpart of the create action.
+  # class designation record is saved using save method and
+  # send a flash message.
   def create_flash
     if @class_des1.save
       flash[:notice] = t('create_class')
@@ -50,20 +59,21 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # This action save the rank level object in database.
+  # In this action 'createrank_flash' action is called for
+  # saving record.
   def createrank
     @course = Course.shod(params[:course_id])
     @rank_levels = @course.ranking_levels.order('prioriy ASC')
     @rank_lev1 = @course.ranking_levels.new(params_rank)
     @max_rank = RankingLevel.maximum('prioriy')
     @rank_lev1 = @course.max(@max_rank, @rank_lev1)
-    if @rank_lev1.save
-      flash[:notice] = t('create_rank')
-    else
-      flash[:notice] = t('not_create_rank')
-      render 'newrank'
-    end
+    createrank_flash
   end
 
+  # This action is subpart of the createrank action.
+  # rank level record is saved using save method and
+  # send a flash message.
   def createrank_flash
     if @rank_lev1.save
       flash[:notice] = t('create_rank')
@@ -73,11 +83,15 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # This action is subpart of increase_priority and decrease_priority.
+  # It store the record of ranking level by ascending order.
   def inc_dec
     @rank_levels = @course.ranking_levels.order('prioriy ASC')
     @rank_lev1 = @course.ranking_levels.find(params[:format])
   end
 
+  # This action is perform the operation to increase the priority
+  # of ranking level.
   def increase_priority
     @course = Course.find(params[:id])
     inc_dec
@@ -87,6 +101,8 @@ class ExamSettingController < ApplicationController
     authorize! :create, @rank_lev1
    end
 
+  # This action is perform the operation to decrease the priority
+  # of ranking level.
   def decrease_priority
     @course = Course.shod(params[:id])
     inc_dec
@@ -96,6 +112,9 @@ class ExamSettingController < ApplicationController
     authorize! :create, @rank_lev1
   end
 
+  # This action delete the selected class designation record
+  # for particular course.
+  # In this action another action is called i.e. 'destroy_flash'.
   def destroy
     @course = Course.shod(params[:id])
     authorize! :delete, @class_des1
@@ -104,6 +123,8 @@ class ExamSettingController < ApplicationController
     destroy_flash
   end
 
+  # This action delete the class designation record using destroy method
+  # and display the flash message.
   def destroy_flash
     if @class_des1.destroy
       flash[:notice] = t('del_class')
@@ -113,6 +134,9 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # This action delete the selected class rank level record
+  # for particular course.In this action another action is called
+  # i.e. 'destroy_rank_flash'.
   def destroy_rank
     @rank_lev1 = RankingLevel.shod(params[:id])
     authorize! :delete, @ranking_levels
@@ -121,6 +145,8 @@ class ExamSettingController < ApplicationController
     destroy_rank_flash(@rank_lev1)
   end
 
+  # This action delete the rank level record using destroy method
+  # and display the flash message.
   def destroy_rank_flash(rank_lev1)
     if rank_lev1.destroy
       flash[:notice] = t('del_rank')
@@ -131,12 +157,17 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # This action is used to fetch the selected class designation
+  # record for edit.
   def edit
     @course = Course.shod(params[:id])
     @class_des1 = @course.class_designations.find(params[:class_des])
     authorize! :update, @class_des1
   end
 
+  # This action update the class designation record for
+  # selected course. Called the update_flash action for actual
+  # updation and send flash message.
   def update
     @course = Course.shod(params[:course_id])
     @class_dess ||= @course.class_designations
@@ -144,6 +175,8 @@ class ExamSettingController < ApplicationController
     update_flash
   end
 
+  # This action is subpart of update action and used to update the record
+  # in database and send flash message.
   def update_flash
     if @class_des1.update(params_class)
       flash[:notice] = t('update_class')
@@ -152,12 +185,23 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # This action is used to fetch the selected rank level
+  # record for edit.
   def edit_rank
     @course = Course.shod(params[:id])
     @rank_lev1 = @course.ranking_levels.shod(params[:course_id])
     authorize! :update, @rank_lev1
   end
 
+  # This action is a sub part of update_rank action
+  def ranklevel
+    @rank_levels = @course.ranking_levels.order('prioriy ASC')
+    @rank_lev1 = @course.ranking_levels.find(params[:id])
+  end
+
+  # This action update the rank level record for
+  # selected course. 'ranklevel' is action called for create
+  # object e.g. @rank_levels, @rank_lev1
   def update_rank
     @course = Course.shod(params[:course_id])
     ranklevel
@@ -168,12 +212,18 @@ class ExamSettingController < ApplicationController
     end
   end
 
+  # @course object is is store the all course record from database for
+  # display in drop down list. @class_dess object is consist the class
+  # designation record for specific course.
   def select
     @course = Course.shod(params[:course][:id])
     @class_dess ||= @course.class_designations
     authorize! :read, @class_dess.first
   end
 
+  # @course object is is store the all course record from database for
+  # display in drop down list. @rank_levels object is consist the ranking
+  # level record for specific course.
   def selectrank
     @course = Course.shod(params[:course][:id])
     @rank_levels = @course.ranking_levels.order('prioriy ASC')

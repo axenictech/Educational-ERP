@@ -42,7 +42,8 @@ class Batch < ActiveRecord::Base
   def batch_course_name
     [course.course_name, name].join(' ')
   end
-
+  
+  # find subject
   def normal_subjects
     subjects.where(elective_group_id: nil)
   end
@@ -50,7 +51,9 @@ class Batch < ActiveRecord::Base
   def has_own_weekday
     Weekday.where(batch_id: id).present?
   end
-
+  
+  # this method is used to transfer student
+  # from one batch to another batch and stored student data in student log
   def trans(students, transfer_id,batch)
     return unless students.present?
     general_subjects = batch.subjects.where(elective_group_id: nil)
@@ -85,7 +88,9 @@ class Batch < ActiveRecord::Base
   def result_published
     exam_groups.where(result_published: true)
   end
-
+  
+  # this method is used to graduate student
+  # student are moved from Student to ArchivedStudent
   def graduate(students, status)
     return unless students.present?
     students.each  do |s|
