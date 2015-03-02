@@ -1,7 +1,6 @@
 # employee controller perform all operation of employee such
 # as employee creation ,payslip,subject allocation and so on...
 class EmployeesController < ApplicationController
-
   # These call backs used for code optimization once we write
   # callback as before filter it automatically all private methods
   # in to calling method,call backs generally used for code reusability
@@ -588,7 +587,7 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
-  # find out all employee of sekected departments,
+  # find out all employee of selected departments,
   # find out assigned employees and call instance method dest that
   # remove employee from asssigned employees list
   def remove_employee2
@@ -810,24 +809,32 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
-  # 
+  # this method used for display general profile of archived employee
+  # find employee whose profile  to be displayed form ArchivedEmployee
   def genral_profile_archived
     @employee = ArchivedEmployee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # this method used for display personal profile,
+  # find employee whose profile  to be displayed
   def personal_profile
     @employee = Employee.shod(params[:format])
     @country = Country.per(@employee)
     authorize! :read, @employee
   end
 
+  # this method used for display personal profile of archived employee,
+  # then find employee whose profile to be displayed
   def personal_profile_archived
     @employee = ArchivedEmployee.shod(params[:format])
     @country = Country.per(@employee)
     authorize! :read, @employee
   end
 
+  # this method used for display address profile of employee,
+  # then find employee whose profile to be displayed and find home country
+  # and office country from Country table
   def address_profile
     @employee = Employee.shod(params[:format])
     @home_country = Country.home_country(@employee)
@@ -835,6 +842,9 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
+  # this method used for display address profile of archived employee,
+  # then find employee whose profile to be displayed and find home country
+  # and office country from Country table
   def address_profile_archived
     @employee = ArchivedEmployee.shod(params[:format])
     @home_country = Country.home_country(@employee)
@@ -842,44 +852,58 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
+  # this method used for display contact profile of employee,
+  # then find employee whose profile to be displayed
   def contact_profile
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # this method used for display contact profile of archived employee,
+  # then find employee whose profile to be displayed
   def contact_profile_archived
     @employee = ArchivedEmployee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # this method is used for display bank info of employee,
+  # then find employee whose bank info to be displayed
   def bank_info
     @employee = Employee.shod(params[:format])
     @bank_details = EmployeeBankDetail.bank_details(@employee)
     authorize! :read, @employee
   end
 
+  # this method is used for display bank info of archived employee,
+  # then find archived employee whose bank info to be displayed
   def bank_info_archived
     @employee = ArchivedEmployee.shod(params[:format])
     @bank_details = EmployeeBankDetail.bank_details(@employee)
     authorize! :read, @employee
   end
 
+  # this method is used for find employee payroll of selected employe
   def emp_payroll
     @emp = Employee.shod(params[:format])
     @payslip = MonthlyPayslip.where(employee_id: @emp.id).take
     authorize! :read, @emp
   end
 
+  # this method is used for find employee whome to be remove
   def remove
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # this method is used for change employee to former employee
   def change_to_former
     @employee = Employee.shod(params[:format])
     authorize! :update, @employee
   end
 
+  # this method is used for create archived employee,first
+  # find the employee then destroy all subject belongs to that employee and
+  # call method  create_archived_employee2
   def create_archived_employee
     @employee = Employee.shod(params[:format])
     return unless request.post?
@@ -887,6 +911,8 @@ class EmployeesController < ApplicationController
     create_archived_employee2
   end
 
+  # This method is used to create archived employee,first destroy employee
+  # whome to be archived and then transfer it to ArchivedEmployee database
   def create_archived_employee2
     @archived_empsloyee = @employee.archived_employee
     @employee.destroy
@@ -894,11 +920,15 @@ class EmployeesController < ApplicationController
     redirect_to archived_employee_profile_employees_path(@employee)
   end
 
+  # This method is used for display archived employee profile,
+  # first find the employee whose profile to be display
   def archived_employee_profile
     @employee = ArchivedEmployee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # This method is used for destroy employee completly from database,
+  # first find employee and call destroy on employee instance
   def delete_employee
     authorize! :delete, @employee
     @employee = Employee.shod(params[:format])
@@ -907,6 +937,8 @@ class EmployeesController < ApplicationController
     redirect_to @employee
   end
 
+  # This method is used to display employee profile, first find
+  # employee if employee is nil then find employee record in archived employee
   def employee_profile
     @employee = Employee.where(id: params[:employee_id]).take
     @employee = ArchivedEmployee.where(id: params[:employee_id]).take \
@@ -916,6 +948,9 @@ class EmployeesController < ApplicationController
     render 'employee_profile', layout: false
   end
 
+  # This method is used to display employee profile pdf, first find
+  # employee if employee is nil then find employee record in archived employee
+  #  and render same page to display pdf
   def personal_profile_pdf
     @employee = Employee.where(id: params[:employee_id]).take
     @employee = ArchivedEmployee.where(id: params[:employee_id]).take\
@@ -925,6 +960,10 @@ class EmployeesController < ApplicationController
     render 'personal_profile_pdf', layout: false
   end
 
+  # This method is used to display employee address profile pdf, first find
+  # employee if employee is nil then find employee record in archived employee
+  # then find out home country and office country from country database and
+  # render same page to display pdf
   def address_profile_pdf
     @employee = Employee.where(id: params[:employee_id]).take
     @employee = ArchivedEmployee.where(id: params[:employee_id]).take \
@@ -935,6 +974,9 @@ class EmployeesController < ApplicationController
     render 'address_profile_pdf', layout: false
   end
 
+  # This method is used to display employee contact profile pdf, first find
+  # employee if employee is nil then find employee record in archived
+  # employee and render same page to display pdf
   def contact_profile_pdf
     @employee = Employee.where(id: params[:employee_id]).take
     @employee = ArchivedEmployee.where(id: params[:employee_id]).take \
@@ -942,7 +984,10 @@ class EmployeesController < ApplicationController
     @general_setting = GeneralSetting.first
     render 'contact_profile_pdf', layout: false
   end
-
+  
+  # This method is used to display bank info pdf, first find
+  # employee if employee is nil then find employee record in archived
+  # employee and render same page to display pdf
   def bank_info_pdf
     @employee = Employee.where(id: params[:employee_id]).take
     @employee = ArchivedEmployee.where(id: params[:employee_id]).take \
@@ -952,33 +997,43 @@ class EmployeesController < ApplicationController
     render 'bank_info_pdf', layout: false
   end
 
+  # This method is used for search result pdf first find employee and
+  # render same page again to diaplay pdf
   def emp_search_result_pdf
     @employees = params[:employees]
     @search = params[:search]
     render 'emp_search_result_pdf', layout: false
   end
 
+  # This method is ued to edit employee personal profile 
   def edit_personal_profile
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # This method is ued to edit employee addres profile
   def edit_address_profile
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # This method is ued to edit employee contact profile
   def edit_contact_profile
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
   end
 
+  # This method is ued to edit employee bank field 
   def edit_bank_info
     @employee = Employee.shod(params[:format])
     @bank_info ||= @employee.employee_bank_details.includes(:bank_field).all
     authorize! :read, @employee
   end
 
+  # This method is ued to update employee bank deatails
+  # call class method up on EmployeeBankdetail
+  # that contain logic for update employee bank deatils and call
+  # update bank details2
   def update_bank_details
     @employee = Employee.shod(params[:format])
     params[:banks].each_pair do |k, v|
@@ -989,11 +1044,13 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
+  # this method is used to just redirecting to employee profile
   def update_bank_details2
     redirect_to profile_employees_path(@employee)
     flash[:notice] = "#{t('bank')}" + " #{@employee.first_name}"
   end
 
+  #  this method is used to hold payslip of selected employee
   def emp_payslip
     @salary_dates = MonthlyPayslip.all
     @emp = Employee.shod(params[:format])

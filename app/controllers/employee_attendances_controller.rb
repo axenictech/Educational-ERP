@@ -72,7 +72,7 @@ class EmployeeAttendancesController < ApplicationController
   
   # get all EmployeeDeparment from database
   # and created employee leaves for the employee which we created
-  # after the employee leave type
+  # after the employee leave type,and perform authorization
   def attendence_register
     @deparments = EmployeeDepartment.all
     @emp = Employee.att_reg
@@ -81,6 +81,7 @@ class EmployeeAttendancesController < ApplicationController
   end
   
   # find the selected department and all employees in that department
+  # and perform authorization
   def select
     @deparment = EmployeeDepartment.find(params[:department][:id])
     @employees ||= @deparment.employees.all
@@ -90,6 +91,7 @@ class EmployeeAttendancesController < ApplicationController
   end
   
   # display employee Attendance register for all months
+  # and perform authorization
   def display
     @deparment = EmployeeDepartment.find(params[:id])
     @employees ||= @deparment.employees.all
@@ -100,6 +102,7 @@ class EmployeeAttendancesController < ApplicationController
   
   # create EmployeeAttendance object and find the
   # employee and date for which we want to add leave
+  # and perform authorization
   def new_attendance
     @attendance = EmployeeAttendance.new
     @employee = Employee.find(params[:id])
@@ -185,6 +188,7 @@ class EmployeeAttendancesController < ApplicationController
   end
   
   # find all EmployeeDeparments from database
+  # and perform authorization
   def attendance_report
     @deparments ||= EmployeeDepartment.all
     authorize! :read, EmployeeAttendance
@@ -192,6 +196,7 @@ class EmployeeAttendancesController < ApplicationController
   
   # find EmployeeDeparment we selected and also find employee
   # leave type and related employee in that department
+  # and perform authorization
   def select_report
     @deparment = EmployeeDepartment.find(params[:department][:id])
     @leave_types ||= EmployeeLeaveType.all
@@ -210,6 +215,7 @@ class EmployeeAttendancesController < ApplicationController
   
   # find employee we selected and find all EmployeeLeaveType of that
   # employee and display employee leave of that employee
+  # and perform authorization
   def report_info
     @employee = Employee.find(params[:id])
     @attendance_report = EmployeeAttendance.find_by_employee_id(@employee.id)
@@ -263,6 +269,7 @@ class EmployeeAttendancesController < ApplicationController
   end
   
   # search employee for Reset Employee Leave for that employee
+  # and perform authorization
   def search_emp
     @employee = Employee.search2(params[:advance_search], params[:search])
     authorize! :read, Employee
@@ -283,6 +290,7 @@ class EmployeeAttendancesController < ApplicationController
   end
 
   private
+  
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
   def params_leave

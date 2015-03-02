@@ -23,7 +23,9 @@ class User < ActiveRecord::Base
   def full_name
     first_name + ' ' + last_name
   end
-
+  
+  # create GeneralSetting object and pass required parameters
+  # create_general_setting action is saving our new general_setting to the database.
   def create_general_setting
     role = 'Admin'
     role = 'SuperAdmin' if id == 1
