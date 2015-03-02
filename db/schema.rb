@@ -143,19 +143,21 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   end
 
   create_table "attendences", force: :cascade do |t|
-    t.integer  "student_id",          limit: 4
-    t.integer  "time_table_entry_id", limit: 4
-    t.boolean  "forenoon",            limit: 1,   default: false
-    t.boolean  "afternoon",           limit: 1,   default: false
+    t.boolean  "forenoon",            limit: 1
+    t.boolean  "afternoon",           limit: 1
     t.string   "reason",              limit: 255
     t.date     "month_date"
+    t.integer  "student_id",          limit: 4
+    t.integer  "time_table_entry_id", limit: 4
     t.integer  "batch_id",            limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "subject_id",          limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "attendences", ["batch_id"], name: "index_attendences_on_batch_id", using: :btree
   add_index "attendences", ["student_id"], name: "index_attendences_on_student_id", using: :btree
+  add_index "attendences", ["subject_id"], name: "index_attendences_on_subject_id", using: :btree
   add_index "attendences", ["time_table_entry_id"], name: "index_attendences_on_time_table_entry_id", using: :btree
 
   create_table "bank_fields", force: :cascade do |t|
@@ -406,7 +408,6 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
     t.string   "amount",              limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "salary_date"
   end
 
   add_index "employee_salery_structures", ["employee_id"], name: "index_employee_salery_structures_on_employee_id", using: :btree
@@ -426,7 +427,7 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
     t.integer  "employee_category_id",   limit: 4
     t.string   "employee_number",        limit: 255
     t.date     "joining_date"
-    t.binary   "first_name",             limit: 65535
+    t.string   "first_name",             limit: 255
     t.string   "middle_name",            limit: 255
     t.string   "last_name",              limit: 255
     t.string   "gender",                 limit: 255
@@ -525,12 +526,12 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   create_table "exams", force: :cascade do |t|
     t.integer  "exam_group_id",    limit: 4
     t.integer  "subject_id",       limit: 4
-    t.string   "start_time",       limit: 255
-    t.string   "end_time",         limit: 255
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.integer  "maximum_marks",    limit: 4
     t.integer  "minimum_marks",    limit: 4
     t.integer  "grading_level_id", limit: 4
-    t.integer  "weightage",        limit: 4,   default: 0
+    t.integer  "weightage",        limit: 4, default: 0
     t.integer  "event_id",         limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -928,11 +929,13 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   add_index "payroll_categories", ["payroll_category_id"], name: "index_payroll_categories_on_payroll_category_id", using: :btree
 
   create_table "placement_exams", force: :cascade do |t|
-    t.string  "question_count", limit: 255
-    t.time    "timeperiod"
-    t.date    "start_date"
-    t.date    "end_date"
-    t.integer "company_id",     limit: 4
+    t.string   "question_count", limit: 255
+    t.time     "timeperiod"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "company_id",     limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "placement_exams", ["company_id"], name: "index_placement_exams_on_company_id", using: :btree
@@ -975,9 +978,9 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   create_table "question_databases", force: :cascade do |t|
     t.integer  "question_type_id", limit: 4
     t.string   "question",         limit: 255
+    t.integer  "no_of_option",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "no_of_option",     limit: 4
   end
 
   add_index "question_databases", ["question_type_id"], name: "index_question_databases_on_question_type_id", using: :btree
@@ -1074,8 +1077,8 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
     t.decimal  "marks",                  precision: 10
     t.integer  "student_id", limit: 4
     t.integer  "batch_id",   limit: 4
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "student_informations", ["batch_id"], name: "index_student_informations_on_batch_id", using: :btree
@@ -1230,8 +1233,8 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
     t.string   "modelname",  limit: 255
     t.integer  "model_id",   limit: 4
     t.string   "action",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "user_activities", ["user_id"], name: "index_user_activities_on_user_id", using: :btree
@@ -1304,22 +1307,13 @@ ActiveRecord::Schema.define(version: 20150122072350078) do
   add_index "weightages", ["placement_exam_id"], name: "index_weightages_on_placement_exam_id", using: :btree
   add_index "weightages", ["question_type_id"], name: "index_weightages_on_question_type_id", using: :btree
 
-  create_table "weights", force: :cascade do |t|
-    t.integer  "percentage",       limit: 4
-    t.integer  "PlacementExam_id", limit: 4
-    t.integer  "QuestionType_id",  limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "weights", ["PlacementExam_id"], name: "index_weights_on_PlacementExam_id", using: :btree
-  add_index "weights", ["QuestionType_id"], name: "index_weights_on_QuestionType_id", using: :btree
-
+  add_foreign_key "attendences", "batches"
+  add_foreign_key "attendences", "students"
+  add_foreign_key "attendences", "subjects"
+  add_foreign_key "attendences", "time_table_entries"
   add_foreign_key "privilege_users", "privilege_tags"
   add_foreign_key "privilege_users", "privileges"
   add_foreign_key "privilege_users", "users"
-  add_foreign_key "student_informations", "batches"
-  add_foreign_key "student_informations", "students"
   add_foreign_key "student_logs", "batches"
   add_foreign_key "student_logs", "exam_groups"
   add_foreign_key "student_logs", "students"
