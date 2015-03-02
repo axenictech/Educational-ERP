@@ -62,10 +62,7 @@
 <tr>
 <% student=es.student%>
     <% unless es.nil? %>
-    
-     
       <td class="col-2"><font color="red"><%= f.label "#{student.first_name+" "+student.last_name}" %></font></td>
-    
 <%else%>
       <td class="col-2"><%= f.label "#{student.first_name+" "+student.last_name}" %></td>
     <%end%>
@@ -86,7 +83,6 @@
 </tr>
 <%end%>
 </table>
-
 </div></div>
   </div>
 </div>
@@ -95,4 +91,3 @@
 </div>
 </div>
 </div>
-

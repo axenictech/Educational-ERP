@@ -1,4 +1,3 @@
-# GradingLevels Controller
 class GradingLevelsController < ApplicationController
   before_filter :find_batch, only: [:new, :create]
   before_filter :find_grade, only: [:edit, :update, :destroy]
