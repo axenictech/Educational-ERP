@@ -1,20 +1,28 @@
-# ExamGroupsController
+# ExamGroupsController perform the operation on exams
+# like create exam, display exam schedule, manage student marks.
 class ExamGroupsController < ApplicationController
+  # This action display a starting page with drop down list of course. 
   def index
     @courses ||= Course.all
   end
 
+  # In this action @batches object is store the batchse list
+  # for selected course.
   def select
     @course = Course.shod(params[:course][:id])
     @batches ||= @course.batches.all
   end
 
+  # Create the @exam_group object build with batch for store in database.
   def new
     @batch = Batch.shod(params[:format])
     @exam_group = @batch.exam_groups.build
     @course = @batch.course
   end
 
+  # Retrieve the selected batch details from database in @batch object.
+  # Create new object @exam_group for storing user inputed details and save
+  # in database.
   def create
     @batch = Batch.shod(params[:format])
     @exam_group = @batch.exam_groups.new(params_exam_group)
@@ -23,11 +31,15 @@ class ExamGroupsController < ApplicationController
     @exam_group.exams.build
   end
 
+  # This action fetch the exam group record from database
+  # for update
   def edit
     @exam_group = ExamGroup.shod(params[:id])
     @batch = @exam_group.batch
   end
 
+  # This action update the exam group record with update method
+  # for selected record.
   def update
     @exam_group = ExamGroup.shod(params[:id])
     @exam_group.update(params_exam_group)
@@ -36,6 +48,10 @@ class ExamGroupsController < ApplicationController
     @exam_group.exams.build
   end
 
+  # Fetch the exam group id throw shod method and store into @exam_group
+  # store the exams attributes in the object a.
+  # Convert the start time and end time into date format for validation
+  # Insert the exam into the database.
   def exam_group_create
     @exam_group = ExamGroup.shod(params[:id])
     a = params[:exam_group][:exams_attributes]
@@ -55,12 +71,16 @@ class ExamGroupsController < ApplicationController
     end
   end
 
+  # This action fetch the exam groups records from database and
+  # display in table.
   def show
     @batch = Batch.shod(params[:id])
     @exam_groups ||= @batch.exam_groups.all
     @course = @batch.course
   end
 
+  # @exam_group object store the user selected exam group id.
+  # @exams fetch the only subject field for specific examgroup.
   def exams
     @exam_group = ExamGroup.shod(params[:id])
     @exams ||= @exam_group.exams.all.includes(:subject)
