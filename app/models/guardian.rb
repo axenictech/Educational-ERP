@@ -24,6 +24,7 @@ class Guardian < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :discover, ->(s, r) { where(student_id: s, relation: r).take }
 
+  # return full student name by joining first name and last name
   def student_name
     [first_name, last_name].join(' ')
   end

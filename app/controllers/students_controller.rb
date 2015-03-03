@@ -2,6 +2,7 @@
 # guardian details, previous year details and profile.
 class StudentsController < ApplicationController
 
+  # Fetch the all student records for display on page.
   def index
     @students ||= Student.list
     authorize! :create, Student
@@ -38,6 +39,7 @@ class StudentsController < ApplicationController
     end
   end
 
+  # This action shows the selected student record.
   def show
     @student = Student.shod(params[:id])
     authorize! :read, @student
@@ -149,11 +151,14 @@ class StudentsController < ApplicationController
     @previous_subjects ||= StudentPreviousSubjectMark.where(student_id: student)
   end
 
+  # View the all students for selected batch.
   def view_all
     @batches ||= Batch.includes(:course).all
     authorize! :read, @batches.first
   end
 
+  # This action execute when user select the batch from drop down list
+  # and provide the selected batch student.
   def select
     @batch = Batch.shod(params[:batch][:id])
     @students ||= @batch.students
@@ -207,6 +212,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # Generate the student reciept about its admission status.
+  # How much fee is pending and how much is paid. 
   def reciept
     @student = Student.shod(params[:format])
     @general_setting = GeneralSetting.first
@@ -224,6 +231,7 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # Generate the archived student report for selected student.
   def archived_report
     @student = ArchivedStudent.shod(params[:format])
     @batch = @student.batch
@@ -272,6 +280,8 @@ class StudentsController < ApplicationController
     render 'academic_report', layout: false
   end
 
+  # This action provide the data for generate the final report for
+  # selected student.
   def final_report
     @student = Student.shod(params[:format])
     @batch = @student.batch
@@ -280,6 +290,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action provide the data for generate the pdf for student
+  # final report.
   def student_final_report
     @student = Student.shod(params[:student_id])
     @batch = @student.batch
@@ -289,6 +301,8 @@ class StudentsController < ApplicationController
     render 'student_final_report', layout: false
   end
 
+  # This action provide the data for generate the transcript report for
+  # selected student.
   def transcript_report
     @student = Student.shod(params[:format])
     @batch = @student.batch
@@ -299,6 +313,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action provide the data for generate the pdf for student
+  # transcript report.
   def student_transcript_report
     @student = Student.shod(params[:student_id])
     @batch = @student.batch
@@ -307,6 +323,8 @@ class StudentsController < ApplicationController
     render 'student_transcript_report', layout: false
   end
 
+  # This action provide the data for generate the pdf for archive student
+  # transcript report.
   def archived_student_transcript_report
     @student = ArchivedStudent.shod(params[:student_id])
     @batch = @student.batch
@@ -336,24 +354,31 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action generate the data for advance search drop down list
+  # i.e. Select course and select batch.
   def advanced_search
     @courses ||= Course.all
     @batches ||= Course.first.batches unless Course.first.nil?
     authorize! :read, @student
   end
 
+  # This action executes when user select specific batch from advance search
+  # form.
   def batch_details
     @course = Course.shod(params[:id])
     @batches ||= @course.batches
     authorize! :read, @student
   end
 
+  # This action fire the complex query to find out correct record for
+  # advance search.
   def advanced_student_search
     @students ||= Student.advance_search(params[:search], params[:batch]) unless params[:batch].nil?
     @search ||= Student.search_script(params[:search], params[:batch]) unless params[:batch].nil?
     authorize! :read, @student
   end
 
+  # This action provide the students data for generate the student search pdf.
   def advanced_search_result
     @students ||= params[:students]
     @search ||= params[:search]
@@ -361,18 +386,21 @@ class StudentsController < ApplicationController
     render 'advanced_search_result', layout: false
   end
 
+  # This action provide the student record for selected elective subject.
   def elective
     @subject = Subject.shod(params[:id])
     @students ||= @subject.elective_group.batch.students
     authorize! :read, @student
   end
 
+  # assign all the students for selected subject.
   def assign_all
     @subject = Subject.shod(params[:id])
     @students ||= @subject.elective_group.batch.students
     authorize! :read, @student
   end
 
+  # remove all the student for selected subject.
   def remove_all
     @subject = Subject.shod(params[:id])
     @students ||= @subject.elective_group.batch.students

@@ -15,6 +15,9 @@ class Subject < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :exam, -> { where(no_exams: false) }
 
+  # Method used for assign subject to student,
+  # first find out studentsubject destroy all student subject if present else
+  # create student subject
   def assign_subject(students)
     batch = elective_group.batch
     student_subject = StudentSubject.where(subject_id: id)
@@ -28,14 +31,17 @@ class Subject < ActiveRecord::Base
     end
   end
 
+  # return subject name by concating name and code
   def subject_name
     [name, code].join(' ')
   end
 
+  # return exam score for student of selectd exam
   def exam_scores(exam)
     ExamScore.where(exam_id: exam, student_id: id).take
   end
 
+  # return full name by concating first name and last name
   def full_name
     [first_name, last_name].join(' ')
   end
