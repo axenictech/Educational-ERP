@@ -6,6 +6,9 @@ class FeeCollectionParticular < ActiveRecord::Base
   has_and_belongs_to_many :students
   scope :shod, ->(id) { where(id: id).take }
 
+  # This action generate the different collection for different student.
+  # e.g. collection is generating according to student admission number,
+  # student category and for whole student.
   def student_fee_collection
     students = []
     @batch = batch

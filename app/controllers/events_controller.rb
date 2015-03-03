@@ -41,16 +41,17 @@ class EventsController < ApplicationController
   # this method is used to create event for multipal batch and department
   def update
     @event = Event.shod(params[:event_id])
-    @event.create_event(params[:batches], params[:departments])
-    flash[:notice] = 'Event confirmation successfully'
-    redirect_to calender_index_path
+    if @event.create_event(params[:batches], params[:departments])
+      flash[:notice] = 'Event confirmation successfully'
+      redirect_to calender_index_path
+    end
   end
 
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
 
   private
-
+  
   def params_event
     params.require(:event).permit!
   end

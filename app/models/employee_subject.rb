@@ -4,12 +4,8 @@ class EmployeeSubject < ActiveRecord::Base
   belongs_to :employee
   belongs_to :subject
   has_one :batch, through: :subject
+  
   scope :shod, ->(id) { where(id: id).take }
-
-  def self.assign_emp(sub)
-    where(subject_id: sub.id)
-  end
-
   scope :ass_emp, -> (emp, sub) \
   { create(employee_id: emp.id, subject_id: sub.id) }
 
@@ -22,6 +18,12 @@ class EmployeeSubject < ActiveRecord::Base
   scope :ass_emp1, -> (sub) { where(subject_id: sub.id) }
   scope :rem_emp2, -> (sub2) { where(subject_id: sub2.id) }
 
+  # return subject from employeesubject
+  def self.assign_emp(sub)
+    where(subject_id: sub.id)
+  end
+
+  
   # use in timetable controller
   # create and save employee and releted subject in database.
   def self.allot_work(employee_subj_ids)

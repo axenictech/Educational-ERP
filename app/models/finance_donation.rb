@@ -7,6 +7,9 @@ class FinanceDonation < ActiveRecord::Base
   validates :amount, presence: true, numericality: true
   validates :transaction_date, presence: true
   scope :shod, ->(id) { where(id: id).take }
+  
+  # This action called by finance controller for save the data into
+  # finance transaction table when donor is created.
   def create_transaction
     category = FinanceTransactionCategory.find_by_name('Donation')
     transaction = category.finance_transactions.create(title: donor\
@@ -15,6 +18,8 @@ class FinanceDonation < ActiveRecord::Base
     update(finance_transaction_id: transaction.id)
   end
 
+  # This action called by finance controller for update the data into
+  # finance transaction table whin donor is updated.
   def update_transaction
     finance_transaction.update(title: donor, description: description\
       , amount: amount, transaction_date: transaction_date)

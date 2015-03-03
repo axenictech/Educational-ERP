@@ -6,7 +6,7 @@ class BatchGroup < ActiveRecord::Base
   validates :name, presence: true, length: \
   { minimum: 1, maximum: 30 }, format: { with: /\A[a-zA-Z0-9_" "-\/]+\Z/ }
   scope :shod, ->(id) { where(id: id).take }
-  
+
   # get all selected batch and create BatchGroup
   # create_group_batch action is saving our BatchGroup to the database.
   def create_group_batch(batches, batch_group)

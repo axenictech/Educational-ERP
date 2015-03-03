@@ -131,7 +131,7 @@ class Employee < ActiveRecord::Base
         else
           @payroll_salary.update(amount: p_amount)
         end
-        update_payroll(payrol.id, p_amount,salary_date)
+        update_payroll(payrol.id, p_amount, salary_date)
       end
     end
   end

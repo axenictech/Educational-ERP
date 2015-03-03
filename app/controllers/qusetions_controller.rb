@@ -1,28 +1,27 @@
 class QusetionsController < ApplicationController
   before_action :set_qusetion, only: [:show, :edit, :update, :destroy]
 
-  # GET /qusetions
-  # GET /qusetions.json
+  # method for GET qusetions
   def index
     @qusetions = Qusetion.all
   end
 
-  # GET /qusetions/1
-  # GET /qusetions/1.json
+  # method for show qusetions
   def show
   end
 
-  # GET /qusetions/new
+  # method for GET new qusetions
   def new
     @qusetion = Qusetion.new
   end
 
-  # GET /qusetions/1/edit
+  # method for  edit qusetions
   def edit
   end
 
-  # POST /qusetions
-  # POST /qusetions.json
+  # This method used for create Question,
+  # create Question instance  and pass required params
+  # from private method and call save method on Question instance
   def create
     @qusetion = Qusetion.new(qusetion_params)
 
@@ -37,8 +36,9 @@ class QusetionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /qusetions/1
-  # PATCH/PUT /qusetions/1.json
+  # this method used for update Question,first
+  # find Question which to be update
+  # call update method on instance of Question
   def update
     respond_to do |format|
       if @qusetion.update(qusetion_params)
@@ -51,8 +51,9 @@ class QusetionsController < ApplicationController
     end
   end
 
-  # DELETE /qusetions/1
-  # DELETE /qusetions/1.json
+  # this method used for destroy Question ,
+  # first find Question which to be destroy
+  # call destroy method on instance of Question
   def destroy
     @qusetion.destroy
     respond_to do |format|
@@ -68,7 +69,7 @@ class QusetionsController < ApplicationController
     @qusetion = Qusetion.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters froqm the scary internet, only allow the white list through.
   def qusetion_params
     params.require(:qusetion).permit(:question, :question_type_id, :question_count)
   end

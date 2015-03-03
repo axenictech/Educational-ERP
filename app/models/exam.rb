@@ -57,6 +57,8 @@ class Exam < ActiveRecord::Base
     end
   end
 
+  # This action select the  subject for exam.
+  # This action is also check the subject is either elective or not.
   def select_subject(s1, s2, exam)
     unless s2.nil?
       s2.each do |std|
@@ -72,6 +74,8 @@ class Exam < ActiveRecord::Base
     s1
   end
 
+  # This action is update the exam score. This action also magage the
+  # updation of exam score according to marks, grade, marks and grade.
   def score_exam(temps, batch, exam, exam_group, grades)
     temps.each_pair do |student_id, details|
       @exam_score = ExamScore.where(exam_id: exam.id,
@@ -123,6 +127,9 @@ class Exam < ActiveRecord::Base
     end
   end
 
+  # This action is useful to update the exam score. But the score strategy is
+  # divided into the three parts i.e. marks,grades,marks and grades so to 
+  # manage update operation on exam score is also divided as per score strategy
   def update_exam_scr(exam, exam_group, batch, param)
     param.each_pair do |student_id, details|
       exam_score = ExamScore.exrep(exam, student_id)
@@ -158,18 +165,22 @@ class Exam < ActiveRecord::Base
     end
   end
 
+  # This action fetch the student recored which is failed.
   def is_failed
     exam_scores.where(is_failed: true).includes(:student, :grading_level)
   end
 
+  # This action find out the score of user selected student.
   def scores(student)
     ExamScore.score(student.id, id) unless student.nil?
   end
 
+  # This action perform the arithmetic operation for calculate total marks.
   def exam_total(total)
     total.to_f + maximum_marks.to_f
   end
 
+  # This action generate the data for marks of particular student.
   def exam_mar(student, marks)
     exam_score = scores(student)
     marks.to_f + exam_score.marks.to_f

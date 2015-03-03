@@ -11,6 +11,10 @@ class EmployeeDepartment < ActiveRecord::Base
   scope :is_status, -> { where(status: true).order(:name) }
   scope :not_status, -> { where(status: false).order(:name) }
 
+  # this method used for assign employee to batch
+  # initilize empty array of emp,employees hold all employees of department
+  # if batch contain employee id then split employee id store into assign
+  # employee,else return emp
   def assign_employee(batch)
     emp = []
     employees = self.employees.pluck(:id)
@@ -23,7 +27,10 @@ class EmployeeDepartment < ActiveRecord::Base
     end
   end
 
+  # This method is used for split employee id
   def ass_emp(batch)
+    if batch.employee_id
     batch.employee_id.split(',')
+  end
   end
 end

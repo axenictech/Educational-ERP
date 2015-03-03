@@ -6,8 +6,7 @@
         width:100%;
         margin: 0 auto;
       }
-
-       
+      
       #head {
         height: 100px;
         width: 700px;
@@ -27,14 +26,15 @@
     <div id="heading">
       <div id="head">
         <%= @general_setting.school_or_college_name%><br/>
-        <div id="head_info">
-          <%= @general_setting.school_or_college_address%><br/><br/>
+      </div>  
+      <div id="head_info">
+          <%= @general_setting.school_or_college_address%><br/>
           <%= @general_setting.school_or_college_phone_no%>
-        </div>
       </div>
+    </div>  
       <hr>
 
-      <br/><h3><center>Attendance Wise Ranking Report </center></h3>
+      <br/><h3><center>Attendance-wise Ranking Report </center></h3>
     <br>
       <h4><%= @batch.course.course_name.capitalize+" "+@batch.course.section_name.capitalize+" "+@batch.name.capitalize+" | "+ @start_date.to_s+" - "+@end_date.to_s%></h4>
     

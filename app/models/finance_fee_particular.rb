@@ -11,6 +11,9 @@ class FinanceFeeParticular < ActiveRecord::Base
   , numericality: true, allow_blank: true
   scope :shod, ->(id) { where(id: id).take }
 
+  # This action is called from action 'create_fees_particular' in
+  # finance controller. This action is save the data in finance fee
+  # particular.
   def self.create_fee(params, batches, mode, adm_no, cat_id)
     error = 1
     if batches.present?
@@ -23,6 +26,9 @@ class FinanceFeeParticular < ActiveRecord::Base
     error
   end
 
+  # This action is subpart of the self.create action.
+  # This action used to set the value for admission no,
+  # batch id, category id.
   def set(mode, adm_no, cat_id, batch)
     if mode == 'admission_no'
       self.admission_no, self.batch_id = adm_no, batch

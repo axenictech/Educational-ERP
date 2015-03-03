@@ -9,6 +9,8 @@ class FinanceTransactionCategory < ActiveRecord::Base
   scope :expense, -> { where(is_income: false) }
   scope :income, -> { where(is_income: true) }
 
+  # Find out the transaction record between user inputed start date
+  # end date.
   def category_amount(start_date, end_date)
     amount = 0
     transactions = finance_transactions.where(transaction_date: start_date..end_date)

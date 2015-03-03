@@ -17,7 +17,7 @@ class Student < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: \
   ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-  
+
   validates :admission_no, presence: true
   validates :admission_date, presence: true
   validates :email, presence: true, format: \
@@ -93,6 +93,9 @@ class Student < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  # This action generate the unique student admission no for each student.
+  # Admission number is combination of admission date with prefix 'S' and
+  # admission count.
   def self.set_admission_no
     date = Date.today.strftime('%Y%m%d')
     if Student.first.nil?
@@ -103,6 +106,7 @@ class Student < ActiveRecord::Base
     end
   end
 
+  # This action is used to search the student record.
   def self.search(input, status)
     return if input.empty?
     if status.eql? 'present'
@@ -116,6 +120,9 @@ class Student < ActiveRecord::Base
     end
   end
 
+  # This action is used to search the student record on the advance basis.
+  # It search the record by name, category, batch, course, gender, blood
+  # group and so on.
   def self.advance_search(search, batch)
     conditions = ''
     conditions += "concat_ws(' ',first_name,last_name) \
@@ -244,16 +251,16 @@ class Student < ActiveRecord::Base
   end
 
   HUMANIZED_ATTRIBUTES = {
-    :email => "Email Address",
-    :phone1 => "Phone number",
-    :phone2 => "Mobile number"
+    email: 'Email Address',
+    phone1: 'Phone number',
+    phone2: 'Mobile number'
   }
- 
+
   private
-  
-  def self.human_attribute_name(attr, options={})
+
+  def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
-  end 
+  end
 
   def create_user_account
     user = User.new do |u|

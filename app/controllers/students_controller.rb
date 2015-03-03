@@ -1,10 +1,16 @@
-# Students Controller
+# Students Controller magange the operation of student admission,
+# guardian details, previous year details and profile.
 class StudentsController < ApplicationController
+
   def index
     @students ||= Student.list
     authorize! :create, Student
   end
 
+  # In this action @batches, @countries, @categories object fetch the data
+  # for drop down list in the form. @student is the new object create for
+  # store the new student admission details in database. set_admission_no
+  # method is used to generate the unique admission number for each student.
   def admission1
     @student = Student.new
     @student.admission_no = Student.set_admission_no
@@ -14,10 +20,12 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # This action save the student record in the database. before save the
+  # record email id is convert into small case alphabet.
   def create
     @student = Student.new(student_params)
     @batches ||= Batch.all.includes(:course)
-    temp_email = params["student"]["email"]
+    temp_email = params['student']['email']
     downcase_email = temp_email.downcase
     @student.email = downcase_email
     if @student.save
@@ -35,6 +43,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action create the new object of store the guardion details
+  # for adjecent student. Build the student object with guardian object.
   def admission2
     @student = Student.shod(params[:format])
     @guardian = @student.guardians.build
@@ -42,11 +52,15 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # This action display the successfull message of guardian add successfully
+  # for adjecent student.
   def admission2_1
     @student = Student.shod(params[:format])
     authorize! :create, @student
   end
 
+  # This action is fetch the selected student record and display the
+  # form for select emergency contact of guardian.
   def admission3
     @student = Student.shod(params[:format])
     authorize! :create, @student
@@ -69,6 +83,8 @@ class StudentsController < ApplicationController
     end
   end
 
+  # This action is perform the operation for update immediate contact
+  # for selected student.
   def update_immediate_contact
     @student = Student.shod(params[:id])
     @student.update(student_params)
@@ -77,11 +93,15 @@ class StudentsController < ApplicationController
     redirect_to previous_data_students_path(@student)
   end
 
+  # Provide the parent list for change its priority to
+  # first contact.
   def edit_immediate_contact
     @student = Student.shod(params[:format])
     authorize! :update, @student
   end
 
+  # This action is perform the operation for update immediate contact
+  # for selected student.
   def update_immediatecontact
     @student = Student.shod(params[:id])
     @student.update(student_params)
@@ -90,12 +110,16 @@ class StudentsController < ApplicationController
     redirect_to profile_student_path(@student)
   end
 
+  # Create the new object for storing the previous institute details
+  # for selected student.
   def previous_data
     @student = Student.shod(params[:format])
     @previous_data = StudentPreviousData.new
     authorize! :create, @student
   end
 
+  # Insert the previous institute data into the database for selected
+  # student.
   def previous_data_create
     @student = Student.shod(params[:student_previous_data][:student_id])
     @previous_data = StudentPreviousData.create(previous_data_params)
@@ -106,12 +130,16 @@ class StudentsController < ApplicationController
     end
   end
 
+  # Create the new object for store previous course subject details
+  # for selected student.
   def previous_subject
     @student = Student.shod(params[:format])
     @previous_subject = StudentPreviousSubjectMark.new
     authorize! :create, @student
   end
 
+  # Insert the previous course subject details. Retreive these record for
+  # on the form display.
   def previous_subject_create
     @previous_subject = StudentPreviousSubjectMark.create(params_subject)
     student = params[:student_previous_subject_mark][:student_id]

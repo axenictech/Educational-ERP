@@ -70,7 +70,7 @@ class FinanceController < ApplicationController
     end
   end
 
-  # Generating the information for displaying donation receipt. 
+  # Generating the information for displaying donation receipt.
   def donation_receipt
     @donation = FinanceDonation.shod(params[:id])
     authorize! :read, @donation
@@ -230,7 +230,7 @@ class FinanceController < ApplicationController
     render 'liability_list', layout: false
   end
 
-  # Fetching the automatic transaction details from database and 
+  # Fetching the automatic transaction details from database and
   # display list.
   def automatic_transaction
     @automatic_transactions ||= FinanceTransactionTrigger.all
@@ -300,7 +300,7 @@ class FinanceController < ApplicationController
     end
   end
 
-  # This action display the list of expenses of given start and 
+  # This action display the list of expenses of given start and
   # end date.
   def expense_list
     @start_date = params[:expense][:start_date].to_date
@@ -370,7 +370,7 @@ class FinanceController < ApplicationController
     end
   end
 
-  # This action display the list of income of given start and 
+  # This action display the list of income of given start and
   # end date.
   def income_list
     @start_date = params[:income][:start_date].to_date
@@ -558,7 +558,7 @@ class FinanceController < ApplicationController
     @batches ||= @master_category.batches
     authorize! :read, @master_category
   end
-  
+
   # Insert the record of particular fee for specific finance category.
   def create_fees_particular
     @categories ||= FinanceFeeCategory.all
@@ -633,7 +633,7 @@ class FinanceController < ApplicationController
   # This action is perform a operation for update the particular.
   # For that it require a batch record.
   # After finding the batch, we find out finance fee category.
-  # With the help of finance fee category update the particulars record. 
+  # With the help of finance fee category update the particulars record.
   def update_particular_fee
     @batch = Batch.shod(params[:batch_id])
     @master_category = FinanceFeeCategory.shod(params[:master_id])
@@ -657,7 +657,7 @@ class FinanceController < ApplicationController
     flash[:notice] = t('fee_delete')
   end
 
-  # Create the object for save discount record on the basis of category. 
+  # Create the object for save discount record on the basis of category.
   def new_fee_discount
     @fee_discount = FeeDiscount.new
     @categories ||= FinanceFeeCategory.all
@@ -727,7 +727,7 @@ class FinanceController < ApplicationController
 
   # To find out discount record for delete, we want a fee category id
   # and batch id, for that we create a @batch, @master_category object.
-  # For delete discount record destroy method is used. 
+  # For delete discount record destroy method is used.
   def delete_fee_discount
     @batch = Batch.shod(params[:id])
     @master_category = FinanceFeeCategory.shod(params[:master_id])
@@ -781,7 +781,7 @@ class FinanceController < ApplicationController
 
   # This action update the collection record. Find out batch with the help
   # of shod method. Find out the collection for specific batch with the help
-  # of @batch object and update the record by update method. 
+  # of @batch object and update the record by update method.
   def update_fee_collection
     @batch = Batch.shod(params[:batch_id])
     @collections ||= @batch.finance_fee_collections
@@ -845,7 +845,7 @@ class FinanceController < ApplicationController
   end
 
   # It is the subpart of action 'student_fees'
-  # It 
+  # It fetch the particulars, discounts and transaction record.
   def student_fee2
     @particulars ||= @collection.fee_collection_particulars
     @discounts ||= @collection.fee_collection_discounts
@@ -853,28 +853,28 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
-
-  # def student_fees_details
-  #   @collection = FinanceFeeCollection.shod(params[:id])
-  #   @category = @collection.finance_fee_category
-  #   @finance_fees ||= @collection.finance_fees
-  #   @finance_fee = @finance_fees.shod(params[:finance_fee_id])
-  #   @student = @finance_fee.student
-  #   @previous = @collection.previous(@student)
-  #   student_fees_details2
-  #   authorize! :read, @collection
-  # end
+  # This action collect object for displaying the student fees details.
+  def student_fees_details
+    @collection = FinanceFeeCollection.shod(params[:id])
+    @category = @collection.finance_fee_category
+    @finance_fees ||= @collection.finance_fees
+    @finance_fee = @finance_fees.shod(params[:finance_fee_id])
+    @student = @finance_fee.student
+    @previous = @collection.previous(@student)
+    student_fees_details2
+    authorize! :read, @collection
+  end
 
   # It is the subpart of action 'student_fees_details;
   # It fetch the particulars records, discount records and transaction records.
-  # def student_fees_details2
-  #   @next = @collection.next(@student)
-  #   @fee = @collection.fee(@student)
-  #   @particulars ||= @collection.fee_collection_particulars
-  #   @discounts ||= @collection.fee_collection_discounts
-  #   @transactions ||= @fee.finance_transactions
-  #   @fines ||= @fee.finance_fines
-  # end
+  def student_fees_details2
+    @next = @collection.next(@student)
+    @fee = @collection.fee(@student)
+    @particulars ||= @collection.fee_collection_particulars
+    @discounts ||= @collection.fee_collection_discounts
+    @transactions ||= @fee.finance_transactions
+    @fines ||= @fee.finance_fines
+  end
 
   # Add fine for particular student.
   def pay_fine
@@ -890,6 +890,7 @@ class FinanceController < ApplicationController
   end
 
   # It is a sub part of the action 'def pay_fine'
+  # This is helpful to add fine for student.
   def pay_fine2
     @previous = @collection.previous(@student)
     @next = @collection.next(@student)
@@ -914,7 +915,8 @@ class FinanceController < ApplicationController
     authorize! :read, @collection
   end
 
-  # Its a subpart of the action 'def pay_fee'
+  # Its a subpart of the action 'def pay_fee' and helpful to
+  # insert payment details of students.
   def pay_fee2
     @student = @finance_fee.student
     @previous = @collection.previous(@student)
@@ -937,7 +939,7 @@ class FinanceController < ApplicationController
     render 'student_fee_receipt', layout: false
   end
 
-   # Its a subpart of the action 'def student_fee_receipt'
+  # Its a subpart of the action 'def student_fee_receipt'
   def student_fee_receipt2
     @student = @finance_fee.student
     @fee = @collection.fee(@student)
@@ -946,7 +948,7 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
-  # Search student.
+  # This action perform search operaion on the student.
   def search_student
     @students = Student.search(params[:search], 'present')
   end

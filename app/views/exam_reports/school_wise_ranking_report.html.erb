@@ -11,7 +11,7 @@
         height: 100px;
         width: 700px;
         text-align: center;
-        font-size: 25px;
+        font-size: 40px;
         border-color: black;
 
       }
@@ -27,14 +27,13 @@
       <div id="head">
         <%= @general_setting.school_or_college_name%><br/>
       </div>  
-        <div id="head_info">
-          <%= @general_setting.school_or_college_address%><br/><br/>
+      <div id="head_info">
+          <%= @general_setting.school_or_college_address%><br/>
           <%= @general_setting.school_or_college_phone_no%>
-        </div>
-      
+      </div>
     </div>  
     <hr/>
-    <h3><center>School Wise Ranking Report </center></h3>
+    <h3><center>School-wise Ranking Report </center></h3>
     
      <% unless @courses.empty? %>
         <% unless @students.empty? %>
