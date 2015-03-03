@@ -60,7 +60,7 @@ class ExamSettingController < ApplicationController
   end
 
   # This action save the rank level object in database.
-  # In this action 'createrank_flash' action is called for
+  # In this action 'createrank_flash' subaction is called for
   # saving record.
   def createrank
     @course = Course.shod(params[:course_id])

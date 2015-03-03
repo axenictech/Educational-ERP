@@ -3,10 +3,7 @@
   <ul class="breadcrumb">
     <li><%= link_to 'Home',dashboard_home_index_path %></li>
     <li><%= link_to 'Examination','/exams'%></li>
-     
-    <li><%= link_to 'Report Center','/exam_reports/report_center' %></li>
-   
-    
+    <li><%= link_to 'Report Center','/exam_reports/report_center' %></li>    
     <li>Student Ranking Per School</li>
   </ul>
 </div>
@@ -20,13 +17,11 @@
   </div>
 </div>
 <hr>
-
-
 <div class="row">
     <div class="col-md-12">
     <div class="box-inner">
       <div class="box-header well">
-    <h2>Overall school rankings : Axenic School</h2></div>
+    <h2>Overall school rankings :</h2></div>
     <div class="box-content">
       <% unless @courses.empty? %>
         <% unless @students.empty? %>

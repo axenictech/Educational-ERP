@@ -4,6 +4,8 @@ class FeeCollectionParticularsStudent < ActiveRecord::Base
   belongs_to :fee_collection_particular
   scope :shod, ->(id) { where(id: id).take }
 
+  # This action create a new object for insert the finance fee
+  # and generate the fee receipt number.
   def create_finance_fee(collection, student)
     last_receipt_no = FinanceFee.last.receipt_no if FinanceFee.last
     fee = FinanceFee.new

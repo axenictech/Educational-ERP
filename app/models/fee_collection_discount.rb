@@ -7,6 +7,9 @@ class FeeCollectionDiscount < ActiveRecord::Base
   has_and_belongs_to_many :students
   scope :shod, ->(id) { where(id: id).take }
 
+  # This action generate the different discount for different type.
+  # e.g. discount is generating according to student admission number,
+  # student category and for whole student.
   def student_fee_collection_discount
     students = []
     @batch = batch
@@ -27,6 +30,7 @@ class FeeCollectionDiscount < ActiveRecord::Base
     end
   end
 
+  # Calculating collection discount on user inputed total value.
   def collection_discount(total)
     (discount * total) / 100
   end

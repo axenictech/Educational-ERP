@@ -103,6 +103,7 @@ class Student < ActiveRecord::Base
     end
   end
 
+  # This action is used to search the student record.
   def self.search(input, status)
     return if input.empty?
     if status.eql? 'present'
@@ -116,6 +117,9 @@ class Student < ActiveRecord::Base
     end
   end
 
+  # This action is used to search the student record on the advance basis.
+  # It search the record by name, category, batch, course, gender, blood
+  # group and so on.
   def self.advance_search(search, batch)
     conditions = ''
     conditions += "concat_ws(' ',first_name,last_name) \
