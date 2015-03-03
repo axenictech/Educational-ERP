@@ -63,32 +63,43 @@ class Student < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :list, -> { all + ArchivedStudent.all }
 
+  # return batch name by concating course name,batch name
+  # and section name
   def batch_name
     [batch.course.course_name, batch.course.section_name, batch.name].join(' ')
   end
 
+  # return student name by concating first name and last name
   def student_name
     [first_name, last_name].join(' ')
   end
 
+  # return student full name by concating
+  # first_name, middle_name, last_name
   def stud_full_name
     [first_name, middle_name, last_name].join(' ')
   end
 
+  # return address line by concating address_line1, address_line2
   def address_line
     [address_line1, address_line2].join(' ')
   end
 
+  # return address line by concating first_name,last_name,relation
   def guard_name(p)
     [p.first_name, p.last_name, p.relation].join(' ')
   end
 
+  # This method for create archived student,
+  # get all student attributes add  student id,
+  # call create method on ArchivedStudent and pass student attributes
   def archived_student
     student_attributes = attributes
     student_attributes['student_id'] = id
     archived_student = ArchivedStudent.create(student_attributes)
   end
 
+  # return full name  by concating first_name,last_name
   def full_name
     [first_name, last_name].join(' ')
   end
