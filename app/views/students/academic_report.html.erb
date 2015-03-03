@@ -23,60 +23,49 @@
     <div id="heading">
       <div id="head">
         <%= @general_setting.school_or_college_name%><br/>
-        <div id="head_info">
-          <%= @general_setting.school_or_college_address%><br/><br/>
-          <%= @general_setting.school_or_college_phone_no%>
-        </div>
+      </div>  
+      <div id="head_info">
+        <%= @general_setting.school_or_college_address%><br/><br/>
+        <%= @general_setting.school_or_college_phone_no%>
       </div>
-      <hr>
-      <br/><h3><center>Student Academic Report </center></h3>
-      <br>
-      <h3><%= @batch.course.course_name.capitalize+" "+@batch.course.section_name.capitalize+" "+@batch.name.capitalize %> - <%= @subject.name.capitalize %></h3>
-      <span><%= "#{@student.first_name+" "+@student.last_name}"" - #{@student.admission_no}" %></span>
-
-
     </div>
-  </div>
-  <br>
-<table cellpadding="5" cellspacing="5" width="700">
-        <tr>
-          <th bgcolor="99CCFF">Exam Name</th>
-          <th bgcolor="99CCFF">Marks</th>
-          <th bgcolor="99CCFF">Maximum Marks</th>
-          <th bgcolor="99CCFF">Grades</th>
-        </tr>
-              <% @exam_groups.each do |exam_group| %>
-              <tr class="tr-<%= cycle('odd', 'even') %>">
-                <td><%= exam_group.name %></td>
-                  <% exam = Exam.find_by_subject_id_and_exam_group_id(@subject.id,exam_group.id) %>
-                  <% exam_score = ExamScore.find_by_student_id_and_exam_id(@student.id,exam.id) unless exam.nil? %>
-                <% unless exam.nil? %>
-                  <% if exam_group.exam_type == 'Marks' %>
-                    <td>
-                      <%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}"%>
-                    </td>
-                    <td>
-                      <%= exam_score.nil? ? '-' : "#{exam.maximum_marks || "-"}"%>
-                    </td>
-                    <td>-</td>
-                  <% elsif exam_group.exam_type == 'Grades'%>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                      <%= exam_score.nil? ? '-' : (exam_score.grading_level.name || '-') %></td>
-                  <% else %>
-                    <td>
-                      <%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}"%>
-                    </td>
-                    <td>
-                      <%= exam_score.nil? ? '-' : "#{exam.maximum_marks || "-"}"%>
-                    </td>
-                    <td> <%= exam_score.nil? ? '-' : (exam_score.grading_level.name || '-') %></td>
-                    <% end %>
-                  <% end %>
-                    </tr>
-                <% end %>
-        </table>
-      </div>
-    </body>
-  </html>
+      <hr>
+      <br/><h3><center>Student Academic Report </center></h3><br>
+      <h3><%= @batch.course.course_name.capitalize+" "+@batch.course.section_name.capitalize+" "+@batch.name.capitalize %> - <%= @subject.name.capitalize %></h3>
+      <span>
+        <%= "#{@student.first_name+" "+@student.last_name}"" - #{@student.admission_no}" %>
+      </span>
+    <br>
+  <table cellpadding="5" cellspacing="5" width="700">
+    <tr>
+      <th bgcolor="99CCFF">Exam Name</th>
+      <th bgcolor="99CCFF">Marks</th>
+      <th bgcolor="99CCFF">Maximum Marks</th>
+      <th bgcolor="99CCFF">Grades</th>
+    </tr>
+    <% @exam_groups.each do |exam_group| %>
+      <tr class="tr-<%= cycle('odd', 'even') %>">
+        <td><%= exam_group.name %></td>
+        <% exam = Exam.find_by_subject_id_and_exam_group_id(@subject.id,exam_group.id) %>
+        <% exam_score = ExamScore.find_by_student_id_and_exam_id(@student.id,exam.id) unless exam.nil? %>
+        <% unless exam.nil? %>
+          <% if exam_group.exam_type == 'Marks' %>
+            <td><%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}"%></td>
+            <td><%= exam_score.nil? ? '-' : "#{exam.maximum_marks || "-"}"%></td>
+            <td>-</td>
+          <% elsif exam_group.exam_type == 'Grades'%>
+            <td>-</td>
+            <td>-</td>
+            <td><%= exam_score.nil? ? '-' : (exam_score.grading_level.name || '-') %></td>
+          <% else %>
+            <td><%= exam_score.nil? ? '-' : "#{exam_score.marks || "-"}"%></td>
+            <td><%= exam_score.nil? ? '-' : "#{exam.maximum_marks || "-"}"%></td>
+            <td><%= exam_score.nil? ? '-' : (exam_score.grading_level.name || '-') %></td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+</body>
+</html>
