@@ -3,12 +3,17 @@ class UsersController < ApplicationController
   def index
     authorize! :read, User
   end
-
+  
+  # create new object of User
+  # this method is used when user Sign_up for system
   def new
     @user = User.new
     authorize! :create, @user
   end
-
+  
+  # create User object and pass required parameters
+  # from private method user_params and
+  # create action is saving our new User to the database.
   def create
     @user = User.new(user_params)
     if @user.save

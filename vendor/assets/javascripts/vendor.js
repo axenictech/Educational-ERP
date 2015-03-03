@@ -20,7 +20,10 @@
 
 
 $(function() {
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+                   format: 'mm/dd/yyyy'
+
+                });
 });
 
 $(document).ready(function() {
