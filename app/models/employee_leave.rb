@@ -13,13 +13,13 @@ class EmployeeLeave < ActiveRecord::Base
     create(employee_id: e.id, employee_leave_type_id: new_leave.id, \
            leave_count: new_leave.max_leave_count)
   end
-  
+
   # find EmployeeLeave
   def self.edit_att(att)
     find_by_employee_id_and_employee_leave_type_id(att.employee_id,\
                                                    att.employee_leave_type_id)
   end
-  
+
   # update_attendance update EmployeeAttendence
   def update_attendance(count, att, p)
     unless count.nil?
@@ -63,7 +63,7 @@ class EmployeeLeave < ActiveRecord::Base
     end
   end
   end
-  
+
   # find EmployeeAttendance and EmployeeLeave related to that
   # employee which we want to destroy,
   # destroy_att method deleting that Attendence from the database
@@ -86,7 +86,7 @@ class EmployeeLeave < ActiveRecord::Base
       rc.update(leave_taken: leave)
     end
   end
-   
+
   # get max_leave_count from employee leave type and and update leave count
   # of employee leave to max_leave_count
   def self.leave_reset(leave)

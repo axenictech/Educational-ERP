@@ -18,7 +18,7 @@ class ExamReportsController < ApplicationController
 
   def select_batch
     @batch = Batch.shod(params[:batch_select][:id])
-    p "bbbbbbbbbbbbb"
+    p 'bbbbbbbbbbbbb'
     p @batch
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @exam_groups.first
@@ -163,15 +163,13 @@ class ExamReportsController < ApplicationController
     @subjects ||= @batch.subjects
     authorize! :read, @exam_groups.first
   end
-  
-  def archived_student_report
 
-    @courses=Course.all
-    @batches=Course.first.batches.all if Course.first
+  def archived_student_report
+    @courses = Course.all
+    @batches = Course.first.batches.all if Course.first
 
     @courses = Course.all
     @batches = Course.first.batches.all unless Course.first.nil?
-
   end
 
   def select_course
@@ -196,7 +194,6 @@ class ExamReportsController < ApplicationController
     end
   end
 
-  
   def archived_students_exam_report
     @batch = Batch.shod(params[:id])
     @students ||= @batch.archived_students

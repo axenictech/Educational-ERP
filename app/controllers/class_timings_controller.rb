@@ -1,13 +1,12 @@
 # ClassTimings Controller
 # set the class timing for timetable module
 class ClassTimingsController < ApplicationController
-  
   # Get all Batches from database, and perform authorization
   def index
     @batches ||= Batch.includes(:course).all
     authorize! :read, ClassTiming
   end
-  
+
   # create class timing object,get selected batch and association of that
   # batch with our class timing object, and perform authorization
   def new
@@ -27,7 +26,7 @@ class ClassTimingsController < ApplicationController
     @class_timing1.save
     flash[:notice] = t('class_timing_create')
   end
-  
+
   # find class timing which we want to destroy,
   # destroy method deleting that class timing from the
   # database and perform authorization
@@ -39,7 +38,7 @@ class ClassTimingsController < ApplicationController
     flash[:notice] = t('class_timing_delete')
     redirect_to class_timings_path
   end
-  
+
   # find class timing which we want to edit and pass it to update method
   # and perform authorization
   def edit
@@ -47,7 +46,7 @@ class ClassTimingsController < ApplicationController
     @class_timing1 = @batch.class_timings.shod(params[:id])
     authorize! :update, @class_timing1
   end
-  
+
   # upadate method update a class timing,
   # and it accepts a hash containing the attributes that you want to update.
   # and perform authorization
@@ -68,7 +67,7 @@ class ClassTimingsController < ApplicationController
   end
 
   private
-  
+
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
   def params_class

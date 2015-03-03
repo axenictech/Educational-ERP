@@ -11,7 +11,7 @@ class ArchivedStudent < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: \
   ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
   scope :shod, ->(id) { where(id: id).take }
-  
+
   def mail(subject, recipient, message)
     user = User.discover(student_id, recipient)
     UserMailer.student_email(user, subject, message).deliver

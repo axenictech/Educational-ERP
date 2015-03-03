@@ -7,6 +7,7 @@ class Newscast < ActiveRecord::Base
   validates :content, presence: true, length: { minimum: 1, maximum: 9000 }
   scope :shod, ->(id) { where(id: id).take }
 
+  # this method is used to return news title
   def self.news(title)
     return if title.empty?
     Newscast.where('title like ?', title + '%')

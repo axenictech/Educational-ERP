@@ -1,6 +1,5 @@
 # Time Table Entries Controller
 class TimeTableEntriesController < ApplicationController
-  
   # find time table which we created,and perform authorization
   # get all batches from database,and perform authorization
   def index
@@ -9,7 +8,7 @@ class TimeTableEntriesController < ApplicationController
     @batches = Batch.includes(:course).all
     authorize! :read, @time
   end
-  
+
   # get selected batch and
   # list all our class timings for that batch,and perform authorization
   def select
@@ -19,7 +18,7 @@ class TimeTableEntriesController < ApplicationController
     @subjects = @batch.subjects.all
     authorize! :read, TimeTableEntry
   end
-  
+
   # find selected subject and employee related to that subject
   def select_subject
     @subject = Subject.shod(params[:sub][:subject_id])
@@ -27,7 +26,7 @@ class TimeTableEntriesController < ApplicationController
     @emp = EmployeeSubject.where(subject_id: @subject.id, employee_id: nil)
     authorize! :read, TimeTableEntry
   end
-  
+
   # get value of required parameters
   def assign_time
     @class_timing_id = params[:timing_id]
@@ -37,7 +36,7 @@ class TimeTableEntriesController < ApplicationController
     assign_time2(params[:subject_id], params[:teacher])
     assign_time3(params[:time_table_id])
   end
-  
+
   # validation for creation of timetable entry
   def assign_time2(subject_id, teacher)
     @subject = Subject.shod(subject_id)
@@ -49,7 +48,7 @@ class TimeTableEntriesController < ApplicationController
       assign_time4
     end
   end
-  
+
   # validation for creation of timetable entry
   def assign_time3(time_table_id)
     @time = time_table_id
@@ -57,7 +56,7 @@ class TimeTableEntriesController < ApplicationController
     @class_timing = @batch.class_timings.is_break
     @teachers = EmployeeSubject.where(subject_id: @subject.id)
   end
-  
+
   # validation for creation of timetable entry
   def assign_time4
     if TimeTableEntry.max_week(@em, @time)
@@ -70,7 +69,7 @@ class TimeTableEntriesController < ApplicationController
       flash[:alert] = t('max_hours_week_exceeded')
     end
   end
-  
+
   # create timetable entry
   def assign_time5
     @assign_time = TimeTableEntry.create(batch_id: @batch.id\
@@ -92,7 +91,7 @@ class TimeTableEntriesController < ApplicationController
     @time = @delete_time.time_table.id
     redirect_to dashboard_home_index_path
   end
-  
+
   # get all bathces from databases,and perform authorization
   def new
     @timetable = TimeTable.shod(params[:format])
@@ -101,7 +100,7 @@ class TimeTableEntriesController < ApplicationController
   end
 
   private
-  
+
   # this private methods tell us exactly which parameters are allowed
   # into our time_table_entroes controller actions.
   def time_table

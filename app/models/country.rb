@@ -1,6 +1,6 @@
 # country
 class Country < ActiveRecord::Base
-  #include Activity
+  # include Activity
   def self.per(emp)
     find(emp.country_id).name unless emp.country_id.nil?
   end

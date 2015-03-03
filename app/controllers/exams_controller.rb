@@ -25,7 +25,6 @@ class ExamsController < ApplicationController
     end
   end
 
-  
   def edit
     @exam = Exam.shod(params[:id])
     @exam_group = @exam.exam_group

@@ -28,7 +28,7 @@ class EmployeesController < ApplicationController
     @categories1 ||= EmployeeCategory.is_status
     @categories2 ||= EmployeeCategory.not_status
   end
-  
+
   # check employee department category is active or inactive
   def emp_department
     @departments1 ||= EmployeeDepartment.is_status
@@ -291,7 +291,6 @@ class EmployeesController < ApplicationController
     authorize! :create, @payroll_category
   end
 
-  
   # add new employe grade field here,create new
   # instance of employee grade ,perform authorization call
   # emp grade method that contain active and inactive grade
@@ -382,7 +381,7 @@ class EmployeesController < ApplicationController
     authorize! :update, @employee
   end
 
-  # this method used for 
+  # this method used for
   def admission3
     @employee = Employee.shod(params[:format])
     @bank_fields ||= BankField.all
@@ -429,7 +428,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.shod(params[:format])
     authorize! :update, @employee
   end
-  
+
   # This method is used to search reporting manager from various criteria
   # by calling class method search2 ,search2 method contain logic for searching
   def search
@@ -473,7 +472,7 @@ class EmployeesController < ApplicationController
     .reporting_manager_id).first_name unless @employee.reporting_manager_id.nil?
     authorize! :read, @employee
   end
-  
+
   # edit employee profile,first find employee which to be edit
   # and transfer controll to update_profile method and perform authorization
   def edit_profile
@@ -492,7 +491,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-   
   # update employee profile ,first find employee which record to be update
   # and transfer controll to profile page
   def update_edit_profile
@@ -610,7 +608,7 @@ class EmployeesController < ApplicationController
     authorize! :read, Employee
   end
 
-  #this method display all employee of selectd department
+  # this method display all employee of selectd department
   def allemp
     @department = EmployeeDepartment.shod(params[:viewall][:id])
     @employees ||= @department.employees.all
@@ -626,8 +624,8 @@ class EmployeesController < ApplicationController
 
   # This method is used for make pdf of advance search result,
   # find employee whose pdf to display,
-  # for displaying pdf use pdf format and render advance 
-  # search result page again 
+  # for displaying pdf use pdf format and render advance
+  # search result page again
   def advance_search_result_pdf
     @employees = params[:employees]
     @search = params[:search]
@@ -659,7 +657,7 @@ class EmployeesController < ApplicationController
   # hold list of all employees in single instance ,then hold
   # list of all employee whose salery slip already created and
   # call on instance method one click that contain logic for
-  # payslip calculation 
+  # payslip calculation
   def one_click_payslip_generate
     salary_date = params[:payslip][:joining_date].to_date
     @employees ||= Employee.all
@@ -673,7 +671,7 @@ class EmployeesController < ApplicationController
   def one_click_pay(salary_date)
     redirect_to payslip_employees_path
     flash[:notice] = "#{t('one')}" + \
-                     ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
+      ":#{salary_date.strftime('%B')}" + "#{t('one_click')}"
     authorize! :update, @employee
   end
 
@@ -984,7 +982,7 @@ class EmployeesController < ApplicationController
     @general_setting = GeneralSetting.first
     render 'contact_profile_pdf', layout: false
   end
-  
+
   # This method is used to display bank info pdf, first find
   # employee if employee is nil then find employee record in archived
   # employee and render same page to display pdf
@@ -1005,7 +1003,7 @@ class EmployeesController < ApplicationController
     render 'emp_search_result_pdf', layout: false
   end
 
-  # This method is ued to edit employee personal profile 
+  # This method is ued to edit employee personal profile
   def edit_personal_profile
     @employee = Employee.shod(params[:format])
     authorize! :read, @employee
@@ -1023,7 +1021,7 @@ class EmployeesController < ApplicationController
     authorize! :read, @employee
   end
 
-  # This method is ued to edit employee bank field 
+  # This method is ued to edit employee bank field
   def edit_bank_info
     @employee = Employee.shod(params[:format])
     @bank_info ||= @employee.employee_bank_details.includes(:bank_field).all

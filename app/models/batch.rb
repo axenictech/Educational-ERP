@@ -42,7 +42,7 @@ class Batch < ActiveRecord::Base
   def batch_course_name
     [course.course_name, name].join(' ')
   end
-  
+
   # find subject
   def normal_subjects
     subjects.where(elective_group_id: nil)
@@ -51,31 +51,31 @@ class Batch < ActiveRecord::Base
   def has_own_weekday
     Weekday.where(batch_id: id).present?
   end
-  
+
   # this method is used to transfer student
   # from one batch to another batch and stored student data in student log
-  def trans(students, transfer_id,batch)
+  def trans(students, transfer_id, batch)
     return unless students.present?
     general_subjects = batch.subjects.where(elective_group_id: nil)
-    student_electives = StudentSubject.where(student_id: students,batch_id: batch.id)
+    student_electives = StudentSubject.where(student_id: students, batch_id: batch.id)
     elective_subjects = []
     student_electives.each do |elect|
       elective_subjects.push Subject.find(elect.subject_id)
     end
     @subject = general_subjects + elective_subjects
     @exam_group = batch.result_published
-    
-      students.each  do |student|
-        @subject.each do |subject|
+
+    students.each  do |student|
+      @subject.each do |subject|
         @exam_group.each do |exam_group|
           unless @subject.nil?
-          exam = Exam.find_by_subject_id_and_exam_group_id(subject.id,exam_group.id)
-          unless exam.nil?
-          exam_score = ExamScore.find_by_student_id_and_exam_id(student, exam.id)
-          unless exam_score.nil?
-             StudentLog.create(subject_id:subject.id,batch_id:batch.id,student_id:student,exam_group_id:exam_group.id,mark:exam_score.marks,maximum_marks: exam.maximum_marks)
-            end
-            end
+            exam = Exam.find_by_subject_id_and_exam_group_id(subject.id, exam_group.id)
+            unless exam.nil?
+              exam_score = ExamScore.find_by_student_id_and_exam_id(student, exam.id)
+              unless exam_score.nil?
+                StudentLog.create(subject_id: subject.id, batch_id: batch.id, student_id: student, exam_group_id: exam_group.id, mark: exam_score.marks, maximum_marks: exam.maximum_marks)
+                end
+              end
          end
         end
       end
@@ -88,7 +88,7 @@ class Batch < ActiveRecord::Base
   def result_published
     exam_groups.where(result_published: true)
   end
-  
+
   # this method is used to graduate student
   # student are moved from Student to ArchivedStudent
   def graduate(students, status)
