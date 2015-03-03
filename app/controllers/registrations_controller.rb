@@ -1,5 +1,6 @@
 # Registrations Controller
 class RegistrationsController < Devise::RegistrationsController
+  # This method for create general setting
   def create
     super
     @user.create_general_setting

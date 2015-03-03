@@ -85,6 +85,7 @@ class Batch < ActiveRecord::Base
     end
   end
 
+  
   def result_published
     exam_groups.where(result_published: true)
   end

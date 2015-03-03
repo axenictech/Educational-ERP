@@ -69,7 +69,7 @@ class QusetionsController < ApplicationController
     @qusetion = Qusetion.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters froqm the scary internet, only allow the white list through.
   def qusetion_params
     params.require(:qusetion).permit(:question, :question_type_id, :question_count)
   end
