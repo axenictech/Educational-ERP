@@ -93,11 +93,15 @@ class StudentsController < ApplicationController
     redirect_to previous_data_students_path(@student)
   end
 
+  # Provide the parent list for change its priority to
+  # first contact.
   def edit_immediate_contact
     @student = Student.shod(params[:format])
     authorize! :update, @student
   end
 
+  # This action is perform the operation for update immediate contact
+  # for selected student.
   def update_immediatecontact
     @student = Student.shod(params[:id])
     @student.update(student_params)
@@ -114,6 +118,8 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # Insert the previous institute data into the database for selected
+  # student.
   def previous_data_create
     @student = Student.shod(params[:student_previous_data][:student_id])
     @previous_data = StudentPreviousData.create(previous_data_params)
@@ -132,6 +138,8 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # Insert the previous course subject details. Retreive these record for
+  # on the form display.
   def previous_subject_create
     @previous_subject = StudentPreviousSubjectMark.create(params_subject)
     student = params[:student_previous_subject_mark][:student_id]

@@ -70,6 +70,7 @@ class ExamGroup < ActiveRecord::Base
         exam_score.nil? ? result = '-' : result = type_result(exam, exam_score)
       end
       result
+    end  
   end
 
   # This action manage the type of exam result i.e.Grades or Marks.
