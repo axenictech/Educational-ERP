@@ -66,12 +66,15 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # Fetch the student record from database for edit.
   def edit
     @student = Student.shod(params[:id])
     @batches ||= Batch.includes(:course).all
     authorize! :update, @student
   end
 
+  # Update the student record for selected student id. Display the flash
+  # message for its success of failure.
   def update
     @student = Student.shod(params[:id])
     if @student.update(student_params)
@@ -157,12 +160,15 @@ class StudentsController < ApplicationController
     authorize! :read, @students.first
   end
 
+  # Display the student profile after admission successfully.
+  # Profile consist a both the student and guardian details.
   def profile
     @student = Student.shod(params[:id])
     @immediate_contact = Guardian.shod(@student.immediate_contact)
     authorize! :read, @student
   end
 
+  # Provide the data for generate the pdf for student profile.
   def student_profile
     @student = Student.shod(params[:id])
     @immediate_contact = Guardian.shod(@student.immediate_contact)
@@ -172,6 +178,7 @@ class StudentsController < ApplicationController
     render 'student_profile', layout: false
   end
 
+  # Generate the archived profile after student leave the college or school.
   def archived_profile
     @student = ArchivedStudent.shod(params[:id])
     id = @student.student_id
@@ -181,6 +188,7 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # Provide the data for generate the pdf for student archived profile.
   def archived_student_profile
     @student = ArchivedStudent.shod(params[:id])
     id = @student.student_id
@@ -191,6 +199,8 @@ class StudentsController < ApplicationController
     render 'student_profile', layout: false
   end
 
+  # Provide the various reports link for particular student.
+  # like recent exam report, subject wise report, transcript report.
   def report
     @student = Student.shod(params[:format])
     @batch = @student.batch
@@ -221,6 +231,9 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action provide the recent exam report. @exam_group object
+  # retreive the selected exam group from database and @student object
+  # retreive the given student for that particular exam group.
   def recent_exam_report
     @exam_group = ExamGroup.shod(params[:exam_group_id])
     @student = Student.shod(params[:student_id])
@@ -228,6 +241,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action generate the pdf for exam report with subject and marks
+  # for selected exam group.
   def student_exam_report
     @exam_group = ExamGroup.shod(params[:exam_group_id])
     @student = Student.shod(params[:student_id])
@@ -236,6 +251,8 @@ class StudentsController < ApplicationController
     render 'student_exam_report', layout: false
   end
 
+  # This action provide the information for display the subject wise
+  # exam report.
   def subject_wise_report
     @subject = Subject.shod(params[:subject_id])
     @student = Student.shod(params[:student_id])
@@ -244,6 +261,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action provide the data with object like @subject, @student,
+  # @batch to generate pdf for academic report for particular subject.
   def academic_report
     @subject = Subject.shod(params[:subject_id])
     @student = Student.shod(params[:student_id])
@@ -296,6 +315,8 @@ class StudentsController < ApplicationController
     render 'archived_student_transcript_report', layout: false
   end
 
+  # This action provide the data for create the subject drop down
+  # list for selected student.
   def attendance_report
     @student = Student.shod(params[:format])
     @batch = @student.batch
@@ -303,6 +324,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action generate the attendance report. Attendance report generate
+  # the data with considering the student, subject, start date and end date.
   def genrate_report
     @student = Student.shod(params[:report][:student_id])
     s_id = params[:report][:subject_id]
@@ -364,11 +387,14 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # Provide the student name and email from database for sending mail.
   def email
     @student = Student.shod(params[:format])
     authorize! :create, @student
   end
 
+  # Retreive the mail subject, recipient, message from the email from and
+  # send to the student email.
   def send_email
     subject = params[:subject]
     recipient = params[:email][:recipient]
@@ -396,6 +422,7 @@ class StudentsController < ApplicationController
     redirect_to report_email_students_path(@student)
   end
 
+  # This action is useful to generate transfer certificate data.
   def generate_tc
     @student = ArchivedStudent.shod(params[:id])
     authorize! :create, @student
@@ -406,15 +433,19 @@ class StudentsController < ApplicationController
     render 'generate_tc', layout: false
   end
 
+  # This action fetch the record from database which we have to
+  # remove from college or school.
   def remove
     @student = Student.shod(params[:format])
     authorize! :create, @student
   end
 
+  # This action fetch the selected student record from database for delete.
   def delete
     @student = Student.shod(params[:format])
   end
 
+  # In this action given student record is permenently deleted from database.
   def destroy
     @student = Student.shod(params[:id])
     authorize! :delete, @student
@@ -422,12 +453,16 @@ class StudentsController < ApplicationController
     redirect_to home_dashboard_path
   end
 
+  # This action create the new object for transfer the student from
+  # its prsent record to former record.
   def change_to_former
     @student = Student.shod(params[:format])
     @archived_student = ArchivedStudent.new
     authorize! :create, @student
   end
 
+  # This action transfer the student record from present to archived
+  # student.
   def archived_student_create
     @student = Student.shod(params[:format])
     @archived_student = @student.archived_student
@@ -441,12 +476,14 @@ class StudentsController < ApplicationController
     redirect_to archived_profile_student_path(@archived_student)
   end
 
+  # This action fetch the guardians record for selected student.
   def dispguardian
     @student = Student.shod(params[:format])
     @guards ||= @student.guardians.includes(:country)
     authorize! :read, @student
   end
 
+  # Create the object for add new guardian in database for selected students.
   def addguardian
     @student = Student.shod(params[:format])
     @guard = @student.guardians.build

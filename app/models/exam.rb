@@ -43,6 +43,7 @@ class Exam < ActiveRecord::Base
     end
   end
 
+  
   def create_exam_event
     batch = exam_group.batch
     @event = event
