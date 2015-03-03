@@ -40,6 +40,8 @@ class FinanceFeeCollection < ActiveRecord::Base
      end
    end
 
+  # This action is subpart of the action 'self.fee' and save the data
+  # into the collection particular. 
   def create_collection_particular(batch, master_category)
     fee_particulars = master_category.finance_fee_particulars.where(batch_id: batch)
     unless fee_particulars.nil?
@@ -51,6 +53,8 @@ class FinanceFeeCollection < ActiveRecord::Base
     end
   end
 
+  # This action is subpart of the action 'self.fee' and save the data
+  # into the collection discount.
   def create_fee_collection_discount(batch, master_category)
     discounts = master_category.fee_discounts.where(batch_id: batch)
     unless discounts.nil?
@@ -62,6 +66,7 @@ class FinanceFeeCollection < ActiveRecord::Base
     end
   end
 
+  # check the due date must be less than today's date.
   def is_due_date?
     if due_date < Date.today
       return true
@@ -70,6 +75,7 @@ class FinanceFeeCollection < ActiveRecord::Base
     end
   end
 
+  # This action save the fee collection record and return the error.
   def self.fee(params, batches)
     error = true
     if batches.present?
@@ -83,6 +89,8 @@ class FinanceFeeCollection < ActiveRecord::Base
     error
   end
 
+  # this action is used to save the collection particular record and
+  # fee collection discount after creating fees particular.
   def create_fee(batch)
     self.batch_id = batch
     category = finance_fee_category
@@ -92,14 +100,20 @@ class FinanceFeeCollection < ActiveRecord::Base
     end
   end
 
+  # This action fetch the first record from finance fees
+  # for selected student id.
   def previous(student)
     finance_fees.where(student_id: student.id).take.id - 1
   end
 
+  # This action fetch the first record from finance fees
+  # for selected student id.
   def next(student)
     finance_fees.where(student_id: student.id).take.id + 1
   end
 
+  # This action fetch the first record from finance fees
+  # for selected student id.
   def fee(student)
     finance_fees.where(student_id: student.id).take
   end

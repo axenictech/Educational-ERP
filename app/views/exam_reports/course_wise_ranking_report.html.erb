@@ -20,17 +20,18 @@
     </style>
   </head>
   <body>
-    <div id="heading">
-      <div id="head">
-        <%= @general_setting.school_or_college_name%><br/>
+     <div id="heading">
+        <div id="head">
+          <%= @general_setting.school_or_college_name%><br/>
+        </div>  
         <div id="head_info">
-          <%= @general_setting.school_or_college_address%><br/><br/>
-          <%= @general_setting.school_or_college_phone_no%>
+            <%= @general_setting.school_or_college_address%><br/>
+            <%= @general_setting.school_or_college_phone_no%>
         </div>
-      </div>
+      </div>  
       <hr>
       <br/>
-      <h3><center>Course Wise Ranking Report </center></h3>
+      <h3><center>Course-wise Ranking Report </center></h3>
       <h4>Course:<%= @course.course_name.capitalize+" "+@course.section_name.capitalize%></h4>
       <table cellpadding="4" cellspacing="5" width="700">
         <tr bgcolor="99CCFF">

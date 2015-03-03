@@ -845,7 +845,7 @@ class FinanceController < ApplicationController
   end
 
   # It is the subpart of action 'student_fees'
-  # It
+  # It fetch the particulars, discounts and transaction record.
   def student_fee2
     @particulars ||= @collection.fee_collection_particulars
     @discounts ||= @collection.fee_collection_discounts
@@ -853,27 +853,28 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
-  # def student_fees_details
-  #   @collection = FinanceFeeCollection.shod(params[:id])
-  #   @category = @collection.finance_fee_category
-  #   @finance_fees ||= @collection.finance_fees
-  #   @finance_fee = @finance_fees.shod(params[:finance_fee_id])
-  #   @student = @finance_fee.student
-  #   @previous = @collection.previous(@student)
-  #   student_fees_details2
-  #   authorize! :read, @collection
-  # end
+  # This action collect object for displaying the student fees details.
+  def student_fees_details
+    @collection = FinanceFeeCollection.shod(params[:id])
+    @category = @collection.finance_fee_category
+    @finance_fees ||= @collection.finance_fees
+    @finance_fee = @finance_fees.shod(params[:finance_fee_id])
+    @student = @finance_fee.student
+    @previous = @collection.previous(@student)
+    student_fees_details2
+    authorize! :read, @collection
+  end
 
   # It is the subpart of action 'student_fees_details;
   # It fetch the particulars records, discount records and transaction records.
-  # def student_fees_details2
-  #   @next = @collection.next(@student)
-  #   @fee = @collection.fee(@student)
-  #   @particulars ||= @collection.fee_collection_particulars
-  #   @discounts ||= @collection.fee_collection_discounts
-  #   @transactions ||= @fee.finance_transactions
-  #   @fines ||= @fee.finance_fines
-  # end
+  def student_fees_details2
+    @next = @collection.next(@student)
+    @fee = @collection.fee(@student)
+    @particulars ||= @collection.fee_collection_particulars
+    @discounts ||= @collection.fee_collection_discounts
+    @transactions ||= @fee.finance_transactions
+    @fines ||= @fee.finance_fines
+  end
 
   # Add fine for particular student.
   def pay_fine
@@ -889,6 +890,7 @@ class FinanceController < ApplicationController
   end
 
   # It is a sub part of the action 'def pay_fine'
+  # This is helpful to add fine for student.
   def pay_fine2
     @previous = @collection.previous(@student)
     @next = @collection.next(@student)
@@ -913,7 +915,8 @@ class FinanceController < ApplicationController
     authorize! :read, @collection
   end
 
-  # Its a subpart of the action 'def pay_fee'
+  # Its a subpart of the action 'def pay_fee' and helpful to
+  # insert payment details of students.
   def pay_fee2
     @student = @finance_fee.student
     @previous = @collection.previous(@student)
@@ -945,7 +948,7 @@ class FinanceController < ApplicationController
     @fines ||= @fee.finance_fines
   end
 
-  # Search student.
+  # This action perform search operaion on the student.
   def search_student
     @students = Student.search(params[:search], 'present')
   end

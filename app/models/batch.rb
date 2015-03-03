@@ -21,6 +21,7 @@ class Batch < ActiveRecord::Base
   has_many :student_informations
   scope :shod, ->(id) { where(id: id).take }
 
+  # Collect the subjects which are selected for exams.
   def exam
     subjects.where(no_exams: false)
   end
@@ -85,7 +86,9 @@ class Batch < ActiveRecord::Base
     end
   end
 
-  
+
+  # This action find the exam groupes record who's result published
+  # status is true.
   def result_published
     exam_groups.where(result_published: true)
   end

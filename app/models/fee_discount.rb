@@ -7,6 +7,8 @@ class FeeDiscount < ActiveRecord::Base
 
   scope :shod, ->(id) { where(id: id).take }
 
+  # This action is insert the data into fee discount table and return
+  # error object with error.
   def self.create_discount(params, batches, adm_no, cat_id)
     error = 1
     if batches.present?
@@ -19,6 +21,8 @@ class FeeDiscount < ActiveRecord::Base
     error
   end
 
+  # This action is subpart of 'self.create_discount' and
+  # set the value of admission no, category id, batch id.
   def set(adm_no, cat_id, batch)
     if type == 'Student'
       self.admission_no, self.batch_id = adm_no, batch

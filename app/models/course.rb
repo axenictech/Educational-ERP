@@ -19,12 +19,15 @@ class Course < ActiveRecord::Base
     [course_name, section_name].join(' ')
   end
 
+  # This action is used to set the maximum rank level and maximum
+  # rank level prioriy. and return the rank level1 object.
   def max(max_rank, rank_lev1)
     max_rank = 0.to_i if max_rank.nil?
     rank_lev1.prioriy = max_rank + 1.to_i
     rank_lev1
   end
 
+  # This action is used to increase the ranking level from bottom to top.
   def increase_logic(rank_levels, selected)
     previous = 0.to_i
     temp = nil
@@ -41,6 +44,7 @@ class Course < ActiveRecord::Base
     end
   end
 
+  # This action is used to decrease the ranking level from top to bottom.
   def decrease_logic(rank_levels, selected)
     next_pri = 0.to_i
     temp = nil
