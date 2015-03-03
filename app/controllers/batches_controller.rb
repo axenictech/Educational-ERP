@@ -88,11 +88,7 @@ class BatchesController < ApplicationController
   # on department instance ,this method display employee and
   def assign_tutorial
     @batch = Batch.shod(params[:format])
-    p "BAtchhhhhhhhhhhhhhhhhhhh"
-    p @batch
     @department = EmployeeDepartment.shod(params[:assign_tutor][:id])
-    p "deeeeeeeeeeeeeparrrrrrrrrrrrrrrrrr"
-    p @department
     @employees ||= @department.assign_employee(@batch)
     @assign_employees ||= @department.ass_emp(@batch)
     authorize! :read, @batch
