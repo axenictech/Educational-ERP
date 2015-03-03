@@ -1,7 +1,7 @@
 # ExamGroupsController perform the operation on exams
 # like create exam, display exam schedule, manage student marks.
 class ExamGroupsController < ApplicationController
-  # This action display a starting page with drop down list of course. 
+  # This action display a starting page with drop down list of course.
   def index
     @courses ||= Course.all
   end

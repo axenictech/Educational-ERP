@@ -17,7 +17,7 @@ class Student < ActiveRecord::Base
   has_attached_file :image
   validates_attachment_content_type :image, content_type: \
   ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
-  
+
   validates :admission_no, presence: true
   validates :admission_date, presence: true
   validates :email, presence: true, format: \
@@ -248,16 +248,16 @@ class Student < ActiveRecord::Base
   end
 
   HUMANIZED_ATTRIBUTES = {
-    :email => "Email Address",
-    :phone1 => "Phone number",
-    :phone2 => "Mobile number"
+    email: 'Email Address',
+    phone1: 'Phone number',
+    phone2: 'Mobile number'
   }
- 
+
   private
-  
-  def self.human_attribute_name(attr, options={})
+
+  def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
-  end 
+  end
 
   def create_user_account
     user = User.new do |u|

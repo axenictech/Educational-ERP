@@ -63,14 +63,13 @@ class ExamGroup < ActiveRecord::Base
   def exam_marks(subject, student)
     exam = exam_data(subject)
     exam_score = exam.scores(student)
-    unless exam_score.nil?
+    unless  exam_score.nil?
       if exam.nil?
         result = 'NA'
       else
         exam_score.nil? ? result = '-' : result = type_result(exam, exam_score)
       end
-    result
-    end
+      result
   end
 
   # This action manage the type of exam result i.e.Grades or Marks.
@@ -78,9 +77,9 @@ class ExamGroup < ActiveRecord::Base
     if exam_type == 'Grades'
       es.grading_level.name || 'AB'
     elsif exam_type == 'Marks'
-      [es.marks || 'AB', e.maximum_marks].join('/') 
+      [es.marks || 'AB', e.maximum_marks].join('/')
     else
-      [[es.marks || 'AB', e.maximum_marks].join('/') ,es.grading_level.name || '-'].join('|') 
+      [[es.marks || 'AB', e.maximum_marks].join('/'), es.grading_level.name || '-'].join('|')
     end
   end
 

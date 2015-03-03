@@ -1,6 +1,5 @@
 # GeneralSetting Controller
 class GeneralSettingsController < ApplicationController
- 
   # create GeneralSetting object and pass required parameters
   # create_general_setting action is
   # saving our new general_setting to the database.
@@ -9,7 +8,7 @@ class GeneralSettingsController < ApplicationController
     @general_setting = current_user.general_setting
     authorize! :read, @general_setting
   end
-  
+
   # upadate method update a GeneralSetting,
   # and it accepts a hash containing the attributes that you want to update.
   def update
@@ -23,7 +22,7 @@ class GeneralSettingsController < ApplicationController
   end
 
   private
-  
+
   # this private methods tell us exactly which parameters are allowed
   # into our controller actions.
   def general_setting_params

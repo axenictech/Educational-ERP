@@ -20,7 +20,7 @@ class EmployeeAttendance < ActiveRecord::Base
       lc.each(&:destroy)
     end
   end
-  
+
   # if EmployeeAttendences save the leave is add for
   # that employee in EmployeeLeave
   def create_att(att)
@@ -44,7 +44,7 @@ class EmployeeAttendance < ActiveRecord::Base
                                              employee_leave_type_id: l.id).size
     end
   end
-  
+
   # get max_leave_count from employee leave type and and update leave count
   # of employee leave to max_leave_count
   def self.department_leave_reset(emp)

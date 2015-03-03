@@ -1,9 +1,12 @@
 # Guardians Controller
 class GuardiansController < ApplicationController
+  # this method is used for create guardian
+  # pertiular student, find student call create method on association of
+  # student.guardian ,save guardian
   def create
     @student = Student.shod(params[:student_id])
     @guardian = @student.guardians.create(guardian_params)
-    temp_email = params["guardian"]["email"]
+    temp_email = params['guardian']['email']
     downcase_email = temp_email.downcase
     @guardian.email = downcase_email
     if @guardian.save
@@ -14,15 +17,19 @@ class GuardiansController < ApplicationController
     end
   end
 
+  # this method is used for hold the student of perticular guardian
   def addguardian
     @student = Student.shod(params[:student_id])
     authorize! :read, @student
   end
 
+  # this method is used for create guardian
+  # pertiular student, find student call create method on association of
+  # student.guardian ,save guardian
   def addguardian_create
     @student = Student.shod(params[:format])
     @guard = @student.guardians.create(guardian_params)
-    temp_email = params["guardian"]["email"]
+    temp_email = params['guardian']['email']
     downcase_email = temp_email.downcase
     @guard.email = downcase_email
     if @guard.save
@@ -32,6 +39,8 @@ class GuardiansController < ApplicationController
     end
   end
 
+  # This method is used to destroy guardian,first find guardian which
+  # to be destroy call destroy method on instance guardian
   def destroy
     @guard = Guardian.shod(params[:id])
     authorize! :delete, @guard
@@ -39,12 +48,15 @@ class GuardiansController < ApplicationController
     redirect_to students_dispguardian_path(@guard.student)
   end
 
+  # This method used for edit guardian  details
   def edit
     @student = Student.shod(params[:student_id])
     @guard = @student.guardians.shod(params[:id])
     authorize! :update, @student
   end
 
+  # this method used for updat guardian,first find guardian which to be update
+  # call update method on instance of guardian
   def update
     @student = Student.shod(params[:student_id])
     @guard = @student.guardians.shod(params[:id])

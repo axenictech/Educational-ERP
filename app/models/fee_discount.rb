@@ -4,7 +4,7 @@ class FeeDiscount < ActiveRecord::Base
   belongs_to :finance_fee_category
   belongs_to :batch
   belongs_to :category
-  
+
   scope :shod, ->(id) { where(id: id).take }
 
   # This action is insert the data into fee discount table and return
