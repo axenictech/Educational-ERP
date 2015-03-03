@@ -37,7 +37,7 @@ class EventsController < ApplicationController
   end
 
   private
-
+  
   def params_event
     params.require(:event).permit!
   end

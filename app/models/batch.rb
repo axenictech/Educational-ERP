@@ -31,15 +31,18 @@ class Batch < ActiveRecord::Base
       errors.add(:end_date, "can't be less than start date")
     end
   end
-
+ 
+  # method return course name, section name and batch name 
   def full_name
     [course.course_name, course.section_name, name].join(' ')
   end
 
+  # method return course code and batch name
   def batch_course_code
     [course.code, name].join(' ')
   end
 
+  # method return course name and batch name
   def batch_course_name
     [course.course_name, name].join(' ')
   end
@@ -49,6 +52,7 @@ class Batch < ActiveRecord::Base
     subjects.where(elective_group_id: nil)
   end
 
+  # find out weekdays for batch
   def has_own_weekday
     Weekday.where(batch_id: id).present?
   end

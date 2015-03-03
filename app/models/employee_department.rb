@@ -16,13 +16,6 @@ class EmployeeDepartment < ActiveRecord::Base
   # if batch contain employee id then split employee id store into assign
   # employee,else return emp
   def assign_employee(batch)
-    p "batchhhhhhhhhhhhhhhhhhhhh"
-    
-    if p batch.employee_id
-      p "yessssssssss"
-    else
-      p "noooooooooooooo"
-    end
     emp = []
     employees = self.employees.pluck(:id)
     employees.each { |e| emp << e.to_s }
