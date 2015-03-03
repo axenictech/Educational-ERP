@@ -15,6 +15,7 @@ class Course < ActiveRecord::Base
   has_many :ranking_levels
   scope :shod, ->(id) { where(id: id).take }
 
+  # method return full name by joining course name section name
   def full_name
     [course_name, section_name].join(' ')
   end

@@ -17,6 +17,7 @@ class ClassTiming < ActiveRecord::Base
     end
   end
 
+  # return full time by joining start time and end time
   def full_time
     [start_time.strftime('%I:%M %p'), end_time.strftime('%I:%M %p')].join('-')
   end
