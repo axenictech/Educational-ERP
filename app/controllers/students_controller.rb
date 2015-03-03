@@ -1,10 +1,16 @@
-# Students Controller
+# Students Controller magange the operation of student admission,
+# guardian details, previous year details and profile.
 class StudentsController < ApplicationController
+
   def index
     @students ||= Student.list
     authorize! :create, Student
   end
 
+  # In this action @batches, @countries, @categories object fetch the data
+  # for drop down list in the form. @student is the new object create for
+  # store the new student admission details in database. set_admission_no
+  # method is used to generate the unique admission number for each student.
   def admission1
     @student = Student.new
     @student.admission_no = Student.set_admission_no
@@ -14,6 +20,8 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # This action save the student record in the database. before save the
+  # record email id is convert into small case alphabet.
   def create
     @student = Student.new(student_params)
     @batches ||= Batch.all.includes(:course)
@@ -35,6 +43,8 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # This action create the new object of store the guardion details
+  # for adjecent student. Build the student object with guardian object.
   def admission2
     @student = Student.shod(params[:format])
     @guardian = @student.guardians.build
@@ -42,11 +52,15 @@ class StudentsController < ApplicationController
     authorize! :create, @student
   end
 
+  # This action display the successfull message of guardian add successfully
+  # for adjecent student.
   def admission2_1
     @student = Student.shod(params[:format])
     authorize! :create, @student
   end
 
+  # This action is fetch the selected student record and display the
+  # form for select emergency contact of guardian.
   def admission3
     @student = Student.shod(params[:format])
     authorize! :create, @student
@@ -69,6 +83,8 @@ class StudentsController < ApplicationController
     end
   end
 
+  # This action is perform the operation for update immediate contact
+  # for selected student.
   def update_immediate_contact
     @student = Student.shod(params[:id])
     @student.update(student_params)
@@ -90,6 +106,8 @@ class StudentsController < ApplicationController
     redirect_to profile_student_path(@student)
   end
 
+  # Create the new object for storing the previous institute details
+  # for selected student.
   def previous_data
     @student = Student.shod(params[:format])
     @previous_data = StudentPreviousData.new
@@ -106,6 +124,8 @@ class StudentsController < ApplicationController
     end
   end
 
+  # Create the new object for store previous course subject details
+  # for selected student.
   def previous_subject
     @student = Student.shod(params[:format])
     @previous_subject = StudentPreviousSubjectMark.new
@@ -180,8 +200,8 @@ class StudentsController < ApplicationController
       @fee = @student.finance_fees.take
       @fines ||= @fee.finance_fines
     else
-      flash[:notice] = 'Collection not created for reciept'
-      redirect_to profile_student_path(@student)
+      flash[:notice] = "Collection not created for reciept"
+      redirect_to profile_student_path(@student) 
     end
     authorize! :read, @student
   end
@@ -247,7 +267,7 @@ class StudentsController < ApplicationController
     @batch = @student.batch
     @first = Batch.first.id
     @current = @batch.id - 1
-    @student_log = StudentLog.where(student_id: @student)
+    @student_log = StudentLog.where(student_id:@student)
     @exam_groups ||= @batch.exam_groups
     authorize! :read, @student
   end
@@ -405,9 +425,9 @@ class StudentsController < ApplicationController
     @archived_student = @student.archived_student
     @archived_student.update(status_description: \
       params[:archived_student][:status_description])
-    s = StudentLog.where(student_id: @student)
+    s=StudentLog.where(student_id:@student)
     s.each do |m|
-      StudentLog.destroy(m.id)
+     StudentLog.destroy(m.id)
     end
     @student.destroy
     redirect_to archived_profile_student_path(@archived_student)

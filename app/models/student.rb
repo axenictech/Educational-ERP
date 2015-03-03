@@ -93,6 +93,9 @@ class Student < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  # This action generate the unique student admission no for each student.
+  # Admission number is combination of admission date with prefix 'S' and
+  # admission count.
   def self.set_admission_no
     date = Date.today.strftime('%Y%m%d')
     if Student.first.nil?

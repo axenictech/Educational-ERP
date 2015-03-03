@@ -28,6 +28,7 @@ class Guardian < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  # This action create the user account for parent for selected student.
   def create_user_account
     user = User.new do |u|
       u.first_name = first_name
