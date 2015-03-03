@@ -6,6 +6,8 @@ class PrivilegeUser < ActiveRecord::Base
   belongs_to :privilege_tag
   scope :shod, ->(id) { where(id: id).take }
 
+  # method for update privileges ,get all privileges tag and privileges
+  # and perticular user,then create or update privileges to selectd user
   def self.privilege_update(privilege_tag, user)
     unless privilege_tag.nil?
       privilege_tag.each do |k|

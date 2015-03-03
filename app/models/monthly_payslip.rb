@@ -1,7 +1,12 @@
+# MonthlyPayslip
 class MonthlyPayslip < ActiveRecord::Base
   include Activity
   belongs_to :employee
   scope :shod, ->(id) { where(id: id).take }
+
+  # method for approve salary ,first update is_approved to true
+  # then create instance of FinanceTransactionCategory assign all
+  # information to FinanceTransactionCategory and save
   def approve_salary
     update(is_approved: true)
     employee = self.employee
@@ -14,6 +19,7 @@ class MonthlyPayslip < ActiveRecord::Base
     t.save
   end
 
+  # return monthlypaslip of employee from salary date
   def self.view(s, e)
     where(salary_date: s, employee_id: e).take
   end
