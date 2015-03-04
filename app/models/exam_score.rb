@@ -12,13 +12,18 @@ class ExamScore < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :exrep, ->(ex, st) { where(exam_id: ex.id, student_id: st).take }
   scope :score, ->(s, e) { where(student_id: s, exam_id: e).take }
-
+  
+  # this validation is for exam_score,
+  # exam_score of particular student shuold not be negative
   def marks_cant_be_negative
     if  marks.present? && marks < 0
       errors.add(:marks, 'cannot be negative')
     end
   end
-
+  
+  # this validation is for exam_score,
+  # exam_score of particular student should
+  # not be grater than maximum marks of that exam
   def marks_cant_be_greater_than_maximum_marks
     unless exam.exam_group.exam_type == 'Grades'
       if  marks.present? && marks > exam.maximum_marks
