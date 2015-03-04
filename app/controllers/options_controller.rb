@@ -1,3 +1,4 @@
+# Options Controller
 class OptionsController < ApplicationController
   before_action :set_option, only: [:show, :edit, :update, :destroy]
 

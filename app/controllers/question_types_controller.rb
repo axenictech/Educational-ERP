@@ -1,3 +1,4 @@
+# QuestionTypes Controller
 class QuestionTypesController < ApplicationController
   before_action :set_question_type, only: [:edit, :update, :destroy]
 
