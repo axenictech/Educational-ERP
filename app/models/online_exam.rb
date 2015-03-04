@@ -1,3 +1,4 @@
+# OnlineExam model
 class OnlineExam < ActiveRecord::Base
   include Activity
   # belongs_to :online_exam_group

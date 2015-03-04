@@ -1,3 +1,4 @@
+# StudentPreviousData model
 class StudentPreviousData < ActiveRecord::Base
   include Activity
   belongs_to :student

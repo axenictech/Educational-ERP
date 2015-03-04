@@ -1,3 +1,4 @@
+# FinacneTransaction model
 class FinanceTransaction < ActiveRecord::Base
   include Activity
   belongs_to :finance_transaction_category

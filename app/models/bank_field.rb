@@ -1,3 +1,4 @@
+# BankField model
 class BankField < ActiveRecord::Base
   include Activity
   validates :name, presence: true,

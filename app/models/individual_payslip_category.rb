@@ -1,3 +1,4 @@
+# IndividualPayslipCategory model
 class IndividualPayslipCategory < ActiveRecord::Base
   include Activity
   belongs_to :employee

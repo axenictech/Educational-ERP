@@ -1,3 +1,4 @@
+# GeneralSetting model
 class GeneralSetting < ActiveRecord::Base
   validates :school_or_college_name, presence: true, format: { with: /\A[a-zA-Z.&, " "]+\z/ },
                                      length: { in: 1..100 }, on: :update

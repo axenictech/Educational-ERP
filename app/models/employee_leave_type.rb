@@ -1,4 +1,4 @@
-# EmployeeLeaveType
+# EmployeeLeaveType model
 class EmployeeLeaveType < ActiveRecord::Base
   include Activity
   validates :name, presence: true, length: \

@@ -1,3 +1,4 @@
+# RankingLeve model
 class RankingLevel < ActiveRecord::Base
   include Activity
   belongs_to :course

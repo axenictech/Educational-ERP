@@ -1,4 +1,4 @@
-# country
+# Country model
 class Country < ActiveRecord::Base
   # include Activity
   

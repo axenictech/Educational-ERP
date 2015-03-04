@@ -1,3 +1,4 @@
+# ClassDesignation model
 class ClassDesignation < ActiveRecord::Base
   include Activity
   belongs_to :course

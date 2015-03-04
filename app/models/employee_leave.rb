@@ -1,4 +1,4 @@
-# EmployeeLeave
+# EmployeeLeave model
 class EmployeeLeave < ActiveRecord::Base
   include Activity
   belongs_to :employee_leave_type

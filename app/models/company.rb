@@ -1,4 +1,4 @@
-# company
+# Company Model
 class Company < ActiveRecord::Base
   include Activity
   validates :name, presence: true, length: { \

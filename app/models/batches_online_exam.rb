@@ -1,3 +1,4 @@
+# BatchesOnlineExam model
 class BatchesOnlineExam < ActiveRecord::Base
   include Activity
   belongs_to :batch

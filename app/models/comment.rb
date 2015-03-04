@@ -1,4 +1,4 @@
-# comments
+# Comment model
 class Comment < ActiveRecord::Base
   include Activity
   belongs_to :newscast

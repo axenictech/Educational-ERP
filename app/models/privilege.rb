@@ -1,3 +1,4 @@
+# Privilege model
 class Privilege < ActiveRecord::Base
   include Activity
   has_many :privilege_users

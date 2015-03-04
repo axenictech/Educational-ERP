@@ -1,4 +1,4 @@
-# Track all UserActivity
+# UserActivity model
 class UserActivity < ActiveRecord::Base
   belongs_to :user
   scope :shod, ->(id) { where(id: id).take }

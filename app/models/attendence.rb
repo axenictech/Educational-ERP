@@ -1,3 +1,4 @@
+# Attendence model
 class Attendence < ActiveRecord::Base
   belongs_to :student
   belongs_to :time_table_entry

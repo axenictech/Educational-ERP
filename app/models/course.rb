@@ -1,4 +1,4 @@
-# course model
+# Course model
 class Course < ActiveRecord::Base
   include Activity
   validates :course_name, presence: true, length: \

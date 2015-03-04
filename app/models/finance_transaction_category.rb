@@ -1,3 +1,4 @@
+# FinanceTransactionCategory model
 class FinanceTransactionCategory < ActiveRecord::Base
   include Activity
   has_many :finance_transactions

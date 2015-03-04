@@ -1,3 +1,4 @@
+# FinanceFeeCategory model
 class FinanceFeeCategory < ActiveRecord::Base
   include Activity
   has_and_belongs_to_many :batches

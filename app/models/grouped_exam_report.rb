@@ -1,4 +1,4 @@
-# GroupedExamReport
+# GroupedExamReport model
 class GroupedExamReport < ActiveRecord::Base
   include Activity
 

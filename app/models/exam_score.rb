@@ -1,4 +1,4 @@
-# ExamScore
+# ExamScore model
 class ExamScore < ActiveRecord::Base
   include Activity
   belongs_to :student

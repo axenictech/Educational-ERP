@@ -1,3 +1,4 @@
+# EmployeeSaleryStructure model
 class EmployeeSaleryStructure < ActiveRecord::Base
   include Activity
   belongs_to :employee

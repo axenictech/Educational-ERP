@@ -1,4 +1,4 @@
-# PrivilegeUser
+# PrivilegeUser model
 class PrivilegeUser < ActiveRecord::Base
   include Activity
   belongs_to :privilege

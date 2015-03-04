@@ -1,4 +1,4 @@
-# Exam Active Record
+# Exam model
 class Exam < ActiveRecord::Base
   include Activity
   belongs_to :exam_group

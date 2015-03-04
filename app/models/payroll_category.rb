@@ -1,3 +1,4 @@
+# PayrollCategory model
 class PayrollCategory < ActiveRecord::Base
   include Activity
   has_many :employee_salery_structures

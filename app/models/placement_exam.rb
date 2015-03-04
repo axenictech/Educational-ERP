@@ -1,4 +1,4 @@
-# PlacementExam
+# PlacementExam model
 class PlacementExam < ActiveRecord::Base
   include Activity
   belongs_to :company

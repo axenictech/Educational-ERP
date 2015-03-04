@@ -1,4 +1,4 @@
-# EmployeeAttendance
+# EmployeeAttendance model
 class EmployeeAttendance < ActiveRecord::Base
   include Activity
   belongs_to :employee

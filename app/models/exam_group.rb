@@ -1,4 +1,4 @@
-# ExamGroup
+# ExamGroup model
 class ExamGroup < ActiveRecord::Base
   include Activity
   belongs_to :batch

@@ -1,3 +1,4 @@
+# PlacementNews model
 class PlacementNews < ActiveRecord::Base
   include Activity
   validates :title, presence: true, length: { minimum: 1, maximum: 100 }

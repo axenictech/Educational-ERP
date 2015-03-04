@@ -1,3 +1,4 @@
+# StudentLog model
 class StudentLog < ActiveRecord::Base
   belongs_to :student
   belongs_to :subject

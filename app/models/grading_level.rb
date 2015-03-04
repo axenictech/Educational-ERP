@@ -1,3 +1,4 @@
+# GradingLevel model
 class GradingLevel < ActiveRecord::Base
   include Activity
   belongs_to :batch

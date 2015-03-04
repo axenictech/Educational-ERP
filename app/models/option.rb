@@ -1,3 +1,4 @@
+# Option model
 class Option < ActiveRecord::Base
   include Activity
   belongs_to :question

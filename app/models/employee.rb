@@ -1,4 +1,4 @@
-# Employee
+# Employee model
 class Employee < ActiveRecord::Base
   include Activity
   belongs_to :employee_category

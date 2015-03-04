@@ -1,3 +1,4 @@
+# Batch Event model
 class BatchEvent < ActiveRecord::Base
   include Activity
   belongs_to :batch

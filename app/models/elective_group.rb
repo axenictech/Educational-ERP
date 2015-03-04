@@ -1,4 +1,4 @@
-# elective group
+# ElectiveGroup model
 class ElectiveGroup < ActiveRecord::Base
   include Activity
   belongs_to :batch

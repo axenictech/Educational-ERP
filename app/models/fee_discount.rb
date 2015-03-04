@@ -1,3 +1,4 @@
+# FeeDiscount model
 class FeeDiscount < ActiveRecord::Base
   include Activity
   self.inheritance_column = nil

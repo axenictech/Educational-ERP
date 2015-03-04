@@ -1,3 +1,4 @@
+# FinanceTransactionTrigger model
 class FinanceTransactionTrigger < ActiveRecord::Base
   include Activity
   belongs_to :category, class_name: 'FinanceTransactionCategory', foreign_key: 'category_id'

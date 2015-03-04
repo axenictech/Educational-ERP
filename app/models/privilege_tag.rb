@@ -1,3 +1,4 @@
+# PrivilegeTag model
 class PrivilegeTag < ActiveRecord::Base
   include Activity
   has_many :privileges

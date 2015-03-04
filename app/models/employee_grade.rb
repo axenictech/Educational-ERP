@@ -1,3 +1,4 @@
+# EmployeeGrade model
 class EmployeeGrade < ActiveRecord::Base
   include Activity
   validates :name, presence: true, length: { minimum: 1, maximum: 20 }, format: { with: /\A[a-z A-Z+-]+\z/, message: 'only allows letter' }

@@ -1,3 +1,4 @@
+# FinanceDonation model
 class FinanceDonation < ActiveRecord::Base
   include Activity
   belongs_to :finance_transaction

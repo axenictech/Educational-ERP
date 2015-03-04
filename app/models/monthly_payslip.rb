@@ -1,4 +1,4 @@
-# MonthlyPayslip
+# MonthlyPayslip model
 class MonthlyPayslip < ActiveRecord::Base
   include Activity
   belongs_to :employee

@@ -1,3 +1,4 @@
+# StudentAnswerSheet model
 class StudentAnswerSheet < ActiveRecord::Base
   include Activity
   belongs_to :student_exams

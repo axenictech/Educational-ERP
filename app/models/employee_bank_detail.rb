@@ -1,4 +1,4 @@
-# bank details
+# EmployeeBankDetail model
 class EmployeeBankDetail < ActiveRecord::Base
   include Activity
   belongs_to :employee

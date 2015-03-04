@@ -1,4 +1,4 @@
-# QuestionDatabase
+# QuestionDatabase model
 class QuestionDatabase < ActiveRecord::Base
   include Activity
   belongs_to :question_type

@@ -1,3 +1,4 @@
+# QuestionType model
 class QuestionType < ActiveRecord::Base
   include Activity
   has_many :weightages

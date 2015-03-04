@@ -1,3 +1,4 @@
+# EmployeeCategory model
 class EmployeeCategory < ActiveRecord::Base
   include Activity
   has_many :employee_positions
