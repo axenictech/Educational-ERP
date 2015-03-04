@@ -1,3 +1,4 @@
+# Qusetions Controller
 class QusetionsController < ApplicationController
   before_action :set_qusetion, only: [:show, :edit, :update, :destroy]
 
