@@ -1,3 +1,4 @@
+# ArchivedStudent Model
 class ArchivedStudent < ActiveRecord::Base
   include Activity
   belongs_to :country
