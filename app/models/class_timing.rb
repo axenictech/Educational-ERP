@@ -12,6 +12,7 @@ class ClassTiming < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :is_break, -> { where(is_break: false) }
 
+  # This is a validation action and add error if end time is less than start date.
   # this is for validation of class_timimg, class start time
   # can not be greater that class end time
   def end_time_cannot_be_less_than_start_time

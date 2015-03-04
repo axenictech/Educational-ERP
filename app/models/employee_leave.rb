@@ -8,6 +8,7 @@ class EmployeeLeave < ActiveRecord::Base
   scope :dest_leave, ->(leave) { where(employee_leave_type_id: leave.id) }
   # find employee from employee leave
   scope :leave_detail, ->(emp) { where(employee_id: emp.id) }
+
   
   # create leave for particular employee
   def self.leave(new_leave, e)

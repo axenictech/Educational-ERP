@@ -32,6 +32,7 @@ class ExamScore < ActiveRecord::Base
     end
   end
 
+  # This action calculate the percentage and manage the floating point.
   def calculate_percentage
     '%0.2f' % (marks.to_f * 100 / exam.maximum_marks.to_f)
   end
