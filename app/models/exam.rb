@@ -5,7 +5,7 @@ class Exam < ActiveRecord::Base
   belongs_to :subject
   belongs_to :event
   has_many :exam_scores, dependent: :destroy
-
+  
   validates :maximum_marks, numericality: { only_integer: true }, length: \
             { minimum: 1, maximum: 3 }, allow_blank: true
 
@@ -19,24 +19,32 @@ class Exam < ActiveRecord::Base
   scope :shod, ->(id) { where(id: id).take }
   scope :result, ->(s, e) { where(subject_id: s, exam_group_id: e).take }
 
+  # this is for validation of exam, exam start time can not be greater than exam
+  # exam end time
   def end_time_cannot_be_less_than_start_time
     if end_time.present? && end_time < start_time
       errors.add(:end_time, 'cannot be less than start time')
     end
   end
-
+  
+  # this is for validation of exam,exam start date
+  # should not be less than current date that is todays date
   def start_time_cannot_be_less_than_past
     if start_time.present? && start_time.to_date < Date.today
       errors.add(:start_time, 'should not be past date')
     end
   end
-
+  
+  # this is for validation of exam, exam end date
+  # should not be less than current date that is todays date
   def end_time_cannot_be_less_than_past
     if end_time.present? && end_time.to_date < Date.today
       errors.add(:end_time, 'should not be past date')
     end
   end
-
+  
+  # rhis is for validation of exam, maximum marks should
+  # not be greater than minimum marks
   def max_marks_greater_than_min_marks
     if maximum_marks.present? && minimum_marks.present? && maximum_marks < minimum_marks
       errors.add(:maximum_marks, 'should be greater than minimum marks')
