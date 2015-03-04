@@ -18,7 +18,7 @@ class ArchivedStudent < ActiveRecord::Base
     UserMailer.student_email(user, subject, message).deliver
   end
 
-  #method return full name by concating first name and last name
+  # method return full name by concating first name and last name
   def full_name
     [first_name, last_name].join(' ')
   end
