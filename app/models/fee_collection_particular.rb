@@ -31,6 +31,8 @@ class FeeCollectionParticular < ActiveRecord::Base
     end
   end
 
+  # Fetch the student number by admission number and return the
+  # student full name.
   def student_name
     student = Student.find_by_admission_no(admission_no)\
      if admission_no.present?

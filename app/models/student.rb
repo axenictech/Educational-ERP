@@ -262,7 +262,8 @@ class Student < ActiveRecord::Base
     UserMailer.student_email(user, subject, message).deliver
   end
 
-  
+
+  # Fetch the record from student according to selected exam and student.
   def exam_scores(exam)
     ExamScore.where(exam_id: exam, student_id: id).take
   end

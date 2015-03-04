@@ -121,11 +121,15 @@ class ExamGroupsController < ApplicationController
     @exam_groups = @batch.exam_groups.all
   end
 
+  # This action provide the exam groups record for selected batch
+  # assign all operation.
   def assign_all
     @batch = Batch.shod(params[:id])
     @exam_groups = @batch.exam_groups.all
   end
 
+  # This action provide the exam groups record for selected batch
+  # for remove all operation.
   def remove_all
     @batch = Batch.shod(params[:id])
     @exam_groups = @batch.exam_groups.all
@@ -176,12 +180,15 @@ class ExamGroupsController < ApplicationController
     redirect_to exam_group_path(batch)
   end
 
+  # This action display the previous exam scores of failed student.
   def previous_exam_scores
     @exam = Exam.shod(params[:format])
     @exam_scores = @exam.is_failed
     # authroize! :update, @exam
   end
 
+  # This action is update the exam score using update method for
+  # selected exam.
   def update_exam_score
     @exam = Exam.shod(params[:id])
     @exam_group = @exam.exam_group

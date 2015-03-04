@@ -1,4 +1,5 @@
-# Exam Controller
+# Exam Controller perform the operation on exam like read,
+# create, update, delete.
 class ExamsController < ApplicationController
   # Create the new form for add the subject for exams.
   # Add the subject for selected exam group.
@@ -77,6 +78,7 @@ class ExamsController < ApplicationController
     exam
   end
 
+  # This provide the exam grade and subject for students.
   def exam
     if @errors.nil?
       redirect_to exam_score_exam_path(@exam)

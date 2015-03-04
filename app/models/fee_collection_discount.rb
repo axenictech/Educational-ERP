@@ -34,7 +34,9 @@ class FeeCollectionDiscount < ActiveRecord::Base
   def collection_discount(total)
     (discount * total) / 100
   end
-
+ 
+  # Fetch the student number by admission number and return the
+  # student full name.
   def student_name
     student = Student.find_by_admission_no(admission_no)\
      if type == 'Student'
