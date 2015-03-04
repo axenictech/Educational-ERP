@@ -28,9 +28,8 @@ class EmployeeDepartment < ActiveRecord::Base
   end
 
   # This method is used for split employee id
+  # on selected batch
   def ass_emp(batch)
-    if batch.employee_id
     batch.employee_id.split(',')
-  end
   end
 end

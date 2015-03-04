@@ -93,6 +93,7 @@ class Student < ActiveRecord::Base
   # This method for create archived student,
   # get all student attributes add  student id,
   # call create method on ArchivedStudent and pass student attributes
+  # and create archived student
   def archived_student
     student_attributes = attributes
     student_attributes['student_id'] = id
@@ -212,6 +213,9 @@ class Student < ActiveRecord::Base
     end
   end
 
+  # Method for search student and return criteria for searching,
+  # when user search upon muitiple criteria thoes criteria return
+  # by search script and return script result
   def self.search_script(search, batch)
     script = ''
     script += ' Name: ' + search[:name].to_s + ', ' \
@@ -252,6 +256,7 @@ class Student < ActiveRecord::Base
     script
   end
 
+  # This method for send mail to user
   def mail(subject, recipient, message)
     user = User.discover(id, recipient).take
     UserMailer.student_email(user, subject, message).deliver

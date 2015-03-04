@@ -20,14 +20,7 @@
 
 
 $(function() {
-  $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy' })
-});
-
-$(function () {
-                $('.datetimepicker1').datetimepicker({
-                   format: 'DD/MM/YYYY h:m A'
-
-                });
+  $('.datepicker').datepicker();
 });
 
 $(document).ready(function() {

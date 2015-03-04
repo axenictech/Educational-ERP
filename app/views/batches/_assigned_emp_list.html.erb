@@ -13,7 +13,7 @@
     </thead>
     <tr><td colspan="2"><%=assign_emp_not_found!%></td></tr>
     <tbody>
-    <%unless @batch.employee_id.nil?%>
+    
     <% @assign_employees = emp_split(@batch) unless @batch.employee_id.nil?%>
 	  <% @assign_employees.each do |emp|%>
 		  <% @employee = assign_emp_find(emp) %>
@@ -24,7 +24,7 @@
             </td>
           </tr>
       <% end %>
-      <%end%>
+  
     </tbody>
   </table>
 </div>

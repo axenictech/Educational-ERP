@@ -26,8 +26,9 @@ class Batch < ActiveRecord::Base
     subjects.where(no_exams: false)
   end
 
-  # This is a validation action and give errors if end date is less than
-  # start date.
+  # This method for validates start date and end date
+  # if end date of current batch is less than start date
+  # then add and retuens errors
   def end_date_cannot_be_less_than_start_date
     if end_date.present? && end_date < start_date
       errors.add(:end_date, "can't be less than start date")
@@ -91,7 +92,6 @@ class Batch < ActiveRecord::Base
       Student.find(student).update(batch_id: transfer_id)
     end
   end
-
 
   # This action find the exam groupes record who's result published
   # status is true.
