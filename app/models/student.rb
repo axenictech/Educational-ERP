@@ -262,7 +262,7 @@ class Student < ActiveRecord::Base
     UserMailer.student_email(user, subject, message).deliver
   end
 
-  # exam score 
+  # exam score     ku  nlkmmmmmmmmmmmmmmm    
   def exam_scores(exam)
     ExamScore.where(exam_id: exam, student_id: id).take
   end
