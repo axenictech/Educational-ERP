@@ -213,7 +213,7 @@ class StudentsController < ApplicationController
   end
 
   # Generate the student reciept about its admission status.
-  # How much fee is pending and how much is paid. 
+  # How much fee is pending and how much is paid.
   def reciept
     @student = Student.shod(params[:format])
     @general_setting = GeneralSetting.first
