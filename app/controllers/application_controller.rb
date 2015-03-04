@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   
-
+  # Method used for set cuttent user
   def set_current_user
     User.current = current_user
   end

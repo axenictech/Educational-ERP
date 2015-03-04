@@ -1,4 +1,5 @@
-# Exam controller is perform the operation for ranking level and class disignation
+# Exam controller is perform the operation for
+# ranking level and class disignation
 # e.g. Insert, Delete, Update, Read.
 class ExamSettingController < ApplicationController
   def index
@@ -99,7 +100,7 @@ class ExamSettingController < ApplicationController
     @course.increase_logic(@rank_levels, selected)
     @rank_levels = @course.ranking_levels.order('prioriy ASC')
     authorize! :create, @rank_lev1
-   end
+  end
 
   # This action is perform the operation to decrease the priority
   # of ranking level.
