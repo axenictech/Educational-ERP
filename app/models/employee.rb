@@ -492,6 +492,7 @@ class Employee < ActiveRecord::Base
 
   private
 
+  # This action create the user for employee login.
   def create_user_account
     user = User.new do |u|
       u.first_name = first_name

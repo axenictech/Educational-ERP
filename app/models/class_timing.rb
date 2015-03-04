@@ -11,6 +11,8 @@ class ClassTiming < ActiveRecord::Base
   # validate  :validate_class_timing
   scope :shod, ->(id) { where(id: id).take }
   scope :is_break, -> { where(is_break: false) }
+
+  # This is a validation action and add error if end time is less than start date.
   def end_time_cannot_be_less_than_start_time
     if end_time.present? && end_time < start_time
       errors.add(:end_time, "can't be less than start time")

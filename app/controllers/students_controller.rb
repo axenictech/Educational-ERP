@@ -407,6 +407,7 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # Assing the elective subject for particular student.
   def assign_elective
     @subject = Subject.shod(params[:student_subject][:subject_id])
     @subject.assign_subject(params[:students])
@@ -439,11 +440,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  # This action report the mail to archived student.
   def report_email
     @student = ArchivedStudent.shod(params[:format])
     authorize! :create, @student
   end
 
+  # This action send the email for archived student.
   def send_report_email
     @student = ArchivedStudent.shod(params[:student_id])
     @student.mail(params[:subject], recipient, message)
@@ -518,6 +521,7 @@ class StudentsController < ApplicationController
     authorize! :read, @student
   end
 
+  # Provide the data of student and guardian for display.
   def archived_student_guardian
     @student = ArchivedStudent.shod(params[:format])
     @guards ||= Guardian.where(student_id: @student.student_id)
