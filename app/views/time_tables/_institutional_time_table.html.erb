@@ -23,6 +23,7 @@
       </div>
     <table id="datatable" class="table table-striped table-bordered responsive">
         <tbody>
+           <%flag=0%>
           <%@time_table.each do |t| %>
           <%@time_table_entries=time_table_id(t)%>
           <%@time_table_entries.each do |time|%>
@@ -30,10 +31,20 @@
           <% present=institutional_time_table(time) %>  
           <%if time.weekday.weekday==I18n.l(@today,:format=>"%A")%>
           <tr>
-            <th>
-              <%='Time'%><hr>
+
+      <th> 
+         
+         <%if flag==0%>
+            <%=time.batch.name%>
+            <%flag=1%>
+            <%@temp=time.batch.name%>
+            <%elsif%>
+              <%@temp!=time.batch.name%>
               <%=time.batch.name%>
-            </th>
+              <%flag=0%>
+          <%end%>
+      </th>
+           
             <td><%=timing.full_time%><hr>
              <%=present.subject.name%><br/>
              <%=present.employee.first_name%>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206092332) do
+ActiveRecord::Schema.define(version: 20170206092334) do
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer  "employee_id",             limit: 4
@@ -143,19 +143,21 @@ ActiveRecord::Schema.define(version: 20170206092332) do
   end
 
   create_table "attendences", force: :cascade do |t|
-    t.integer  "student_id",          limit: 4
-    t.integer  "time_table_entry_id", limit: 4
-    t.boolean  "forenoon",            limit: 1,   default: false
-    t.boolean  "afternoon",           limit: 1,   default: false
+    t.boolean  "forenoon",            limit: 1
+    t.boolean  "afternoon",           limit: 1
     t.string   "reason",              limit: 255
     t.date     "month_date"
+    t.integer  "student_id",          limit: 4
+    t.integer  "time_table_entry_id", limit: 4
     t.integer  "batch_id",            limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "subject_id",          limit: 4
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "attendences", ["batch_id"], name: "index_attendences_on_batch_id", using: :btree
   add_index "attendences", ["student_id"], name: "index_attendences_on_student_id", using: :btree
+  add_index "attendences", ["subject_id"], name: "index_attendences_on_subject_id", using: :btree
   add_index "attendences", ["time_table_entry_id"], name: "index_attendences_on_time_table_entry_id", using: :btree
 
   create_table "bank_fields", force: :cascade do |t|
@@ -1289,6 +1291,10 @@ ActiveRecord::Schema.define(version: 20170206092332) do
   add_index "weightages", ["placement_exam_id"], name: "index_weightages_on_placement_exam_id", using: :btree
   add_index "weightages", ["question_type_id"], name: "index_weightages_on_question_type_id", using: :btree
 
+  add_foreign_key "attendences", "batches"
+  add_foreign_key "attendences", "students"
+  add_foreign_key "attendences", "subjects"
+  add_foreign_key "attendences", "time_table_entries"
   add_foreign_key "privilege_users", "privilege_tags"
   add_foreign_key "privilege_users", "privileges"
   add_foreign_key "privilege_users", "users"
