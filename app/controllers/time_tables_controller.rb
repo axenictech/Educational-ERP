@@ -9,7 +9,7 @@ class TimeTablesController < ApplicationController
 
   def new
     @timetables ||= TimeTable.all
-    authorize! :read, @timetables.first
+    authorize! :read, TimeTableEntry
   end
 
   def select_time
@@ -64,7 +64,7 @@ class TimeTablesController < ApplicationController
 
   def teachers_timetable
     @timetables ||= TimeTable.all
-    authorize! :read, @timetables.first
+    authorize! :read, TimeTableEntry
   end
 
   def teacher_timetable_pdf
